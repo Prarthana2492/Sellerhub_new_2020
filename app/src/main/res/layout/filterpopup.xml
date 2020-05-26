@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main_layout"
+    android:layout_width="match_parent"
+    android:layout_height="230dp"
+    android:orientation="vertical"
+    android:background="@drawable/border_empty_curve">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingRight="15dp"
+        android:paddingLeft="10dp"
+        android:background="@drawable/addrs_top_curve"
+        android:paddingVertical="10dp"
+        android:weightSum="100"
+        >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:layout_weight="95">
+
+
+            <TextView
+                android:id="@+id/popup_heading"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="Farmer Category"
+                android:textColor="#000"
+                android:textSize="16dp"
+                android:textStyle="bold"
+
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/close_popup"
+            android:layout_width="30dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/ic_filter_state"
+            android:gravity="center">
+
+
+            <ImageView
+                android:layout_width="23dp"
+                android:layout_height="23dp"
+                android:src="@drawable/ic_error"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="6dp"
+        >
+        <RadioGroup
+            android:padding="10dp"
+            android:id="@+id/radioGroup"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RadioButton
+                android:id="@+id/radioButton1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Owner"
+                android:buttonTint="@color/green"
+                android:backgroundTint="@color/green"
+                android:paddingLeft="5dp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/segoeui"
+                android:layout_marginTop="10dp"
+                android:textSize="18sp"/>
+
+            <RadioButton
+                android:id="@+id/radioButton2"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="5dp"
+                android:buttonTint="@color/green"
+                android:backgroundTint="@color/green"
+                android:textColor="@color/black"
+                android:fontFamily="@font/segoeui"
+                android:text="Tenant"
+                android:layout_marginTop="10dp"
+                android:textSize="18sp"/>
+
+            <RadioButton
+                android:id="@+id/radioButton3"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="5dp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/segoeui"
+                android:buttonTint="@color/green"
+                android:backgroundTint="@color/green"
+                android:text="Share Croper"
+                android:layout_marginTop="10dp"
+                android:textSize="18sp"/>
+        </RadioGroup>
+
+
+
+
+
+
+
+
+
+
+
+</LinearLayout>
+
+
+
+
+
+</LinearLayout>

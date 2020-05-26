@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="#fff"
+    android:tag="cards main container">
+
+    <LinearLayout
+        android:id="@+id/lnr_lyt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="20"
+        android:layout_marginTop="12dp"
+        android:layout_marginRight="17dp"
+        android:orientation="vertical" >
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/farm_image"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:padding="10dp"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:src="@drawable/mapview" />
+
+        <TextView
+            android:id="@+id/fnamee"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:fontFamily="@font/segoeui"
+            android:textSize="12dp"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:text="Mango Mist" />
+    </LinearLayout>
+
+
+</LinearLayout>
+

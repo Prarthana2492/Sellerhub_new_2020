@@ -1,0 +1,655 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#fff"
+    android:weightSum="100"
+    >
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="8"
+        android:background="@color/green"
+        android:gravity="center_vertical">
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:orientation="horizontal"
+            android:background="@color/menu_green"
+            tools:ignore="MissingConstraints">
+
+
+
+            <LinearLayout
+                android:id="@+id/back_feed"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/ic_filter_state"
+                android:gravity="center">
+
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_go_back_left_arrow_"
+
+                    />
+
+            </LinearLayout>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Inventory Details"
+                android:textSize="20dp"
+                android:textColor="#fff"
+                android:textStyle="bold"
+                android:layout_gravity="center"
+                android:layout_marginHorizontal="10dp"
+                android:id="@+id/toolbar_title" />
+
+
+    </LinearLayout>
+
+    </LinearLayout>
+
+
+            <!--<LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@color/green"
+
+                >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="100"
+        android:layout_marginLeft="5dp"
+        android:paddingVertical="15dp"
+        android:layout_marginBottom="10dp"
+        >
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_marginLeft="5dp"
+            android:layout_weight="20">
+
+            <ImageView
+                android:id="@+id/image"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_marginHorizontal="10dp"
+                android:src="@drawable/vegitablespng"
+                android:background="@drawable/border_grey_thick"
+                android:padding="5dp"
+                />
+
+
+            &lt;!&ndash;<de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/bank_img"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@drawable/avatarmale"
+                app:civ_border_color="#dcdcdc"
+                app:civ_border_width="0.0dp" />&ndash;&gt;
+
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginHorizontal="5dp"
+            android:layout_weight="80">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="100"
+                android:layout_marginHorizontal="5dp"
+                >
+
+                <TextView
+                    android:id="@+id/bank_name"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="70"
+                    android:fontFamily="@font/segoeui"
+                    android:gravity="center_vertical"
+                    android:text="Vegetables"
+                    android:textColor="#fff"
+                    android:textSize="14dp" />
+
+
+                <TextView
+                    android:id="@+id/in_process"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="30"
+                    android:fontFamily="@font/segoeui"
+                    android:text="IN PROCESS"
+                    android:textColor="#fff"
+                    android:gravity="center"
+                    android:paddingVertical="5dp"
+                    android:paddingHorizontal="10dp"
+                    android:background="@drawable/border_filled_red_not_curved"
+                    android:textSize="10dp" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="100"
+                android:layout_marginTop="10dp"
+                >
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="40"
+                    android:orientation="vertical"
+                    android:layout_gravity="center"
+                    >
+
+                    <TextView
+                        android:id="@+id/loan_amount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/segoeui"
+                        android:gravity="center_vertical"
+                        android:text="10"
+                        android:textColor="#fff"
+                        android:textSize="14dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/segoeui"
+                        android:gravity="center_vertical"
+                        android:text="Quantity"
+                        android:layout_gravity="center"
+                        android:textColor="#fff"
+                        android:textSize="12dp" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="30"
+                    android:orientation="vertical"
+                    android:layout_gravity="center"
+                    >
+                    <TextView
+                        android:id="@+id/interest_rate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/segoeui"
+                        android:gravity="center_vertical"
+                        android:text="30"
+                        android:textColor="#fff"
+                        android:layout_gravity="center"
+                        android:textSize="14dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/segoeui"
+                        android:gravity="center_vertical"
+                        android:text="Unit of Price"
+                        android:textColor="#fff"
+                        android:layout_gravity="center"
+                        android:textSize="12dp" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="30"
+                    android:orientation="vertical"
+                    android:layout_gravity="center"
+                    >
+                    <TextView
+                        android:id="@+id/tenure_range"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/segoeui"
+                        android:gravity="center_vertical"
+                        android:text="300"
+                        android:textColor="#fff"
+                        android:layout_gravity="center"
+                        android:textSize="14dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/segoeui"
+                        android:gravity="center_vertical"
+                        android:text="Price"
+                        android:layout_gravity="center"
+                        android:textColor="#fff"
+                        android:textSize="12dp" />
+
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/segoeui"
+                android:gravity="center_vertical"
+                android:text="Application Number : 103519997577"
+                android:textColor="#fff"
+                android:layout_marginHorizontal="5dp"
+                android:layout_marginTop="10dp"
+                android:textSize="12dp" />
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+            </LinearLayout>-->
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="100"
+                android:paddingVertical="15dp"
+                android:layout_marginBottom="10dp"
+                android:background="@color/green"
+                >
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_weight="20">
+
+                    <ImageView
+                        android:id="@+id/image"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:layout_marginHorizontal="10dp"
+                        android:src="@drawable/vegitablespng"
+                        android:background="@drawable/border_grey_thick"
+                        android:padding="5dp"
+                        />
+
+
+                    <!--<de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+                        android:id="@+id/bank_img"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:src="@drawable/avatarmale"
+                        app:civ_border_color="#dcdcdc"
+                        app:civ_border_width="0.0dp" />-->
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginHorizontal="5dp"
+                    android:layout_weight="80">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="100"
+                        >
+
+
+                        <TextView
+                            android:id="@+id/sellname"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="70"
+                            android:fontFamily="@font/segoeui"
+                            android:layout_marginLeft="10dp"
+                            android:text="Vegetables"
+                            android:textColor="#000"
+                            android:layout_marginTop="18dp"
+                            android:textSize="14dp" />
+
+                        <ImageView
+                            android:id="@+id/edit_sell"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="30"
+                            android:src="@drawable/ic_edit_pencil_red"
+                            android:layout_gravity="center"
+                            android:paddingHorizontal="10dp"
+                            android:paddingVertical="5dp"
+                             />
+
+
+                    <!--    <TextView
+                            android:id="@+id/in_process"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+
+                            android:background="@drawable/border_filled_red"
+                            android:fontFamily="@font/segoeui"
+                            android:gravity="center"
+                            android:paddingHorizontal="10dp"
+                            android:paddingVertical="5dp"
+                            android:text="IN PROCESS"
+                            android:textColor="#fff"
+                            android:textSize="10dp" />-->
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:weightSum="100"
+                        android:layout_marginTop="10dp"
+                        >
+                        <!--
+                                            <TextView
+                                                android:id="@+id/quantity"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:fontFamily="@font/segoeui"
+                                                android:layout_marginLeft="10dp"
+                                                android:text="quantity"
+                                                android:textColor="#000"
+                                                android:textSize="14dp" />-->
+
+                        <TextView
+                            android:id="@+id/price"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/segoeui"
+                            android:text="Rs"
+                            android:textColor="#000"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginLeft="10dp"
+                            android:textStyle="bold"
+                            android:textSize="12dp" />
+
+
+                    </LinearLayout>
+
+
+
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="10dp"
+            android:weightSum="100"
+            android:layout_marginHorizontal="16dp"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center_vertical"
+                android:weightSum="100"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="90"
+                    android:text="Sell Details"
+                    android:padding="10dp"
+                    android:background="#fff"
+                    android:textColor="#000"
+                    android:fontFamily="@font/segoeui"
+                    android:textStyle="bold"
+                    android:layout_gravity="center_vertical"
+                    android:drawableLeft="@drawable/ic_user_black"
+                    android:drawablePadding="5dp"
+                    />
+
+               <!-- <ImageView
+                    android:id="@+id/edit_sell"
+                    android:layout_weight="10"
+                    android:layout_width="15dp"
+                    android:layout_marginRight="10dp"
+                    android:src="@drawable/ic_edit_pencil"
+                    android:layout_gravity="center"
+                    android:layout_height="15dp" />-->
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="100"
+                android:layout_marginBottom="20dp"
+                >
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="45"
+                    android:orientation="vertical"
+                    android:paddingLeft="30dp"
+                    >
+
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Quality"
+                        android:background="#fff"
+                        android:textColor="#000"
+                        android:fontFamily="@font/segoeui"
+                        />
+
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Variety"
+                        android:background="#fff"
+                        android:textColor="#000"
+                        android:fontFamily="@font/segoeui"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Quantity"
+                        android:background="#fff"
+                        android:textColor="#000"
+                        android:fontFamily="@font/segoeui"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="UOM"
+                        android:background="#fff"
+                        android:textColor="#000"
+                        android:fontFamily="@font/segoeui"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Price"
+                        android:background="#fff"
+                        android:textColor="#000"
+                        android:fontFamily="@font/segoeui"
+                        />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="5"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=":"
+                        android:textColor="#000"
+                        android:fontFamily="@font/segoeui"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=":"
+                        android:textColor="#000"
+                        android:fontFamily="@font/segoeui"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=":"
+                        android:textColor="#000"
+                        android:fontFamily="@font/segoeui"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=":"
+                        android:textColor="#000"
+                        android:fontFamily="@font/segoeui"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=":"
+                        android:textColor="#000"
+                        android:fontFamily="@font/segoeui"
+                        />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="50"
+                    android:orientation="vertical"
+                    >
+                    <TextView
+                        android:id="@+id/e_quality"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Jwari"
+                        android:background="#fff"
+                        android:textColor="#000"
+                        android:fontFamily="@font/segoeui"
+                        />
+
+                    <TextView
+                        android:id="@+id/e_variety"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Jwari"
+                        android:background="#fff"
+                        android:textColor="#000"
+                        android:fontFamily="@font/segoeui"
+                        />
+
+                    <TextView
+                        android:id="@+id/e_quantity"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="20"
+                        android:background="#fff"
+                        android:textColor="#000"
+                        android:fontFamily="@font/segoeui"
+                        />
+
+                    <TextView
+                        android:id="@+id/e_uom"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Box/Boxes"
+                        android:background="#fff"
+                        android:textColor="#000"
+                        android:fontFamily="@font/segoeui"
+                        />
+
+                    <TextView
+                        android:id="@+id/e_price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="100.0"
+                        android:background="#fff"
+                        android:textColor="#000"
+                        android:fontFamily="@font/segoeui"
+                        />
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+
+</LinearLayout>

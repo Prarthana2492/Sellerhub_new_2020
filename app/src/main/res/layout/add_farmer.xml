@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#fff"
+    >
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="100"
+        android:fillViewport="true">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:weightSum="100"
+            android:orientation="vertical">
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/green"
+        android:gravity="center_vertical"
+        tools:ignore="MissingConstraints">
+
+        <LinearLayout
+            android:id="@+id/back_feed"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/ripple_effect"
+            android:gravity="center">
+
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/ic_go_back_left_arrow_"
+
+                />
+
+        </LinearLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Farm Details"
+            android:textSize="20dp"
+            android:textColor="#fff"
+            android:textStyle="bold"
+            android:layout_marginHorizontal="10dp"
+            android:id="@+id/toolbar_title" />
+    </LinearLayout>
+
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginTop="20dp"
+        android:layout_marginHorizontal="16dp"
+        >
+
+        <EditText
+            android:id="@+id/farmname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Farm Name"
+            android:paddingLeft="10dp"
+            android:textColorHint="#9D9D9D"
+            android:fontFamily="@font/segoeui"
+            android:paddingVertical="13dp"
+            android:background="@drawable/request_price_white_border2"
+            android:textSize="16dp"
+            android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnoprqstuvwxyz"
+            />
+
+        <LinearLayout
+            android:id="@+id/loan_lay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="100"
+            >
+
+            <EditText
+                android:id="@+id/aboutfarm"
+                android:layout_width="match_parent"
+                android:layout_height="230dp"
+                android:hint="About Farm"
+                android:gravity="top"
+                android:paddingLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:textSize="16dp"
+                android:textColorHint="#9D9D9D"
+                android:fontFamily="@font/segoeui"
+                android:paddingVertical="13dp"
+                android:background="@drawable/request_price_white_border2"
+                />
+        </LinearLayout>
+
+    </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/continuebtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/border_filled_red_not_curved"
+        android:orientation="horizontal"
+        android:gravity="center"
+        >
+
+        <TextView
+            android:id="@+id/apply_loan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Continue"
+            android:textAllCaps="true"
+            android:textSize="20dp"
+            android:gravity="center"
+            android:padding="15dp"
+            android:fontFamily="@font/segoeui"
+            android:textColor="#ffffff"
+            />
+<ImageView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:src="@drawable/ic_right_arrow2"/>
+    </LinearLayout>
+
+</LinearLayout>

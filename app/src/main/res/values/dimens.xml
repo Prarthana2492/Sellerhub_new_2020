@@ -1,0 +1,3 @@
+<resources>
+    <dimen name="card_bottom_interval">24dp</dimen>
+</resources>

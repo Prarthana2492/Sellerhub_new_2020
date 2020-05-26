@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#fff"
+    android:weightSum="100"
+    >
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="10"
+        android:orientation="horizontal"
+        android:background="@color/menu_green"
+        tools:ignore="MissingConstraints">
+
+
+
+        <LinearLayout
+            android:id="@+id/back_feed"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/ic_filter_state"
+            android:layout_marginTop="10dp"
+            android:gravity="center">
+
+
+            <ImageView
+                android:id="@+id/back_arrw"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_go_back_left_arrow_"
+
+                />
+
+        </LinearLayout>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Guidelines"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:textColor="#fff"
+            android:layout_marginLeft="10dp"
+            android:layout_gravity="center"
+            android:id="@+id/setting_tittle" />
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="100"
+        android:orientation="vertical"
+        android:layout_marginTop="20dp">
+
+        <TextView
+            android:id="@+id/text1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1. Go few steps back and capture a picture of the full building."
+            android:textSize="16dp"
+            android:gravity="center"
+            android:padding="10dp"
+            android:fontFamily="@font/segoeui"
+            android:textColor="@color/black"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginBottom="10dp"
+            android:padding="10dp"
+            android:layout_weight="30">
+
+
+        <FrameLayout
+            android:id="@+id/img1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#CDB6EEB8">
+
+            <ImageView
+                android:id="@+id/progd_img1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/farm_banner3"
+                android:layout_marginLeft="80dp"
+                android:layout_marginRight="20dp"
+                android:scaleType="fitXY" />
+
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="100dp"
+                android:scaleType="fitXY" />
+
+
+        </FrameLayout>
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:padding="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_weight="30">
+
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#E28A83">
+
+                <ImageView
+                    android:id="@+id/progd_img2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:src="@drawable/farm_banner3"
+                    android:layout_marginLeft="80dp"
+                    android:layout_marginRight="20dp"
+                    android:scaleType="fitXY" />
+
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:gravity="center"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="100dp"
+                    android:scaleType="fitXY" />
+
+
+            </FrameLayout>
+        </LinearLayout>
+
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/continuebtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/border_filled_red_not_curved"
+        android:orientation="horizontal"
+        android:layout_gravity="bottom"
+        android:gravity="center"
+        >
+
+        <TextView
+            android:id="@+id/apply_loan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Next"
+            android:textAllCaps="true"
+            android:textSize="20dp"
+            android:gravity="center"
+            android:padding="15dp"
+            android:fontFamily="@font/segoeui"
+            android:textColor="#ffffff"
+            />
+
+    </LinearLayout>
+
+
+</LinearLayout>

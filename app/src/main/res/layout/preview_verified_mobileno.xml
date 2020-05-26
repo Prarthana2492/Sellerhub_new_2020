@@ -1,0 +1,206 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/coordinate_layout"
+    android:weightSum="100"
+    android:orientation="vertical"
+    android:padding="10dp"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center_vertical"
+            android:layout_marginTop="10dp"
+            android:weightSum="100"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="90"
+                android:text="Verified Mobile Number"
+                android:padding="10dp"
+                android:background="#fff"
+                android:textColor="#000"
+                android:textStyle="bold"
+                android:layout_gravity="center_vertical"
+                android:fontFamily="@font/segoeui"
+                android:drawableLeft="@drawable/ic_icon"
+                android:drawablePadding="5dp"
+                />
+            <ImageView
+
+                android:id="@+id/mno_pencil"
+                android:layout_weight="10"
+                android:layout_width="15dp"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/ic_edit_pencil"
+                android:layout_gravity="center"
+                android:layout_height="15dp" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="100"
+            android:layout_marginBottom="20dp"
+            >
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="45"
+                android:orientation="vertical"
+                android:paddingLeft="30dp"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Mobile Number"
+                    android:background="#fff"
+                    android:textColor="#000"
+                    android:fontFamily="@font/segoeui"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Send Mail"
+                    android:background="#fff"
+                    android:textColor="#000"
+                    android:fontFamily="@font/segoeui"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="5"
+                android:orientation="vertical"
+                android:gravity="center"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=":"
+                    android:textColor="#000"
+                    android:fontFamily="@font/segoeui"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=":"
+                    android:textColor="#000"
+                    android:fontFamily="@font/segoeui"
+                    />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="50"
+                android:orientation="vertical"
+                >
+
+                <TextView
+                    android:id="@+id/mobile_number"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="********89 "
+                    android:background="#fff"
+                    android:textColor="#000"
+                    android:fontFamily="@font/segoeui"
+                    android:drawableRight="@drawable/locked"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="******86@gmail.com "
+                    android:background="#fff"
+                    android:textColor="#000"
+                    android:fontFamily="@font/segoeui"
+                    android:drawableRight="@drawable/locked"
+                    />
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:orientation="horizontal"
+            android:weightSum="100"
+            android:layout_marginBottom="10dp"
+            android:layout_gravity="center"
+            android:padding="10dp"
+            android:background="@drawable/request_price_white_border2"
+            >
+            <ImageView
+                android:layout_weight="10"
+                android:layout_width="15dp"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/locked"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:layout_height="25dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="To Unlock the contact\n             Details"
+                android:background="#fff"
+                android:layout_weight="70"
+                android:textColor="#000"
+                android:fontFamily="@font/segoeui"
+                android:layout_gravity="center"
+                android:layout_marginLeft="20dp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="20"
+                android:text="Upgrade Now"
+                android:background="@drawable/border_filled_red_not_curved"
+                android:textColor="#fff"
+                android:fontFamily="@font/segoeui"
+                android:layout_gravity="center"
+                android:padding="5dp"
+
+                />
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#dcdcdc"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginTop="2dp"
+        />
+
+
+</LinearLayout>

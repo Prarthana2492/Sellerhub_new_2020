@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/linearLayout"
+    android:orientation="vertical"
+    android:weightSum="100"
+    android:background="#f1f1f1">
+
+
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="100"
+                    android:fillViewport="true">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="91"
+                        android:orientation="vertical">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:gravity="right"
+                    android:layout_gravity="right"
+                    android:orientation="vertical"
+                    android:layout_weight="55">
+
+
+                    <ImageView
+                        android:id="@+id/capt_img"
+                        android:scaleType="fitXY"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/farm_banner1"/>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="8dp"
+                        android:orientation="horizontal"
+
+                       >
+
+
+
+                    <LinearLayout
+                        android:id="@+id/back_feed"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/ic_filter_state"
+                        android:gravity="center">
+
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_go_back_left_arrow_"
+
+                            />
+
+                    </LinearLayout>
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:id="@+id/fname_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom"
+                        android:layout_marginBottom="60dp"
+                        android:orientation="vertical">
+
+
+                        <EditText
+                            android:id="@+id/farm_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/segoeui"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:hint="Farm Name*"
+                            android:layout_marginTop="35dp"
+                            android:textColor="#FFFFFF"
+                            android:textColorHint="#FFFFFF"
+                            android:textSize="18dp"
+                            android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                            android:paddingRight="10dp"
+                            android:backgroundTint="@android:color/white"
+                            android:textCursorDrawable="@drawable/cursor_color_white"
+
+                            />
+
+                       <!-- <EditText
+                            android:id="@+id/mobile_no"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/segoeui"
+                            android:layout_gravity="left"
+                            android:layout_marginLeft="10dp"
+                            android:hint="Mobile Number*"
+                            android:layout_marginTop="10dp"
+                            android:textColor="#FFFFFF"
+                            android:textColorHint="#FFFFFF"
+                            android:textSize="18dp"
+                            android:maxLength="10"
+                            android:inputType="number"
+                            android:paddingRight="10dp"
+
+                            />
+-->
+
+                       <!-- <EditText
+                            android:id="@+id/desce"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/segoeui"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:hint="Description"
+                            android:textSize="18dp"
+                            android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                            android:paddingRight="10dp"
+                            android:inputType="textFilter"
+                            android:layout_marginTop="15dp"
+                            android:textColor="#FFFFFF"
+                            android:textColorHint="#FFFFFF"
+                            android:backgroundTint="@android:color/white"
+                            android:textCursorDrawable="@drawable/cursor_color_white"
+                            />-->
+
+
+
+                    </LinearLayout>
+
+
+
+
+
+
+                </FrameLayout>
+
+                    <LinearLayout
+                        android:id="@+id/tips_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="36"
+                        android:background="#ffffff"
+                        android:clickable="true"
+                        android:fontFamily="@font/segoeui"
+                        android:gravity="right"
+                        android:orientation="vertical"
+                        android:weightSum="100">
+
+                        <TextView
+                            android:id="@+id/tips"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="20dp"
+                            android:layout_marginTop="10dp"
+                            android:fontFamily="@font/segoeui"
+                            android:text="Tips"
+                            android:textColor="#000"
+                            android:textSize="18dp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/p_txt1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="20dp"
+                            android:layout_marginTop="10dp"
+                            android:drawableLeft="@drawable/ic_verified_green"
+                            android:drawablePadding="10dp"
+                            android:fontFamily="@font/segoeui"
+                            android:text="Go few steps back and capture picture of full crop / harvest / farm produce"
+                            android:textColor="#000"
+                            android:textSize="14dp" />
+
+                        <TextView
+                            android:id="@+id/p_txt2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="20dp"
+                            android:layout_marginTop="10dp"
+                            android:drawableLeft="@drawable/ic_verified_green"
+                            android:drawablePadding="10dp"
+                            android:fontFamily="@font/segoeui"
+                            android:text="Take pictures in a day.No pictures in the night"
+                            android:textColor="#000"
+                            android:textSize="14dp" />
+
+                        <TextView
+                            android:id="@+id/p_txt3"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="20dp"
+                            android:layout_marginTop="10dp"
+                            android:drawableLeft="@drawable/ic_verified_green"
+                            android:drawablePadding="10dp"
+                            android:fontFamily="@font/segoeui"
+                            android:text="Crop full picture to be visible"
+                            android:textColor="#000"
+                            android:textSize="14dp" />
+
+
+                        <TextView
+                            android:id="@+id/text4"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="20dp"
+                            android:layout_marginTop="10dp"
+                            android:drawableLeft="@drawable/ic_verified_green"
+                            android:drawablePadding="10dp"
+                            android:fontFamily="@font/segoeui"
+                            android:text="Photo should be clear and sharp"
+                            android:textColor="#000"
+                            android:textSize="14dp" />
+
+
+                        <TextView
+                            android:id="@+id/take_photo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="20dp"
+                            android:text="Take photo again"
+                            android:textColor="#713ECC"
+                            android:textSize="16dp" />
+
+
+                        <!--<ImageView
+                            android:id="@+id/cancel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_close_icon"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="30dp"
+                            />-->
+
+                    </LinearLayout>
+
+                </LinearLayout>
+                    </LinearLayout>
+                </ScrollView>
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/border_filled_red_not_curved"
+        android:layout_gravity="bottom"
+        android:gravity="center"
+        >
+
+
+        <TextView
+
+            android:id="@+id/continue_4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Proceed"
+            android:textAllCaps="true"
+            android:textSize="20dp"
+            android:gravity="center"
+            android:padding="17dp"
+            android:fontFamily="@font/segoeui"
+            android:textColor="#ffffff"
+
+            />
+
+
+              <!--  <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="9"
+                    android:background="@drawable/border_filled_red_not_curved"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+
+                        <TextView
+                            android:id="@+id/continue_4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="PROCEED"
+                            android:textColor="#ffffff"
+                            android:textAllCaps="true"
+                            android:textSize="20dp"
+                            android:padding="15dp"
+                            android:fontFamily="@font/segoeui"
+                           />
+                    </LinearLayout>-->
+
+
+
+
+
+
+
+
+</LinearLayout>
+
+</LinearLayout>
+

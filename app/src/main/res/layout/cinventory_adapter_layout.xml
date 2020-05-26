@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/linear_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:background="#FFFFFF"
+    android:tag="cards main container">
+
+
+    <LinearLayout
+        android:id="@+id/item"
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:weightSum="100"
+        android:background="@drawable/request_price_white_border"
+        android:gravity="center"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/t_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/segoeui"
+            android:gravity="center"
+            android:text="Poultry Farm"
+            android:singleLine="false"
+            android:textColor="#000"
+            android:textSize="13dp" />
+
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/name2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/segoeui"
+        android:gravity="center"
+        android:text="Poultry Farm"
+        android:singleLine="false"
+        android:textColor="#000"
+        android:textSize="13dp" />
+
+</LinearLayout>
+
+
+
+
+
+
+
+
+
+
+
+

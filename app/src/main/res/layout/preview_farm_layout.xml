@@ -1,0 +1,1309 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/coordinate_layout"
+    android:weightSum="100"
+    android:orientation="vertical"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:orientation="horizontal"
+        android:background="@color/menu_green"
+        >
+
+        <LinearLayout
+            android:id="@+id/back_feed"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/ic_filter_state"
+            android:gravity="center">
+
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_go_back_left_arrow_"
+
+                />
+
+        </LinearLayout>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Preview Profile"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:textColor="#fff"
+            android:layout_marginLeft="10dp"
+            android:layout_gravity="center"
+            android:id="@+id/toolbar_title" />
+
+
+        <TextView
+            android:id="@+id/preview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Edit"
+            android:drawableLeft="@drawable/ic_edit_pencil"
+            android:drawablePadding="3dp"
+            android:gravity="right"
+            android:layout_marginLeft="80dp"
+            android:layout_gravity="right|center_vertical"
+            android:textColor="#fff"
+            android:textAllCaps="true"
+            android:textSize="14dp"
+            android:textStyle="bold" />
+
+
+    </LinearLayout>
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/scroll">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:orientation="vertical"
+                    android:id="@+id/lay_account">
+
+                    <ImageView
+                        android:id="@+id/f_image"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/chilli_spice_profile"
+                        />
+
+                </LinearLayout>
+
+                <!--<LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingVertical="5dp"
+                    >
+
+                    <LinearLayout
+                        android:id="@+id/back_feed"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="5dp"
+                        android:background="@drawable/ripple_effect"
+                        android:gravity="center">
+
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:src="@drawable/ic_go_back_left_arrow_"
+
+                            />
+
+                    </LinearLayout>
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Preview"
+                        android:textSize="20dp"
+                        android:textColor="#fff"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginHorizontal="10dp"
+                        />
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:layout_gravity="center_vertical"
+                        android:gravity="right">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_pencil_edit_white"
+                            android:padding="5dp"
+                            android:background="@drawable/border_round_transp_black"
+                            />
+
+                    </LinearLayout>
+
+                </LinearLayout>-->
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="bottom"
+                    android:layout_marginTop="200dp"
+                    android:orientation="vertical">
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:background="#CC413F3F"
+                        >
+
+                        <TextView
+                            android:id="@+id/farm_nameee"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:paddingLeft="10dp"
+                            android:text="Vinayaka Motors"
+                            android:singleLine="true"
+                            android:ellipsize="end"
+                            android:paddingTop="5dp"
+                            android:textColor="@color/white"
+                            android:textSize="14dp" />
+
+
+                        <!-- <TextView
+                             android:id="@+id/farm_nameeeee2"
+                             android:layout_width="wrap_content"
+                             android:layout_height="wrap_content"
+                             android:gravity="center_vertical"
+                             android:paddingLeft="10dp"
+                             android:text="Spicies"
+                             android:singleLine="true"
+                             android:ellipsize="end"
+                             android:paddingTop="5dp"
+                             android:textColor="@color/black"
+                             android:textSize="14dp" />-->
+
+
+
+                        <TextView
+                            android:id="@+id/location"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:drawablePadding="5dp"
+                            android:gravity="center_vertical"
+                            android:paddingLeft="10dp"
+                            android:paddingBottom="10dp"
+                            android:text="Rajarajeshwari Nagar, Bangalore"
+                            android:textColor="@color/white"
+                            android:textSize="12dp"
+                            />
+
+
+                    </LinearLayout>
+
+
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="FARMS INFORMATION"
+                    android:padding="10dp"
+                    android:layout_marginTop="10dp"
+                    android:textColor="@color/green"
+                    android:fontFamily="@font/segoeui"
+                    android:textStyle="bold"
+                    android:drawablePadding="5dp"
+                    />
+
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/green"
+                    android:layout_marginHorizontal="10dp"
+                    />
+
+
+                <!--<LinearLayout-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:orientation="horizontal"-->
+                    <!--android:layout_gravity="center_vertical"-->
+                    <!--android:layout_marginTop="10dp"-->
+                    <!--&gt;-->
+
+                    <!--<TextView-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:text="About Our Farm"-->
+                        <!--android:padding="10dp"-->
+                        <!--android:background="#fff"-->
+                        <!--android:textColor="#000"-->
+                        <!--android:textStyle="bold"-->
+                        <!--android:layout_gravity="center_vertical"-->
+                        <!--android:fontFamily="@font/segoeui"-->
+                        <!--android:drawableLeft="@drawable/ic_docs"-->
+                        <!--android:drawablePadding="5dp"-->
+
+                        <!--/>-->
+
+
+                <!--</LinearLayout>-->
+
+                <!--<LinearLayout-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:orientation="vertical"-->
+                    <!--android:layout_gravity="center_vertical"-->
+                    <!--android:layout_marginLeft="20dp"-->
+                    <!--&gt;-->
+
+                    <!--<TextView-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:text="@string/About_farm"-->
+                        <!--android:padding="10dp"-->
+                        <!--android:background="#fff"-->
+                        <!--android:textColor="#000"-->
+                        <!--android:layout_gravity="center_vertical"-->
+                        <!--android:fontFamily="@font/segoeui"-->
+                        <!--android:drawablePadding="5dp"-->
+                        <!--/>-->
+
+                <!--</LinearLayout>-->
+
+
+                <!--<View-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="1dp"-->
+                    <!--android:layout_marginTop="20dp"-->
+                    <!--android:layout_marginHorizontal="10dp"-->
+                    <!--android:background="#dcdcdc"-->
+                    <!--/>-->
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginTop="10dp"
+                    >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="General Information"
+                        android:padding="10dp"
+                        android:background="#fff"
+                        android:textColor="#000"
+                        android:textStyle="bold"
+                        android:layout_gravity="center_vertical"
+                        android:fontFamily="@font/segoeui"
+                        android:drawableLeft="@drawable/ic_docs"
+                        android:drawablePadding="5dp"
+                        />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="100"
+                    >
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="35"
+                        android:orientation="vertical"
+                        android:paddingLeft="30dp"
+                        >
+
+                       <!-- <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Name"
+                            android:background="#fff"
+                            android:textColor="#000"
+                            android:fontFamily="@font/segoeui"
+                            />-->
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Telephone No"
+                            android:background="#fff"
+                            android:textColor="#000"
+                            android:fontFamily="@font/segoeui"
+                            />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Email Id"
+                            android:background="#fff"
+                            android:textColor="#000"
+                            android:fontFamily="@font/segoeui"
+                            />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Fax"
+                            android:background="#fff"
+                            android:textColor="#000"
+                            android:fontFamily="@font/segoeui"
+                            />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Website"
+                            android:background="#fff"
+                            android:textColor="#000"
+                            android:fontFamily="@font/segoeui"
+                            />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="5"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        >
+                       <!-- <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text=":"
+                            android:textColor="#000"
+                            android:fontFamily="@font/segoeui"
+                            />-->
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text=":"
+                            android:textColor="#000"
+                            android:fontFamily="@font/segoeui"
+                            />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text=":"
+                            android:textColor="#000"
+                            android:fontFamily="@font/segoeui"
+                            />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text=":"
+                            android:textColor="#000"
+                            android:fontFamily="@font/segoeui"
+                            />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text=":"
+                            android:textColor="#000"
+                            android:fontFamily="@font/segoeui"
+                            />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="60"
+                        android:orientation="vertical"
+                        >
+
+                       <!-- <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Vinayaka Motors"
+                            android:background="#fff"
+                            android:textColor="#000"
+                            android:fontFamily="@font/segoeui"
+                            />-->
+
+                        <TextView
+                            android:id="@+id/ppn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="011-22224444"
+                            android:background="#fff"
+                            android:textColor="#000"
+                            android:fontFamily="@font/segoeui"
+                            />
+
+                        <TextView
+                            android:id="@+id/pei"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="vinayaka@gmail.com"
+                            android:background="#fff"
+                            android:textColor="#000"
+                            android:fontFamily="@font/segoeui"
+                            android:singleLine="false"
+                            />
+                        <TextView
+                            android:id="@+id/pfax"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="011-22224444"
+                            android:background="#fff"
+                            android:textColor="#000"
+                            android:fontFamily="@font/segoeui"
+                            />
+
+                        <TextView
+                            android:id="@+id/pweb"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="www.vinayakamotors.com"
+                            android:background="#fff"
+                            android:textColor="#000"
+                            android:fontFamily="@font/segoeui"
+                            />
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginHorizontal="10dp"
+                    android:background="#A39E9E"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="10dp"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Address"
+                    android:padding="10dp"
+                    android:background="#fff"
+                    android:textColor="#000"
+                    android:textStyle="bold"
+                    android:layout_gravity="center_vertical"
+                    android:fontFamily="@font/segoeui"
+                    android:drawableLeft="@drawable/ic_map_marker"
+                    android:drawablePadding="5dp"
+                    />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingLeft="30dp"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Vinayaka Motors"
+                    android:background="#fff"
+                    android:textColor="#000"
+                    android:fontFamily="@font/segoeui"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="60 Feet Road Near-BMTC Depot,"
+                    android:background="#fff"
+                    android:textColor="#000"
+                    android:fontFamily="@font/segoeui"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="BEML Layout, 5th Stage,"
+                    android:background="#fff"
+                    android:textColor="#000"
+                    android:fontFamily="@font/segoeui"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="RR Nagar, Bengaluru,"
+                    android:background="#fff"
+                    android:textColor="#000"
+                    android:fontFamily="@font/segoeui"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Karnataka 560098"
+                    android:background="#fff"
+                    android:textColor="#000"
+                    android:fontFamily="@font/segoeui"
+                    />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginHorizontal="10dp"
+                android:background="#A39E9E"
+                />
+           <!-- <include
+                layout="@layout/preview_verified_mobileno"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                />-->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center_vertical"
+                >
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Farm Ownership"
+                    android:padding="10dp"
+                    android:background="#fff"
+                    android:textColor="#000"
+                    android:fontFamily="@font/segoeui"
+                    android:textStyle="bold"
+                    android:layout_gravity="center_vertical"
+                    android:drawableLeft="@drawable/ic_user_black"
+                    android:drawablePadding="5dp"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="100"
+                android:layout_marginBottom="20dp"
+                >
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="45"
+                    android:orientation="vertical"
+                    android:paddingLeft="30dp"
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Name"
+                        android:background="#fff"
+                        android:textColor="#000"
+                        android:fontFamily="@font/segoeui"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Relationship"
+                        android:background="#fff"
+                        android:textColor="#000"
+                        android:fontFamily="@font/segoeui"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Relative Name"
+                        android:background="#fff"
+                        android:textColor="#000"
+                        android:fontFamily="@font/segoeui"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Age"
+                        android:background="#fff"
+                        android:textColor="#000"
+                        android:fontFamily="@font/segoeui"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Caste Category"
+                        android:background="#fff"
+                        android:textColor="#000"
+                        android:fontFamily="@font/segoeui"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Farmer Type"
+                        android:background="#fff"
+                        android:textColor="#000"
+                        android:fontFamily="@font/segoeui"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Farmer Category"
+                        android:background="#fff"
+                        android:textColor="#000"
+                        android:fontFamily="@font/segoeui"
+                        />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="5"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=":"
+                        android:textColor="#000"
+                        android:fontFamily="@font/segoeui"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=":"
+                        android:textColor="#000"
+                        android:fontFamily="@font/segoeui"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=":"
+                        android:textColor="#000"
+                        android:fontFamily="@font/segoeui"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=":"
+                        android:textColor="#000"
+                        android:fontFamily="@font/segoeui"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=":"
+                        android:textColor="#000"
+                        android:fontFamily="@font/segoeui"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=":"
+                        android:textColor="#000"
+                        android:fontFamily="@font/segoeui"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=":"
+                        android:textColor="#000"
+                        android:fontFamily="@font/segoeui"
+                        />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="50"
+                    android:orientation="vertical"
+                    >
+
+                    <TextView
+                        android:id="@+id/pname"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Vijay Shankar"
+                        android:background="#fff"
+                        android:textColor="#000"
+                        android:fontFamily="@font/segoeui"
+                        />
+
+                    <TextView
+                        android:id="@+id/prlnshp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Son"
+                        android:background="#fff"
+                        android:textColor="#000"
+                        android:fontFamily="@font/segoeui"
+                        />
+
+                    <TextView
+                        android:id="@+id/prltvname"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Jeevan Anand"
+                        android:background="#fff"
+                        android:textColor="#000"
+                        android:fontFamily="@font/segoeui"
+                        />
+                    <TextView
+                        android:id="@+id/page"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="23"
+                        android:background="#fff"
+                        android:textColor="#000"
+                        android:fontFamily="@font/segoeui"
+                        />
+
+                    <TextView
+                        android:id="@+id/pcastctgry"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="General"
+                        android:background="#fff"
+                        android:textColor="#000"
+                        android:fontFamily="@font/segoeui"
+                        />
+
+                    <TextView
+                        android:id="@+id/pftyp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Lorem Ipsum"
+                        android:background="#fff"
+                        android:textColor="#000"
+                        android:fontFamily="@font/segoeui"
+                        />
+
+                    <TextView
+                        android:id="@+id/pfcatgry"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Lorem Ipsum"
+                        android:background="#fff"
+                        android:textColor="#000"
+                        android:fontFamily="@font/segoeui"
+                        />
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginHorizontal="10dp"
+                android:background="#A39E9E"
+                />
+
+            <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center_vertical"
+            >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Survey Details"
+                android:padding="10dp"
+                android:background="#fff"
+                android:textColor="#000"
+                android:fontFamily="@font/segoeui"
+                android:textStyle="bold"
+                android:layout_gravity="center_vertical"
+                android:drawableLeft="@drawable/ic_user_black"
+                android:drawablePadding="5dp"
+                />
+
+        </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="100"
+                android:layout_marginBottom="20dp"
+                >
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="45"
+                    android:orientation="vertical"
+                    android:paddingLeft="30dp"
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Survey Khata No"
+                        android:background="#fff"
+                        android:textColor="#000"
+                        android:fontFamily="@font/segoeui"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Khasra/Plot No"
+                        android:background="#fff"
+                        android:textColor="#000"
+                        android:fontFamily="@font/segoeui"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Hissan No"
+                        android:background="#fff"
+                        android:textColor="#000"
+                        android:fontFamily="@font/segoeui"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Extent Acre"
+                        android:background="#fff"
+                        android:textColor="#000"
+                        android:fontFamily="@font/segoeui"
+                        />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="5"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=":"
+                        android:textColor="#000"
+                        android:fontFamily="@font/segoeui"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=":"
+                        android:textColor="#000"
+                        android:fontFamily="@font/segoeui"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=":"
+                        android:textColor="#000"
+                        android:fontFamily="@font/segoeui"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=":"
+                        android:textColor="#000"
+                        android:fontFamily="@font/segoeui"
+                        />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="50"
+                    android:orientation="vertical"
+                    >
+
+                    <TextView
+                        android:id="@+id/sery_no"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="123456"
+                        android:background="#fff"
+                        android:textColor="#000"
+                        android:fontFamily="@font/segoeui"
+                        />
+
+                    <TextView
+                        android:id="@+id/khas_no"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="9876543"
+                        android:background="#fff"
+                        android:textColor="#000"
+                        android:fontFamily="@font/segoeui"
+                        />
+
+                    <TextView
+                        android:id="@+id/his_no"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="123654"
+                        android:background="#fff"
+                        android:textColor="#000"
+                        android:fontFamily="@font/segoeui"
+                        />
+                    <TextView
+                        android:id="@+id/ext_acr"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="25"
+                        android:background="#fff"
+                        android:textColor="#000"
+                        android:fontFamily="@font/segoeui"
+                        />
+
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginHorizontal="10dp"
+                android:background="#A39E9E"
+                />
+
+            <include
+                layout="@layout/preview_soil_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <include
+                layout="@layout/preview_irrigation_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+            <include
+                layout="@layout/preview_pond_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginTop="10dp"
+                    >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Farm Category"
+                        android:padding="10dp"
+                        android:background="#fff"
+                        android:textColor="#000"
+                        android:textStyle="bold"
+                        android:layout_gravity="center_vertical"
+                        android:fontFamily="@font/segoeui"
+                        android:drawableLeft="@drawable/ic_icon"
+                        android:drawablePadding="5dp"
+                        />
+
+
+                </LinearLayout>
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recycler_view_auth_brand"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginRight="10dp"
+                    />
+
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#A39E9E"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginTop="20dp"
+                />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginTop="10dp"
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="What are u Farming"
+                        android:padding="10dp"
+                        android:background="#fff"
+                        android:textColor="#000"
+                        android:gravity="center_vertical"
+                        android:textStyle="bold"
+                        android:layout_gravity="center_vertical"
+                        android:drawableLeft="@drawable/ic_tractor"
+                        android:fontFamily="@font/segoeui"
+                        android:drawablePadding="5dp"
+                        />
+
+
+
+                </LinearLayout>
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recycler_view_dealer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    />
+
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#A39E9E"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginHorizontal="10dp"
+                    />
+
+            </LinearLayout>
+
+         <!--   <include
+                layout="@layout/preview_crop_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />-->
+
+            <include
+                layout="@layout/preview_event_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+          <!--  <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center_vertical"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Contact Person"
+                    android:padding="10dp"
+                    android:background="#fff"
+                    android:textColor="#000"
+                    android:fontFamily="@font/segoeui"
+                    android:textStyle="bold"
+                    android:layout_gravity="center_vertical"
+                    android:drawableLeft="@drawable/ic_user_black"
+                    android:drawablePadding="5dp"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="100"
+                android:layout_marginBottom="20dp"
+                >
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="45"
+                    android:orientation="vertical"
+                    android:paddingLeft="30dp"
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Name"
+                        android:background="#fff"
+                        android:textColor="#000"
+                        android:fontFamily="@font/segoeui"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Mobile Number"
+                        android:background="#fff"
+                        android:textColor="#000"
+                        android:fontFamily="@font/segoeui"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Email Id"
+                        android:background="#fff"
+                        android:textColor="#000"
+                        android:fontFamily="@font/segoeui"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Relationship"
+                        android:background="#fff"
+                        android:textColor="#000"
+                        android:fontFamily="@font/segoeui"
+                        />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="5"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=":"
+                        android:textColor="#000"
+                        android:fontFamily="@font/segoeui"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=":"
+                        android:textColor="#000"
+                        android:fontFamily="@font/segoeui"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=":"
+                        android:textColor="#000"
+                        android:fontFamily="@font/segoeui"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=":"
+                        android:textColor="#000"
+                        android:fontFamily="@font/segoeui"
+                        />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="50"
+                    android:orientation="vertical"
+                    >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Manoj Savanur"
+                        android:background="#fff"
+                        android:textColor="#000"
+                        android:fontFamily="@font/segoeui"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="9876543211"
+                        android:background="#fff"
+                        android:textColor="#000"
+                        android:fontFamily="@font/segoeui"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="manoj@gmail.com"
+                        android:background="#fff"
+                        android:textColor="#000"
+                        android:fontFamily="@font/segoeui"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Owner"
+                        android:background="#fff"
+                        android:textColor="#000"
+                        android:fontFamily="@font/segoeui"
+                        />
+
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+-->
+
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+</LinearLayout>

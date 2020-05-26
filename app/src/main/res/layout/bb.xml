@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:id="@+id/layout"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#fff"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+  <!--  <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:weightSum="100">
+
+            <!--<LinearLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:orientation="horizontal"-->
+                <!--android:weightSum="20"-->
+                <!--android:background="@color/light_grey1"-->
+                <!--android:layout_weight="20">-->
+
+                <!--<ImageView-->
+
+                    <!--android:layout_width="55dp"-->
+                    <!--android:layout_height="100dp"-->
+                    <!--android:layout_weight="10"-->
+                    <!--android:layout_marginLeft="20dp"-->
+                    <!--android:layout_marginTop="10dp"-->
+                    <!--android:layout_marginBottom="10dp"-->
+                    <!--android:src="@drawable/farms_nandi"/>-->
+
+                <!--<LinearLayout-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_weight="10"-->
+                    <!--android:layout_marginLeft="20dp"-->
+                    <!--android:layout_marginTop="10dp"-->
+                    <!--android:orientation="vertical">-->
+
+                    <!--<TextView-->
+                        <!--android:layout_marginLeft="10dp"-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:textColor="#000"-->
+                        <!--android:layout_marginTop="20dp"-->
+                        <!--android:textSize="14dp"-->
+                        <!--android:fontFamily="@font/lato_regular"-->
+                        <!--android:text="Welcome,"/>-->
+
+
+                    <!--<TextView-->
+                        <!--android:id="@+id/nameee"-->
+                        <!--android:layout_marginTop="2dp"-->
+                        <!--android:layout_marginLeft="10dp"-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:textColor="#000"-->
+                        <!--android:textStyle="bold"-->
+                        <!--android:textSize="16dp"-->
+                        <!--android:fontFamily="@font/lato_regular"-->
+                        <!--android:text="Jagdish Kumar"/>-->
+
+                    <!--<TextView-->
+                        <!--android:layout_marginTop="3dp"-->
+                        <!--android:layout_marginLeft="10dp"-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:textColor="#000"-->
+                        <!--android:textSize="12dp"-->
+                        <!--android:fontFamily="@font/lato_regular"-->
+                        <!--android:text="@string/something"/>-->
+
+
+                <!--</LinearLayout>-->
+
+            <!--</LinearLayout>-->
+
+
+            <include
+                layout="@layout/banner_image_slider_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:layout_marginBottom="10dp" />
+
+
+            <include
+                layout="@layout/no_farms_layout"
+                android:layout_width="match_parent"
+                android:layout_marginBottom="10dp"
+                android:layout_height="wrap_content" />
+
+            <LinearLayout
+                android:id="@+id/farms_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="25"
+                android:layout_marginBottom="15dp"
+                android:orientation="vertical">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/farmlist_count"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:gravity="center"
+                        android:textColor="@color/navy_blue"
+                        android:textStyle="bold"
+                        android:textSize="20dp"
+                        android:inputType="number"/>
+
+                    <TextView
+                        android:layout_marginTop="7dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Farms Listed"
+                        android:gravity="center"
+                        android:textColor="#000"
+                        android:textSize="16dp"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="10dp"
+                        />
+
+                    <TextView
+                        android:id="@+id/farms_sell_all"
+                        android:layout_marginTop="3dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="See All"
+                        android:gravity="center"
+                        android:textColor="@color/navy_blue"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="15dp"
+                        android:textSize="12dp"
+                        />
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:gravity="center">
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/recylr_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="25dp"
+                        android:layout_gravity="center_horizontal"
+                        android:background="#fff">
+                    </android.support.v7.widget.RecyclerView>
+
+                    <!--  <ImageView
+                          android:layout_width="match_parent"
+                          android:layout_height="100dp"
+                          android:layout_gravity="center"
+                          android:src="@drawable/brinjal"/>-->
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/add_list"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="16dp"
+                    android:textColor="#fff"
+                    android:text="    List your Farm"
+                    android:textAllCaps="false"
+                    android:padding="10dp"
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/border_filled_red_not_curved"
+                    android:layout_gravity="center"/>
+            </LinearLayout>
+
+
+
+
+
+        </LinearLayout>
+    <!--</ScrollView>-->
+</LinearLayout>
+

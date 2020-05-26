@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:id="@+id/bottom_sheet1"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/card_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="@android:color/white"
+        app:cardCornerRadius="4dp">
+
+
+        <include
+            layout="@layout/you_address_layout2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+
+
+
+    </android.support.v7.widget.CardView>
+
+
+    <!--<android.support.v7.widget.CardView-->
+    <!--android:id="@+id/card_id1"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:background="@drawable/button_border_layout"-->
+    <!--app:cardElevation="4dp"-->
+    <!--app:cardMaxElevation="6dp"-->
+    <!--app:cardCornerRadius="4dp">-->
+
+
+    <!--<include-->
+    <!--layout="@layout/adress_layout_3"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--/>-->
+
+
+    <!--</android.support.v7.widget.CardView>-->
+
+
+</LinearLayout>

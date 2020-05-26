@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#fff"
+    >
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="100"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/green"
+        android:gravity="center_vertical"
+       >
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:orientation="horizontal"
+                    android:background="@color/menu_green"
+                    tools:ignore="MissingConstraints">
+
+
+
+                    <LinearLayout
+                        android:id="@+id/back_feed"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/ic_filter_state"
+                        android:gravity="center">
+
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_go_back_left_arrow_"
+
+                            />
+
+                    </LinearLayout>
+
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                         android:text="Land Records"
+                        android:textSize="20dp"
+                        android:textColor="#fff"
+                        android:layout_gravity="center"
+                        android:textStyle="bold"
+                       android:layout_marginHorizontal="10dp"
+                        android:id="@+id/toolbar_title" />
+
+
+    </LinearLayout>
+
+            </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:layout_weight="80"
+        android:layout_marginTop="20dp"
+        android:layout_marginHorizontal="16dp"
+        >
+
+        <EditText
+            android:id="@+id/telno"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Survey Khata Number"
+            android:paddingLeft="10dp"
+            android:textColorHint="#9D9D9D"
+            android:fontFamily="@font/segoeui"
+            android:paddingVertical="13dp"
+            android:background="@drawable/request_price_white_border2"
+            android:textSize="16dp"
+            android:inputType="number"
+            android:maxLength="4"
+            />
+
+
+
+
+
+
+
+        <EditText
+            android:id="@+id/kasa"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Khasra/Plot No"
+            android:textSize="16dp"
+            android:textColorHint="#9D9D9D"
+            android:paddingLeft="10dp"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/segoeui"
+            android:paddingVertical="13dp"
+            android:paddingRight="10dp"
+            android:background="@drawable/request_price_white_border2"
+            android:digits="*"
+            android:maxLength="1"
+            />
+
+        <EditText
+            android:id="@+id/hissa"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Hissa No."
+            android:textSize="16dp"
+            android:textColorHint="#9D9D9D"
+            android:paddingLeft="10dp"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/segoeui"
+            android:paddingVertical="13dp"
+            android:paddingRight="10dp"
+            android:background="@drawable/request_price_white_border2"
+            android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"
+           android:maxLength="2"
+            />
+
+        <EditText
+            android:id="@+id/ea"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Extent "
+            android:textSize="16dp"
+            android:textColorHint="#9D9D9D"
+            android:paddingLeft="10dp"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/segoeui"
+            android:paddingVertical="13dp"
+            android:paddingRight="10dp"
+            android:background="@drawable/request_price_white_border2"
+            android:inputType="numberDecimal"
+            android:maxLength="8"
+            />
+
+    </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/continuebtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/border_filled_red_not_curved"
+        android:orientation="horizontal"
+        android:gravity="center"
+        >
+
+
+        <TextView
+            android:id="@+id/apply_loan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Continue"
+            android:textAllCaps="true"
+            android:textSize="20dp"
+            android:gravity="center"
+            android:padding="15dp"
+            android:fontFamily="@font/segoeui"
+            android:textColor="#ffffff"
+            />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:src="@drawable/ic_right_arrow2"/>
+    </LinearLayout>
+
+
+</LinearLayout>

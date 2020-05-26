@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">7Nine Partner Code</string>
+    <string name="forgtpass">Please enter your mobile number so that we can look up your password</string>
+    <string name="thankpage">Please enter the OTP below for Reset Password.</string>
+    <string name="enterotp">Please enter the OTP below for registration.</string>
+    <string name="logout">Are you sure you want to end the session?</string>
+    <string name="permission_required">Permission Required</string>
+    <string name="permission_message">You must grant permission to access camera and external storage to run this application.</string>
+    <string name="permission_warning">All permissions are required.</string>
+
+
+    <string name="ReferEarn">Refer n Earn</string>
+    <string name="Terms">Terms &amp; Conditions</string>
+    <string name="Help">Help &amp; Support</string>
+    <string name="recently_added">Sort by <font color='#000'> <b>Recently Added</b></font></string>
+
+    <string name="Help1">Tigers are the largest felines in the world and as such, many cultures consider the tiger to be a symbol of strength, courage.</string>
+    <string name="About_farm">Lorem Ipsum sit amet,consectetur adipiscing\nelit,sed do eiusmod tempor incididunt...</string>
+    <string name="verification">Our agent will call you soon to verify your shop. Please be availabele over call.</string>
+    <string name="Refer_text">Get a scratch card (min Rs.25 cashback) on your friends first app sharing</string>
+    <string name="title_activity_search_pp">Search_pp</string>
+    <string name="something" formatted="false">Son/daughter of the soil.</string>
+    <string name="noti" formatted="false">The FarmPe has been launched at the state level event organized for farming community.Honorable chief minister Yeddyurappa and Industrialist Vijay Sankeshwar visited the event and FarmPe CEO Mallikarjun Ragi and FarmPe team witnessed the event. </string>
+    <string name="Postage">Postage &amp; Packaging:</string>
+
+
+</resources>

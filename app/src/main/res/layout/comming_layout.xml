@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#FFF"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:minHeight="?attr/actionBarSize"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:titleTextColor="@android:color/white"
+        android:background="#FFF"
+        android:gravity="left"
+        android:layout_gravity="left"
+        android:contentInsetLeft="0dp"
+        android:contentInsetStart="0dp"
+        app:contentInsetLeft="0dp"
+        app:contentInsetStart="10dp"
+        android:contentInsetRight="0dp"
+        android:contentInsetEnd="0dp"
+        app:contentInsetRight="0dp"
+        app:contentInsetEnd="0dp">
+
+        <LinearLayout
+            android:id="@+id/back_feed1"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:background="@drawable/ic_filter_state">
+            <ImageView
+                android:id="@+id/b_arrow"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginLeft="10dp"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/ic_go_back_left_arrow"
+                />
+        </LinearLayout>
+        <!--<LinearLayout-->
+        <!--android:id="@+id/back_feed1"-->
+        <!--android:layout_width="50dp"-->
+        <!--android:layout_height="50dp"-->
+        <!--android:background="@drawable/ripple_effect"-->
+        <!--&gt;-->
+
+        <!--<ImageView-->
+        <!--android:id="@+id/b_arrow"-->
+        <!--android:layout_width="20dp"-->
+        <!--android:layout_height="20dp"-->
+        <!--android:layout_gravity="center_vertical"-->
+        <!--android:src="@drawable/ic_left_arrow_white"-->
+        <!--style="@style/SelectableItemBackground"-->
+        <!--android:background="?attr/selectableItemBackgroundBorderless"-->
+
+        <!--/>-->
+        <!--</LinearLayout>-->
+
+    </android.support.v7.widget.Toolbar>
+
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="150dp"
+        android:src="@drawable/nandi_icon"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Coming Soon"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textSize="20dp"
+        android:textColor="#000"/>
+
+</LinearLayout>

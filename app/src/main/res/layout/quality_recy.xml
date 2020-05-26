@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main_layout"
+    android:layout_width="match_parent"
+    android:layout_height="230dp"
+    android:orientation="vertical"
+    android:background="@drawable/border_empty_curve">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingRight="15dp"
+        android:paddingLeft="10dp"
+        android:background="@drawable/addrs_top_curve"
+        android:paddingVertical="10dp"
+        android:weightSum="100"
+        >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:layout_weight="95">
+
+
+            <TextView
+                android:id="@+id/popup_heading"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="Farmer Category"
+                android:textColor="#000"
+                android:textSize="16dp"
+                android:textStyle="bold"
+
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/close_popup"
+            android:layout_width="30dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/ic_filter_state"
+            android:gravity="center">
+
+
+            <ImageView
+                android:id="@+id/cross"
+                android:layout_width="23dp"
+                android:layout_height="23dp"
+                android:src="@drawable/ic_error"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="6dp"
+        >
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/quality_recyy"
+            android:layout_width="match_parent"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_height="match_parent">
+
+
+        </android.support.v7.widget.RecyclerView>
+
+
+
+
+
+
+
+
+
+
+
+</LinearLayout>
+
+
+
+
+
+</LinearLayout>
