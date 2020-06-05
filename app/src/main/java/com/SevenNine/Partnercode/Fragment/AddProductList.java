@@ -139,7 +139,7 @@ public class AddProductList extends Fragment {
             Crop_Post.crop_posting(getActivity(), Urls.GetProductLists, jsonObject, new VoleyJsonObjectCallback() {
                 @Override
                 public void onSuccessResponse(JSONObject result) {
-                    System.out.println("GetSellingTypeeeeeeee"+result);
+                    System.out.println("GetSellingTypeeeeeeeepp"+result);
 
 
                     try{

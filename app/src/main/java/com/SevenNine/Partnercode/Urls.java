@@ -38,6 +38,8 @@ public class Urls {
  public static final String GetFarmDetailsList = ROOT_URL+"MasterTable/GetFarmsList";
  public static final String GetFarmsListByUserId = ROOT_URL+"MasterTable/GetFarmsListByUserId";
  public static final String GetOrderList =ROOT_URL +"Partner/GetOrdersFromCart";
+ public static final String GetProductDetails =ROOT_URL +"Partner/GetProductDetails";
+ public static final String GetAcceptedOrdersDetails =ROOT_URL +"Partner/GetAcceptedOrdersDetails";
 
  // Refer n Earn
  public static final String Refferal_Code = ROOT_URL +"Auth/GetUserDetails";
@@ -151,6 +153,7 @@ public class Urls {
  public static final String GetSellingList = ROOT_URL + "MasterTable/GetSellingList";
  public static final String GetProductLists = ROOT_URL + "MasterTable/GetProductLists";
  public static final String AddUpdateProductDetails = ROOT_URL + "Partner/AddUpdateProductDetails";
+ public static final String AddAcceptOrdersFrom7NineDetails = ROOT_URL + "Partner/AddAcceptOrdersFrom7NineDetails";
  public static final String GetStoreDetails = ROOT_URL + "Partner/GetStoreDetails";
 
  public static final String GetCropTypeList = ROOT_URL + "MasterTable/GetCropTypeList";

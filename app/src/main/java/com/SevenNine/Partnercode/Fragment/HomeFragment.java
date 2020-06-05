@@ -7,6 +7,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.NonNull;
+import android.support.annotation.RequiresApi;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
@@ -24,6 +25,7 @@ import android.view.Window;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.SevenNine.Partnercode.R;
 import com.SevenNine.Partnercode.SessionManager;
@@ -37,7 +39,7 @@ Fragment selectedFragment;
     String userid;
     SessionManager sessionManager;
     DrawerLayout drawer_layout;
-    TextView home,logout,shop_cat,disc_store,my_orders,list_prod,cart,account,store,sell_on_xohri,help_center,notification;
+    TextView home,logout,shop_cat,disc_store,my_orders,list_prod,inventory,account,store,sell_on_xohri,help_center,notification;
     public static TextView cart_count_text,user_name_menu;
 static boolean fragloaded;
     boolean doubleBackToExitPressedOnce = false;
@@ -49,6 +51,7 @@ static Fragment myloadingfragment;
         return fragment;
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         final View view = inflater.inflate(R.layout.activity_navigation_menu, container, false);
@@ -64,9 +67,10 @@ static Fragment myloadingfragment;
         list_prod=view.findViewById(R.id.list_prod);
         logout=view.findViewById(R.id.logout);
         store=view.findViewById(R.id.stores);
+        inventory=view.findViewById(R.id.inventory);
         drawer_layout=view.findViewById(R.id.drawer_layout);
         Window window = getActivity().getWindow();
-        window.setStatusBarColor(ContextCompat.getColor(getActivity(),R.color.colorPrimaryDark));
+        window.setStatusBarColor(ContextCompat.getColor(getActivity(),R.color.colorPrimaryDark1));
         drawer = (DrawerLayout)view.findViewById(R.id.drawer_layout);
 
         sessionManager=new SessionManager((getActivity()));
@@ -93,7 +97,7 @@ static Fragment myloadingfragment;
 
                     doubleBackToExitPressedOnce = true;
 
-                    Snackbar snackbar = Snackbar
+                   /* Snackbar snackbar = Snackbar
                             .make(drawer_layout,"Please click back again to exit", Snackbar.LENGTH_LONG);
                     View snackbarView = snackbar.getView();
                     TextView tv = (TextView) snackbarView.findViewById(android.support.design.R.id.snackbar_text);
@@ -104,7 +108,10 @@ static Fragment myloadingfragment;
                     } else {
                         tv.setGravity(Gravity.CENTER_HORIZONTAL);
                     }
-                    snackbar.show();
+                    snackbar.show();*/
+                    Toast toast = Toast.makeText(getActivity(),"Please click back again to exit", Toast.LENGTH_LONG);
+                    toast.setGravity(Gravity.TOP|Gravity.CENTER,0,0);
+                    toast.show();
                     //   Toast.makeText(getApplicationContext(), toast_click_back, Toast.LENGTH_SHORT).show();
 
                     new Handler().postDelayed(new Runnable() {
@@ -120,6 +127,10 @@ static Fragment myloadingfragment;
                 return true;
             }
         });
+        selectedFragment = HomeLandingFragment.newInstance();
+        FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
+        transaction.replace(R.id.frame_layout_home, selectedFragment);
+        transaction.commit();
         menu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -128,10 +139,10 @@ static Fragment myloadingfragment;
                 home.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        /*selectedFragment = HomeLandingPageFragment.newInstance();
+                        selectedFragment = HomeLandingFragment.newInstance();
                         FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
                         transaction.replace(R.id.frame_layout_home, selectedFragment);
-                        transaction.commit();*/
+                        transaction.commit();
                         drawer.closeDrawers();
                     }
                 });
@@ -158,9 +169,20 @@ static Fragment myloadingfragment;
                 my_orders.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        selectedFragment = NewOrderFragment.newInstance();
+                        selectedFragment = OrderTabFragment.newInstance();
                         FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
                         transaction.replace(R.id.frame_layout_home, selectedFragment);
+                        transaction.addToBackStack("dhsks");
+                        transaction.commit();
+                        drawer.closeDrawers();
+                    }
+                });
+                inventory.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        selectedFragment = InventoryList.newInstance();
+                        FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
+                        transaction.replace(R.id.frame_layout1, selectedFragment);
                         transaction.addToBackStack("dhsks");
                         transaction.commit();
                         drawer.closeDrawers();

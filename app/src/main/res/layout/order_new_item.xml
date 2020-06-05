@@ -11,15 +11,21 @@
     android:layout_marginBottom="2dp"
     >
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginLeft="5dp"
+        android:paddingVertical="30dp"
+        android:layout_marginTop="0dp"
+        >
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:weightSum="100"
-            android:layout_marginLeft="5dp"
-            android:paddingVertical="30dp"
-            android:layout_marginTop="0dp"
+
             >
 
             <LinearLayout
@@ -63,7 +69,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:layout_marginHorizontal="5dp"
-                android:layout_weight="55">
+                android:layout_weight="70">
 
                 <TextView
                     android:id="@+id/prod_name"
@@ -72,6 +78,18 @@
                     android:fontFamily="@font/segoeui"
                     android:gravity="center_vertical"
                     android:text="Parle-G Gold Milk Glucose"
+                    android:textColor="#000"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="5dp"
+                    android:textSize="16dp" />
+
+                <TextView
+                    android:id="@+id/quantity"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/segoeui"
+                    android:gravity="center_vertical"
+                    android:text=""
                     android:textColor="#000"
                     android:layout_marginLeft="5dp"
                     android:textSize="16dp" />
@@ -83,12 +101,50 @@
                     android:layout_marginLeft="5dp"
                     android:fontFamily="@font/segoeui"
                     android:gravity="center_vertical"
-                    android:text="Arriving 27 May - 28 May"
+                    android:text="Amount"
+                    android:textColor="#000"
                     android:textSize="14dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    >
+
+                    <TextView
+                        android:id="@+id/accept"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Accept"
+                        android:textColor="#000"
+                        android:textSize="14dp"
+                        android:paddingVertical="6dp"
+                        android:paddingHorizontal="15dp"
+                        android:fontFamily="@font/segoeui"
+                        android:background="@drawable/border_grey"
+                        />
+
+                    <TextView
+                        android:id="@+id/arrow"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="View"
+                        android:textColor="#000"
+                        android:paddingVertical="6dp"
+                        android:textSize="14dp"
+                        android:paddingHorizontal="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginLeft="15dp"
+                        android:fontFamily="@font/segoeui"
+                        android:background="@drawable/border_grey"
+                        />
+                </LinearLayout>
+
 
 
             </LinearLayout>
 
+<!--
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -105,8 +161,10 @@
                     android:src="@drawable/ic_right_angle_arrow" />
 
             </LinearLayout>
+-->
         </LinearLayout>
 
+    </LinearLayout>
 
     </LinearLayout>
 

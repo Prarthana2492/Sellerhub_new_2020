@@ -53,7 +53,7 @@
                 >
 
                 <TextView
-                    android:text="7Nine Partner"
+                    android:text="7-Nine Partner"
                     android:paddingHorizontal="5dp"
                     android:gravity="center_vertical"
                     android:layout_width="wrap_content"

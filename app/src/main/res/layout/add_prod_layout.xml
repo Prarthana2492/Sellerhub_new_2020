@@ -56,7 +56,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Add Product"
+                        android:text="Product Details"
                         android:textSize="20dp"
                         android:textColor="#fff"
                         android:layout_gravity="center"
@@ -75,7 +75,7 @@
                 android:orientation="vertical">
 
 
-                <TextView
+                <!--<TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Product Code"
@@ -94,7 +94,6 @@
                     android:textSize="18dp"
 
                     />
-
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -116,10 +115,9 @@
 
                     />
 
-                <TextView
+-->                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
                     android:text="Product Description"
                     android:textColor="#9D9D9D"
                     android:textSize="15dp" />
@@ -137,6 +135,48 @@
 
                     />
 
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="MRP"
+                    android:textColor="#9D9D9D"
+                    android:textSize="15dp" />
+
+
+                <EditText
+                    android:id="@+id/mrp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/segoeui"
+                    android:maxLength="30"
+                    android:singleLine="true"
+                    android:textColorHint="#C7C7C7"
+                    android:textSize="18dp"
+
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="Amount"
+                    android:textColor="#9D9D9D"
+                    android:textSize="15dp" />
+
+
+                <EditText
+                    android:id="@+id/amount"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/segoeui"
+                    android:maxLength="30"
+                    android:singleLine="true"
+                    android:inputType="number"
+                    android:textColorHint="#C7C7C7"
+                    android:textSize="18dp"
+
+                    />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -159,7 +199,7 @@
 
                     />
 
-                <TextView
+               <!-- <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
@@ -189,30 +229,10 @@
                     android:layout_height="1dp"
                     android:layout_marginTop="5dp"
                     android:background="#000" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
-                    android:text="Amount"
-                    android:textColor="#9D9D9D"
-                    android:textSize="15dp" />
+-->
 
 
-                <EditText
-                    android:id="@+id/amount"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/segoeui"
-                    android:maxLength="30"
-                    android:singleLine="true"
-                    android:inputType="number"
-                    android:textColorHint="#C7C7C7"
-                    android:textSize="18dp"
-
-                    />
-
-                <TextView
+               <!-- <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
@@ -232,7 +252,7 @@
                     android:textSize="18dp"
 
                     />
-
+-->
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -246,17 +266,15 @@
                     android:id="@+id/brand"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:drawableRight="@drawable/down_arrow"
                     android:fontFamily="@font/segoeui"
                     android:maxLength="30"
                     android:singleLine="true"
-                    android:editable="false"
                     android:textColorHint="#C7C7C7"
                     android:textSize="18dp"
 
                     />
 
-                <TextView
+               <!-- <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
@@ -277,7 +295,7 @@
                     android:textColorHint="#C7C7C7"
                     android:textSize="18dp"
 
-                    />
+                    />-->
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -328,7 +346,7 @@
             android:id="@+id/apply_loan"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Proceed"
+            android:text="ADD PRODUCT"
             android:textAllCaps="true"
             android:textSize="20dp"
             android:gravity="center"

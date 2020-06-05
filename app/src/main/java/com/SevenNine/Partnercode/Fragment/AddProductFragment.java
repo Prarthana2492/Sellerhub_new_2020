@@ -59,7 +59,7 @@ public class AddProductFragment extends Fragment {
     Fragment selectedFragment;
     TextView norecords;
     LinearLayout Continue,linearLayout,backfeed;
-    EditText product_code,product_name,product_description,quantity,amount,sku,model,search;
+    EditText product_code,product_name,product_description,quantity,amount,sku,mrp,search;
     public  static EditText brand;
     public  static TextView uom,expiry_date;
     SessionManager sessionManager;
@@ -93,16 +93,17 @@ public class AddProductFragment extends Fragment {
         Continue = view.findViewById(R.id.continuebtn);
         backfeed = view.findViewById(R.id.back_feed);
         linearLayout = view.findViewById(R.id.main_layout);
-        product_code = view.findViewById(R.id.prod_code);
+      //  product_code = view.findViewById(R.id.prod_code);
         product_name = view.findViewById(R.id.prod_name);
         product_description = view.findViewById(R.id.prod_description);
         quantity = view.findViewById(R.id.quantity);
-        uom = view.findViewById(R.id.uom);
+     //   uom = view.findViewById(R.id.uom);
         amount = view.findViewById(R.id.amount);
-        sku = view.findViewById(R.id.sku);
+      //  sku = view.findViewById(R.id.sku);
         brand = view.findViewById(R.id.brand);
+        mrp = view.findViewById(R.id.mrp);
         search = view.findViewById(R.id.search);
-        model = view.findViewById(R.id.model);
+     //   model = view.findViewById(R.id.model);
         expiry_date = view.findViewById(R.id.expiry_date);
         recyclerView = view.findViewById(R.id.recycler_view);
         norecords = view.findViewById(R.id.norecords);
@@ -185,7 +186,7 @@ public class AddProductFragment extends Fragment {
             }
         });
 
-        uom.setOnClickListener(new View.OnClickListener() {
+      /*  uom.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 getActivity().getWindow().setSoftInputMode( WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
@@ -209,37 +210,24 @@ public class AddProductFragment extends Fragment {
 
                 PrepareUOM();
             }
-        });
+        });*/
         Continue.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                if (product_code.getText().toString().equals("")) {
-                    Toast toast = Toast.makeText(getActivity(), "Enter Product code", Toast.LENGTH_LONG);
-                    toast.setGravity(Gravity.TOP | Gravity.CENTER, 0, 0);
-                    toast.show();
-                } else if (product_name.getText().toString().equals("")) {
-                    Toast toast = Toast.makeText(getActivity(), "Enter Product name", Toast.LENGTH_LONG);
-                    toast.setGravity(Gravity.TOP | Gravity.CENTER, 0, 0);
-                    toast.show();
-                } else if (product_description.getText().toString().equals("")) {
-                    Toast toast = Toast.makeText(getActivity(), "Enter Product description", Toast.LENGTH_LONG);
-                    toast.setGravity(Gravity.TOP | Gravity.CENTER, 0, 0);
-                    toast.show();
-                } else if (quantity.getText().toString().equals("")) {
-                    Toast toast = Toast.makeText(getActivity(), "Enter quantity", Toast.LENGTH_LONG);
-                    toast.setGravity(Gravity.TOP | Gravity.CENTER, 0, 0);
-                    toast.show();
-                } else if (uom.getText().toString().equals("")) {
-                    Toast toast = Toast.makeText(getActivity(), "Select Unit of Measurement", Toast.LENGTH_LONG);
+                if (mrp.getText().toString().equals("")) {
+                    Toast toast = Toast.makeText(getActivity(), "Enter MRP", Toast.LENGTH_LONG);
                     toast.setGravity(Gravity.TOP | Gravity.CENTER, 0, 0);
                     toast.show();
                 } else if (amount.getText().toString().equals("")) {
-                    Toast toast = Toast.makeText(getActivity(), "Enter Amount", Toast.LENGTH_LONG);
+                    Toast toast = Toast.makeText(getActivity(), "Enter selling amount", Toast.LENGTH_LONG);
                     toast.setGravity(Gravity.TOP | Gravity.CENTER, 0, 0);
                     toast.show();
-                } else if (sku.getText().toString().equals("")) {
-                    Toast toast = Toast.makeText(getActivity(), "Enter SKU", Toast.LENGTH_LONG);
+                } else if (quantity.getText().toString().equals("")) {
+                    Toast toast = Toast.makeText(getActivity(), "Enter Quantity", Toast.LENGTH_LONG);
+                    toast.setGravity(Gravity.TOP | Gravity.CENTER, 0, 0);
+                    toast.show();
+                } else if (brand.getText().toString().equals("")) {
+                    Toast toast = Toast.makeText(getActivity(), "Enter Brand", Toast.LENGTH_LONG);
                     toast.setGravity(Gravity.TOP | Gravity.CENTER, 0, 0);
                     toast.show();
                 } else if (expiry_date.getText().toString().equals("")) {
@@ -252,20 +240,22 @@ public class AddProductFragment extends Fragment {
                         // newOrderBeansList.clear();
                         JSONObject jsonObject = new JSONObject();
                         //  jsonObject.put("ProductId",productlistid);
-                        jsonObject.put("ProductCode", product_code.getText().toString());
-                        jsonObject.put("ProductName", product_name.getText().toString());
+                        jsonObject.put("ProductCode", "123456");
+                        //  jsonObject.put("ProductName", product_name.getText().toString());
                         jsonObject.put("ProductDescription", product_description.getText().toString());
                         jsonObject.put("Quantity", quantity.getText().toString());
-                        jsonObject.put("UnitOfPriceId", uom.getText().toString());
+                        //   jsonObject.put("UnitOfPriceId", uom.getText().toString());
                         jsonObject.put("Amount", amount.getText().toString());
-                        jsonObject.put("SKU", sku.getText().toString());
-                        jsonObject.put("BrandId", "1");
-                        jsonObject.put("ModelId", "1");
+                        jsonObject.put("MRP", mrp.getText().toString());
+                        //  jsonObject.put("SKU", sku.getText().toString());
+                        jsonObject.put("Brand", brand.getText().toString());
+                        //  jsonObject.put("ModelId", "1");
                         jsonObject.put("ProductListId", productlistid);
                         jsonObject.put("SellingCategoryId", SelectCategoryAdapter.selling_category_id);
                         jsonObject.put("SellingListMasterId", sellingmasterid);
                         jsonObject.put("ExpiryDate", expiry_date.getText().toString());
                         jsonObject.put("UserId", sessionManager.getRegId("userId"));
+                        jsonObject.put("ProductId", 0);
 
                         System.out.println("jhfdfdjc111" + jsonObject);
 
@@ -294,9 +284,9 @@ public class AddProductFragment extends Fragment {
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
-
                 }
-            }
+                }
+           /* }*/
         });
 
 
