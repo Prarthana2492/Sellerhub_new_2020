@@ -14,16 +14,16 @@
             android:layout_marginHorizontal="20dp"
             >
 
-    <TextView
-        android:id="@+id/howit"
-        android:textSize="30dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:fontFamily="@font/segoeui"
-        android:textColor="@color/colorPrimary"
-        android:textStyle="bold"
-        android:text="How it Works?"/>
+            <TextView
+                android:id="@+id/howit"
+                android:textSize="30dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:fontFamily="@font/segoeui"
+                android:textColor="@color/colorPrimary"
+                android:textStyle="bold"
+                android:text="How it Works?"/>
 
 
             <TextView
@@ -33,7 +33,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:fontFamily="@font/segoeui"
-                android:textColor="@color/colorPrimary"
+                android:textColor="#999999"
                 android:textStyle="bold"
                 android:text="1. Register"/>
 
@@ -44,7 +44,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:fontFamily="@font/segoeui"
-                android:textColor="@color/colorPrimary"
+                android:textColor="#000"
                 android:text="Register by entering required details."/>
 
             <TextView
@@ -54,7 +54,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
                 android:fontFamily="@font/segoeui"
-                android:textColor="@color/colorPrimary"
+                android:textColor="#999999"
                 android:textStyle="bold"
                 android:text="2. Order"/>
 
@@ -65,7 +65,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:fontFamily="@font/segoeui"
-                android:textColor="@color/colorPrimary"
+                android:textColor="#000"
                 android:text="Place an order in the app by selecting the required items."/>
 
             <TextView
@@ -75,7 +75,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
                 android:fontFamily="@font/segoeui"
-                android:textColor="@color/colorPrimary"
+                android:textColor="#999999"
                 android:textStyle="bold"
                 android:text="3. Delivery"/>
 
@@ -86,7 +86,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:fontFamily="@font/segoeui"
-                android:textColor="@color/colorPrimary"
+                android:textColor="#000"
                 android:text="Get the required items at your shop delivered in the mentioned date."/>
 
             <TextView
@@ -96,7 +96,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
                 android:fontFamily="@font/segoeui"
-                android:textColor="@color/colorPrimary"
+                android:textColor="#999999"
                 android:textStyle="bold"
                 android:text="4.  Pay"/>
 
@@ -107,7 +107,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:fontFamily="@font/segoeui"
-                android:textColor="@color/colorPrimary"
+                android:textColor="#000"
                 android:text="Pay Online post order placement"/>
 
         </LinearLayout>

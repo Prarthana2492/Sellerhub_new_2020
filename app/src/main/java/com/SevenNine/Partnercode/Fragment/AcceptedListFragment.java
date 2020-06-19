@@ -60,9 +60,9 @@ public class AcceptedListFragment extends Fragment {
         Window window = getActivity().getWindow();
         window.setStatusBarColor(ContextCompat.getColor(getActivity(),R.color.colorPrimary));
 
-        System.out.println("orderrrrrrrrrrrrrr");
+       // System.out.println("orderrrrrrrrrrrrrr");
 
-        newOrderBeansList.clear();
+      //  newOrderBeansList.clear();
         GridLayoutManager mLayoutManager_farm = new GridLayoutManager(getActivity(), 1, GridLayoutManager.VERTICAL, false);
         recyclerView.setLayoutManager(mLayoutManager_farm);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
@@ -105,7 +105,7 @@ public class AcceptedListFragment extends Fragment {
     }
 
     private void OrderDetails() {
-       // newOrderBeansList.clear();
+        newOrderBeansList.clear();
 
         try {
             JSONObject userRequestjsonObject = new JSONObject();
@@ -125,32 +125,34 @@ public class AcceptedListFragment extends Fragment {
                         for (int i=0;i<jsonArray.length();i++) {
                             JSONObject jsonObject1 = jsonArray.getJSONObject(i);
 
-                            String SellingListName=jsonObject1.getString("SellingListName");
+                            String RESPMsg=jsonObject1.getString("SellingListName");
                             String SellingListIcon=jsonObject1.getString("SellingListIcon");
                             String ProductIcon=jsonObject1.getString("ProductIcon");
                             String ProductName=jsonObject1.getString("ProductName");
                             String CreatedOn=jsonObject1.getString("CreatedOn");
                             String TxnId=jsonObject1.getString("PayUTransactionId");
                             String Amount=jsonObject1.getString("Amount");
-                            String SelectedQuantity=jsonObject1.getString("SellingQuality");
+                            String Quantity=jsonObject1.getString("Quantity");
                             String UnitOfPrice=jsonObject1.getString("UnitOfPrice");
                             String ProductInfo=jsonObject1.getString("ProductInfo");
-                            String SellingCategoryName=jsonObject1.getString("SellingCategoryName");
+                            String SellingCategoryName=jsonObject1.getString("CategoryName");
                             String mode=jsonObject1.getString("mode");
-                            String FirstName=jsonObject1.getString("FirstName");
+                            String Brand=jsonObject1.getString("Brand");
+                            String ProductDescription=jsonObject1.getString("ProductDescription");
+                            String mrp=jsonObject1.getString("MRP");
 
                             /*PreferedBranchBean bean=new PreferedBranchBean(Name,StreeAddress,StreeAddress1,State,Pincode,"",Id);
                             newOrderBeansList.add(bean);*/
 
-                            NewOrderBean img1=new NewOrderBean(ProductName,CreatedOn,SellingListIcon,TxnId,Amount,SelectedQuantity,UnitOfPrice,ProductInfo,mode,
-                                    FirstName,SellingCategoryName,ProductIcon,SellingListName,"","");
+                            NewOrderBean img1=new NewOrderBean(ProductName,CreatedOn,SellingListIcon,TxnId,Amount,Quantity,UnitOfPrice,ProductInfo,mode,
+                                    mrp,SellingCategoryName,ProductIcon,RESPMsg,Brand,ProductDescription);
                             newOrderBeansList.add(img1);
 
                           //  System.out.println("adreess_list_size"+newOrderBeansList.size());
-
+                            madapter = new AcceptedOrderAdapter(getActivity(), newOrderBeansList);
+                            recyclerView.setAdapter(madapter);
                         }
-                        madapter = new AcceptedOrderAdapter(getActivity(), newOrderBeansList);
-                        recyclerView.setAdapter(madapter);
+
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }

@@ -47,14 +47,13 @@
             android:id="@+id/banner_descr"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="The Confluence of consumers and essentials fair trade"
-            android:textColor="#26A541"
+            android:text="Your Go-To Convenience Store for Vegetables, Fruits, Groceries, Dairy and More."
+            android:textColor="#999999"
             android:textSize="18dp"
             android:gravity="center"
             android:fontFamily="@font/segoeui"
             android:layout_marginTop="10dp"
             android:paddingHorizontal="20dp"
-            />
-    </LinearLayout>
+            />    </LinearLayout>
 
 </LinearLayout>

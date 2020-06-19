@@ -23,10 +23,10 @@ public class SelectLanguageBean {
         return lang_letter;
     }
 
-    public SelectLanguageBean(String vendor, int languageid, String lang_letter) {
+    public SelectLanguageBean(String vendor, int languageid, String imageicon) {
         this.languageid=languageid;
         this.vendor = vendor;
-        this.lang_letter=lang_letter;
+        this.imageicon=imageicon;
     }
 }
 

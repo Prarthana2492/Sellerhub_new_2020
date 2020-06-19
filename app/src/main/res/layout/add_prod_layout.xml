@@ -115,7 +115,7 @@
 
                     />
 
--->                <TextView
+-->               <!-- <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Product Description"
@@ -134,7 +134,7 @@
                     android:textSize="18dp"
 
                     />
-
+-->
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -150,6 +150,7 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/segoeui"
                     android:maxLength="30"
+                    android:inputType="number"
                     android:singleLine="true"
                     android:textColorHint="#C7C7C7"
                     android:textSize="18dp"
@@ -160,7 +161,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
-                    android:text="Amount"
+                    android:text="Price"
                     android:textColor="#9D9D9D"
                     android:textSize="15dp" />
 
@@ -297,7 +298,7 @@
 
                     />-->
 
-                <TextView
+               <!-- <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
@@ -318,13 +319,13 @@
                     android:textColorHint="#C7C7C7"
                     android:textSize="18dp"
 
-                    />
-                <View
+                    />-->
+               <!-- <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:layout_marginTop="5dp"
                     android:layout_marginBottom="10dp"
-                    android:background="#000" />
+                    android:background="#000" />-->
 
             </LinearLayout>
 

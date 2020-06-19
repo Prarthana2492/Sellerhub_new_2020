@@ -131,20 +131,22 @@ public class NewOrderFragment extends Fragment {
                             String CreatedOn=jsonObject1.getString("CreatedOn");
                             String TxnId=jsonObject1.getString("PayUTransactionId");
                             String Amount=jsonObject1.getString("Amount");
-                            String SelectedQuantity=jsonObject1.getString("SellingQuality");
+                            String SelectedQuantity=jsonObject1.getString("Quantity");
                             String UnitOfPrice=jsonObject1.getString("UnitOfPrice");
                             String ProductInfo=jsonObject1.getString("CustAddress");
                             String SellingCategoryName=jsonObject1.getString("SellingCategoryName");
                             String SellingListName=jsonObject1.getString("SellingListName");
+                            String ProductDescription=jsonObject1.getString("ProductDescription");
+                            String Brand=jsonObject1.getString("Brand");
                             String ProductIcon=jsonObject1.getString("ProductIcon");
                             String mode=jsonObject1.getString("mode");
-                            String FirstName=jsonObject1.getString("FirstName");
+                            String MRP=jsonObject1.getString("MRP");
 
                             /*PreferedBranchBean bean=new PreferedBranchBean(Name,StreeAddress,StreeAddress1,State,Pincode,"",Id);
                             newOrderBeansList.add(bean);*/
 
                             NewOrderBean img1=new NewOrderBean(ProductName,CreatedOn,SellingListIcon,TxnId,Amount,SelectedQuantity,UnitOfPrice,ProductInfo,mode,
-                                    FirstName,SellingCategoryName,ProductIcon,SellingListName,"","");
+                                    MRP,SellingCategoryName,ProductIcon,SellingListName,Brand,ProductDescription);
                             newOrderBeansList.add(img1);
 
                           //  System.out.println("adreess_list_size"+newOrderBeansList.size());

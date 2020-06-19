@@ -195,6 +195,8 @@ checkConnection();
         apply_loan.add(bean14);
         ListBean2 bean15=new ListBean2("Beauty",11,R.drawable.beauty,1);
         apply_loan.add(bean15);
+        apply_loan.add(bean15);
+        apply_loan.add(bean15);
         final ViewPager vp_slider = (ViewPager) findViewById(R.id.vp_slider);
         ll_dots = (LinearLayout) findViewById(R.id.ll_dots);
         SliderPagerAdapter sliderPagerAdapter = new SliderPagerAdapter(Slider_Activity.this, apply_loan);

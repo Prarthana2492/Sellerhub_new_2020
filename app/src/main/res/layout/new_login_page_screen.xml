@@ -32,36 +32,36 @@
             />
     </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="50"
+        android:weightSum="100"
+        android:orientation="vertical"
+        >
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="50"
+            android:layout_weight="60"
             android:weightSum="100"
+            android:gravity="center"
             android:orientation="vertical"
             >
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="60"
-                android:weightSum="100"
-                android:gravity="center"
-                android:orientation="vertical"
-                >
-                <ImageView
-                    android:layout_width="150dp"
-                    android:layout_height="150dp"
-                    android:layout_gravity="center"
-                    android:src="@drawable/seven_nine_logo" />
-
-            </LinearLayout>
-
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="0dp"
-                android:layout_weight="40"
+            <ImageView
+                android:layout_width="150dp"
+                android:layout_height="150dp"
                 android:layout_gravity="center"
-                android:orientation="vertical">
+                android:src="@drawable/seven_nine_logo" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="40"
+            android:layout_gravity="center"
+            android:orientation="vertical">
 
 
             <TextView
@@ -87,20 +87,20 @@
                 android:id="@+id/conflu"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="The Confluence of consumers and essentials fair trade"
+                android:text="Your Go-To Convenience Store for Vegetables, Fruits, Groceries, Dairy and More."
                 android:paddingLeft="10dp"
-                android:textColor="@color/colorPrimaryDark"
+                android:textColor="#999999"
                 android:fontFamily="@font/segoeui"
                 android:paddingRight="10dp"
                 android:textSize="19dp"
                 android:layout_marginTop="10dp"
                 android:layout_gravity="center_horizontal"
                 android:gravity="center"
-              />
-
-            </LinearLayout>
+                />
 
         </LinearLayout>
+
+    </LinearLayout>
 
 
     <LinearLayout
@@ -135,23 +135,24 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="15dp"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="10dp"
                 android:text="+91"
                 android:textColor="@color/black"
                 android:textSize="20dp" />
 
             <EditText
-              android:id="@+id/phonenumber"
+                android:id="@+id/phonenumber"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="90"
                 android:layout_marginRight="15dp"
-                android:layout_marginLeft="10dp"
+                android:layout_marginLeft="0dp"
                 android:backgroundTint="@color/colorPrimaryDark"
                 android:inputType="number"
+                android:textSize="20dp"
                 android:maxLength="10"
 
-    />
+                />
 
 
 
@@ -170,21 +171,21 @@
 
 
 
-         <TextView
-             android:id="@+id/register_btn"
-             android:layout_width="0dp"
-             android:layout_height="wrap_content"
-             android:layout_weight="1"
-             android:padding="12dp"
-             android:background="@drawable/border_filled_red_register"
-             android:text="REGISTER"
-             android:textSize="18dp"
-             android:gravity="center"
-             android:textColor="@color/white"
-             android:layout_marginLeft="15dp"
-             android:layout_marginRight="15dp"
+            <TextView
+                android:id="@+id/register_btn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="12dp"
+                android:background="@drawable/border_filled_red_register"
+                android:text="REGISTER"
+                android:textSize="18dp"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
 
-             />
+                />
 
 
             <TextView
@@ -208,7 +209,7 @@
 
     </LinearLayout>
 
-    </LinearLayout>
+</LinearLayout>
 
 
 

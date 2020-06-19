@@ -46,26 +46,53 @@ public class CartSliderAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
         }
     }
 
+    public class MyViewHolderForMore extends RecyclerView.ViewHolder {
+
+        private TextView morecount;
+
+        public MyViewHolderForMore(View itemView) {
+            super(itemView);
+            // morecount= itemView.findViewById(R.id.morecount);
+        }
+
+    }
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        System.out.println("itemmmmmmm");
+        if(viewType==0) {
             System.out.println("itemmmmmmm");
+
             View itemView = LayoutInflater.from(parent.getContext())
-                    .inflate(R.layout.sell_item, parent, false);
+                    .inflate(R.layout.loan_item, parent, false);
 
-
+            //  int width =  parent.getMeasuredWidth();
             float height = (float) parent.getMeasuredHeight() /4;//(Width/Height)
             RecyclerView.LayoutParams params = (RecyclerView.LayoutParams) itemView.getLayoutParams();
             params.height = Math.round(height);
             itemView.setLayoutParams(params);
+
             return new MyViewHolder(itemView);
         }
+        else{
+            System.out.println("moreeeee");
+            View itemView = LayoutInflater.from(parent.getContext())
+                    .inflate(R.layout.loan_item_more, parent, false);
+           /* int height = parent.getMeasuredHeight() / 3;
+            itemView.setMinimumHeight(height);*/
+            float height = (float) parent.getMeasuredHeight() /4;//(Width/Height)
+            RecyclerView.LayoutParams params = (RecyclerView.LayoutParams) itemView.getLayoutParams();
+            params.height = Math.round(height);
+            return new MyViewHolderForMore(itemView);
+        }
+    }
 
     @Override
     public void onBindViewHolder(final RecyclerView.ViewHolder holder, final int position) {
-            MyViewHolder viewHolder0 = (MyViewHolder)holder;
+        if(holder.getItemViewType()==0) {
+            MyViewHolder viewHolder0 = (MyViewHolder) holder;
             final ListBean2 products1 = productList.get(position);
-            viewHolder0.loan_text.setText(products1.getName());
 
+            viewHolder0.loan_text.setText(products1.getName());
 
 
      /*   Glide.with(activity).load(products1.getImage())
@@ -83,21 +110,38 @@ public class CartSliderAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
                 .into(viewHolder0.loan_img);*/
 
 
-        Glide.with(activity).load(products1.getImage())
-                .thumbnail(0.5f)
-                // .crossFade()
-                .apply(RequestOptions.diskCacheStrategyOf(DiskCacheStrategy.ALL)
-                        .error(R.drawable.avatarmale))
-                .placeholder(R.drawable.avatarmale)
-                .into(viewHolder0.loan_img);
+            Glide.with(activity).load(products1.getImage())
+                    .thumbnail(0.5f)
+                    // .crossFade()
+                    .apply(RequestOptions.diskCacheStrategyOf(DiskCacheStrategy.ALL)
+                            .error(R.drawable.avatarmale))
+                    .placeholder(R.drawable.avatarmale)
+                    .into(viewHolder0.loan_img);
 
 
+            System.out.println("imageeeeesliderrrrr" + products1.getImage());
 
-        System.out.println("imageeeeesliderrrrr"+products1.getImage());
+        }else{
+            MyViewHolderForMore viewHolder2 = (MyViewHolderForMore)holder;
+            //  viewHolder2.morecount.setText("+"+SliderPagerAdapter.morecount);
+
+           /* viewHolder2.morecount.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    selectedFragment = LoansListFragment.newInstance();
+                    FragmentTransaction transaction = ((FragmentActivity) activity).getSupportFragmentManager().beginTransaction();
+                    transaction.replace(R.id.frame_layout, selectedFragment);
+                    transaction.addToBackStack("home");
+                    transaction.commit();
+                }
+            });*/
+
+        }
 
     }
     @Override
     public int getItemViewType(int position) {
+
         // Just as an example, return 0 or 2 depending on position
         // Note that unlike in ListView adapters, types don't have to be contiguous
         System.out.println("jhdjsk"+position+" "+SliderPagerAdapter.morecount);
@@ -108,6 +152,11 @@ public class CartSliderAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
         else return 0;
         //  return position % 2 * 2;
     }
+
+
+
+
+
 
     @Override
     public int getItemCount() {

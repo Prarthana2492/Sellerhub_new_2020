@@ -25,8 +25,11 @@ import com.SevenNine.Partnercode.SessionManager;
 
 import org.json.JSONObject;
 
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 
 public class OrderDetailsFragment extends Fragment {
@@ -89,12 +92,14 @@ public class OrderDetailsFragment extends Fragment {
 
             }
         });
-
+        DecimalFormat formatter = (DecimalFormat) NumberFormat.getInstance(Locale.US);;
+        formatter .applyPattern("##,##,##,###");
+        double rate_double1= (Double.parseDouble(getArguments().getString("Amount")));
         ordered_on.setText(getArguments().getString("createdon").substring(0,10));
-        items_cost.setText("₹"+Double.parseDouble(getArguments().getString("Amount")));
-        before_tax.setText("₹"+Double.parseDouble(getArguments().getString("Amount")));
-        total_amt.setText("₹"+Double.parseDouble(getArguments().getString("Amount")));
-        total_sum_amt.setText("₹"+Double.parseDouble(getArguments().getString("Amount")));
+        items_cost.setText("₹"+formatter.format(rate_double1)+".00");
+        before_tax.setText("₹"+formatter.format(rate_double1)+".00");
+        total_amt.setText("₹"+formatter.format(rate_double1)+".00");
+        total_sum_amt.setText("₹"+formatter.format(rate_double1)+".00");
         item_count.setText("Items -"+"1 Item");
         name_vw.setText(getArguments().getString("product_info"));
         pay_mode.setText(getArguments().getString("pay_mode"));

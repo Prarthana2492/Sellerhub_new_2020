@@ -40,13 +40,13 @@ public class OrderTabFragment extends Fragment implements TabLayout.OnTabSelecte
         tabLayout.addTab(tabLayout.newTab().setText("Dispatched"));
         tabLayout.addTab(tabLayout.newTab().setText("Cancelled"));
 
-        tabLayout.setOnTabSelectedListener(this);
 
         viewPager = view.findViewById(R.id.simpleViewPager_tab);
 
         PagerOrder adapter = new PagerOrder(getActivity().getSupportFragmentManager(), tabLayout.getTabCount());
         viewPager.setAdapter(adapter);
         viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
+        tabLayout.setOnTabSelectedListener(this);
 
         return view;
     }

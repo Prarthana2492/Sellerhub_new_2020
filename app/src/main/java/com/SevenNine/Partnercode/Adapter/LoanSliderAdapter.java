@@ -56,7 +56,7 @@ public class LoanSliderAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
 
         public MyViewHolderForMore(View itemView) {
             super(itemView);
-            morecount= itemView.findViewById(R.id.morecount);
+          //  morecount= itemView.findViewById(R.id.morecount);
         }
 
     }
@@ -233,7 +233,7 @@ public class LoanSliderAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
         }
         else{
             MyViewHolderForMore viewHolder2 = (MyViewHolderForMore)holder;
-            viewHolder2.morecount.setText("+"+SliderPagerAdapter.morecount);
+           // viewHolder2.morecount.setText("+"+SliderPagerAdapter.morecount);
 
            /* viewHolder2.morecount.setOnClickListener(new View.OnClickListener() {
                 @Override

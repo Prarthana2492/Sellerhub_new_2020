@@ -167,7 +167,7 @@ public class AdapterSelectLanguage extends RecyclerView.Adapter<AdapterSelectLan
 
             System.out.print("iiidddddd" + id);
 
-            Crop_Post.crop_posting(activity, Urls.CHANGE_LANGUAGE, jsonObject, new VoleyJsonObjectCallback() {
+            Crop_Post.lang_posting(activity, Urls.CHANGE_LANGUAGE, jsonObject, new VoleyJsonObjectCallback() {
                 @Override
                 public void onSuccessResponse(JSONObject result) {
 
@@ -194,6 +194,8 @@ public class AdapterSelectLanguage extends RecyclerView.Adapter<AdapterSelectLan
         } catch (Exception e) {
             e.printStackTrace();
         }
+
+
 
 
     }

@@ -13,10 +13,12 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.text.Editable;
 import android.text.InputFilter;
 import android.text.SpannableString;
 import android.text.Spanned;
 import android.text.TextUtils;
+import android.text.TextWatcher;
 import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
@@ -32,6 +34,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.SevenNine.Partnercode.Activity.Status_bar_change_singleton;
+import com.SevenNine.Partnercode.Adapter.InventoryAdapter;
 import com.SevenNine.Partnercode.Adapter.SelectCategoryAdapter;
 import com.SevenNine.Partnercode.Adapter.SelectSubCategoryAdapter;
 import com.SevenNine.Partnercode.Adapter.UOMAdapter;
@@ -47,6 +50,8 @@ import com.SevenNine.Partnercode.Volly_class.VoleyJsonObjectCallback;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -88,14 +93,14 @@ public class AddProductFragment extends Fragment {
         View view = inflater.inflate(R.layout.add_product_navi, container, false);
 
         Status_bar_change_singleton.getInstance().color_change(getActivity());
-        myCalendar = Calendar.getInstance();
+     //   myCalendar = Calendar.getInstance();
         sessionManager=new SessionManager(getActivity());
         Continue = view.findViewById(R.id.continuebtn);
         backfeed = view.findViewById(R.id.back_feed);
         linearLayout = view.findViewById(R.id.main_layout);
       //  product_code = view.findViewById(R.id.prod_code);
         product_name = view.findViewById(R.id.prod_name);
-        product_description = view.findViewById(R.id.prod_description);
+       // product_description = view.findViewById(R.id.prod_description);
         quantity = view.findViewById(R.id.quantity);
      //   uom = view.findViewById(R.id.uom);
         amount = view.findViewById(R.id.amount);
@@ -104,7 +109,7 @@ public class AddProductFragment extends Fragment {
         mrp = view.findViewById(R.id.mrp);
         search = view.findViewById(R.id.search);
      //   model = view.findViewById(R.id.model);
-        expiry_date = view.findViewById(R.id.expiry_date);
+     //   expiry_date = view.findViewById(R.id.expiry_date);
         recyclerView = view.findViewById(R.id.recycler_view);
         norecords = view.findViewById(R.id.norecords);
         norecords.setVisibility(View.GONE);
@@ -120,6 +125,12 @@ public class AddProductFragment extends Fragment {
     }
 }
 
+        if (InventoryAdapter.prod_id!=null){
+            quantity.setText(InventoryAdapter.quantity);
+            mrp.setText(InventoryAdapter.mrp);
+            amount.setText(InventoryAdapter.amount);
+            brand.setText(InventoryAdapter.brand);
+        }
 
         setupUI(linearLayout);
         backfeed.setOnClickListener(new View.OnClickListener() {
@@ -163,6 +174,80 @@ public class AddProductFragment extends Fragment {
             }
         });
 
+
+        mrp.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+            @Override
+            public void afterTextChanged(Editable editable) {
+                mrp.removeTextChangedListener(this);
+                try {
+                    String originalString = editable.toString();
+
+                    Long longval;
+                    if (originalString.contains(",")) {
+                        originalString = originalString.replaceAll(",", "");
+                    }
+                    longval = Long.parseLong(originalString);
+
+                    DecimalFormat formatter = (DecimalFormat) NumberFormat.getInstance(Locale.US);
+                    formatter.applyPattern("#,##,##,###");
+                    String formattedString = formatter.format(longval);
+
+                    //setting text after format to EditText
+                    mrp.setText(formattedString);
+                    mrp.setSelection(mrp.getText().length());
+                } catch (NumberFormatException nfe) {
+                    nfe.printStackTrace();
+                }
+
+                mrp.addTextChangedListener(this);
+            }
+        });
+
+        amount.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+            @Override
+            public void afterTextChanged(Editable editable) {
+                amount.removeTextChangedListener(this);
+                try {
+                    String originalString = editable.toString();
+
+                    Long longval;
+                    if (originalString.contains(",")) {
+                        originalString = originalString.replaceAll(",", "");
+                    }
+                    longval = Long.parseLong(originalString);
+
+                    DecimalFormat formatter = (DecimalFormat) NumberFormat.getInstance(Locale.US);
+                    formatter.applyPattern("#,##,##,###");
+                    String formattedString = formatter.format(longval);
+
+                    //setting text after format to EditText
+                    amount.setText(formattedString);
+                    amount.setSelection(amount.getText().length());
+                } catch (NumberFormatException nfe) {
+                    nfe.printStackTrace();
+                }
+
+                amount.addTextChangedListener(this);
+            }
+        });
+
+
         final DatePickerDialog.OnDateSetListener date = new DatePickerDialog.OnDateSetListener() {
 
             @Override
@@ -176,7 +261,7 @@ public class AddProductFragment extends Fragment {
             }
 
         };
-        expiry_date.setOnClickListener(new View.OnClickListener() {
+       /* expiry_date.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 new DatePickerDialog(getActivity(), date, myCalendar
@@ -185,7 +270,7 @@ public class AddProductFragment extends Fragment {
 
             }
         });
-
+*/
       /*  uom.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -230,11 +315,11 @@ public class AddProductFragment extends Fragment {
                     Toast toast = Toast.makeText(getActivity(), "Enter Brand", Toast.LENGTH_LONG);
                     toast.setGravity(Gravity.TOP | Gravity.CENTER, 0, 0);
                     toast.show();
-                } else if (expiry_date.getText().toString().equals("")) {
+                } /*else if (expiry_date.getText().toString().equals("")) {
                     Toast toast = Toast.makeText(getActivity(), "Select Expiry date", Toast.LENGTH_LONG);
                     toast.setGravity(Gravity.TOP | Gravity.CENTER, 0, 0);
                     toast.show();
-                } else {
+                }*/ else {
 
                     try {
                         // newOrderBeansList.clear();
@@ -242,7 +327,7 @@ public class AddProductFragment extends Fragment {
                         //  jsonObject.put("ProductId",productlistid);
                         jsonObject.put("ProductCode", "123456");
                         //  jsonObject.put("ProductName", product_name.getText().toString());
-                        jsonObject.put("ProductDescription", product_description.getText().toString());
+                        jsonObject.put("ProductDescription", "Vegetables");
                         jsonObject.put("Quantity", quantity.getText().toString());
                         //   jsonObject.put("UnitOfPriceId", uom.getText().toString());
                         jsonObject.put("Amount", amount.getText().toString());
@@ -253,9 +338,15 @@ public class AddProductFragment extends Fragment {
                         jsonObject.put("ProductListId", productlistid);
                         jsonObject.put("SellingCategoryId", SelectCategoryAdapter.selling_category_id);
                         jsonObject.put("SellingListMasterId", sellingmasterid);
-                        jsonObject.put("ExpiryDate", expiry_date.getText().toString());
+                        jsonObject.put("ExpiryDate", "19/06/2020");
                         jsonObject.put("UserId", sessionManager.getRegId("userId"));
-                        jsonObject.put("ProductId", 0);
+                        if (InventoryAdapter.prod_id!=null){
+                            jsonObject.put("ProductId", InventoryAdapter.prod_id);
+
+                        }else{
+                            jsonObject.put("ProductId", 0);
+
+                        }
 
                         System.out.println("jhfdfdjc111" + jsonObject);
 
@@ -268,13 +359,25 @@ public class AddProductFragment extends Fragment {
                                 try {
                                     String status = result.getString("Status");
                                     if (status.equals("Success")) {
-                                        selectedFragment = HomeFragment.newInstance();
-                                        FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
-                                        transaction.replace(R.id.frame_layout1, selectedFragment);
-                                        transaction.addToBackStack("spicescateory");
-                                        transaction.commit();
+                                        if (InventoryAdapter.prod_id != null) {
+                                            selectedFragment = InventoryList.newInstance();
+                                            FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
+                                            transaction.replace(R.id.frame_layout1, selectedFragment);
+                                            transaction.addToBackStack("spicescateory");
+                                            transaction.commit();
+                                            InventoryAdapter.prod_id=null;
+                                            InventoryAdapter.quantity=null;
+                                            InventoryAdapter.brand=null;
+                                            InventoryAdapter.mrp=null;
+                                            InventoryAdapter.amount=null;
+                                        } else {
+                                            selectedFragment = HomeFragment.newInstance();
+                                            FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
+                                            transaction.replace(R.id.frame_layout1, selectedFragment);
+                                            transaction.addToBackStack("spicescateory");
+                                            transaction.commit();
+                                        }
                                     }
-
                                 } catch (Exception e) {
                                     e.printStackTrace();
                                 }

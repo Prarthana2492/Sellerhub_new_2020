@@ -3,6 +3,8 @@ package com.SevenNine.Partnercode.Adapter;
 import android.app.Activity;
 import android.graphics.Paint;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,6 +16,7 @@ import android.widget.TextView;
 import com.SevenNine.Partnercode.Bean.InventoryBean;
 import com.SevenNine.Partnercode.Bean.Sellbean;
 import com.SevenNine.Partnercode.Fragment.InventoryList;
+import com.SevenNine.Partnercode.Fragment.What_Are_looking;
 import com.SevenNine.Partnercode.R;
 import com.SevenNine.Partnercode.SessionManager;
 import com.bumptech.glide.Glide;
@@ -29,7 +32,7 @@ public class InventoryAdapter extends RecyclerView.Adapter<InventoryAdapter.MyVi
     private List<InventoryBean> productList;
     Activity activity;
     Fragment selectedFragment;
-    public static String sellingtypeid,sellingedit_id,prodid,upid,amount,quantity,status;
+    public static String prod_name,mrp,brand,prod_id,amount,quantity,status;
     SessionManager sessionManager;
     LinearLayout linear_layout;
 
@@ -44,7 +47,7 @@ public class InventoryAdapter extends RecyclerView.Adapter<InventoryAdapter.MyVi
     public class MyViewHolder extends RecyclerView.ViewHolder {
         public ImageView image,prod_img_fix;
         public LinearLayout item;
-        public TextView name,weight,price,actual_price,add_cart;
+        public TextView name,weight,price,actual_price,edit;
 
 
         public MyViewHolder(View view) {
@@ -56,7 +59,7 @@ public class InventoryAdapter extends RecyclerView.Adapter<InventoryAdapter.MyVi
             weight=view.findViewById(R.id.weight);
             price=view.findViewById(R.id.price);
             actual_price=view.findViewById(R.id.actual_price);
-          //  add_cart=view.findViewById(R.id.add_cart);
+            edit=view.findViewById(R.id.edit);
             linear_layout=view.findViewById(R.id.linear_layout);
 
             sessionManager=new SessionManager(activity);
@@ -77,9 +80,9 @@ public class InventoryAdapter extends RecyclerView.Adapter<InventoryAdapter.MyVi
     public void onBindViewHolder(final MyViewHolder holder, final int position) {
      final InventoryBean products = productList.get(position);
 
-        holder.name.setText(products.getProd_name()+", "+products.getBrand()+", "+products.getProd_desc());
+        holder.name.setText(products.getProd_name());
         holder.weight.setText(products.getQuantity()+" Kg");
-        holder.price.setText("₹"+products.getAmount());
+        holder.price.setText("Rs "+products.getAmount());
         holder.actual_price.setText("₹"+products.getMrp());
         holder.actual_price.setPaintFlags(holder.actual_price.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
 
@@ -89,17 +92,24 @@ public class InventoryAdapter extends RecyclerView.Adapter<InventoryAdapter.MyVi
                 .apply(RequestOptions.diskCacheStrategyOf(DiskCacheStrategy.ALL)
                         .error(R.drawable.ic_gallery__default))
                 .into(holder.prod_img_fix);
-       /* holder.image.setOnClickListener(new View.OnClickListener() {
+        holder.edit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                selectedFragment = SelectSubCategoryFragment.newInstance();
+                prod_name=products.getProd_name();
+                brand=products.getBrand();
+                quantity=products.getQuantity();
+                amount=products.getAmount();
+                mrp=products.getMrp();
+                prod_id=products.getProd_desc();
+
+                selectedFragment = What_Are_looking.newInstance();
                 FragmentTransaction transaction = ((FragmentActivity)activity).getSupportFragmentManager().beginTransaction();
                 transaction.replace(R.id.frame_layout1, selectedFragment);
-                transaction.addToBackStack("spicescateory");
+                transaction.addToBackStack("spicescateorye");
                 transaction.commit();
 
             }
-        });*/
+        });
 
 
     }

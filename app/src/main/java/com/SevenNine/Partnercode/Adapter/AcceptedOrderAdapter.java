@@ -1,6 +1,7 @@
 package com.SevenNine.Partnercode.Adapter;
 
 import android.app.Activity;
+import android.graphics.Paint;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
@@ -47,7 +48,7 @@ public class AcceptedOrderAdapter extends RecyclerView.Adapter<AcceptedOrderAdap
 
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
-        public TextView prod_name,dispatched_date,next,accept,quantity;
+        public TextView prod_name,dispatched_date,next,accept,quantity,mrp;
         public ImageView image;
 
 
@@ -59,6 +60,7 @@ public class AcceptedOrderAdapter extends RecyclerView.Adapter<AcceptedOrderAdap
             next=view.findViewById(R.id.arrow);
             accept=view.findViewById(R.id.accept);
             quantity=view.findViewById(R.id.quantity);
+            mrp=view.findViewById(R.id.mrp);
            sessionManager=new SessionManager(activity);
         }
 
@@ -78,11 +80,20 @@ public class AcceptedOrderAdapter extends RecyclerView.Adapter<AcceptedOrderAdap
         final NewOrderBean products1 = productList.get(position);
 
         System.out.println("ordreadapterrrr" + products1.getUom());
-        holder.prod_name.setText(products1.getProd_name()+", "+products1.getBrand()+", "+products1.getProd_desc());
-        holder.dispatched_date.setText("₹"+Double.parseDouble(products1.getAmount()));
-        holder.quantity.setText(products1.getQuantity()+" Kg");
+        if (products1.getProd_desc().equals("")){
+            holder.prod_name.setText(products1.getProd_name()+", "+products1.getBrand()+", "+products1.getSellingCategoryName());
 
-        Glide.with(activity).load(products1.getProd_img())
+        }else{
+            holder.prod_name.setText(products1.getProd_name()+", "+products1.getBrand()+", "+products1.getProd_desc());
+
+        }
+        holder.dispatched_date.setText("₹"+(products1.getAmount()));
+        holder.quantity.setText(products1.getQuantity()+" Kg");
+        holder.mrp.setText("₹"+products1.getFirstname());
+        holder.mrp.setPaintFlags(holder.mrp.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
+
+
+        Glide.with(activity).load(products1.getProducts_Icon())
                 .thumbnail(0.5f)
                 // .crossFade()
                 .apply(RequestOptions.diskCacheStrategyOf(DiskCacheStrategy.ALL)
@@ -100,7 +111,12 @@ public class AcceptedOrderAdapter extends RecyclerView.Adapter<AcceptedOrderAdap
                 bundle.putString("quantity", products1.getQuantity());
                 bundle.putString("product_info", products1.getProductInfo());
                 bundle.putString("prod_img", products1.getProd_img());
-                bundle.putString("pay_mode", products1.getMode());
+                if (products1.getSellingListName()==null){
+                    bundle.putString("pay_mode", "COD");
+                }else{
+                    bundle.putString("pay_mode", "Online Payment");
+
+                }
                 bundle.putString("uom", products1.getUom());
                 selectedFragment = OrderDetailsFragment.newInstance();
                 FragmentTransaction transaction = ((FragmentActivity) activity).getSupportFragmentManager().beginTransaction();

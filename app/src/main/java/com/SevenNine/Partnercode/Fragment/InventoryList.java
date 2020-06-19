@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.annotation.RequiresApi;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.GridLayoutManager;
@@ -80,8 +81,10 @@ sessionManager=new SessionManager(getActivity());
         back_feed.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                FragmentManager fm = getFragmentManager();
-                fm.popBackStack();
+                selectedFragment = HomeFragment.newInstance();
+                FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
+                transaction.replace(R.id.frame_layout1, selectedFragment);
+                transaction.commit();
             }
         });
         view.setFocusableInTouchMode(true);
@@ -91,9 +94,10 @@ sessionManager=new SessionManager(getActivity());
             public boolean onKey(View v, int keyCode, KeyEvent event) {
                 if( keyCode == KeyEvent.KEYCODE_BACK && event.getAction() == KeyEvent.ACTION_UP) {
 
-                    FragmentManager fm = getFragmentManager();
-                    fm.popBackStack();
-
+                    selectedFragment = HomeFragment.newInstance();
+                    FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
+                    transaction.replace(R.id.frame_layout1, selectedFragment);
+                    transaction.commit();
                     return true;
                 }
 
@@ -127,7 +131,7 @@ sessionManager=new SessionManager(getActivity());
                         for(int i=0;i<get_soiltype.length();i++){
 
                             JSONObject jsonObject1 = get_soiltype.getJSONObject(i);
-                            InventoryBean sellbean = new InventoryBean(jsonObject1.getString("ProductName"),jsonObject1.getString("ProductDescription"),jsonObject1.getString("Brand"),jsonObject1.getString("Quantity"),jsonObject1.getString("Amount"),jsonObject1.getString("MRP"),jsonObject1.getString("ProductIcon"),jsonObject1.getString("SellingListIcon"));
+                            InventoryBean sellbean = new InventoryBean(jsonObject1.getString("ProductName"),jsonObject1.getString("ProductId"),jsonObject1.getString("Brand"),jsonObject1.getString("Quantity"),jsonObject1.getString("Amount"),jsonObject1.getString("MRP"),jsonObject1.getString("ProductIcon"),jsonObject1.getString("SellingListIcon"));
 
                             newOrderBeansList_subcat.add(sellbean);
                         }

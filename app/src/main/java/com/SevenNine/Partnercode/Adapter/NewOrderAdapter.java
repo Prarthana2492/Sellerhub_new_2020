@@ -1,6 +1,7 @@
 package com.SevenNine.Partnercode.Adapter;
 
 import android.app.Activity;
+import android.graphics.Paint;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
@@ -29,7 +30,10 @@ import com.bumptech.glide.request.RequestOptions;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 import java.util.List;
+import java.util.Locale;
 
 
 public class NewOrderAdapter extends RecyclerView.Adapter<NewOrderAdapter.MyViewHolder>  {
@@ -47,7 +51,7 @@ public class NewOrderAdapter extends RecyclerView.Adapter<NewOrderAdapter.MyView
 
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
-        public TextView prod_name,dispatched_date,next,accept,quantity;
+        public TextView prod_name,dispatched_date,next,accept,quantity,mrp;
         public ImageView image;
 
 
@@ -59,6 +63,7 @@ public class NewOrderAdapter extends RecyclerView.Adapter<NewOrderAdapter.MyView
             next=view.findViewById(R.id.arrow);
             accept=view.findViewById(R.id.accept);
             quantity=view.findViewById(R.id.quantity);
+            mrp=view.findViewById(R.id.mrp);
            sessionManager=new SessionManager(activity);
         }
 
@@ -79,14 +84,19 @@ public class NewOrderAdapter extends RecyclerView.Adapter<NewOrderAdapter.MyView
 
         System.out.println("ordreadapterrrr"+products1.getUom());
       holder.prod_name.setText(products1.getProd_name()+", "+products1.getBrand()+", "+products1.getProd_desc());
-      holder.dispatched_date.setText("₹"+Double.parseDouble(products1.getAmount()));
+        DecimalFormat formatter = (DecimalFormat) NumberFormat.getInstance(Locale.US);;
+        formatter .applyPattern("##,##,##,###");
+        double rate_double1= (Double.parseDouble(products1.getAmount()));
+      holder.dispatched_date.setText("₹"+formatter.format(rate_double1));
       holder.quantity.setText(products1.getQuantity()+" Kg");
+        holder.mrp.setText("₹"+products1.getFirstname());
+        holder.mrp.setPaintFlags(holder.mrp.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
 
-        Glide.with(activity).load(products1.getProd_img())
+        Glide.with(activity).load(products1.getProducts_Icon())
                 .thumbnail(0.5f)
                 // .crossFade()
                 .apply(RequestOptions.diskCacheStrategyOf(DiskCacheStrategy.ALL)
-                        .error(R.drawable.veg))
+                        .error(R.drawable.ic_gallery__default))
                 .into(holder.image);
 
 
@@ -123,12 +133,16 @@ public class NewOrderAdapter extends RecyclerView.Adapter<NewOrderAdapter.MyView
                    params.put("UserId",sessionManager.getRegId("userId"));
                    params.put("SellingListName",products1.getSellingListName());
                    params.put("CategoryName",products1.getSellingCategoryName());
+                   params.put("Quantity",products1.getQuantity()); //using status
                    params.put("SelectedQuantity",products1.getQuantity()); //using status
                    params.put("UnitOfPrice","Kilograms");
+                   params.put("MRP",products1.getFirstname());
+                   params.put("Brand",products1.getBrand());
                    params.put("SellingListIcon",products1.getProd_img());
                    params.put("ProductIcon",products1.getProducts_Icon());
                    params.put("ProductName",products1.getProd_name());
-                   params.put("CustomerName",products1.getFirstname());  //tarnsaction id
+                   params.put("ProductDescription",products1.getProd_desc());
+                   params.put("CustomerName","Priya");  //tarnsaction id
                    params.put("CreatedBy",sessionManager.getRegId("userId"));
 
                    System.out.println("RESPMsgdsfadf"+params);
