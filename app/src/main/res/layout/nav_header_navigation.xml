@@ -89,7 +89,7 @@
              android:textColor="#000"
              />
 
-         <TextView
+        <!-- <TextView
              android:id="@+id/shop_cat"
              android:layout_width="match_parent"
              android:layout_height="wrap_content"
@@ -111,12 +111,12 @@
              android:fontFamily="@font/segoeui"
              android:textColor="#000"
              />
-
-         <View
+-->
+        <!-- <View
              android:layout_width="match_parent"
              android:layout_height="1dp"
              android:background="#dcdcdc"
-             />
+             />-->
 
          <TextView
              android:id="@+id/my_orders"
@@ -169,6 +169,7 @@
              android:layout_height="1dp"
              android:background="#dcdcdc"
              />
+<!--
          <TextView
              android:id="@+id/list_prod"
              android:layout_width="match_parent"
@@ -179,12 +180,13 @@
              android:fontFamily="@font/segoeui"
              android:textColor="#000"
              />
+-->
 
          <TextView
              android:id="@+id/inventory"
              android:layout_width="match_parent"
              android:layout_height="wrap_content"
-             android:text="Inventory"
+             android:text="List Products"
              android:layout_marginTop="25dp"
              android:textSize="16dp"
              android:fontFamily="@font/segoeui"
@@ -209,9 +211,11 @@
              android:text="Offres"
              android:layout_marginTop="25dp"
              android:textSize="16dp"
+             android:layout_marginBottom="15dp"
              android:fontFamily="@font/segoeui"
              android:textColor="#000"
              />
+<!--
          <TextView
              android:id="@+id/bank_acc"
              android:layout_width="match_parent"
@@ -223,6 +227,7 @@
              android:fontFamily="@font/segoeui"
              android:textColor="#000"
              />
+-->
 
          <View
              android:layout_width="match_parent"
@@ -234,13 +239,14 @@
              android:id="@+id/account"
              android:layout_width="match_parent"
              android:layout_height="wrap_content"
-             android:text="My Accounts"
+             android:text="Settings"
              android:layout_marginTop="15dp"
              android:textSize="16dp"
              android:textColor="#000"
              android:fontFamily="@font/segoeui"
              />
 
+<!--
          <TextView
              android:id="@+id/settings"
              android:layout_width="match_parent"
@@ -251,6 +257,8 @@
              android:textColor="#000"
              android:fontFamily="@font/segoeui"
              />
+-->
+<!--
          <TextView
              android:id="@+id/logout"
              android:layout_width="match_parent"
@@ -262,6 +270,7 @@
              android:layout_marginBottom="20dp"
              android:fontFamily="@font/segoeui"
              />
+-->
 
       </LinearLayout>
 

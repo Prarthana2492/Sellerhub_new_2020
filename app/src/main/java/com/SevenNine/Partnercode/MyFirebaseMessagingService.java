@@ -2,52 +2,54 @@ package com.SevenNine.Partnercode;
 
 import android.os.Build;
 import android.support.annotation.RequiresApi;
+import android.util.Log;
 
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
+
+import static com.SevenNine.Partnercode.Fragment.Payfragment.TAG;
+
+/*
+import com.google.firebase.messaging.FirebaseMessagingService;
+import com.google.firebase.messaging.RemoteMessage;
+*/
 
 
 public class MyFirebaseMessagingService extends FirebaseMessagingService {
 
     @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
-    public void onMessageReceived(RemoteMessage message) {
-        System.out.println("Notificationnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnbb"+message.getNotification().getBody());
+    public void onMessageReceived(RemoteMessage remoteMessage) {
+        // ...
 
-            sendMyNotification(message.getNotification().getBody());
+        // TODO(developer): Handle FCM messages here.
+        // Not getting messages here? See why this may be: https://goo.gl/39bRNJ
+        Log.d(TAG, "From: " + remoteMessage.getFrom());
 
+        // Check if message contains a data payload.
+        if (remoteMessage.getData().size() > 0) {
+            Log.d(TAG, "Message data payload: " + remoteMessage.getData());
+/*
 
+            if (*/
+/* Check if data needs to be processed by long running job *//*
+ true) {
+                // For long-running tasks (10 seconds or more) use Firebase Job Dispatcher.
+                scheduleJob();
+            } else {
+                // Handle message within 10 seconds
+                handleNow();
+            }
+*/
 
-    }
+        }
 
+        // Check if message contains a notification payload.
+        if (remoteMessage.getNotification() != null) {
+            Log.d(TAG, "Message Notification Body: " + remoteMessage.getNotification().getBody());
+        }
 
-    @RequiresApi(api = Build.VERSION_CODES.O)
-    private void sendMyNotification(String message) {
-
-//
-//        String stop = "stop";
-//       // registerReceiver(stopReceiver, new IntentFilter(stop));
-//        PendingIntent broadcastIntent = PendingIntent.getBroadcast(
-//                this, 0, new Intent(stop), PendingIntent.FLAG_UPDATE_CURRENT);
-//        // Create the persistent notification
-//
-//        NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
-//        String channelId = getString(R.string.app_name);
-//        NotificationChannel notificationChannel = new NotificationChannel(channelId, channelId, NotificationManager.IMPORTANCE_DEFAULT);
-//        notificationChannel.setDescription(channelId);
-//        notificationChannel.setSound(null, null);
-//        notificationManager.createNotificationChannel(notificationChannel);
-//        Notification notification = new Notification.Builder(this, channelId)
-//                .setContentTitle(getString(R.string.app_name))
-//                .setContentText("llllllllllll")
-//                .setOngoing(true)
-//                .setContentIntent(broadcastIntent)
-//                .setSmallIcon(R.drawable.ic_launcher_foreground)
-//                .setPriority(Notification.PRIORITY_DEFAULT)
-//                .build();
-//        startForeground(0, notification);
-
-
-
+        // Also if you intend on generating your own notifications as a result of a received FCM
+        // message, here is where that should be initiated. See sendNotification method below.
     }
 }

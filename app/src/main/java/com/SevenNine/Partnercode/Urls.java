@@ -2,7 +2,7 @@ package com.SevenNine.Partnercode;
 
 public class Urls {
 
- private static final String ROOT_URL = "http://52.66.200.98:8484/api/";///DEV
+ private static final String ROOT_URL = "http://13.232.185.209:7171/api/";///DEV
  //private static final String ROOT_URL = "http://13.233.184.72:9090/api/";///pro
  // private static final String ROOT_URL = "http://3.17.6.57:9393/api/";///DEV
  // private static final String ROOT_URL = "http://3.17.6.57:8888//api/";//PRO
@@ -38,8 +38,14 @@ public class Urls {
  public static final String GetFarmDetailsList = ROOT_URL+"MasterTable/GetFarmsList";
  public static final String GetFarmsListByUserId = ROOT_URL+"MasterTable/GetFarmsListByUserId";
  public static final String GetOrderList =ROOT_URL +"Partner/GetOrdersFromCart";
+ public static final String Get7NineWeeklyPaymentDetails =ROOT_URL +"Partner/Get7NineWeeklyPaymentDetails";
+ public static final String Get7NineTodaysPaymentDetails =ROOT_URL +"Partner/Get7NineTodaysPaymentDetails";
+ public static final String DeleteProductDetails =ROOT_URL +"Partner/DeleteProductDetails";
  public static final String GetProductDetails =ROOT_URL +"Partner/GetProductDetails";
+ public static final String GetOfferDetails =ROOT_URL +"Partner/GetOfferDetails";
  public static final String GetAcceptedOrdersDetails =ROOT_URL +"Partner/GetAcceptedOrdersDetails";
+ public static final String GetBankList = ROOT_URL+"MasterTable/GetBankDetailsList";
+
 
  // Refer n Earn
  public static final String Refferal_Code = ROOT_URL +"Auth/GetUserDetails";
@@ -155,6 +161,8 @@ public class Urls {
  public static final String AddUpdateProductDetails = ROOT_URL + "Partner/AddUpdateProductDetails";
  public static final String AddAcceptOrdersFrom7NineDetails = ROOT_URL + "Partner/AddAcceptOrdersFrom7NineDetails";
  public static final String GetStoreDetails = ROOT_URL + "Partner/GetStoreDetails";
+ public static final String Get_Profile_Details1= ROOT_URL + "Auth/GetRegUserDetails";
+
 
  public static final String GetCropTypeList = ROOT_URL + "MasterTable/GetCropTypeList";
  public static final String GetCropCategoryList = ROOT_URL + "MasterTable/GetCropCategoryList";

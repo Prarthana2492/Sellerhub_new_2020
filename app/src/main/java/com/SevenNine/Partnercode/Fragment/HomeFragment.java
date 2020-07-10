@@ -39,7 +39,7 @@ Fragment selectedFragment;
     String userid;
     SessionManager sessionManager;
     DrawerLayout drawer_layout;
-    TextView home,logout,shop_cat,disc_store,my_orders,list_prod,inventory,account,store,sell_on_xohri,help_center,notification;
+    TextView home,logout,shop_cat,disc_store,my_orders,list_prod,inventory,account,store,offers,payments,notification;
     public static TextView cart_count_text,user_name_menu;
 static boolean fragloaded;
     boolean doubleBackToExitPressedOnce = false;
@@ -58,16 +58,18 @@ static Fragment myloadingfragment;
 
         menu=view.findViewById(R.id.menu);
         home=view.findViewById(R.id.home);
-        shop_cat=view.findViewById(R.id.shop_cat);
-        disc_store=view.findViewById(R.id.disc_store);
+      //  shop_cat=view.findViewById(R.id.shop_cat);
+      //  disc_store=view.findViewById(R.id.disc_store);
         my_orders=view.findViewById(R.id.my_orders);
         account=view.findViewById(R.id.account);
         user_name_menu=view.findViewById(R.id.user_name_menu);
         prof_tab=view.findViewById(R.id.prof_tab);
-        list_prod=view.findViewById(R.id.list_prod);
+       // list_prod=view.findViewById(R.id.list_prod);
         logout=view.findViewById(R.id.logout);
         store=view.findViewById(R.id.stores);
+        offers=view.findViewById(R.id.offers);
         inventory=view.findViewById(R.id.inventory);
+        payments=view.findViewById(R.id.payments);
         drawer_layout=view.findViewById(R.id.drawer_layout);
         Window window = getActivity().getWindow();
         window.setStatusBarColor(ContextCompat.getColor(getActivity(),R.color.colorPrimaryDark1));
@@ -146,7 +148,7 @@ static Fragment myloadingfragment;
                         drawer.closeDrawers();
                     }
                 });
-                list_prod.setOnClickListener(new View.OnClickListener() {
+               /* list_prod.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         selectedFragment = What_Are_looking.newInstance();
@@ -155,7 +157,7 @@ static Fragment myloadingfragment;
                         transaction.commit();
                         drawer.closeDrawers();
                     }
-                });
+                });*/
                 store.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -177,6 +179,18 @@ static Fragment myloadingfragment;
                         drawer.closeDrawers();
                     }
                 });
+                account.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        selectedFragment = AaSettingFragment.newInstance();
+                        FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
+                        transaction.replace(R.id.frame_layout1, selectedFragment);
+                        transaction.addToBackStack("dhsks");
+                        transaction.commit();
+                        drawer.closeDrawers();
+                    }
+                });
+
                 inventory.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -188,7 +202,29 @@ static Fragment myloadingfragment;
                         drawer.closeDrawers();
                     }
                 });
-                logout.setOnClickListener(new View.OnClickListener() {
+                payments.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        selectedFragment = PaymentsTabLayout.newInstance();
+                        FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
+                        transaction.replace(R.id.frame_layout1, selectedFragment);
+                        transaction.addToBackStack("dhsks");
+                        transaction.commit();
+                        drawer.closeDrawers();
+                    }
+                });
+                offers.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        selectedFragment = OffersListFragment.newInstance();
+                        FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
+                        transaction.replace(R.id.frame_layout1, selectedFragment);
+                        transaction.addToBackStack("dhsks");
+                        transaction.commit();
+                        drawer.closeDrawers();
+                    }
+                });
+               /* logout.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         sessionManager.logoutUser();
@@ -196,7 +232,7 @@ static Fragment myloadingfragment;
                         drawer.closeDrawers();
                     }
                 });
-
+*/
 
             }
         });

@@ -27,6 +27,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.CheckBox;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.LinearLayout;
@@ -63,16 +64,19 @@ import java.util.Locale;
 public class AddProductFragment extends Fragment {
     Fragment selectedFragment;
     TextView norecords;
-    LinearLayout Continue,linearLayout,backfeed;
-    EditText product_code,product_name,product_description,quantity,amount,sku,mrp,search;
+    LinearLayout Continue,linearLayout,backfeed,offer_lay;
+    EditText product_code,product_name,product_description,quantity,amount,sku,mrp,search,delivery_charge,off_price;
     public  static EditText brand;
     public  static TextView uom,expiry_date;
     SessionManager sessionManager;
-    String status,productlistid,sellingmasterid,shop_ads_toast;
+    String status,productlistid,sellingmasterid,sellingcatid,sellingtypeid;
     JSONObject lngObject;
     Calendar myCalendar;
     RecyclerView recyclerView;
     String date_str;
+    int IsOfferAvailable;
+    CheckBox offer_checkbox;
+    int mrp_int,amount_int;
     public static ArrayList<SelectLanguageBean> newOrderBeansList = new ArrayList<>();
     private List<SelectLanguageBean> searchresultAraaylist = new ArrayList<>();
     public static UOMAdapter livestock_types_adapter3;
@@ -93,7 +97,7 @@ public class AddProductFragment extends Fragment {
         View view = inflater.inflate(R.layout.add_product_navi, container, false);
 
         Status_bar_change_singleton.getInstance().color_change(getActivity());
-     //   myCalendar = Calendar.getInstance();
+        myCalendar = Calendar.getInstance();
         sessionManager=new SessionManager(getActivity());
         Continue = view.findViewById(R.id.continuebtn);
         backfeed = view.findViewById(R.id.back_feed);
@@ -109,8 +113,12 @@ public class AddProductFragment extends Fragment {
         mrp = view.findViewById(R.id.mrp);
         search = view.findViewById(R.id.search);
      //   model = view.findViewById(R.id.model);
-     //   expiry_date = view.findViewById(R.id.expiry_date);
+        expiry_date = view.findViewById(R.id.expiry_date);
         recyclerView = view.findViewById(R.id.recycler_view);
+        offer_checkbox = view.findViewById(R.id.offer_checkbox);
+        delivery_charge = view.findViewById(R.id.delivery_charge);
+        off_price = view.findViewById(R.id.off_price);
+        offer_lay = view.findViewById(R.id.offer_lay);
         norecords = view.findViewById(R.id.norecords);
         norecords.setVisibility(View.GONE);
         drawer = (DrawerLayout) view.findViewById(R.id.drawer_layout_op);
@@ -119,9 +127,18 @@ public class AddProductFragment extends Fragment {
     if (getArguments().getString("page")!=null) {
         productlistid = getArguments().getString("status1");
         sellingmasterid = getArguments().getString("masterId1");
-    }else{
+        sellingcatid = SelectCategoryAdapter.selling_category_id;
+        sellingtypeid = What_Areu_Looking_Adapter.sellingtypeid;
+    }else if (getArguments().getString("status")!=null){
         productlistid = getArguments().getString("status");
         sellingmasterid = getArguments().getString("masterId");
+        sellingcatid = SelectCategoryAdapter.selling_category_id;
+        sellingtypeid = What_Areu_Looking_Adapter.sellingtypeid;
+
+    }else{
+        productlistid=getArguments().getString("productlistid");
+        sellingmasterid=getArguments().getString("sellingmasterid");
+        sellingtypeid=getArguments().getString("sellingtypeid");
     }
 }
 
@@ -130,6 +147,15 @@ public class AddProductFragment extends Fragment {
             mrp.setText(InventoryAdapter.mrp);
             amount.setText(InventoryAdapter.amount);
             brand.setText(InventoryAdapter.brand);
+            delivery_charge.setText(InventoryAdapter.deliver_charges);
+            if (InventoryAdapter.isofferactive.equals("true")){
+                offer_checkbox.setChecked(true);
+                off_price.setVisibility(View.VISIBLE);
+                expiry_date.setVisibility(View.VISIBLE);
+                off_price.setText(InventoryAdapter.offer_price);
+                expiry_date.setText(InventoryAdapter.exp_date.substring(0,10));
+            }
+
         }
 
         setupUI(linearLayout);
@@ -174,6 +200,28 @@ public class AddProductFragment extends Fragment {
             }
         });
 
+        if (offer_checkbox.isChecked()){
+            offer_lay.setVisibility(View.VISIBLE);
+            IsOfferAvailable=1;
+        }else{
+            offer_lay.setVisibility(View.GONE);
+            IsOfferAvailable=0;
+
+        }
+        offer_checkbox.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (offer_checkbox.isChecked()){
+                    offer_lay.setVisibility(View.VISIBLE);
+                    IsOfferAvailable=1;
+                }else{
+                    offer_lay.setVisibility(View.GONE);
+                    IsOfferAvailable=0;
+
+
+                }
+            }
+        });
 
         mrp.addTextChangedListener(new TextWatcher() {
             @Override
@@ -186,6 +234,7 @@ public class AddProductFragment extends Fragment {
             }
             @Override
             public void afterTextChanged(Editable editable) {
+
                 mrp.removeTextChangedListener(this);
                 try {
                     String originalString = editable.toString();
@@ -203,6 +252,7 @@ public class AddProductFragment extends Fragment {
                     //setting text after format to EditText
                     mrp.setText(formattedString);
                     mrp.setSelection(mrp.getText().length());
+                    mrp_int=Integer.parseInt(mrp.getText().toString());
                 } catch (NumberFormatException nfe) {
                     nfe.printStackTrace();
                 }
@@ -239,6 +289,16 @@ public class AddProductFragment extends Fragment {
                     //setting text after format to EditText
                     amount.setText(formattedString);
                     amount.setSelection(amount.getText().length());
+                    amount_int=Integer.parseInt(amount.getText().toString());
+                    mrp_int=Integer.parseInt(mrp.getText().toString());
+
+                    if (amount_int>mrp_int){
+                        Toast toast = Toast.makeText(getActivity(), "Price should be less than MRP", Toast.LENGTH_LONG);
+                        toast.setGravity(Gravity.TOP | Gravity.CENTER, 0, 0);
+                        toast.show();
+                        amount.getText().clear();
+                    }
+
                 } catch (NumberFormatException nfe) {
                     nfe.printStackTrace();
                 }
@@ -257,20 +317,29 @@ public class AddProductFragment extends Fragment {
                 myCalendar.set(Calendar.YEAR, year);
                 myCalendar.set(Calendar.MONTH, monthOfYear);
                 myCalendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+
                 updateLabel();
             }
 
         };
-       /* expiry_date.setOnClickListener(new View.OnClickListener() {
+        expiry_date.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                new DatePickerDialog(getActivity(), date, myCalendar
+                DatePickerDialog datePickerDialog=new DatePickerDialog(getActivity(), date, myCalendar
                         .get(Calendar.YEAR), myCalendar.get(Calendar.MONTH),
-                        myCalendar.get(Calendar.DAY_OF_MONTH)).show();
+                        myCalendar.get(Calendar.DAY_OF_MONTH));
+
+                //following line to restrict future date selection
+                datePickerDialog.getDatePicker().setMinDate(System.currentTimeMillis());
+                datePickerDialog.show();
+                /*new DatePickerDialog(getActivity(), date, myCalendar
+                        .get(Calendar.YEAR), myCalendar.get(Calendar.MONTH),
+                        myCalendar.get(Calendar.DAY_OF_MONTH)).show();*/
+
+
 
             }
         });
-*/
       /*  uom.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -311,15 +380,26 @@ public class AddProductFragment extends Fragment {
                     Toast toast = Toast.makeText(getActivity(), "Enter Quantity", Toast.LENGTH_LONG);
                     toast.setGravity(Gravity.TOP | Gravity.CENTER, 0, 0);
                     toast.show();
-                } else if (brand.getText().toString().equals("")) {
+                }else if (IsOfferAvailable==1){
+                    if (off_price.getText().toString().equals("")){
+                        Toast toast = Toast.makeText(getActivity(), "Enter Offer Price", Toast.LENGTH_LONG);
+                        toast.setGravity(Gravity.TOP | Gravity.CENTER, 0, 0);
+                        toast.show();
+                    }else if (expiry_date.getText().toString().equals("")){
+                        Toast toast = Toast.makeText(getActivity(), "Select Expiry Date", Toast.LENGTH_LONG);
+                        toast.setGravity(Gravity.TOP | Gravity.CENTER, 0, 0);
+                        toast.show();
+                    }
+                }
+                /*else if (brand.getText().toString().equals("")) {
                     Toast toast = Toast.makeText(getActivity(), "Enter Brand", Toast.LENGTH_LONG);
                     toast.setGravity(Gravity.TOP | Gravity.CENTER, 0, 0);
                     toast.show();
-                } /*else if (expiry_date.getText().toString().equals("")) {
+                }*/ /*else if (expiry_date.getText().toString().equals("")) {
                     Toast toast = Toast.makeText(getActivity(), "Select Expiry date", Toast.LENGTH_LONG);
                     toast.setGravity(Gravity.TOP | Gravity.CENTER, 0, 0);
                     toast.show();
-                }*/ else {
+                } */else {
 
                     try {
                         // newOrderBeansList.clear();
@@ -336,15 +416,29 @@ public class AddProductFragment extends Fragment {
                         jsonObject.put("Brand", brand.getText().toString());
                         //  jsonObject.put("ModelId", "1");
                         jsonObject.put("ProductListId", productlistid);
-                        jsonObject.put("SellingCategoryId", SelectCategoryAdapter.selling_category_id);
+                        jsonObject.put("SellingCategoryId", sellingcatid);
+                        jsonObject.put("SellingTypeId", sellingtypeid);
+                        jsonObject.put("IsOfferAvailable", IsOfferAvailable);
+                        if (IsOfferAvailable == 1) {
+                            jsonObject.put("OfferExpiresOn", expiry_date.getText().toString());
+                            jsonObject.put("OfferPrice", off_price.getText().toString());
+                        }else{
+                            jsonObject.put("OfferExpiresOn", "10/7/2020");
+                            jsonObject.put("OfferPrice", "0");
+                        }
+                        if (delivery_charge.getText().toString().equals("0")){
+                            jsonObject.put("DeliveryCharges", "0");
+                        }else{
+                            jsonObject.put("DeliveryCharges", delivery_charge.getText().toString());
+                        }
                         jsonObject.put("SellingListMasterId", sellingmasterid);
-                        jsonObject.put("ExpiryDate", "19/06/2020");
+                        jsonObject.put("ExpiryDate", "1/1/2020");
                         jsonObject.put("UserId", sessionManager.getRegId("userId"));
                         if (InventoryAdapter.prod_id!=null){
                             jsonObject.put("ProductId", InventoryAdapter.prod_id);
 
                         }else{
-                            jsonObject.put("ProductId", 0);
+                            jsonObject.put("ProductId", "");
 
                         }
 
@@ -446,7 +540,8 @@ public class AddProductFragment extends Fragment {
         private void updateLabel() {
         String myFormat = "yyyy/MM/dd"; //In which you need put here
         SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.US);
-        date_str=sdf.format(myCalendar.getTime());
+
+            date_str=sdf.format(myCalendar.getTime());
         System.out.println("ddddaaattteee"+date_str);
         expiry_date.setText(sdf.format(myCalendar.getTime()));
     }

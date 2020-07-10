@@ -52,6 +52,7 @@ public class InventoryList extends Fragment {
     LinearLayout back_feed,linearLayout;
     JSONArray get_categorylist_array;
     JSONArray get_soiltype;
+    ImageView list_prod;
     public static String sellingcatId,sellnavigation;
     SessionManager sessionManager;
 
@@ -71,6 +72,7 @@ public class InventoryList extends Fragment {
 
         recyclerView_main=view.findViewById(R.id.recycler_cat_detail);
         name=view.findViewById(R.id.name);
+        list_prod=view.findViewById(R.id.list_prod);
 sessionManager=new SessionManager(getActivity());
         linearLayout = view.findViewById(R.id.linearLayout);
         back_feed = view.findViewById(R.id.back_feed);
@@ -104,6 +106,16 @@ sessionManager=new SessionManager(getActivity());
                 return false;
             }
         });
+
+        list_prod.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                selectedFragment = What_Are_looking.newInstance();
+                FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
+                transaction.replace(R.id.frame_layout1, selectedFragment);
+                transaction.commit();
+            }
+        });
         newOrderBeansList_subcat.clear();
         // livestock_types_adapter = new Livestock_Types_Adapter( getActivity(),newOrderBeansList);
         GridLayoutManager mLayoutManager_farm = new GridLayoutManager(getActivity(), 1, GridLayoutManager.VERTICAL, false);
@@ -131,7 +143,7 @@ sessionManager=new SessionManager(getActivity());
                         for(int i=0;i<get_soiltype.length();i++){
 
                             JSONObject jsonObject1 = get_soiltype.getJSONObject(i);
-                            InventoryBean sellbean = new InventoryBean(jsonObject1.getString("ProductName"),jsonObject1.getString("ProductId"),jsonObject1.getString("Brand"),jsonObject1.getString("Quantity"),jsonObject1.getString("Amount"),jsonObject1.getString("MRP"),jsonObject1.getString("ProductIcon"),jsonObject1.getString("SellingListIcon"));
+                            InventoryBean sellbean = new InventoryBean(jsonObject1.getString("ProductName"),jsonObject1.getString("ProductId"),jsonObject1.getString("Brand"),jsonObject1.getString("Quantity"),jsonObject1.getString("Amount"),jsonObject1.getString("MRP"),jsonObject1.getString("ProductIcon"),jsonObject1.getString("SellingListIcon"),jsonObject1.getString("SellingCategoryId"),jsonObject1.getString("ProductListId"),jsonObject1.getString("SellingListMasterId"),jsonObject1.getString("OfferPrice"),jsonObject1.getString("DeliveryCharges"),jsonObject1.getString("OfferExpiresOn"),jsonObject1.getString("IsOfferAvailable"),jsonObject1.getString("SellingTypeId"));
 
                             newOrderBeansList_subcat.add(sellbean);
                         }

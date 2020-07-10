@@ -6,65 +6,122 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="#fff"
     android:weightSum="100"
     >
 
+    <!--
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="10"
+            android:background="@color/green"
+            android:gravity="center_vertical">
+
+            <LinearLayout
+                android:id="@+id/back_feed"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_margin="10dp"
+                android:background="@drawable/ripple_effect"
+                android:gravity="center">
+
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/ic_go_back_left_arrow_"
+
+                    />
+
+            </LinearLayout>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Add New Bank Details"
+                android:textSize="20dp"
+                android:textColor="#fff"
+                android:textStyle="bold"
+                android:layout_marginHorizontal="10dp"
+                android:id="@+id/toolbar_title" />
+
+
+        </LinearLayout>
+    -->
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="100"
         android:fillViewport="true">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:weightSum="100"
             android:orientation="vertical">
-
-
-
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="8dp"
-                android:orientation="horizontal"
-                android:background="@color/menu_green"
-                tools:ignore="MissingConstraints">
+                android:orientation="vertical">
+
+                <android.support.v7.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:background="@color/green"
+                    android:contentInsetStart="0dp"
+                    android:contentInsetLeft="0dp"
+                    android:contentInsetEnd="0dp"
+                    android:contentInsetRight="0dp"
+                    android:gravity="left"
+                    android:minHeight="?attr/actionBarSize"
+                    app:contentInsetEnd="0dp"
+                    app:contentInsetLeft="0dp"
+                    app:contentInsetRight="0dp"
+                    app:contentInsetStart="10dp"
+                    app:titleTextColor="@android:color/white">
 
 
+                    <LinearLayout
+                        android:id="@+id/back_feed"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/ripple_effect"
+                        android:gravity="center">
 
-                <LinearLayout
-                    android:id="@+id/back_feed"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:background="@drawable/ic_filter_state"
-                    android:gravity="center">
-
-
-
-                    <ImageView
-                        android:layout_width="20dp"
-                        android:layout_height="20dp"
-                        android:layout_gravity="center"
-                        android:src="@drawable/ic_go_back_left_arrow_"
-                        />
-
-                </LinearLayout>
+                        <ImageView
+                            android:id="@+id/b_arrow"
+                            android:layout_width="wrap_content"
+                            android:layout_height="20dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="15dp"
+                            android:src="@drawable/ic_go_back_left_arrow_" />
+                    </LinearLayout>
 
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Add New Bank Details"
-            android:textSize="20dp"
-            android:textColor="#fff"
-            android:textStyle="bold"
-            android:layout_gravity="center"
-            android:layout_marginHorizontal="10dp"
-            android:id="@+id/toolbar_title" />
+                    <TextView
+                        android:id="@+id/toolbar_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Add New Bank Details"
+                        android:textColor="#fff"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
 
+                </android.support.v7.widget.Toolbar>
 
-    </LinearLayout>
+            </LinearLayout>
+
+            <!-- <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="90"
+        android:fillViewport="true">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -72,171 +129,232 @@
         android:orientation="vertical"
         android:layout_marginTop="20dp"
         android:layout_marginHorizontal="16dp"
-        android:layout_marginBottom="10dp"
-        >
+        >-->
 
-        <EditText
-            android:id="@+id/ifsc"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Do you have IFSC"
-            android:paddingLeft="10dp"
-            android:paddingRight="20dp"
-            android:textColorHint="#9D9D9D"
-            android:fontFamily="@font/segoeui"
-            android:paddingVertical="13dp"
-            android:background="@drawable/request_price_white_border2"
-            android:textSize="16dp"
-            android:drawableRight="@drawable/ic_down_arrow"
-            android:editable="false"
-            android:clickable="false"
-            android:focusable="false"
-            />
-
-
-
-        <LinearLayout
-            android:id="@+id/loan_lay"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:weightSum="100"
-            >
-
+            <!--
+                        <TextView
+                            android:id="@+id/fullname"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/border_grey"
+                            android:drawableRight="@drawable/ic_down_arrow"
+                            android:fontFamily="@font/segoeui"
+                            android:hint="Do you have IFSC"
+                            android:paddingVertical="13dp"
+                            android:paddingLeft="10dp"
+                            android:paddingRight="10dp"
+                            android:layout_marginTop="15dp"
+                            android:textColor="#000"
+                            android:layout_marginHorizontal="16dp"
+                            android:textColorHint="#9D9D9D"
+                            android:textSize="16dp" />
+            -->
             <EditText
-                android:id="@+id/statee"
+                android:id="@+id/holder_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="State"
-                android:paddingLeft="10dp"
-                android:layout_marginTop="10dp"
-                android:paddingRight="20dp"
-                android:drawableRight="@drawable/ic_down_arrow"
+                android:hint="Holder Name"
                 android:textSize="16dp"
                 android:textColorHint="#9D9D9D"
+                android:paddingLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginHorizontal="16dp"
                 android:fontFamily="@font/segoeui"
                 android:paddingVertical="13dp"
-                android:background="@drawable/request_price_white_border2"
-                android:editable="false"
-                android:clickable="false"
-                android:focusable="false"
+                android:paddingRight="10dp"
+                android:singleLine="true"
+                android:background="@drawable/border_grey"
 
                 />
-        </LinearLayout>
 
-        <EditText
-            android:id="@+id/districtt"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="District"
-            android:textSize="16dp"
-            android:layout_marginTop="10dp"
-            android:textColorHint="#9D9D9D"
-            android:paddingLeft="10dp"
-            android:fontFamily="@font/segoeui"
-            android:drawableRight="@drawable/ic_down_arrow"
-            android:paddingVertical="13dp"
-            android:paddingRight="10dp"
-            android:background="@drawable/request_price_white_border2"
-            android:editable="false"
-            android:clickable="false"
-            android:focusable="false"
+            <EditText
+                android:id="@+id/age"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/border_grey"
+                android:fontFamily="@font/segoeui"
+                android:hint="Bank Name"
+                android:paddingVertical="13dp"
+                android:paddingLeft="10dp"
+                android:singleLine="true"
+                android:textColor="#000"
+                android:layout_marginHorizontal="16dp"
+                android:textColorHint="#9D9D9D"
+                android:visibility="visible"
+                android:textSize="16dp" />
 
-            />
+            <EditText
+                android:id="@+id/castecategory"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/border_grey"
+                android:fontFamily="@font/segoeui"
+                android:hint="Bank Branch Name"
+                android:paddingVertical="13dp"
+                android:layout_marginHorizontal="16dp"
+                android:paddingLeft="10dp"
+                android:singleLine="true"
+                android:visibility="visible"
+                android:textColor="#000"
+                android:textColorHint="#9D9D9D"
+                android:textSize="16dp"
+
+                />
+
+
+            <EditText
+                android:id="@+id/enterifsc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter IFSC"
+                android:textSize="16dp"
+                android:textColorHint="#9D9D9D"
+                android:paddingLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginHorizontal="16dp"
+                android:fontFamily="@font/segoeui"
+                android:paddingVertical="13dp"
+                android:paddingRight="10dp"
+                android:singleLine="true"
+                android:background="@drawable/border_grey"
+
+                />
+
+            <!--
+                        <TextView
+                            android:id="@+id/verify_ifsc"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Enter IFSC"
+                            android:textSize="16dp"
+                            android:layout_gravity="right"
+                            android:padding="20dp"
+                            android:fontFamily="@font/segoeui"
+                            android:textColor="#2E34C8"
+                            />
+            -->
+            <LinearLayout
+                android:id="@+id/loan_lay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginHorizontal="16dp"
+
+                android:weightSum="100">
+
+                <TextView
+                    android:id="@+id/state_bank"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/border_grey"
+                    android:drawableRight="@drawable/ic_down_arrow"
+                    android:fontFamily="@font/segoeui"
+                    android:hint="State"
+                    android:textColor="#000"
+                    android:paddingVertical="13dp"
+                    android:paddingLeft="10dp"
+                    android:visibility="visible"
+                    android:paddingRight="10dp"
+                    android:textColorHint="#9D9D9D"
+                    android:textSize="16dp"
+
+                    />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/relativename"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/border_grey"
+                android:drawableRight="@drawable/ic_down_arrow"
+                android:fontFamily="@font/segoeui"
+                android:hint="District"
+                android:paddingVertical="13dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:visibility="visible"
+                android:textColor="#000"
+                android:layout_marginHorizontal="16dp"
+                android:textColorHint="#9D9D9D"
+                android:textSize="16dp"
+
+                />
 
 
 
-        <EditText
-            android:id="@+id/age"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Bank Name"
-            android:textSize="16dp"
-            android:textColorHint="#9D9D9D"
-            android:layout_marginTop="10dp"
-            android:fontFamily="@font/segoeui"
-            android:paddingLeft="10dp"
-            android:paddingVertical="13dp"
-            android:background="@drawable/request_price_white_border2"
-            />
-        <EditText
-            android:id="@+id/castecategory"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Bank Branch Name"
-            android:textSize="16dp"
-            android:textColorHint="#9D9D9D"
-            android:paddingLeft="10dp"
-            android:layout_marginTop="10dp"
 
-            android:fontFamily="@font/segoeui"
-            android:paddingVertical="13dp"
-            android:background="@drawable/request_price_white_border2"
+            <EditText
+                android:id="@+id/farmertype"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/border_grey"
+                android:fontFamily="@font/segoeui"
+                android:hint="Savings Bank A/C Number"
+                android:paddingVertical="13dp"
+                android:paddingLeft="10dp"
+                android:singleLine="true"
+                android:inputType="number"
+                android:layout_marginHorizontal="16dp"
+                android:textColorHint="#9D9D9D"
+                android:textSize="16dp"
+                />
 
-            />
+            <EditText
+                android:id="@+id/farmercategory"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/border_grey"
+                android:fontFamily="@font/segoeui"
+                android:hint="Confirm Savings Bank A/C Number"
+                android:paddingVertical="13dp"
+                android:paddingLeft="10dp"
+                android:singleLine="true"
+                android:inputType="number"
+                android:textColorHint="#9D9D9D"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginBottom="10dp"
+                android:textSize="16dp"
+                />
 
-        <EditText
-            android:id="@+id/farmertype"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Savings Bank A/C Number"
-            android:textSize="16dp"
-            android:textColorHint="#9D9D9D"
-            android:paddingLeft="10dp"
-            android:layout_marginTop="10dp"
-            android:fontFamily="@font/segoeui"
-            android:paddingVertical="13dp"
-            android:background="@drawable/request_price_white_border2"
 
-            />
-        <EditText
-            android:id="@+id/farmercategory"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Confirm Savings Bank A/C Number"
-            android:layout_marginTop="10dp"
-            android:textSize="16dp"
-            android:textColorHint="#9D9D9D"
-            android:fontFamily="@font/segoeui"
-            android:paddingLeft="10dp"
-            android:paddingVertical="13dp"
-            android:background="@drawable/request_price_white_border2"
+            <!-- </LinearLayout>
+    </ScrollView>-->
 
-            />
 
-    </LinearLayout>
         </LinearLayout>
     </ScrollView>
-
-
-
     <LinearLayout
         android:id="@+id/continuebtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/border_filled_red_not_curved"
-        android:orientation="horizontal"
         android:gravity="center"
-        >
+        android:orientation="horizontal">
+
         <TextView
             android:id="@+id/apply_loan"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/segoeui"
+            android:gravity="center"
+            android:padding="10dp"
             android:text="Continue"
             android:textAllCaps="true"
-            android:textSize="20dp"
-            android:gravity="center"
-            android:padding="15dp"
-            android:fontFamily="@font/segoeui"
             android:textColor="#ffffff"
-            />
+            android:drawablePadding="10dp"
+            android:textSize="20dp" />
 
-<ImageView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:gravity="center"
-    android:src="@drawable/ic_right_arrow2"/>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:src="@drawable/ic_right_arrow2" />
     </LinearLayout>
-
 
 </LinearLayout>

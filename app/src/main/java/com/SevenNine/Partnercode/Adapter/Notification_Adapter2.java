@@ -17,7 +17,7 @@ import android.widget.TextView;
 import com.SevenNine.Partnercode.Bean.Notification_recy_bean;
 import com.SevenNine.Partnercode.Fragment.Notification_Recyc_Fragment;
 import com.SevenNine.Partnercode.R;
-import com.google.firebase.messaging.FirebaseMessaging;
+//import com.google.firebase.messaging.FirebaseMessaging;
 
 import java.util.List;
 
@@ -102,7 +102,7 @@ public class Notification_Adapter2 extends RecyclerView.Adapter<Notification_Ada
             @Override
             public void onClick(View view) {
                 if (holder.switch1.isChecked()){
-                    FirebaseMessaging.getInstance().subscribeToTopic(products.getNoti_code());
+                  //  FirebaseMessaging.getInstance().subscribeToTopic(products.getNoti_code());
 
                 }else {
 

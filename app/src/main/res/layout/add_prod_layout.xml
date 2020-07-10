@@ -140,6 +140,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
                     android:text="MRP"
+                    android:drawablePadding="5dp"
+                    android:drawableRight="@drawable/ic_astrick_icon"
                     android:textColor="#9D9D9D"
                     android:textSize="15dp" />
 
@@ -162,6 +164,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
                     android:text="Price"
+                    android:drawablePadding="5dp"
+                    android:drawableRight="@drawable/ic_astrick_icon"
                     android:textColor="#9D9D9D"
                     android:textSize="15dp" />
 
@@ -183,6 +187,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
                     android:text="Quantity"
+                    android:drawablePadding="5dp"
+                    android:drawableRight="@drawable/ic_astrick_icon"
                     android:textColor="#9D9D9D"
                     android:textSize="15dp" />
 
@@ -200,6 +206,110 @@
 
                     />
 
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="20dp"
+                    >
+                    <CheckBox
+                        android:id="@+id/offer_checkbox"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Offers Availible"
+                        android:fontFamily="@font/segoeui"
+                        android:textColor="#9D9D9D"
+
+                        />
+
+                    <LinearLayout
+                        android:id="@+id/offer_lay"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginLeft="5dp"
+                        android:visibility="gone"
+                        >
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:text="Offer Price in percentage"
+                            android:drawablePadding="5dp"
+                            android:drawableRight="@drawable/ic_astrick_icon"
+                            android:textColor="#9D9D9D"
+                            android:textSize="15dp" />
+
+
+                        <EditText
+                            android:id="@+id/off_price"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/segoeui"
+                            android:maxLength="30"
+                            android:singleLine="true"
+                            android:inputType="number"
+                            android:textColorHint="#C7C7C7"
+                            android:textSize="18dp"
+
+                            />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:text="Expiry Date"
+                            android:drawablePadding="5dp"
+                            android:drawableRight="@drawable/ic_astrick_icon"
+                            android:textColor="#9D9D9D"
+                            android:textSize="15dp" />
+
+
+                        <TextView
+                            android:id="@+id/expiry_date"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/segoeui"
+                            android:singleLine="true"
+                            android:editable="false"
+                            android:textColor="#000"
+                            android:layout_marginTop="10dp"
+                            android:textColorHint="#9d9d9d"
+                            android:textSize="18dp"
+
+                            />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginBottom="10dp"
+                            android:background="#9D9D9D" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="Delivery Charges in Rs"
+                    android:textColor="#9D9D9D"
+                    android:textSize="15dp" />
+
+
+                <EditText
+                    android:id="@+id/delivery_charge"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/segoeui"
+                    android:maxLength="30"
+                    android:singleLine="true"
+                    android:inputType="number"
+                    android:textColorHint="#C7C7C7"
+                    android:textSize="18dp"
+
+                    />
                <!-- <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

@@ -3,6 +3,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.RequiresApi;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.DefaultItemAnimator;
@@ -73,11 +74,12 @@ public class What_Are_looking extends Fragment {
         back_feed.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                selectedFragment = HomeFragment.newInstance();
+                FragmentManager fm = getFragmentManager();
+                fm.popBackStack();
+               /* selectedFragment = HomeFragment.newInstance();
                 FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
                 transaction.replace(R.id.frame_layout1, selectedFragment);
-                transaction.commit();
+                transaction.commit();*/
             }
         });
 
@@ -90,11 +92,12 @@ public class What_Are_looking extends Fragment {
             public boolean onKey(View v, int keyCode, KeyEvent event) {
                 if( keyCode == KeyEvent.KEYCODE_BACK && event.getAction() == KeyEvent.ACTION_UP) {
 
-                    selectedFragment = HomeFragment.newInstance();
+                   /* selectedFragment = HomeFragment.newInstance();
                     FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
                     transaction.replace(R.id.frame_layout1, selectedFragment);
-                    transaction.commit();
-
+                    transaction.commit();*/
+                    FragmentManager fm = getFragmentManager();
+                    fm.popBackStack();
                     return true;
                 }
 

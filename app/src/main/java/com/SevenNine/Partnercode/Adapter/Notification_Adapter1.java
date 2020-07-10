@@ -21,7 +21,7 @@ import com.SevenNine.Partnercode.SessionManager;
 import com.SevenNine.Partnercode.Urls;
 import com.SevenNine.Partnercode.Volly_class.Crop_Post;
 import com.SevenNine.Partnercode.Volly_class.VoleyJsonObjectCallback;
-import com.google.firebase.messaging.FirebaseMessaging;
+//import com.google.firebase.messaging.FirebaseMessaging;
 
 import org.json.JSONObject;
 
@@ -91,7 +91,7 @@ public class Notification_Adapter1 extends RecyclerView.Adapter<Notification_Ada
         holder.actninfo.setText(products.getNoti_txt());
 
 
-        holder.switch1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+       /* holder.switch1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
 
@@ -107,7 +107,7 @@ public class Notification_Adapter1 extends RecyclerView.Adapter<Notification_Ada
 
             }
         });
-
+*/
 
 
      /*   holder.switch1.setOnClickListener(new View.OnClickListener() {
