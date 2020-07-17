@@ -22,6 +22,7 @@ public class Urls {
  public static final String GetAllCrops=ROOT_URL+"Crops/GetCrops";
  public static final String AddToCart=ROOT_URL+"Order/AddToCart";
  public static final String Languages=ROOT_URL+"MasterTable/GetLanguages";
+ public static final String AddUpdateBankDetails=ROOT_URL+"MasterTable/AddUpdateBankDetails";
  public static final String Forgot_Password=ROOT_URL+"Auth/ForgotPassword";
  public static final String ChangePassword=ROOT_URL+"Auth/ChangePassword";
  public static final String ResendOTP=ROOT_URL +"Auth/ResendOTPforUser";
@@ -40,6 +41,9 @@ public class Urls {
  public static final String GetOrderList =ROOT_URL +"Partner/GetOrdersFromCart";
  public static final String Get7NineWeeklyPaymentDetails =ROOT_URL +"Partner/Get7NineWeeklyPaymentDetails";
  public static final String Get7NineTodaysPaymentDetails =ROOT_URL +"Partner/Get7NineTodaysPaymentDetails";
+ public static final String GetFiltersOnTodayPaymentDetails =ROOT_URL +"Partner/GetFiltersOnTodayPaymentDetails";
+ public static final String GetFiltersOnThisWeekPaymentDetails =ROOT_URL +"Partner/GetFiltersOnThisWeekPaymentDetails";
+ public static final String GetPaymentDashboardDetails =ROOT_URL +"Partner/GetPaymentDashboardDetails";
  public static final String DeleteProductDetails =ROOT_URL +"Partner/DeleteProductDetails";
  public static final String GetProductDetails =ROOT_URL +"Partner/GetProductDetails";
  public static final String GetOfferDetails =ROOT_URL +"Partner/GetOfferDetails";

@@ -14,6 +14,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -46,6 +47,7 @@ public class OffersListFragment extends Fragment {
     LinearLayout back_feed,linearLayout;
     JSONArray get_categorylist_array;
     JSONArray get_soiltype;
+    ImageView list_prod;
     public static String sellingcatId,sellnavigation;
     SessionManager sessionManager;
 
@@ -65,6 +67,7 @@ public class OffersListFragment extends Fragment {
 
         recyclerView_main=view.findViewById(R.id.recycler_cat_detail);
         name=view.findViewById(R.id.name);
+        list_prod=view.findViewById(R.id.list_prod);
 sessionManager=new SessionManager(getActivity());
         linearLayout = view.findViewById(R.id.linearLayout);
         toolbar_title = view.findViewById(R.id.toolbar_title);
@@ -73,6 +76,7 @@ sessionManager=new SessionManager(getActivity());
         // sellingdetailsid=Inventory_Details_Fragment.SId;
     //    sellingcatId=getArguments().getString("sellingCatId");
         toolbar_title.setText("Offers");
+        list_prod.setVisibility(View.GONE);
         back_feed.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

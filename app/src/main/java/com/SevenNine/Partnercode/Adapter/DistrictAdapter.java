@@ -11,6 +11,8 @@ import android.widget.TextView;
 
 
 import com.SevenNine.Partnercode.Bean.StateBean;
+import com.SevenNine.Partnercode.Fragment.AddNewAddressFragment;
+import com.SevenNine.Partnercode.Fragment.Add_NewBankDetails_Fragment;
 import com.SevenNine.Partnercode.Fragment.NewAddressFragment;
 import com.SevenNine.Partnercode.R;
 
@@ -51,9 +53,20 @@ public class DistrictAdapter extends RecyclerView.Adapter<DistrictAdapter.MyStat
 
                 /*Add_New_Address_Fragment.district_txt.setText(holder.statename.getText().toString());
                 Add_New_Address_Fragment.drawer.closeDrawers();*/
+                if (Add_NewBankDetails_Fragment.page!=null){
+                   // AddNewAddressFragment.ed_dstrt.setText(holder.statename.getText().toString());
+                  //  AddNewAddressFragment.drawer.closeDrawers();
 
-                NewAddressFragment.district.setText(holder.statename.getText().toString());
-                NewAddressFragment.drawer.closeDrawers();
+                    Add_NewBankDetails_Fragment.district.setText(holder.statename.getText().toString());
+                    Add_NewBankDetails_Fragment.drawer.closeDrawers();
+                }else {
+                     AddNewAddressFragment.ed_dstrt.setText(holder.statename.getText().toString());
+                      AddNewAddressFragment.drawer.closeDrawers();
+                  //  NewAddressFragment.district.setText(holder.statename.getText().toString());
+                  //  NewAddressFragment.drawer.closeDrawers();
+                }
+               // NewAddressFragment.district.setText(holder.statename.getText().toString());
+              //  NewAddressFragment.drawer.closeDrawers();
 
             }
         });

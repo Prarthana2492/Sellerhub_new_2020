@@ -4,9 +4,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/main_layout"
     android:layout_width="match_parent"
-    android:layout_height="230dp"
+    android:layout_height="wrap_content"
     android:orientation="vertical"
-
+    android:paddingBottom="20dp"
     android:background="@drawable/border_empty_curve"
     >
 
@@ -94,13 +94,13 @@
         android:padding="6dp"
         >
         <TextView
-            android:id="@+id/sort_ascendi"
+            android:id="@+id/all"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="10"
             android:background="#fff"
             android:fontFamily="@font/segoeui"
-            android:text="Sort by Ascending"
+            android:text="All"
             android:textSize="14dp"
             android:padding="10dp"
             android:gravity="start"
@@ -123,13 +123,13 @@
         android:padding="6dp"
         >
         <TextView
-            android:id="@+id/sort_desendi"
+            android:id="@+id/today"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="10"
             android:background="#fff"
             android:fontFamily="@font/segoeui"
-            android:text="Sort by Descending"
+            android:text="Today"
             android:textSize="14dp"
             android:padding="10dp"
             android:gravity="start"
@@ -153,18 +153,19 @@
         >
 
         <TextView
-            android:id="@+id/credited_to"
+            android:id="@+id/last_one_week"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="10"
             android:background="#fff"
             android:fontFamily="@font/segoeui"
-            android:text="Credited To"
+            android:text="Last one week"
             android:textSize="14dp"
             android:padding="10dp"
             android:gravity="start"
             android:textColor="#000000"
             />
+
 
     </LinearLayout>
 
@@ -175,6 +176,67 @@
         android:background="#e5e5e5"
         />
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="6dp"
+        >
+
+        <TextView
+            android:id="@+id/last_one_month"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="10"
+            android:background="#fff"
+            android:fontFamily="@font/segoeui"
+            android:text="Last 1 month"
+            android:textSize="14dp"
+            android:padding="10dp"
+            android:gravity="start"
+            android:textColor="#000000"
+            />
+
+
+    </LinearLayout>
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#e5e5e5"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="6dp"
+        >
+
+        <TextView
+            android:id="@+id/last_six_month"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="10"
+            android:background="#fff"
+            android:fontFamily="@font/segoeui"
+            android:text="Last 6 month"
+            android:textSize="14dp"
+            android:padding="10dp"
+            android:gravity="start"
+            android:textColor="#000000"
+            />
+
+
+    </LinearLayout>
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#e5e5e5"
+        />
 
 
 </LinearLayout>

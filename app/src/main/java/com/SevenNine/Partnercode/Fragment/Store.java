@@ -141,7 +141,7 @@ public class Store extends Fragment {
                 final Dialog dialog = new Dialog(getActivity());
                 dialog.setContentView(R.layout.layout_filterpopup);
                 dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-                final TextView rec = (TextView) dialog.findViewById(R.id.recen_added);
+                final TextView rec = (TextView) dialog.findViewById(R.id.credited_to);
                 final TextView asce = (TextView)dialog.findViewById(R.id.sort_ascendi) ;
                 final TextView desc = (TextView)dialog.findViewById(R.id.sort_desendi) ;
                 //   final TextView popuptxt = (TextView)dialog.findViewById(R.id.popup_heading) ;

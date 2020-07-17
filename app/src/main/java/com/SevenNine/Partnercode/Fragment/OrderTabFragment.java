@@ -8,6 +8,7 @@ import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.SevenNine.Partnercode.R;
 import com.SevenNine.Partnercode.TabLayoutAdapter.PagerOrder;
@@ -23,6 +24,7 @@ public class OrderTabFragment extends Fragment implements TabLayout.OnTabSelecte
     JSONObject jsonObject;
     String bmmvendorstoreid;
     public static TabLayout tabLayout;
+    public static TextView last_month_text;
     private ViewPager viewPager;
 
     public static OrderTabFragment newInstance() {

@@ -798,7 +798,7 @@ public class AddNewAddressFragment extends Fragment {
 
             System.out.println("disssisiisi  "+jsonObject);
 
-            Crop_Post.crop_posting(getActivity(), Urls.Taluks, jsonpost, new VoleyJsonObjectCallback() {
+            Crop_Post.crop_posting(getActivity(), Urls.Blocks, jsonpost, new VoleyJsonObjectCallback() {
                 @Override
                 public void onSuccessResponse(JSONObject result) {
                     System.out.println("aaaaaaaaaaaaafffffffffffff"+result);
@@ -984,14 +984,16 @@ public class AddNewAddressFragment extends Fragment {
 
             jsonObject.put("MobileNo",mobile.getText().toString());
             jsonObject.put("FullName",name.getText().toString());
-            jsonObject.put("AddressType",addr_type);
+            jsonObject.put("AddressType",1);
+            System.out.println("Add_New_AddresssssssssssssssssjsonObject111"+jsonObject);
+
             jsonObject.put("PinCode",pincode_no.getText().toString());
             jsonObject.put("Address",house_numb.getText().toString());
             jsonObject.put("LandMark",landmrk.getText().toString());
             jsonObject.put("UserId",sessionManager.getRegId("userId"));
             jsonObject.put("CreatedBy",sessionManager.getRegId("userId"));
-            jsonObject.put("CustomerLatitude","");
-            jsonObject.put("CustomerLongitude","");
+          //  jsonObject.put("CustomerLatitude","");
+          //  jsonObject.put("CustomerLongitude","");
 
 
             if (StateApdater.stateid==null){

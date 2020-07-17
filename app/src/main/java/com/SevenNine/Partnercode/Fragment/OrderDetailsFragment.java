@@ -108,7 +108,7 @@ public class OrderDetailsFragment extends Fragment {
         recyclerView.setLayoutManager(mLayoutManager_farm);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
 
-        OrderDetailBean bean=new OrderDetailBean(getArguments().getString("ProdName"),getArguments().getString("quantity"),getArguments().getString("Amount"),"₹0","₹0",getArguments().getString("prod_img"),"","");
+        OrderDetailBean bean=new OrderDetailBean(getArguments().getString("ProdName"),getArguments().getString("quantity"),getArguments().getString("Amount"),getArguments().getString("delivery_charges"),getArguments().getString("uom"),getArguments().getString("prod_img"),"","");
         newOrderBeansList.add(bean);
 
         madapter=new OrderDetailsAdapter(getActivity(),newOrderBeansList);

@@ -11,6 +11,8 @@ import android.widget.TextView;
 
 
 import com.SevenNine.Partnercode.Bean.StateBean;
+import com.SevenNine.Partnercode.Fragment.AddNewAddressFragment;
+import com.SevenNine.Partnercode.Fragment.Add_NewBankDetails_Fragment;
 import com.SevenNine.Partnercode.Fragment.NewAddressFragment;
 import com.SevenNine.Partnercode.R;
 
@@ -49,9 +51,18 @@ public class StateApdater extends RecyclerView.Adapter<StateApdater.MyStateHolde
                 stateid=stateBean.getId();
                /* Add_New_Address_Fragment.state_txt.setText(holder.statename.getText().toString());
                 Add_New_Address_Fragment.drawer.closeDrawers();*/
+                if (Add_NewBankDetails_Fragment.page!=null){
+                    Add_NewBankDetails_Fragment.state.setText(holder.statename.getText().toString());
+                    Add_NewBankDetails_Fragment.drawer.closeDrawers();
 
-                NewAddressFragment.state.setText(holder.statename.getText().toString());
-                NewAddressFragment.drawer.closeDrawers();
+                }else {
+                    AddNewAddressFragment.ed_state.setText(holder.statename.getText().toString());
+                    AddNewAddressFragment.drawer.closeDrawers();
+                  //  NewAddressFragment.state.setText(holder.statename.getText().toString());
+                  //  NewAddressFragment.drawer.closeDrawers();
+                }
+              //  NewAddressFragment.state.setText(holder.statename.getText().toString());
+              //  NewAddressFragment.drawer.closeDrawers();
 
             }
         });

@@ -544,7 +544,7 @@ public class Add_NewBankDetails_Fragment extends Fragment {
                 //jsonObject.put("BankDetailsId", BankAccount_Adapter.bank_id_ed);
             }
             System.out.println("poooooossttiing_parameters11"+jsonObject);
-            Login_post.login_posting(getActivity(), "http://52.66.200.98:8383/api/MasterTable/AddUpdateBankDetails", jsonObject, new VoleyJsonObjectCallback() {
+            Login_post.login_posting(getActivity(), Urls.AddUpdateBankDetails, jsonObject, new VoleyJsonObjectCallback() {
                 @Override
                 public void onSuccessResponse(JSONObject result) {
                     System.out.println("111111useruuuu" + result);

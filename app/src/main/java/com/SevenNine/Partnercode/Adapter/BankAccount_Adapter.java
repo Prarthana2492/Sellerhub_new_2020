@@ -207,7 +207,8 @@ public class BankAccount_Adapter extends RecyclerView.Adapter<BankAccount_Adapte
 
                                         if(status.equals("1")){
                                             mBottomSheetDialog.dismiss();
-
+                                            productList.remove(position);
+                                            notifyDataSetChanged();
                                            /* int duration = 1000;
                                             Snackbar snackbar = Snackbar
                                                     .make(linearLayout, "Bank", duration);
@@ -225,8 +226,7 @@ public class BankAccount_Adapter extends RecyclerView.Adapter<BankAccount_Adapte
                                             snackbar.show();*/
 
                                         }
-                                        productList.remove(position);
-                                        notifyDataSetChanged();
+
 
                                     }catch (Exception e){
                                         e.printStackTrace();

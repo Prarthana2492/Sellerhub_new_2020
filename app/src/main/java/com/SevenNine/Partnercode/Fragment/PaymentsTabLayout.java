@@ -7,6 +7,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
 import android.view.KeyEvent;
@@ -15,6 +16,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.SevenNine.Partnercode.R;
 import com.SevenNine.Partnercode.TabLayoutAdapter.PagerPayment;
@@ -29,7 +31,7 @@ public class PaymentsTabLayout extends Fragment implements TabLayout.OnTabSelect
 
     JSONObject jsonObject;
     String bmmvendorstoreid;
-    Text last_month_text;
+    public static TextView last_month_text;
     public static TabLayout tabLayout;
     private ViewPager viewPager;
     LinearLayout back_feed;
@@ -57,11 +59,16 @@ public class PaymentsTabLayout extends Fragment implements TabLayout.OnTabSelect
         tabLayout.setOnTabSelectedListener(this);
 
         viewPager = view.findViewById(R.id.simpleViewPager_tab);
+
+
+
         back_feed.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                FragmentManager fm = getFragmentManager();
-                fm.popBackStack();
+                selectedFragment = HomeFragment.newInstance();
+                FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
+                transaction.replace(R.id.frame_layout1, selectedFragment);
+                transaction.commit();
             }
         });
 

@@ -51,7 +51,7 @@ public class NewOrderAdapter extends RecyclerView.Adapter<NewOrderAdapter.MyView
 
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
-        public TextView prod_name,dispatched_date,next,accept,quantity,mrp;
+        public TextView prod_name,dispatched_date,next,accept,quantity,mrp,mrp_txt,off_text;
         public ImageView image;
 
 
@@ -64,6 +64,8 @@ public class NewOrderAdapter extends RecyclerView.Adapter<NewOrderAdapter.MyView
             accept=view.findViewById(R.id.accept);
             quantity=view.findViewById(R.id.quantity);
             mrp=view.findViewById(R.id.mrp);
+            mrp_txt=view.findViewById(R.id.mrp_txt);
+            off_text=view.findViewById(R.id.off_text);
            sessionManager=new SessionManager(activity);
         }
 
@@ -92,6 +94,22 @@ public class NewOrderAdapter extends RecyclerView.Adapter<NewOrderAdapter.MyView
         holder.mrp.setText("₹"+products1.getFirstname());
         holder.mrp.setPaintFlags(holder.mrp.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
 
+        if (products1.getFirstname().equals(products1.getAmount())){
+            holder.mrp.setVisibility(View.INVISIBLE);
+            holder.mrp_txt.setVisibility(View.INVISIBLE);
+        }else{
+            holder.mrp.setText("₹"+products1.getFirstname());
+            holder.mrp.setBackground(activity.getResources().getDrawable(R.drawable.line));
+            //  holder.actual_price.setPaintFlags(holder.actual_price.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
+        }
+
+        if (products1.getUom().equals("0")){
+            holder.off_text.setVisibility(View.GONE);
+        }else{
+            holder.off_text.setVisibility(View.VISIBLE);
+            holder.off_text.setText(products1.getUom()+"%"+"\n off");
+
+        }
         Glide.with(activity).load(products1.getProducts_Icon())
                 .thumbnail(0.5f)
                 // .crossFade()
@@ -109,9 +127,10 @@ public class NewOrderAdapter extends RecyclerView.Adapter<NewOrderAdapter.MyView
                 bundle.putString("ProdName",products1.getProd_name());
                 bundle.putString("quantity",products1.getQuantity());
                 bundle.putString("product_info",products1.getProductInfo());
-                bundle.putString("prod_img",products1.getProd_img());
+                bundle.putString("prod_img",products1.getProducts_Icon());
                 bundle.putString("pay_mode",products1.getMode());
                 bundle.putString("uom",products1.getUom());
+                bundle.putString("delivery_charges",products1.getSellingCategoryName());
                 selectedFragment = OrderDetailsFragment.newInstance();
                 FragmentTransaction transaction = ((FragmentActivity)activity).getSupportFragmentManager().beginTransaction();
                 transaction.replace(R.id.frame_layout1, selectedFragment);

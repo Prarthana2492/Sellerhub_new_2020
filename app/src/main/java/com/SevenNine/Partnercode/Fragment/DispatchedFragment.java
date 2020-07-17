@@ -37,7 +37,7 @@ public class DispatchedFragment extends Fragment {
 
     public static List<NewOrderBean> newOrderBeansList = new ArrayList<>();
     public static RecyclerView recyclerView;
-    LinearLayout back_feed;
+    LinearLayout back_feed,filter_lay;
     SessionManager sessionManager;
     AcceptedOrderAdapter madapter;
     JSONObject lngObject;
@@ -54,7 +54,9 @@ public class DispatchedFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.new_order_recy, container, false);
         recyclerView=view.findViewById(R.id.new_order_recy);
+        filter_lay=view.findViewById(R.id.filter_lay);
 
+        filter_lay.setVisibility(View.GONE);
         sessionManager=new SessionManager(getActivity());
         Window window = getActivity().getWindow();
         window.setStatusBarColor(ContextCompat.getColor(getActivity(),R.color.colorPrimary));

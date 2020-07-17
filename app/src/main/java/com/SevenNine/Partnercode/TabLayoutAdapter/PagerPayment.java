@@ -7,6 +7,7 @@ import android.support.v4.app.FragmentStatePagerAdapter;
 import com.SevenNine.Partnercode.Fragment.PaymentDetailsFragment;
 import com.SevenNine.Partnercode.Fragment.PaymentThisweekFragment;
 import com.SevenNine.Partnercode.Fragment.PaymentTodayFragment;
+import com.SevenNine.Partnercode.Fragment.PaymentsTabLayout;
 
 /**
  * Created by Belal on 2/3/2016.
@@ -38,12 +39,16 @@ public class PagerPayment extends FragmentStatePagerAdapter {
 
             case 0:
                 System.out.println("llllllllllllllllllll1");
+               // PaymentsTabLayout.last_month_text.setText("Last 6 Month");
+
                 PaymentDetailsFragment tab1 = new PaymentDetailsFragment();
                 return tab1;
             case 1:
+               // PaymentsTabLayout.last_month_text.setText("Today");
                 PaymentTodayFragment scheduledTabFragment=new PaymentTodayFragment();
                 return scheduledTabFragment;
             case 2:
+               // PaymentsTabLayout.last_month_text.setText("This Week");
                 PaymentThisweekFragment tab2 = new PaymentThisweekFragment();
                 return tab2;
            /* case 5:

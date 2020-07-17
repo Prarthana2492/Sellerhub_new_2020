@@ -34,7 +34,7 @@ public class OrderDetailsAdapter extends RecyclerView.Adapter<OrderDetailsAdapte
 
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
-        public TextView prod_name,quantity,amount,shipping_fee,shipping_iscount;
+        public TextView prod_name,quantity,amount,shipping_fee,shipping_iscount,off_text;
         public ImageView image,next;
         View view_line;
 
@@ -45,7 +45,8 @@ public class OrderDetailsAdapter extends RecyclerView.Adapter<OrderDetailsAdapte
             amount=view.findViewById(R.id.amount);
             quantity=view.findViewById(R.id.quantity);
             shipping_fee=view.findViewById(R.id.shipping);
-            shipping_iscount=view.findViewById(R.id.shipping_iscount);
+            off_text=view.findViewById(R.id.off_text);
+           // shipping_iscount=view.findViewById(R.id.shipping_iscount);
             view_line=view.findViewById(R.id.view_line);
 
         }
@@ -68,8 +69,15 @@ public class OrderDetailsAdapter extends RecyclerView.Adapter<OrderDetailsAdapte
       holder.prod_name.setText(products1.getProd_name());
       holder.quantity.setText("Quantity : "+products1.getQuantity());
       holder.amount.setText("₹"+Double.parseDouble(products1.getAmount()));
-      holder.shipping_fee.setText("Shipping Fee: "+products1.getShipping_fee());
-      holder.shipping_iscount.setText("Shipping iscount: "+products1.getShippng_iscount());
+      holder.shipping_fee.setText("Delivery Charges: "+products1.getShipping_fee());
+        if (products1.getShippng_iscount().equals("0")){
+            holder.off_text.setVisibility(View.GONE);
+        }else{
+            holder.off_text.setVisibility(View.VISIBLE);
+            holder.off_text.setText(products1.getShippng_iscount()+"%"+"\n off");
+
+        }
+    //  holder.shipping_iscount.setText("Shipping iscount: "+products1.getShippng_iscount());
 if (position==(productList.size()-1)){
     holder.view_line.setVisibility(View.GONE);
 }

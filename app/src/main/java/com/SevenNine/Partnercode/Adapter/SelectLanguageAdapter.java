@@ -85,7 +85,7 @@ public class SelectLanguageAdapter extends RecyclerView.Adapter<SelectLanguageAd
 
 
         holder.lang_txt.setText(products.getVendor());
-        holder.lang_letter.setText(products.getLang_letter());
+     //   holder.lang_letter.setText(products.getLang_letter());
         lng_list = products.getVendor();
 
 

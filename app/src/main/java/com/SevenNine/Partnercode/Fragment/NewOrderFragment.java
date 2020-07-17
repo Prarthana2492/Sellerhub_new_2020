@@ -39,7 +39,7 @@ public class NewOrderFragment extends Fragment {
 
     public static List<NewOrderBean> newOrderBeansList = new ArrayList<>();
     public static RecyclerView recyclerView;
-    LinearLayout back_feed;
+    LinearLayout back_feed,filter_lay;
     SessionManager sessionManager;
     NewOrderAdapter madapter;
     JSONObject lngObject;
@@ -56,6 +56,9 @@ public class NewOrderFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.new_order_recy, container, false);
         recyclerView=view.findViewById(R.id.new_order_recy);
+        filter_lay=view.findViewById(R.id.filter_lay);
+
+        filter_lay.setVisibility(View.GONE);
 
         sessionManager=new SessionManager(getActivity());
         Window window = getActivity().getWindow();
@@ -132,9 +135,9 @@ public class NewOrderFragment extends Fragment {
                             String TxnId=jsonObject1.getString("PayUTransactionId");
                             String Amount=jsonObject1.getString("Amount");
                             String SelectedQuantity=jsonObject1.getString("Quantity");
-                            String UnitOfPrice=jsonObject1.getString("UnitOfPrice");
+                            String OfferPrice=jsonObject1.getString("OfferPrice");
                             String ProductInfo=jsonObject1.getString("CustAddress");
-                            String SellingCategoryName=jsonObject1.getString("SellingCategoryName");
+                            String DeliveryCharges=jsonObject1.getString("DeliveryCharges");
                             String SellingListName=jsonObject1.getString("SellingListName");
                             String ProductDescription=jsonObject1.getString("ProductDescription");
                             String Brand=jsonObject1.getString("Brand");
@@ -145,8 +148,8 @@ public class NewOrderFragment extends Fragment {
                             /*PreferedBranchBean bean=new PreferedBranchBean(Name,StreeAddress,StreeAddress1,State,Pincode,"",Id);
                             newOrderBeansList.add(bean);*/
 
-                            NewOrderBean img1=new NewOrderBean(ProductName,CreatedOn,SellingListIcon,TxnId,Amount,SelectedQuantity,UnitOfPrice,ProductInfo,mode,
-                                    MRP,SellingCategoryName,ProductIcon,SellingListName,Brand,ProductDescription);
+                            NewOrderBean img1=new NewOrderBean(ProductName,CreatedOn,SellingListIcon,TxnId,Amount,SelectedQuantity,OfferPrice,ProductInfo,mode,
+                                    MRP,DeliveryCharges,ProductIcon,SellingListName,Brand,ProductDescription);
                             newOrderBeansList.add(img1);
 
                           //  System.out.println("adreess_list_size"+newOrderBeansList.size());

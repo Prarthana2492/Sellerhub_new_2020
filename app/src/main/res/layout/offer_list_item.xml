@@ -53,6 +53,7 @@
                     android:gravity="center"
                     android:fontFamily="@font/segoeui"
                     android:textSize="12dp"
+                    android:layout_marginLeft="5dp"
                     android:textColor="#fff"
                     />
                 </LinearLayout>

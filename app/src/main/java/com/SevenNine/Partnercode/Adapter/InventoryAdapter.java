@@ -99,7 +99,8 @@ public class InventoryAdapter extends RecyclerView.Adapter<InventoryAdapter.MyVi
             holder.mrp_text.setVisibility(View.INVISIBLE);
         }else{
             holder.actual_price.setText("₹"+products.getMrp());
-            holder.actual_price.setPaintFlags(holder.actual_price.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
+            holder.actual_price.setBackground(activity.getResources().getDrawable(R.drawable.line));
+          //  holder.actual_price.setPaintFlags(holder.actual_price.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
         }
         if (products.getOffer_price().equals("0")){
             holder.off_text.setVisibility(View.GONE);

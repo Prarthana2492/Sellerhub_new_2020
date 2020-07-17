@@ -10,6 +10,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.SevenNine.Partnercode.Bean.StateBean;
+import com.SevenNine.Partnercode.Fragment.AddNewAddressFragment;
 import com.SevenNine.Partnercode.Fragment.NewAddressFragment;
 import com.SevenNine.Partnercode.R;
 
@@ -48,8 +49,10 @@ public class VillageAdapter extends RecyclerView.Adapter<VillageAdapter.HoblisMy
             @Override
             public void onClick(View view) {
                villageid = stateBean.getId();
-                NewAddressFragment.village.setText(holder.statename.getText().toString());
-                NewAddressFragment.drawer.closeDrawers();
+                AddNewAddressFragment.ed_vill.setText(holder.statename.getText().toString());
+                AddNewAddressFragment.drawer.closeDrawers();
+             //   NewAddressFragment.village.setText(holder.statename.getText().toString());
+             //   NewAddressFragment.drawer.closeDrawers();
 
             }
         });
