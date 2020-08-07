@@ -5,6 +5,7 @@ import android.app.Dialog;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.drawable.ColorDrawable;
+import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTransaction;
@@ -17,6 +18,9 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.SevenNine.Partnercode.Bean.InventoryBean;
+import com.SevenNine.Partnercode.Fragment.AddProductFragment;
+import com.SevenNine.Partnercode.Fragment.HomeFragment;
+import com.SevenNine.Partnercode.Fragment.PreviewProductDetails;
 import com.SevenNine.Partnercode.Fragment.What_Are_looking;
 import com.SevenNine.Partnercode.R;
 import com.SevenNine.Partnercode.SessionManager;
@@ -39,6 +43,7 @@ public class OffersAdapter extends RecyclerView.Adapter<OffersAdapter.MyViewHold
     public static String prod_name,mrp,brand,prod_id,amount,quantity,status,ProductId;
     SessionManager sessionManager;
     LinearLayout linear_layout;
+    public static String product_name_st,product_price_st,product_mrp_st,prod_img_st,prod_brand_st,prod_quant,off_price;
 
 
     public OffersAdapter(Activity activity, List<InventoryBean> moviesList) {
@@ -89,7 +94,7 @@ public class OffersAdapter extends RecyclerView.Adapter<OffersAdapter.MyViewHold
 
         holder.name.setText(products.getProd_name());
         holder.weight.setText(products.getQuantity()+" Kg");
-        holder.price.setText("Rs "+products.getAmount());
+        holder.price.setText("Rs "+products.getOffer_price());
         if (products.getMrp().equals(products.getAmount())){
             holder.actual_price.setVisibility(View.INVISIBLE);
             holder.mrp_text.setVisibility(View.INVISIBLE);
@@ -98,7 +103,44 @@ public class OffersAdapter extends RecyclerView.Adapter<OffersAdapter.MyViewHold
             holder.actual_price.setPaintFlags(holder.actual_price.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
         }
       //  holder.actual_price.setText("₹"+products.getMrp());
-        holder.off_text.setText(products.getOffer_price()+"%"+"\n off");
+      //  holder.off_text.setText(products.getOffer_price()+"%"+"\n off");
+        double off_price_calcu=(((Double.parseDouble(products.getMrp())-Double.parseDouble(products.getOffer_price()))/(Double.parseDouble(products.getMrp())))*100);
+        System.out.println("jhfdiueshfr"+off_price_calcu);
+        int offer_per_int=(int)off_price_calcu;
+        String off_price_text=String.valueOf(offer_per_int);
+        holder.off_text.setText(off_price_text+"%");
+
+        holder.item.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                status="Preview";
+                product_name_st=products.getProd_name();
+                prod_brand_st=products.getBrand();
+                product_price_st=products.getAmount();
+                product_mrp_st=products.getMrp();
+                prod_img_st=products.getProd_icon();
+                prod_quant=products.getQuantity();
+                off_price=products.getOffer_price();
+
+               /* Bundle bundle=new Bundle();
+                bundle.putString("product_name_st",products.getProd_name());
+                bundle.putString("prod_brand_st",products.getBrand());
+                bundle.putString("product_price_st",products.getAmount());
+                bundle.putString("product_mrp_st",products.getMrp());
+                bundle.putString("prod_img_st",products.getProd_icon());
+                bundle.putString("prod_quant",products.getQuantity());*/
+
+               Bundle bundle=new Bundle();
+               bundle.putString("status","offer");
+                selectedFragment = HomeFragment.newInstance();
+                FragmentTransaction transaction = ((FragmentActivity)activity).getSupportFragmentManager().beginTransaction();
+                transaction.replace(R.id.frame_layout1, selectedFragment);
+                transaction.addToBackStack("spicescateory12");
+                selectedFragment.setArguments(bundle);
+                transaction.commit();
+            }
+        });
+
       //  holder.actual_price.setPaintFlags(holder.actual_price.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
 
        /* holder.delete.setOnClickListener(new View.OnClickListener() {

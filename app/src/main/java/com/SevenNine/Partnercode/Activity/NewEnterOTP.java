@@ -166,10 +166,10 @@ public class NewEnterOTP extends AppCompatActivity implements ConnectivityReceiv
                 startActivity(intent);
             }
         });
-        if (getIntent().getStringExtra("Login")!=null){
+        if (getIntent().getStringExtra("register_status").equals("login_btn")){
             System.out.println("llllllogiiinn");
-            // register_btn.setText("Login");
-            try {
+             register_btn.setText("Login");
+           /* try {
 
                 lngObject = new JSONObject(sessionManager.getRegId("language"));
 
@@ -177,11 +177,11 @@ public class NewEnterOTP extends AppCompatActivity implements ConnectivityReceiv
 
             } catch (JSONException e) {
                 e.printStackTrace();
-            }
+            }*/
 
         }else{
-            // register_btn.setText("Register");
-            try {
+             register_btn.setText("Register");
+            /*try {
 
                 lngObject = new JSONObject(sessionManager.getRegId("language"));
 
@@ -189,7 +189,7 @@ public class NewEnterOTP extends AppCompatActivity implements ConnectivityReceiv
 
             } catch (JSONException e) {
                 e.printStackTrace();
-            }
+            }*/
         }
         mob_no.setText(sessionManager.getRegId("phone"));
         System.out.println("uuuuuuuuuu"+sessionManager.getRegId("phone"));

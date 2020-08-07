@@ -409,124 +409,14 @@ public class AddProductFragment extends Fragment {
                         Toast toast = Toast.makeText(getActivity(), "Select Expiry Date", Toast.LENGTH_LONG);
                         toast.setGravity(Gravity.TOP | Gravity.CENTER, 0, 0);
                         toast.show();
+                    }else{
+                        AddProduct();
                     }
                 }
                 else {
                     System.out.println("uuuuuuuu" + IsOfferAvailable);
+                    AddProduct();
 
-                    try {
-                        // newOrderBeansList.clear();
-                        JSONObject jsonObject = new JSONObject();
-                        //  jsonObject.put("ProductId",productlistid);
-                        jsonObject.put("ProductCode", "123456");
-                        System.out.println("hhhhhhh" + jsonObject);
-
-                        //  jsonObject.put("ProductName", product_name.getText().toString());
-                        jsonObject.put("ProductDescription", "Vegetables");
-                        System.out.println("iiiiiii" + jsonObject);
-
-                        jsonObject.put("Quantity", quantity.getText().toString());
-                        System.out.println("aaaaaa" + jsonObject);
-
-                        //   jsonObject.put("UnitOfPriceId", uom.getText().toString());
-                        jsonObject.put("Amount", amount.getText().toString());
-                        System.out.println("bbbbbb" + jsonObject);
-
-                        jsonObject.put("MRP", mrp.getText().toString());
-                        System.out.println("ccccc" + jsonObject);
-
-                        //  jsonObject.put("SKU", sku.getText().toString());
-                        jsonObject.put("Brand", brand.getText().toString());
-                        System.out.println("dddddd" + jsonObject);
-
-                        //  jsonObject.put("ModelId", "1");
-                        jsonObject.put("ProductListId", productlistid);
-                        System.out.println("eeeeee" + jsonObject);
-
-                        jsonObject.put("SellingCategoryId", sellingcatid);
-                        System.out.println("ffffff" + jsonObject);
-
-                        jsonObject.put("SellingTypeId", sellingtypeid);
-                        System.out.println("ggggggg" + jsonObject);
-
-                        jsonObject.put("IsOfferAvailable", IsOfferAvailable);
-                        System.out.println("222222222" + jsonObject);
-
-                        if (IsOfferAvailable == 1) {
-                            jsonObject.put("OfferExpiresOn", expiry_date.getText().toString());
-                            jsonObject.put("OfferExpiresOn", "1/7/2020");
-                            jsonObject.put("OfferPrice", off_price.getText().toString());
-                            System.out.println("333333" + jsonObject);
-
-                        }else{
-                            jsonObject.put("OfferExpiresOn", "1/1/2020");
-                            jsonObject.put("OfferPrice", "0");
-                            System.out.println("3333333" + jsonObject);
-
-                        }
-                        if (delivery_charge.getText().toString().equals("0")){
-                            jsonObject.put("DeliveryCharges", "0");
-                            System.out.println("4444444" + jsonObject);
-
-                        }else{
-                            jsonObject.put("DeliveryCharges", delivery_charge.getText().toString());
-                            System.out.println("444444444" + jsonObject);
-
-                        }
-                        jsonObject.put("SellingListMasterId", sellingmasterid);
-                        jsonObject.put("ExpiryDate", "1/1/2020");
-                        jsonObject.put("UserId", sessionManager.getRegId("userId"));
-                        System.out.println("555555555" + jsonObject);
-
-                        if (InventoryAdapter.prod_id!=null){
-                            jsonObject.put("ProductId", InventoryAdapter.prod_id);
-                            System.out.println("6666666" + jsonObject);
-
-                        }else{
-                            jsonObject.put("ProductId", "0");
-                            System.out.println("6666666" + jsonObject);
-
-                        }
-
-                        System.out.println("jhfdfdjc111" + jsonObject);
-
-                        Crop_Post.crop_posting(getActivity(), Urls.AddUpdateProductDetails, jsonObject, new VoleyJsonObjectCallback() {
-                            @Override
-                            public void onSuccessResponse(JSONObject result) {
-                                System.out.println("GetSellingTypeeeeeeee" + result);
-
-
-                                try {
-                                    String status = result.getString("Status");
-                                    if (status.equals("Success")) {
-                                        if (InventoryAdapter.prod_id != null) {
-                                            selectedFragment = InventoryList.newInstance();
-                                            FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
-                                            transaction.replace(R.id.frame_layout1, selectedFragment);
-                                            transaction.addToBackStack("spicescateory");
-                                            transaction.commit();
-                                            InventoryAdapter.prod_id=null;
-                                            InventoryAdapter.quantity=null;
-                                            InventoryAdapter.brand=null;
-                                            InventoryAdapter.mrp=null;
-                                            InventoryAdapter.amount=null;
-                                        } else {
-                                            selectedFragment = HomeFragment.newInstance();
-                                            FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
-                                            transaction.replace(R.id.frame_layout1, selectedFragment);
-                                            transaction.addToBackStack("spicescateory");
-                                            transaction.commit();
-                                        }
-                                    }
-                                } catch (Exception e) {
-                                    e.printStackTrace();
-                                }
-                            }
-                        });
-
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                    }
                 }
                 }
            /* }*/
@@ -537,6 +427,127 @@ public class AddProductFragment extends Fragment {
         return view;
     }
 
+    private void AddProduct(){
+        try {
+            // newOrderBeansList.clear();
+            JSONObject jsonObject = new JSONObject();
+            //  jsonObject.put("ProductId",productlistid);
+            jsonObject.put("ProductCode", "123456");
+            System.out.println("hhhhhhh" + jsonObject);
+
+            //  jsonObject.put("ProductName", product_name.getText().toString());
+            jsonObject.put("ProductDescription", "Vegetables");
+            System.out.println("iiiiiii" + jsonObject);
+
+            jsonObject.put("Quantity", quantity.getText().toString());
+            System.out.println("aaaaaa" + jsonObject);
+
+            //   jsonObject.put("UnitOfPriceId", uom.getText().toString());
+            jsonObject.put("Amount", amount.getText().toString());
+            System.out.println("bbbbbb" + jsonObject);
+
+            jsonObject.put("MRP", mrp.getText().toString());
+            System.out.println("ccccc" + jsonObject);
+
+            //  jsonObject.put("SKU", sku.getText().toString());
+
+            System.out.println("dddddd" + jsonObject);
+
+            //  jsonObject.put("ModelId", "1");
+            jsonObject.put("ProductListId", productlistid);
+            System.out.println("eeeeee" + jsonObject);
+
+            jsonObject.put("SellingCategoryId", sellingcatid);
+            System.out.println("ffffff" + jsonObject);
+
+            jsonObject.put("SellingTypeId", sellingtypeid);
+            System.out.println("ggggggg" + jsonObject);
+
+            jsonObject.put("IsOfferAvailable", IsOfferAvailable);
+            System.out.println("222222222" + jsonObject);
+
+            if (IsOfferAvailable == 1) {
+                jsonObject.put("OfferExpiresOn", expiry_date.getText().toString());
+                jsonObject.put("OfferExpiresOn", "1/7/2020");
+                jsonObject.put("OfferPrice", off_price.getText().toString());
+                System.out.println("333333" + jsonObject);
+
+            }else{
+                jsonObject.put("OfferExpiresOn", "1/1/2020");
+                jsonObject.put("OfferPrice", "0");
+                System.out.println("3333333" + jsonObject);
+
+            }
+            if (delivery_charge.getText().toString().equals("0")){
+                jsonObject.put("DeliveryCharges", "0");
+                System.out.println("4444444" + jsonObject);
+
+            }else{
+                jsonObject.put("DeliveryCharges", delivery_charge.getText().toString());
+                System.out.println("444444444" + jsonObject);
+
+            }
+            if (brand.getText().toString().equals("")){
+                jsonObject.put("Brand", "Brand");
+
+            }else{
+                jsonObject.put("Brand", brand.getText().toString());
+            }
+            jsonObject.put("SellingListMasterId", sellingmasterid);
+            jsonObject.put("ExpiryDate", "1/1/2020");
+            jsonObject.put("UserId", sessionManager.getRegId("userId"));
+            System.out.println("555555555" + jsonObject);
+
+            if (InventoryAdapter.prod_id!=null){
+                jsonObject.put("ProductId", InventoryAdapter.prod_id);
+                System.out.println("6666666" + jsonObject);
+
+            }else{
+                jsonObject.put("ProductId", "0");
+                System.out.println("6666666" + jsonObject);
+
+            }
+
+            System.out.println("jhfdfdjc111" + jsonObject);
+
+            Crop_Post.crop_posting(getActivity(), Urls.AddUpdateProductDetails, jsonObject, new VoleyJsonObjectCallback() {
+                @Override
+                public void onSuccessResponse(JSONObject result) {
+                    System.out.println("GetSellingTypeeeeeeee" + result);
+
+
+                    try {
+                        String status = result.getString("Status");
+                        if (status.equals("Success")) {
+                            if (InventoryAdapter.prod_id != null) {
+                                selectedFragment = InventoryList.newInstance();
+                                FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
+                                transaction.replace(R.id.frame_layout1, selectedFragment);
+                                transaction.addToBackStack("spicescateory");
+                                transaction.commit();
+                                InventoryAdapter.prod_id=null;
+                                InventoryAdapter.quantity=null;
+                                InventoryAdapter.brand=null;
+                                InventoryAdapter.mrp=null;
+                                InventoryAdapter.amount=null;
+                            } else {
+                                selectedFragment = HomeFragment.newInstance();
+                                FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
+                                transaction.replace(R.id.frame_layout1, selectedFragment);
+                                transaction.addToBackStack("spicescateory");
+                                transaction.commit();
+                            }
+                        }
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                }
+            });
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
     private void PrepareUOM() {
 
 
@@ -584,7 +595,7 @@ public class AddProductFragment extends Fragment {
         }
     }
         private void updateLabel() {
-        String myFormat = "yyyy/MM/dd"; //In which you need put here
+        String myFormat = "dd/MM/yyyy"; //In which you need put here
         SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.US);
 
             date_str=sdf.format(myCalendar.getTime());

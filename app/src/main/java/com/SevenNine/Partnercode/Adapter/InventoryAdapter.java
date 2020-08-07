@@ -104,9 +104,18 @@ public class InventoryAdapter extends RecyclerView.Adapter<InventoryAdapter.MyVi
         }
         if (products.getOffer_price().equals("0")){
             holder.off_text.setVisibility(View.GONE);
+            holder.price.setText("Rs "+products.getAmount());
+
         }else{
             holder.off_text.setVisibility(View.VISIBLE);
-            holder.off_text.setText(products.getOffer_price()+"%"+"\n off");
+           // holder.off_text.setText(products.getOffer_price()+"%"+"\n off");
+            holder.price.setText("Rs "+products.getOffer_price());
+
+            double off_price_calcu=(((Double.parseDouble(products.getMrp())-Double.parseDouble(products.getOffer_price()))/(Double.parseDouble(products.getMrp())))*100);
+            System.out.println("jhfdiueshfr"+off_price_calcu);
+            int offer_per_int=(int)off_price_calcu;
+            String off_price_text=String.valueOf(offer_per_int);
+            holder.off_text.setText(off_price_text+"%");
 
         }
 

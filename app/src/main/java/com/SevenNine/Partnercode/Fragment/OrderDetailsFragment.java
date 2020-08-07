@@ -4,7 +4,9 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.RequiresApi;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.GridLayoutManager;
@@ -40,8 +42,9 @@ public class OrderDetailsFragment extends Fragment {
     SessionManager sessionManager;
     OrderDetailsAdapter madapter;
     JSONObject lngObject;
-    TextView toolbar_title,ordered_on,items_cost,before_tax,total_amt,total_sum_amt,item_count,name_vw,pay_mode;
-
+    Fragment selectedFragment;
+    TextView toolbar_title,ordered_on,items_cost,before_tax,total_amt,total_sum_amt,item_count,name_vw,pay_mode,delivery_charges;
+    public static String order_details;
     public static OrderDetailsFragment newInstance() {
         OrderDetailsFragment fragment = new OrderDetailsFragment();
         return fragment;
@@ -61,6 +64,7 @@ public class OrderDetailsFragment extends Fragment {
         item_count=view.findViewById(R.id.item_count);
         name_vw=view.findViewById(R.id.name_vw);
         pay_mode=view.findViewById(R.id.payment_mode);
+        delivery_charges=view.findViewById(R.id.delivery_charges);
 
 
         Window window = getActivity().getWindow();
@@ -68,8 +72,15 @@ public class OrderDetailsFragment extends Fragment {
         back_feed.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                FragmentManager fm = getFragmentManager();
-                fm.popBackStack();
+              /*  FragmentManager fm = getFragmentManager();
+                fm.popBackStack();*/
+                order_details="true";
+                selectedFragment = HomeFragment.newInstance();
+                FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
+                transaction.replace(R.id.frame_layout1, selectedFragment);
+                transaction.addToBackStack("track24");
+                transaction.commit();
+
             }
         });
 
@@ -82,10 +93,15 @@ public class OrderDetailsFragment extends Fragment {
             @Override
             public boolean onKey(View v, int keyCode, KeyEvent event) {
                 if (keyCode == KeyEvent.KEYCODE_BACK && event.getAction() == KeyEvent.ACTION_UP) {
+                    order_details="true";
 
-                    FragmentManager fm = getFragmentManager();
-                    fm.popBackStack();
-
+                    /*FragmentManager fm = getFragmentManager();
+                    fm.popBackStack();*/
+                    selectedFragment = HomeFragment.newInstance();
+                    FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
+                    transaction.replace(R.id.frame_layout1, selectedFragment);
+                    transaction.addToBackStack("track24");
+                    transaction.commit();
                     return true;
                 }
                 return false;
@@ -94,12 +110,28 @@ public class OrderDetailsFragment extends Fragment {
         });
         DecimalFormat formatter = (DecimalFormat) NumberFormat.getInstance(Locale.US);;
         formatter .applyPattern("##,##,##,###");
-        double rate_double1= (Double.parseDouble(getArguments().getString("Amount")));
+        double rate_double1;
+        rate_double1= (Double.parseDouble(getArguments().getString("Amount")));
+
+        /*if (getArguments().getString("uom").equals("0")){
+             rate_double1= (Double.parseDouble(getArguments().getString("Amount")));
+        }*//*else {
+             rate_double1= (Double.parseDouble(getArguments().getString("uom")));
+
+        }*/
+        String strDouble = String.format("%.2f", rate_double1);
+        double delivery_charges_double=Double.parseDouble(getArguments().getString("delivery_charges"));
+        String delivery_charges_str = String.format("%.2f", delivery_charges_double);
+
         ordered_on.setText(getArguments().getString("createdon").substring(0,10));
-        items_cost.setText("₹"+formatter.format(rate_double1)+".00");
-        before_tax.setText("₹"+formatter.format(rate_double1)+".00");
-        total_amt.setText("₹"+formatter.format(rate_double1)+".00");
-        total_sum_amt.setText("₹"+formatter.format(rate_double1)+".00");
+
+        items_cost.setText("₹"+strDouble);
+        delivery_charges.setText(delivery_charges_str);
+        double before_tax_cal=(rate_double1+delivery_charges_double);
+        String before_tax_str = String.format("%.2f", before_tax_cal);
+        before_tax.setText("₹"+before_tax_str);
+        total_amt.setText("₹"+before_tax_str);
+        total_sum_amt.setText("₹"+before_tax_str);
         item_count.setText("Items -"+"1 Item");
         name_vw.setText(getArguments().getString("product_info"));
         pay_mode.setText(getArguments().getString("pay_mode"));
@@ -108,7 +140,7 @@ public class OrderDetailsFragment extends Fragment {
         recyclerView.setLayoutManager(mLayoutManager_farm);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
 
-        OrderDetailBean bean=new OrderDetailBean(getArguments().getString("ProdName"),getArguments().getString("quantity"),getArguments().getString("Amount"),getArguments().getString("delivery_charges"),getArguments().getString("uom"),getArguments().getString("prod_img"),"","");
+        OrderDetailBean bean=new OrderDetailBean(getArguments().getString("ProdName"),getArguments().getString("quantity"),getArguments().getString("Amount"),getArguments().getString("delivery_charges"),getArguments().getString("uom"),getArguments().getString("prod_img"),"",getArguments().getString("MRP"));
         newOrderBeansList.add(bean);
 
         madapter=new OrderDetailsAdapter(getActivity(),newOrderBeansList);

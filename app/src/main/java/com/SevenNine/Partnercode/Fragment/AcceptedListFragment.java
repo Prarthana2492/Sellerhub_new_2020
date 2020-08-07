@@ -142,12 +142,13 @@ public class AcceptedListFragment extends Fragment {
                             String Brand=jsonObject1.getString("Brand");
                             String ProductDescription=jsonObject1.getString("ProductDescription");
                             String mrp=jsonObject1.getString("MRP");
+                            String DeliveryCharges=jsonObject1.getString("DeliveryCharges");
 
                             /*PreferedBranchBean bean=new PreferedBranchBean(Name,StreeAddress,StreeAddress1,State,Pincode,"",Id);
                             newOrderBeansList.add(bean);*/
 
                             NewOrderBean img1=new NewOrderBean(ProductName,CreatedOn,SellingListIcon,TxnId,Amount,Quantity,UnitOfPrice,ProductInfo,mode,
-                                    mrp,SellingCategoryName,ProductIcon,RESPMsg,Brand,ProductDescription);
+                                    mrp,SellingCategoryName,ProductIcon,RESPMsg,Brand,ProductDescription,DeliveryCharges);
                             newOrderBeansList.add(img1);
 
                           //  System.out.println("adreess_list_size"+newOrderBeansList.size());

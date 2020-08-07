@@ -142,7 +142,7 @@ public class PaymentDetailsFragment extends Fragment {
                     @Override
                     public void onClick(View v) {
                         status="Todaysdata";
-                        last_month_text.setText("All");
+                        last_month_text.setText("Today");
                         dialog.dismiss();
                         FilterDashboard();
 
@@ -152,6 +152,7 @@ public class PaymentDetailsFragment extends Fragment {
                     @Override
                     public void onClick(View v) {
                         status="OneWeekData";
+                        last_month_text.setText("Last one week");
                         dialog.dismiss();
                         FilterDashboard();
 
@@ -161,6 +162,7 @@ public class PaymentDetailsFragment extends Fragment {
                     @Override
                     public void onClick(View v) {
                         status="OneMonth";
+                        last_month_text.setText("Last 1 month");
                         dialog.dismiss();
                         FilterDashboard();
 
@@ -170,6 +172,7 @@ public class PaymentDetailsFragment extends Fragment {
                     @Override
                     public void onClick(View v) {
                         status="Last6Month";
+                        last_month_text.setText("Last 6 month");
                         dialog.dismiss();
                         FilterDashboard();
 

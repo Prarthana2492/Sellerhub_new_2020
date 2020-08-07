@@ -92,6 +92,7 @@ public class PaymentTodayFragment extends Fragment {
                     @Override
                     public void onClick(View v) {
                         status="Ascending";
+                        last_month_text.setText("Ascending");
                         dialog.dismiss();
                         FilterToday();
 
@@ -101,9 +102,17 @@ public class PaymentTodayFragment extends Fragment {
                     @Override
                     public void onClick(View v) {
                         status="descending";
+                        last_month_text.setText("Descending");
                         dialog.dismiss();
                         FilterToday();
 
+                    }
+                });
+                credited_to.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                       // last_month_text.setText("Descending");
+                        dialog.dismiss();
                     }
                 });
                 dialog.show();

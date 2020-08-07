@@ -60,7 +60,7 @@ import static com.android.volley.VolleyLog.TAG;
 
 public class AaSettingFragment extends Fragment {
     Fragment selectedFragment;
-    LinearLayout backfeed,acc_info_lay,not_lay,lang_lay,help_lay,invi_lay,main_layout,change_pass_lay,kyc_lay,addr_lay,log_lay,loans_layout;
+    LinearLayout backfeed,not_lay,lang_lay,help_lay,main_layout,change_pass_lay,kyc_lay,log_lay,loans_layout;
     public static TextView phone_no,name,logout;
     JSONObject lngObject;
     CircleImageView image_acc;
@@ -68,7 +68,7 @@ public class AaSettingFragment extends Fragment {
     SessionManager sessionManager;
     BottomSheetDialog mBottomSheetDialog;
     View sheetView;
-    TextView change_pro,setting_tittle,acc_info1,addre,reque,notifi,pass_change,help,invite_frnd,logout1,loans_lay;
+    TextView change_pro,setting_tittle,reque,notifi,pass_change,help,logout1,loans_lay;
     String packageName;
     String update;
     public static Bitmap bitmap;
@@ -85,13 +85,13 @@ public class AaSettingFragment extends Fragment {
         View view = inflater.inflate(R.layout.a_s_setting_layout1, container, false);
 
         backfeed=view.findViewById(R.id.back_feed);
-        invi_lay=view.findViewById(R.id.invi_lay);
+       // invi_lay=view.findViewById(R.id.invi_lay);
       //  change_pass_lay=view.findViewById(R.id.change_pass_lay);
         lang_lay=view.findViewById(R.id.lang_lay);
         not_lay=view.findViewById(R.id.not_lay);
        // kyc_lay=view.findViewById(R.id.kyc_lay);
-        addr_lay=view.findViewById(R.id.addr_lay);
-        acc_info_lay=view.findViewById(R.id.acc_info_lay);
+      //  addr_lay=view.findViewById(R.id.addr_lay);
+     //   acc_info_lay=view.findViewById(R.id.acc_info_lay);
         phone_no=view.findViewById(R.id.phone_noo);
         name=view.findViewById(R.id.name_set);
         image_acc=view.findViewById(R.id.image_acc1);
@@ -103,13 +103,13 @@ public class AaSettingFragment extends Fragment {
         change_pro=view.findViewById(R.id.change_pro);
         help_lay=view.findViewById(R.id.help_lay);
         setting_tittle=view.findViewById(R.id.setting_tittle);
-        acc_info1=view.findViewById(R.id.acc_info1);
-        addre=view.findViewById(R.id.addre);
+      //  acc_info1=view.findViewById(R.id.acc_info1);
+      //  addre=view.findViewById(R.id.addre);
       //  reque=view.findViewById(R.id.reque);
         notifi=view.findViewById(R.id.notifi);
         pass_change=view.findViewById(R.id.pass_change);
         help=view.findViewById(R.id.help);
-        invite_frnd=view.findViewById(R.id.invite_frnd);
+      //  invite_frnd=view.findViewById(R.id.invite_frnd);
         logout1=view.findViewById(R.id.logout);
       //  loans_layout=view.findViewById(R.id.loans_layout);
        // loans_lay=view.findViewById(R.id.loans_lay);
@@ -160,7 +160,7 @@ public class AaSettingFragment extends Fragment {
                 transaction.commit();
             }
         });*/
-        try {
+       /* try {
 
             lngObject = new JSONObject(sessionManager.getRegId("language"));
 
@@ -183,7 +183,7 @@ public class AaSettingFragment extends Fragment {
 
         } catch (JSONException e) {
             e.printStackTrace();
-        }
+        }*/
 
        /* loans_layout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -201,7 +201,7 @@ public class AaSettingFragment extends Fragment {
                 selectedFragment = ChangeLanguageFragment.newInstance();
                 FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
                 transaction.replace(R.id.frame_layout1, selectedFragment);
-                transaction.addToBackStack("change_lang");
+                transaction.addToBackStack("settingg");
                 transaction.commit();
             }
         });
@@ -226,7 +226,7 @@ public class AaSettingFragment extends Fragment {
                 transaction.commit();
             }
         });*/
-        addr_lay.setOnClickListener(new View.OnClickListener() {
+       /* addr_lay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 selectedFragment = NewAddressDetails_Fragment.newInstance();
@@ -245,7 +245,7 @@ public class AaSettingFragment extends Fragment {
                 transaction.addToBackStack("bbbbb");
                 transaction.commit();
             }
-        });
+        });*/
         help_lay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -315,7 +315,7 @@ public class AaSettingFragment extends Fragment {
 
         });
 
-        invi_lay.setOnClickListener(new View.OnClickListener() {
+       /* invi_lay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -491,7 +491,7 @@ public class AaSettingFragment extends Fragment {
                 mBottomSheetDialog.setContentView(sheetView);
                 mBottomSheetDialog.show();
             }
-        });
+        });*/
 
         cam_img.setOnClickListener(new View.OnClickListener() {
             @Override

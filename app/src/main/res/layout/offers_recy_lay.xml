@@ -10,6 +10,7 @@
     android:weightSum="100"
     >
     <LinearLayout
+        android:id="@+id/title_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/menu_green"
@@ -42,54 +43,13 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginLeft="10dp"
-            android:text="Inventory"
+            android:text="Offers"
             android:textColor="#fff"
             android:textSize="20dp"
             android:textStyle="bold" />
 
-        <LinearLayout
-            android:id="@+id/list_prod_lay"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal"
-            android:layout_gravity="right"
-            android:gravity="right">
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginLeft="10dp"
-                >
-
-                <ImageView
-                    android:id="@+id/list_prod"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:src="@drawable/plus_add_green"
-                    android:layout_marginRight="10dp"
-                    />
-            </LinearLayout>
 
 
-            <TextView
-                android:id="@+id/list_prod_text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="List Products"
-                android:textColor="#fff"
-                android:textStyle="bold"
-                android:layout_marginRight="10dp"
-                android:textSize="16dp"
-                />
-
-
-        </LinearLayout>
-
-
-        <!--
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -98,19 +58,49 @@
                     >
 
                 <ImageView
-                    android:id="@+id/list_prod"
+                    android:id="@+id/search"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:src="@drawable/plus_add_green"
+                    android:src="@drawable/ic_search_green"
                     android:layout_marginRight="10dp"
                     />
                 </LinearLayout>
-        -->
 
     </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/menu_green"
+        android:gravity="center_vertical">
 
+
+        <LinearLayout
+            android:id="@+id/search_lay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="#fff"
+            android:visibility="gone"
+            >
+
+            <EditText
+                android:id="@+id/search_home"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Search"
+                android:textSize="16dp"
+                android:padding="10dp"
+                android:background="@drawable/border_2_empty"
+                android:drawablePadding="10dp"
+                android:drawableLeft="@drawable/ic_search_grey"
+                android:fontFamily="@font/segoeui"
+                android:textColor="@color/gray"
+                />
+
+        </LinearLayout>
+    </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

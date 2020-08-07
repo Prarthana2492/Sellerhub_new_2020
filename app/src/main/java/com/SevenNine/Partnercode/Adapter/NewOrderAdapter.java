@@ -85,14 +85,18 @@ public class NewOrderAdapter extends RecyclerView.Adapter<NewOrderAdapter.MyView
         final NewOrderBean products1 = productList.get(position);
 
         System.out.println("ordreadapterrrr"+products1.getUom());
-      holder.prod_name.setText(products1.getProd_name()+", "+products1.getBrand()+", "+products1.getProd_desc());
+        if (products1.getBrand().equals("Brand")){
+            holder.prod_name.setText(products1.getProd_name());
+        }else{
+            holder.prod_name.setText(products1.getProd_name()+", "+products1.getBrand());
+        }
         DecimalFormat formatter = (DecimalFormat) NumberFormat.getInstance(Locale.US);;
         formatter .applyPattern("##,##,##,###");
         double rate_double1= (Double.parseDouble(products1.getAmount()));
-      holder.dispatched_date.setText("₹"+formatter.format(rate_double1));
+     // holder.dispatched_date.setText("₹"+rate_double1);
       holder.quantity.setText(products1.getQuantity()+" Kg");
         holder.mrp.setText("₹"+products1.getFirstname());
-        holder.mrp.setPaintFlags(holder.mrp.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
+       // holder.mrp.setPaintFlags(holder.mrp.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
 
         if (products1.getFirstname().equals(products1.getAmount())){
             holder.mrp.setVisibility(View.INVISIBLE);
@@ -105,9 +109,17 @@ public class NewOrderAdapter extends RecyclerView.Adapter<NewOrderAdapter.MyView
 
         if (products1.getUom().equals("0")){
             holder.off_text.setVisibility(View.GONE);
+            holder.dispatched_date.setText("Rs "+products1.getAmount());
         }else{
             holder.off_text.setVisibility(View.VISIBLE);
-            holder.off_text.setText(products1.getUom()+"%"+"\n off");
+            holder.dispatched_date.setText("Rs "+products1.getUom());
+
+            //  holder.off_text.setText(products1.getUom()+"%"+"\n off");
+            double off_price_calcu=(((Double.parseDouble(products1.getFirstname())-Double.parseDouble(products1.getUom()))/(Double.parseDouble(products1.getFirstname())))*100);
+            System.out.println("jhfdiueshfr"+off_price_calcu);
+            int offer_per_int=(int)off_price_calcu;
+            String off_price_text=String.valueOf(offer_per_int);
+            holder.off_text.setText(off_price_text+"%");
 
         }
         Glide.with(activity).load(products1.getProducts_Icon())
@@ -130,11 +142,14 @@ public class NewOrderAdapter extends RecyclerView.Adapter<NewOrderAdapter.MyView
                 bundle.putString("prod_img",products1.getProducts_Icon());
                 bundle.putString("pay_mode",products1.getMode());
                 bundle.putString("uom",products1.getUom());
-                bundle.putString("delivery_charges",products1.getSellingCategoryName());
+                bundle.putString("MRP",products1.getFirstname());
+
+                System.out.println("getttttAmountt"+products1.getAmount());
+                bundle.putString("delivery_charges",products1.getDelivery_charges());
                 selectedFragment = OrderDetailsFragment.newInstance();
                 FragmentTransaction transaction = ((FragmentActivity)activity).getSupportFragmentManager().beginTransaction();
                 transaction.replace(R.id.frame_layout1, selectedFragment);
-                transaction.addToBackStack("track2");
+                transaction.addToBackStack("track23");
                 selectedFragment.setArguments(bundle);
                 transaction.commit();
             }
@@ -156,13 +171,18 @@ public class NewOrderAdapter extends RecyclerView.Adapter<NewOrderAdapter.MyView
                    params.put("SelectedQuantity",products1.getQuantity()); //using status
                    params.put("UnitOfPrice","Kilograms");
                    params.put("MRP",products1.getFirstname());
-                   params.put("Brand",products1.getBrand());
                    params.put("SellingListIcon",products1.getProd_img());
                    params.put("ProductIcon",products1.getProducts_Icon());
                    params.put("ProductName",products1.getProd_name());
                    params.put("ProductDescription",products1.getProd_desc());
                    params.put("CustomerName","Priya");  //tarnsaction id
                    params.put("CreatedBy",sessionManager.getRegId("userId"));
+                   if (products1.getBrand().equals("")){
+                       params.put("Brand","Not Entered");
+                   }else{
+                       params.put("Brand",products1.getBrand());
+
+                   }
 
                    System.out.println("RESPMsgdsfadf"+params);
                    Login_post.login_posting(activity, Urls.AddAcceptOrdersFrom7NineDetails, params, new VoleyJsonObjectCallback() {

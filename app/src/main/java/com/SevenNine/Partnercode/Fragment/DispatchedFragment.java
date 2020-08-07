@@ -142,7 +142,7 @@ public class DispatchedFragment extends Fragment {
                             newOrderBeansList.add(bean);*/
 
                             NewOrderBean img1=new NewOrderBean(SellingListName,CreatedOn,SellingListIcon,TxnId,Amount,SelectedQuantity,UnitOfPrice,ProductInfo,mode,
-                                    FirstName,SellingCategoryName,"","","","");
+                                    FirstName,SellingCategoryName,"","","","","");
                             newOrderBeansList.add(img1);
 
                           //  System.out.println("adreess_list_size"+newOrderBeansList.size());

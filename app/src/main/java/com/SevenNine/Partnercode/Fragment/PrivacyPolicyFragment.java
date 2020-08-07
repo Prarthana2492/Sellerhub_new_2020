@@ -40,11 +40,11 @@ SessionManager sessionManager;
       //   HomePage_With_Bottom_Navigation.linear_bottom.setVisibility(View.GONE);
        //  Status_bar_change_singleton.getInstance().color_change(getActivity());
         back_feed=view.findViewById(R.id.back_feed);
-        privacypolicytxt=view.findViewById(R.id.setting_tittle);
+        privacypolicytxt=view.findViewById(R.id.toolbar_title);
         privacypolicytxt.setText("Privacy Policy");
         terms=view.findViewById(R.id.web_terms);
        // terms.loadUrl("http://farmpe.in/privacy.html");
-        terms.loadUrl("http://farmpe.in");
+        terms.loadUrl("http://farmpe.in/privacy.html");
         sessionManager = new SessionManager(getActivity());
 
 

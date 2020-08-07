@@ -68,7 +68,7 @@
                 android:textColor="#fff"
                 android:layout_marginRight="8dp"
                 android:drawablePadding="10dp"
-                android:drawableLeft="@drawable/plus_add_green"
+                android:drawableLeft="@drawable/plus_add_white"
                 android:id="@+id/add_store" />
 
 

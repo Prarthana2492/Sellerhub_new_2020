@@ -234,7 +234,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="20dp"
-                            android:text="Offer Price in percentage"
+                            android:text="Offer Price in Rs"
                             android:drawablePadding="5dp"
                             android:drawableRight="@drawable/ic_astrick_icon"
                             android:textColor="#9D9D9D"

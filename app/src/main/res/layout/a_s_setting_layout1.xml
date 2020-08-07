@@ -334,6 +334,7 @@
 
 
 
+<!--
                 <LinearLayout
                     android:id="@+id/acc_info_lay"
                     android:layout_width="match_parent"
@@ -389,7 +390,9 @@
 
 
                 </LinearLayout>
+-->
 
+<!--
                 <LinearLayout
                     android:id="@+id/addr_lay"
                     android:layout_width="match_parent"
@@ -444,6 +447,7 @@
 
 
                 </LinearLayout>
+-->
 
                 <!--
                         <LinearLayout
@@ -741,6 +745,7 @@
                 </LinearLayout>
 
 
+<!--
                 <LinearLayout
                     android:id="@+id/invi_lay"
                     android:layout_width="match_parent"
@@ -796,6 +801,7 @@
 
 
                 </LinearLayout>
+-->
 
                 <LinearLayout
                     android:id="@+id/log_lay"

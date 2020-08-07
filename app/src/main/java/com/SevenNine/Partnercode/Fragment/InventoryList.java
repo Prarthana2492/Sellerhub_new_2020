@@ -47,7 +47,7 @@ public class InventoryList extends Fragment {
     public static InventoryAdapter livestock_types_adapter;
     JSONObject jsonObject1;
     Fragment selectedFragment = null;
-    public static TextView toolbar_title,name;
+    public static TextView toolbar_title,name,list_prod_text;
     public static String livestock_status;
     LinearLayout back_feed,linearLayout;
     JSONArray get_categorylist_array;
@@ -71,6 +71,7 @@ public class InventoryList extends Fragment {
 
 
         recyclerView_main=view.findViewById(R.id.recycler_cat_detail);
+        list_prod_text=view.findViewById(R.id.list_prod_text);
         name=view.findViewById(R.id.name);
         list_prod=view.findViewById(R.id.list_prod);
 sessionManager=new SessionManager(getActivity());
@@ -108,6 +109,15 @@ sessionManager=new SessionManager(getActivity());
         });
 
         list_prod.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                selectedFragment = What_Are_looking.newInstance();
+                FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
+                transaction.replace(R.id.frame_layout1, selectedFragment);
+                transaction.commit();
+            }
+        });
+        list_prod_text.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 selectedFragment = What_Are_looking.newInstance();

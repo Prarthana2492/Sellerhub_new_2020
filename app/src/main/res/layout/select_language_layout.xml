@@ -50,7 +50,7 @@
             <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="My Language"
+            android:text="Change Language"
             android:textSize="20dp"
             android:textColor="#fff"
                 android:layout_gravity="center"
@@ -65,7 +65,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="80"
+        android:layout_weight="82"
         android:orientation="vertical"
         android:layout_marginLeft="5dp"
         android:layout_marginRight="5dp"
@@ -89,7 +89,7 @@
         android:id="@+id/continuebtn"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="10"
+        android:layout_weight="8"
         android:background="@drawable/border_filled_red_not_curved"
         android:orientation="horizontal"
         android:gravity="center"

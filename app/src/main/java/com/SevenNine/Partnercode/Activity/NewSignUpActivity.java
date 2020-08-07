@@ -10,6 +10,8 @@ import android.graphics.Color;
 import android.net.ConnectivityManager;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.CountDownTimer;
+import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.design.widget.Snackbar;
 import android.support.design.widget.TextInputLayout;
@@ -197,7 +199,7 @@ public class NewSignUpActivity extends AppCompatActivity implements Connectivity
         sessionManager = new SessionManager(this);
     //    sessionManager.checkRegister();
 
-        try {
+       /* try {
             lngObject = new JSONObject(sessionManager.getRegId("language"));
 
             made_text.setText(lngObject.getString("MadeforFarmingCommunity"));
@@ -214,7 +216,7 @@ public class NewSignUpActivity extends AppCompatActivity implements Connectivity
 
         } catch (JSONException e) {
             e.printStackTrace();
-        }
+        }*/
 
         phone_no.addTextChangedListener(new TextWatcher() {
 
@@ -244,7 +246,7 @@ public class NewSignUpActivity extends AppCompatActivity implements Connectivity
                     toast_text.setVisibility(View.VISIBLE);
 
                 } else if (!(phone_no.length() == 10)) {
-                    Toast toast = Toast.makeText(NewSignUpActivity.this,valid_no_toast, Toast.LENGTH_LONG);
+                    Toast toast = Toast.makeText(NewSignUpActivity.this,"Enter Valid Phone number", Toast.LENGTH_LONG);
                     toast.setGravity(Gravity.TOP|Gravity.CENTER,0,0);
                     toast.show();
                    /* Toast toast = Toast.makeText(NewSignUpActivity.this, valid_no_toast, Toast.LENGTH_LONG);
@@ -277,10 +279,13 @@ public class NewSignUpActivity extends AppCompatActivity implements Connectivity
                 contact =  phone_no.getText().toString();
 
                 if (phone_no.getText().toString().equals("")) {
+                    toast_text.setVisibility(View.VISIBLE);
 
-                    Toast toast = Toast.makeText(NewSignUpActivity.this,mob_toast, Toast.LENGTH_LONG);
+                  //  toast_text.setVisibility(View.VISIBLE);
+
+                   /* Toast toast = Toast.makeText(NewSignUpActivity.this,"", Toast.LENGTH_LONG);
                     toast.setGravity(Gravity.TOP|Gravity.CENTER,0,0);
-                    toast.show();
+                    toast.show();*/
                     /*Toast toast = Toast.makeText(NewSignUpActivity.this, mob_toast, Toast.LENGTH_LONG);
                     toast.setGravity(Gravity.TOP|Gravity.CENTER,0,0);
                     TextView toastMessage=(TextView) toast.getView().findViewById(android.R.id.message);
@@ -289,7 +294,7 @@ public class NewSignUpActivity extends AppCompatActivity implements Connectivity
 
 
                 } else if (!(phone_no.length() == 10)) {
-                    Toast toast = Toast.makeText(NewSignUpActivity.this,valid_no_toast, Toast.LENGTH_LONG);
+                    Toast toast = Toast.makeText(NewSignUpActivity.this,"Enter valid Phone number", Toast.LENGTH_LONG);
                     toast.setGravity(Gravity.TOP|Gravity.CENTER,0,0);
                     toast.show();
                     /*Toast toast = Toast.makeText(NewSignUpActivity.this, valid_no_toast, Toast.LENGTH_LONG);
@@ -353,7 +358,7 @@ public class NewSignUpActivity extends AppCompatActivity implements Connectivity
 
                         } else {
 
-                            Toast toast = Toast.makeText(NewSignUpActivity.this,usernot_register, Toast.LENGTH_LONG);
+                            Toast toast = Toast.makeText(NewSignUpActivity.this,"User not registered", Toast.LENGTH_LONG);
                             toast.setGravity(Gravity.TOP|Gravity.CENTER,0,0);
                             toast.show();
                             //snackbar.show();
@@ -536,7 +541,7 @@ public class NewSignUpActivity extends AppCompatActivity implements Connectivity
                             jsonObject_resp = result.getJSONObject("Response");
                             status_resp = jsonObject_resp.getString("Status");
 
-                            Toast toast = Toast.makeText(NewSignUpActivity.this, mobile_registered_toast, Toast.LENGTH_LONG);
+                            Toast toast = Toast.makeText(NewSignUpActivity.this, "User already registered", Toast.LENGTH_LONG);
                             toast.setGravity(Gravity.TOP | Gravity.CENTER, 0, 0);
                             toast.show();
 

@@ -101,7 +101,7 @@ public class AcceptedOrderAdapter extends RecyclerView.Adapter<AcceptedOrderAdap
                 .into(holder.image);
 
 
-        holder.next.setOnClickListener(new View.OnClickListener() {
+       /* holder.next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Bundle bundle = new Bundle();
@@ -117,7 +117,7 @@ public class AcceptedOrderAdapter extends RecyclerView.Adapter<AcceptedOrderAdap
                     bundle.putString("pay_mode", "Online Payment");
 
                 }
-                bundle.putString("uom", products1.getUom());
+                bundle.putString("delivery_charges", products1.getDelivery_charges());
                 selectedFragment = OrderDetailsFragment.newInstance();
                 FragmentTransaction transaction = ((FragmentActivity) activity).getSupportFragmentManager().beginTransaction();
                 transaction.replace(R.id.frame_layout1, selectedFragment);
@@ -126,7 +126,7 @@ public class AcceptedOrderAdapter extends RecyclerView.Adapter<AcceptedOrderAdap
                 transaction.commit();
             }
         });
-
+*/
     }
 
     @Override

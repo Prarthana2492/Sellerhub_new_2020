@@ -138,6 +138,7 @@ public class NewOrderFragment extends Fragment {
                             String OfferPrice=jsonObject1.getString("OfferPrice");
                             String ProductInfo=jsonObject1.getString("CustAddress");
                             String DeliveryCharges=jsonObject1.getString("DeliveryCharges");
+                            String SellingCategoryName=jsonObject1.getString("SellingCategoryName");
                             String SellingListName=jsonObject1.getString("SellingListName");
                             String ProductDescription=jsonObject1.getString("ProductDescription");
                             String Brand=jsonObject1.getString("Brand");
@@ -149,7 +150,7 @@ public class NewOrderFragment extends Fragment {
                             newOrderBeansList.add(bean);*/
 
                             NewOrderBean img1=new NewOrderBean(ProductName,CreatedOn,SellingListIcon,TxnId,Amount,SelectedQuantity,OfferPrice,ProductInfo,mode,
-                                    MRP,DeliveryCharges,ProductIcon,SellingListName,Brand,ProductDescription);
+                                    MRP,SellingCategoryName,ProductIcon,SellingListName,Brand,ProductDescription,DeliveryCharges);
                             newOrderBeansList.add(img1);
 
                           //  System.out.println("adreess_list_size"+newOrderBeansList.size());

@@ -117,13 +117,23 @@
              android:layout_height="1dp"
              android:background="#dcdcdc"
              />-->
+         <TextView
+             android:id="@+id/search_by_cat"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:text="Search by Category"
+             android:layout_marginTop="25dp"
+             android:textSize="16dp"
+             android:fontFamily="@font/segoeui"
+             android:textColor="#000"
+             />
 
          <TextView
              android:id="@+id/my_orders"
              android:layout_width="match_parent"
              android:layout_height="wrap_content"
              android:text="Orders"
-             android:layout_marginTop="15dp"
+             android:layout_marginTop="25dp"
              android:textSize="16dp"
              android:fontFamily="@font/segoeui"
              android:textColor="#000"
@@ -134,6 +144,7 @@
              android:layout_width="match_parent"
              android:layout_height="wrap_content"
              android:text="Payments"
+             android:layout_marginBottom="15dp"
              android:layout_marginTop="25dp"
              android:textSize="16dp"
              android:fontFamily="@font/segoeui"
@@ -141,6 +152,7 @@
              />
 
 
+<!--
          <TextView
              android:id="@+id/rewards"
              android:layout_width="match_parent"
@@ -152,6 +164,7 @@
              android:fontFamily="@font/segoeui"
              android:textColor="#000"
              />
+-->
          <!--<TextView
              android:id="@+id/account"
              android:layout_width="match_parent"
@@ -186,7 +199,7 @@
              android:id="@+id/inventory"
              android:layout_width="match_parent"
              android:layout_height="wrap_content"
-             android:text="List Products"
+             android:text="Inventory"
              android:layout_marginTop="25dp"
              android:textSize="16dp"
              android:fontFamily="@font/segoeui"
@@ -208,7 +221,7 @@
              android:id="@+id/offers"
              android:layout_width="match_parent"
              android:layout_height="wrap_content"
-             android:text="Offres"
+             android:text="Offers"
              android:layout_marginTop="25dp"
              android:textSize="16dp"
              android:layout_marginBottom="15dp"

@@ -27,6 +27,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.SevenNine.Partnercode.Adapter.OffersAdapter;
 import com.SevenNine.Partnercode.R;
 import com.SevenNine.Partnercode.SessionManager;
 
@@ -34,7 +35,7 @@ import com.SevenNine.Partnercode.SessionManager;
 public class HomeFragment extends Fragment implements View.OnClickListener, NavigationView.OnNavigationItemSelectedListener{
 Fragment selectedFragment;
     public static DrawerLayout drawer;
-    ImageView cart_icon;
+    ImageView search;
     LinearLayout menu,prof_tab;
     String userid;
     SessionManager sessionManager;
@@ -71,6 +72,7 @@ static Fragment myloadingfragment;
         inventory=view.findViewById(R.id.inventory);
         payments=view.findViewById(R.id.payments);
         drawer_layout=view.findViewById(R.id.drawer_layout);
+        search=view.findViewById(R.id.search);
         Window window = getActivity().getWindow();
         window.setStatusBarColor(ContextCompat.getColor(getActivity(),R.color.colorPrimaryDark1));
         drawer = (DrawerLayout)view.findViewById(R.id.drawer_layout);
@@ -129,10 +131,42 @@ static Fragment myloadingfragment;
                 return true;
             }
         });
-        selectedFragment = HomeLandingFragment.newInstance();
-        FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
-        transaction.replace(R.id.frame_layout_home, selectedFragment);
-        transaction.commit();
+        /*Bundle bundle=getArguments();
+        if (bundle!=null){*/
+            if (OffersAdapter.status!=null){
+                selectedFragment = PreviewProductDetails.newInstance();
+                FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
+                transaction.replace(R.id.frame_layout_home, selectedFragment);
+                transaction.commit();
+            }else if(OrderDetailsFragment.order_details!=null) {
+                selectedFragment = OrderTabFragment.newInstance();
+                FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
+                transaction.replace(R.id.frame_layout_home, selectedFragment);
+                transaction.commit();
+            }else
+            {
+                selectedFragment = HomeLandingFragment.newInstance();
+                FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
+                transaction.replace(R.id.frame_layout_home, selectedFragment);
+                transaction.commit();
+            }
+       /* }else{
+            selectedFragment = HomeLandingFragment.newInstance();
+            FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
+            transaction.replace(R.id.frame_layout_home, selectedFragment);
+            transaction.commit();
+        }
+*/
+
+       search.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View v) {
+               selectedFragment = SearchProductsFromHome.newInstance();
+               FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
+               transaction.replace(R.id.frame_layout1, selectedFragment);
+               transaction.commit();
+           }
+       });
         menu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
