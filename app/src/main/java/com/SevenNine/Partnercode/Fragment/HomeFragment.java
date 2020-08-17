@@ -30,6 +30,16 @@ import android.widget.Toast;
 import com.SevenNine.Partnercode.Adapter.OffersAdapter;
 import com.SevenNine.Partnercode.R;
 import com.SevenNine.Partnercode.SessionManager;
+import com.SevenNine.Partnercode.Urls;
+import com.SevenNine.Partnercode.Volly_class.Crop_Post;
+import com.SevenNine.Partnercode.Volly_class.VoleyJsonObjectCallback;
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+import de.hdodenhof.circleimageview.CircleImageView;
 
 
 public class HomeFragment extends Fragment implements View.OnClickListener, NavigationView.OnNavigationItemSelectedListener{
@@ -40,9 +50,10 @@ Fragment selectedFragment;
     String userid;
     SessionManager sessionManager;
     DrawerLayout drawer_layout;
-    TextView home,logout,shop_cat,disc_store,my_orders,list_prod,inventory,account,store,offers,payments,notification;
+    TextView home,logout,search_by_cat,disc_store,my_orders,list_prod,inventory,account,store,offers,payments,notification;
     public static TextView cart_count_text,user_name_menu;
 static boolean fragloaded;
+    CircleImageView image_acc;
     boolean doubleBackToExitPressedOnce = false;
 
 static Fragment myloadingfragment;
@@ -67,10 +78,12 @@ static Fragment myloadingfragment;
         prof_tab=view.findViewById(R.id.prof_tab);
        // list_prod=view.findViewById(R.id.list_prod);
         logout=view.findViewById(R.id.logout);
+        search_by_cat=view.findViewById(R.id.search_by_cat);
         store=view.findViewById(R.id.stores);
         offers=view.findViewById(R.id.offers);
         inventory=view.findViewById(R.id.inventory);
         payments=view.findViewById(R.id.payments);
+        image_acc=view.findViewById(R.id.image_acc);
         drawer_layout=view.findViewById(R.id.drawer_layout);
         search=view.findViewById(R.id.search);
         Window window = getActivity().getWindow();
@@ -131,14 +144,14 @@ static Fragment myloadingfragment;
                 return true;
             }
         });
-        /*Bundle bundle=getArguments();
-        if (bundle!=null){*/
-            if (OffersAdapter.status!=null){
+        Bundle bundle=getArguments();
+        if (bundle!=null){
+            if (bundle.getString("status")!=null){
                 selectedFragment = PreviewProductDetails.newInstance();
                 FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
                 transaction.replace(R.id.frame_layout_home, selectedFragment);
                 transaction.commit();
-            }else if(OrderDetailsFragment.order_details!=null) {
+            }else if(bundle.getString("order_details")!=null) {
                 selectedFragment = OrderTabFragment.newInstance();
                 FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
                 transaction.replace(R.id.frame_layout_home, selectedFragment);
@@ -150,13 +163,12 @@ static Fragment myloadingfragment;
                 transaction.replace(R.id.frame_layout_home, selectedFragment);
                 transaction.commit();
             }
-       /* }else{
+        }else{
             selectedFragment = HomeLandingFragment.newInstance();
             FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
             transaction.replace(R.id.frame_layout_home, selectedFragment);
             transaction.commit();
         }
-*/
 
        search.setOnClickListener(new View.OnClickListener() {
            @Override
@@ -192,6 +204,19 @@ static Fragment myloadingfragment;
                         drawer.closeDrawers();
                     }
                 });*/
+                search_by_cat.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        selectedFragment = ShopByCategoryFragment.newInstance();
+                        FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
+                        transaction.replace(R.id.frame_layout1, selectedFragment);
+                        transaction.addToBackStack("dhsks");
+                        transaction.commit();
+                        drawer.closeDrawers();
+                    }
+                });
+
+
                 store.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -267,6 +292,112 @@ static Fragment myloadingfragment;
                     }
                 });
 */
+                try{
+                    JSONObject jsonObject = new JSONObject();
+                    JSONObject post_object = new JSONObject();
+
+                    jsonObject.put("Id",sessionManager.getRegId("userId"));
+                    post_object.put("objUser",jsonObject);
+
+
+                    Crop_Post.crop_posting(getActivity(), Urls.Get_Profile_Details1, post_object, new VoleyJsonObjectCallback() {
+                        @Override
+                        public void onSuccessResponse(JSONObject result) {
+                            System.out.println("ggpgpgpg" + result);
+
+                            try{
+
+                                JSONObject jsonObject1 = result.getJSONObject("user");
+                                String ProfileName1 = jsonObject1.getString("UserName");
+                                System.out.println("11111" + jsonObject1.getString("FullName"));
+                                String ProfilePhone = jsonObject1.getString("PhoneNo");
+                                String ProfileEmail = jsonObject1.getString("EmailId");
+                                String ProfileImage = jsonObject1.getString("ProfilePic");
+                                System.out.println("11111" + ProfileName1);
+
+
+
+                                //  name.setText(ProfileName1);
+                                // phone_no.setText(ProfilePhone);
+                                //  user_name_menu.setText(ProfileName1);
+
+                                // user_name_menu.setFilters(new InputFilter[]{EMOJI_FILTER});
+                                //  phone_no.setFilters(new InputFilter[]{EMOJI_FILTER});
+                                //profile_mail.setFilters(new InputFilter[]{EMOJI_FILTER});
+
+
+                                if (!(ProfileImage.equals(""))){
+                                    Glide.with(getActivity()).load(ProfileImage)
+
+                                            .thumbnail(0.5f)
+                                            //  .crossFade()
+                                            .error(R.drawable.avatarmale)
+                                            .into(image_acc);
+                                }else{
+                                    try {
+
+                                        JSONObject jsonObject = new JSONObject();
+                                        jsonObject.put("UserId", sessionManager.getRegId("userId"));
+
+
+                                        Crop_Post.crop_posting(getActivity(), Urls.GetCImagelist, jsonObject, new VoleyJsonObjectCallback() {
+                                            @Override
+                                            public void onSuccessResponse(JSONObject result) {
+                                                System.out.println("dhfjfjd" + result);
+
+
+                                                try {
+
+                                                    JSONArray imagelist_array = result.getJSONArray("captureImagelist");
+
+                                                    for (int i = 0; i < imagelist_array.length(); i++) {
+
+
+                                                        JSONObject jsonObject1 = imagelist_array.getJSONObject(i);
+                                                        String image_view = jsonObject1.getString("Image1");
+
+
+
+                                                        Glide.with(getActivity()).load(image_view)
+                                                                .thumbnail(0.5f)
+                                                                .diskCacheStrategy(DiskCacheStrategy.ALL)
+                                                                .error(R.drawable.avatarmale)
+                                                                .into(image_acc);
+                                                    }
+
+
+
+
+                                                } catch (Exception e) {
+                                                    e.printStackTrace();
+                                                }
+
+                                            }
+                                        });
+
+
+                                    } catch (Exception e) {
+                                        e.printStackTrace();
+                                    }
+                                }
+                       /* Glide.with(getActivity()).load(ProfileImage)
+
+                                .thumbnail(0.5f)
+                                //  .crossFade()
+                                .error(R.drawable.avatarmale)
+                                .into(prod_img);*/
+
+
+                            }catch (Exception e){
+                                e.printStackTrace();
+                            }
+
+                        }
+                    });
+
+                }catch (Exception e){
+                    e.printStackTrace();
+                }
 
             }
         });

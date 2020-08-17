@@ -100,7 +100,7 @@ sessionManager=new SessionManager(getActivity());
       //  list_prod.setVisibility(View.GONE);
       //  list_prod_lay.setVisibility(View.GONE);
 
-        mHandler.post(
+      /*  mHandler.post(
                 new Runnable() {
                     public void run() {
                         InputMethodManager inputMethodManager =  (InputMethodManager)getActivity().getSystemService(INPUT_METHOD_SERVICE);
@@ -108,7 +108,7 @@ sessionManager=new SessionManager(getActivity());
                         search_off.requestFocus();
                     }
                 });
-
+*/
 
         back_feed.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -136,8 +136,8 @@ sessionManager=new SessionManager(getActivity());
                 return false;
             }
         });
-        search_off.requestFocus();
-        search_off.setCursorVisible(true);
+      //  search_off.requestFocus();
+      //  search_off.setCursorVisible(true);
 
         setupUI(main_layout);
         search.setOnClickListener(new View.OnClickListener() {
@@ -157,8 +157,8 @@ sessionManager=new SessionManager(getActivity());
 
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-                search_off.requestFocus();
-                search_off.setCursorVisible(true);
+              //  search_off.requestFocus();
+              //  search_off.setCursorVisible(true);
 
                 // TODO Auto-generated method stub
             }

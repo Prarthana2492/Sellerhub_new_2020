@@ -35,6 +35,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.SevenNine.Partnercode.Activity.Status_bar_change_singleton;
+import com.SevenNine.Partnercode.Adapter.AddProductListAdapter;
 import com.SevenNine.Partnercode.Adapter.InventoryAdapter;
 import com.SevenNine.Partnercode.Adapter.SelectCategoryAdapter;
 import com.SevenNine.Partnercode.Adapter.SelectSubCategoryAdapter;
@@ -69,12 +70,12 @@ public class AddProductFragment extends Fragment {
     public  static EditText brand;
     public  static TextView uom,expiry_date;
     SessionManager sessionManager;
-    String status,productlistid,sellingmasterid,sellingcatid,sellingtypeid;
+    public static String status,productlistid,sellingmasterid,sellingcatid,sellingtypeid;
     JSONObject lngObject;
     Calendar myCalendar;
     RecyclerView recyclerView;
     String date_str;
-    int IsOfferAvailable;
+    public static int IsOfferAvailable;
     CheckBox offer_checkbox;
     int mrp_int,amount_int;
     public static ArrayList<SelectLanguageBean> newOrderBeansList = new ArrayList<>();
@@ -84,6 +85,7 @@ public class AddProductFragment extends Fragment {
     SelectLanguageBean selectLanguageBean;
 
     public static String search_status="status";
+    String prod_image,prod_name;
 
     public static DrawerLayout drawer;
     public static AddProductFragment newInstance() {
@@ -103,7 +105,7 @@ public class AddProductFragment extends Fragment {
         backfeed = view.findViewById(R.id.back_feed);
         linearLayout = view.findViewById(R.id.main_layout);
       //  product_code = view.findViewById(R.id.prod_code);
-        product_name = view.findViewById(R.id.prod_name);
+       // product_name = view.findViewById(R.id.prod_name);
        // product_description = view.findViewById(R.id.prod_description);
         quantity = view.findViewById(R.id.quantity);
      //   uom = view.findViewById(R.id.uom);
@@ -124,6 +126,8 @@ public class AddProductFragment extends Fragment {
         drawer = (DrawerLayout) view.findViewById(R.id.drawer_layout_op);
 
         if (getArguments()!=null){
+            prod_image=getArguments().getString("prod_img");
+            prod_name=getArguments().getString("prod_name");
     if (getArguments().getString("page")!=null) {
         productlistid = getArguments().getString("status1");
         sellingmasterid = getArguments().getString("masterId1");
@@ -139,6 +143,7 @@ public class AddProductFragment extends Fragment {
         productlistid=getArguments().getString("productlistid");
         sellingmasterid=getArguments().getString("sellingmasterid");
         sellingtypeid=getArguments().getString("sellingtypeid");
+        sellingcatid="1";
     }
 }
 
@@ -401,6 +406,7 @@ public class AddProductFragment extends Fragment {
                     toast.show();
                 } */
                 else if (IsOfferAvailable==1){
+
                     if (off_price.getText().toString().equals("")){
                         Toast toast = Toast.makeText(getActivity(), "Enter Offer Price", Toast.LENGTH_LONG);
                         toast.setGravity(Gravity.TOP | Gravity.CENTER, 0, 0);
@@ -410,12 +416,33 @@ public class AddProductFragment extends Fragment {
                         toast.setGravity(Gravity.TOP | Gravity.CENTER, 0, 0);
                         toast.show();
                     }else{
-                        AddProduct();
+                       // AddProduct();
+                        Bundle bundle=new Bundle();
+                        bundle.putString("ProdName",prod_name);
+                        bundle.putString("ProdPrice",amount.getText().toString());
+                        bundle.putString("ProdMRP",mrp.getText().toString());
+                        bundle.putString("ProdOfferPrice",off_price.getText().toString());
+                        bundle.putString("ProdDeliveryCharge",delivery_charge.getText().toString());
+                        bundle.putString("ProdBrand",brand.getText().toString());
+                        bundle.putString("ProdQuantity",quantity.getText().toString());
+                        bundle.putString("ProdExpiryDate",expiry_date.getText().toString());
+                        bundle.putString("ProdImage", prod_image);
+                        selectedFragment = ProductConfirmationFragment.newInstance();
+                        FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
+                        transaction.replace(R.id.frame_layout1, selectedFragment);
+                        transaction.addToBackStack("spicescateory1");
+                        selectedFragment.setArguments(bundle);
+                        transaction.commit();
                     }
                 }
                 else {
                     System.out.println("uuuuuuuu" + IsOfferAvailable);
-                    AddProduct();
+                   // AddProduct();
+                    selectedFragment = ProductConfirmationFragment.newInstance();
+                    FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
+                    transaction.replace(R.id.frame_layout1, selectedFragment);
+                    transaction.addToBackStack("spicescateory1");
+                    transaction.commit();
 
                 }
                 }
@@ -595,7 +622,7 @@ public class AddProductFragment extends Fragment {
         }
     }
         private void updateLabel() {
-        String myFormat = "dd/MM/yyyy"; //In which you need put here
+        String myFormat = "MM/dd/yyyy"; //In which you need put here
         SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.US);
 
             date_str=sdf.format(myCalendar.getTime());

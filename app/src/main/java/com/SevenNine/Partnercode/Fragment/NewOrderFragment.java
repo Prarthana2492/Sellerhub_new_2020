@@ -44,7 +44,8 @@ public class NewOrderFragment extends Fragment {
     NewOrderAdapter madapter;
     JSONObject lngObject;
     Fragment selectedFragment;
-    TextView toolbar_title;
+    TextView toolbar_title,filter,time;
+    String status;
 
     public static NewOrderFragment newInstance() {
         NewOrderFragment fragment = new NewOrderFragment();
@@ -57,8 +58,11 @@ public class NewOrderFragment extends Fragment {
         View view = inflater.inflate(R.layout.new_order_recy, container, false);
         recyclerView=view.findViewById(R.id.new_order_recy);
         filter_lay=view.findViewById(R.id.filter_lay);
+        time=view.findViewById(R.id.time);
+        filter=view.findViewById(R.id.filter);
 
-        filter_lay.setVisibility(View.GONE);
+
+        filter_lay.setVisibility(View.VISIBLE);
 
         sessionManager=new SessionManager(getActivity());
         Window window = getActivity().getWindow();
@@ -70,7 +74,7 @@ public class NewOrderFragment extends Fragment {
         GridLayoutManager mLayoutManager_farm = new GridLayoutManager(getActivity(), 1, GridLayoutManager.VERTICAL, false);
         recyclerView.setLayoutManager(mLayoutManager_farm);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
-        OrderDetails();
+      //  OrderDetails();
         /*NewOrderBean bean=new NewOrderBean("Parle-G Gold Milk Glucose..","23-Apr-2020","");
         newOrderBeansList.add(bean);
         newOrderBeansList.add(bean);
@@ -105,6 +109,93 @@ public class NewOrderFragment extends Fragment {
             }
         });
 
+
+        try {
+
+
+
+            Bundle bundle =getArguments();
+            System.out.println("buuunnn"+bundle);
+            if (bundle != null) {
+
+                String order_text = bundle.getString("setText");
+                String bundlestatus=bundle.getString("bundlestatus");
+
+                System.out.println("lkdjksj"+order_text);
+
+                time.setText(order_text);
+
+                if (bundlestatus.equals("1")){
+                    // System.out.println("bundlestatus"+bundlestatus);
+                    //CANCEL
+                    status="CancelOrders";
+                    FilterOrderList();
+                }/*else if (bundlestatus.equals("2")) {
+                    //All
+                    status="";
+                }*/  else if(bundlestatus.equals("3")) {
+                    //OPEN
+                    System.out.println("bbbbuunnddllee");
+                    status="OpenOrders";
+                    FilterOrderList();
+
+                } else if (bundlestatus.equals("6month")){
+                    status="Last6Month";
+                    FilterOrderList();
+
+                }else if (bundlestatus.equals("30days")){
+                    status="OneMonth";
+                    FilterOrderList();
+
+                }else if (bundlestatus.equals("year")){
+                    status="YearWisedata";
+                    FilterOrderList();
+
+                }else if (bundlestatus.equals("year1")){
+                    status="";
+                    FilterOrderList();
+
+                }else if (bundlestatus.equals("year2")){
+                    status="";
+                    FilterOrderList();
+
+                }else{
+                    //All
+                    status="AllOrders";
+                    FilterOrderList();
+                }
+               /* if(order_text.equals("Open Orders")){
+                    System.out.println("order_texttttt" + order_text);
+                // Orderlist();
+
+                time.setText(order_text);
+
+            }else if (order_text.equals("Open Orders")){
+                    time.setText(order_text);
+                }
+            else{
+
+                time.setText("Last 6 months");
+               // AllOrders();
+            }*/}else{
+                status="AllOrders";
+                FilterOrderList();
+            }
+        }catch (Exception e){
+
+        }
+        System.out.println("sttttt"+status);
+        filter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                System.out.println("kfhksjhfl");
+                selectedFragment = FilterFragment.newInstance();
+                FragmentTransaction transaction = (getActivity()).getSupportFragmentManager().beginTransaction();
+                transaction.replace(R.id.frame_layout_home, selectedFragment);
+                transaction.addToBackStack("ordersshk");
+                transaction.commit();
+            }
+        });
         return view;
     }
 
@@ -154,6 +245,66 @@ public class NewOrderFragment extends Fragment {
                             newOrderBeansList.add(img1);
 
                           //  System.out.println("adreess_list_size"+newOrderBeansList.size());
+
+                        }
+                        madapter = new NewOrderAdapter(getActivity(), newOrderBeansList);
+                        recyclerView.setAdapter(madapter);
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                }
+            });
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void FilterOrderList() {
+        newOrderBeansList.clear();
+
+        try {
+            JSONObject userRequestjsonObject = new JSONObject();
+            userRequestjsonObject.put("UserId",sessionManager.getRegId("userId"));
+            userRequestjsonObject.put("Status",status);
+            // userRequestjsonObject.put("UserId","1");
+            System.out.println("uiuuuuuussseeettttiiinnnngg"+userRequestjsonObject);
+
+            Login_post.login_posting(getActivity(), Urls.GetFiltersforOrderDetails, userRequestjsonObject, new VoleyJsonObjectCallback() {
+                @Override
+                public void onSuccessResponse(JSONObject result) {
+                    System.out.println("statussssss000lll" + result);
+                    JSONArray jsonArray = new JSONArray();
+
+                    try {
+
+                        jsonArray = result.getJSONArray("filterfororderdetails");
+                        for (int i=0;i<jsonArray.length();i++) {
+                            JSONObject jsonObject1 = jsonArray.getJSONObject(i);
+
+                            String ProductName=jsonObject1.getString("ProductName");
+                            String ProductIcon=jsonObject1.getString("ProductIcon");
+                            String CreatedOn=jsonObject1.getString("CreatedOn");
+                            String TxnId=jsonObject1.getString("PayUTransactionId");
+                            String Amount=jsonObject1.getString("Amount");
+                            String SelectedQuantity=jsonObject1.getString("SelectedQuantity");
+                            String SellingCategoryName=jsonObject1.getString("SellingCategoryName");
+                            String ProductInfo=jsonObject1.getString("CustAddress");
+                            String mode=jsonObject1.getString("mode");
+                            String MRP=jsonObject1.getString("MRP");
+                            String OfferPrice = jsonObject1.getString("OfferPrice");
+                            String CustAddress=jsonObject1.getString("CustAddress");
+                            String DeliveryCharges = jsonObject1.getString("DeliveryCharges");
+                            String SellingListName = jsonObject1.getString("SellingListName");
+                            String Brand = jsonObject1.getString("Brand");
+                            String ProductDescription = jsonObject1.getString("ProductDescription");
+
+                            /*PreferedBranchBean bean=new PreferedBranchBean(Name,StreeAddress,StreeAddress1,State,Pincode,"",Id);
+                            newOrderBeansList.add(bean);*/
+
+                            NewOrderBean img1=new NewOrderBean(ProductName,CreatedOn,"",TxnId,Amount,SelectedQuantity,OfferPrice,ProductInfo,mode,
+                                    MRP,SellingCategoryName,ProductIcon,SellingListName,Brand,ProductDescription,DeliveryCharges);
+                            newOrderBeansList.add(img1);
+                            //  System.out.println("adreess_list_size"+newOrderBeansList.size());
 
                         }
                         madapter = new NewOrderAdapter(getActivity(), newOrderBeansList);

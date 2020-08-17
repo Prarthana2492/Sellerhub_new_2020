@@ -74,11 +74,14 @@ public class OrderDetailsFragment extends Fragment {
             public void onClick(View v) {
               /*  FragmentManager fm = getFragmentManager();
                 fm.popBackStack();*/
+              Bundle bundle=new Bundle();
+              bundle.putString("order_details","true");
                 order_details="true";
                 selectedFragment = HomeFragment.newInstance();
                 FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
                 transaction.replace(R.id.frame_layout1, selectedFragment);
                 transaction.addToBackStack("track24");
+                selectedFragment.setArguments(bundle);
                 transaction.commit();
 
             }

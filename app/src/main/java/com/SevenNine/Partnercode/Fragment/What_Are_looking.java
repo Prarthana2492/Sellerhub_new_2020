@@ -1,4 +1,5 @@
 package com.SevenNine.Partnercode.Fragment;
+import android.app.Activity;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.RequiresApi;
@@ -9,14 +10,20 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
+import android.view.inputmethod.InputMethodManager;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.SevenNine.Partnercode.Adapter.AddProductListAdapter;
 import com.SevenNine.Partnercode.Adapter.What_Areu_Looking_Adapter;
 import com.SevenNine.Partnercode.R;
 import com.SevenNine.Partnercode.Bean.Sellbean;
@@ -28,15 +35,21 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.List;
+
+import static android.content.Context.INPUT_METHOD_SERVICE;
 
 
 public class What_Are_looking extends Fragment {
 
     public static ArrayList<Sellbean> newOrderBeansList = new ArrayList<>();
+    private List<Sellbean> searchresultAraaylist = new ArrayList<>();
+
     public static RecyclerView recyclerView;
     public static What_Areu_Looking_Adapter livestock_types_adapter;
     Fragment selectedFragment = null;
     TextView toolbar_title;
+    EditText search;
     public static String livestock_status;
     LinearLayout back_feed,linearLayout;
     JSONArray get_categorylist_array;
@@ -61,6 +74,7 @@ public class What_Are_looking extends Fragment {
         recyclerView=view.findViewById(R.id.recycler_what_looking);
         toolbar_title=view.findViewById(R.id.toolbar_title);
         back_feed=view.findViewById(R.id.back_feed);
+        search=view.findViewById(R.id.search);
         linearLayout = view.findViewById(R.id.linearLayout);
 
        // sellingdetailsid=Inventory_Details_Fragment.SId;
@@ -105,6 +119,7 @@ public class What_Are_looking extends Fragment {
             }
         });
 
+        setupUI(linearLayout);
 
         newOrderBeansList.clear();
         // livestock_types_adapter = new Livestock_Types_Adapter( getActivity(),newOrderBeansList);
@@ -131,6 +146,31 @@ public class What_Are_looking extends Fragment {
         newOrderBeansList.add(bean7);
         livestock_types_adapter=new What_Areu_Looking_Adapter(getActivity(),newOrderBeansList);
         recyclerView.setAdapter(livestock_types_adapter);*/
+
+
+        search.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                sorting(s.toString());
+                // TODO Auto-generated method stub
+            }
+
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                search.requestFocus();
+                search.setCursorVisible(true);
+
+                // TODO Auto-generated method stub
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+                // TODO Auto-generated method stub
+            }
+        });
+
+
         try{
 
             newOrderBeansList.clear();
@@ -169,6 +209,65 @@ public class What_Are_looking extends Fragment {
         return view;
     }
 
+    public  void sorting(String filter_text){
+
+        final String text = filter_text.toLowerCase();
+
+        searchresultAraaylist.clear();
+        for (int i = 0; i < newOrderBeansList.size(); i++) {
+
+            if (newOrderBeansList.get(i).getName().toLowerCase().contains(text)) {
+                searchresultAraaylist.add(newOrderBeansList.get(i));
+
+            }
+        }
+        livestock_types_adapter=new What_Areu_Looking_Adapter(getActivity(),searchresultAraaylist);
+        recyclerView.setAdapter(livestock_types_adapter);
+
+    }
+    public void setupUI(View view) {
+
+
+        if(!(view instanceof EditText)) {
+            view.setOnTouchListener(new View.OnTouchListener() {
+
+                public boolean onTouch(View v, MotionEvent event) {
+                    hideSoftKeyboard(getActivity());
+                    return false;
+                }
+
+            });
+        }
+        if (view instanceof ViewGroup) {
+
+            for (int i = 0; i < ((ViewGroup) view).getChildCount(); i++) {
+
+                View innerView = ((ViewGroup) view).getChildAt(i);
+
+                setupUI(innerView);
+            }
+        }
+    }
+
+    public static void hideSoftKeyboard(Activity activity) {
+
+
+        InputMethodManager inputManager = (InputMethodManager)
+                activity.getSystemService(
+                        INPUT_METHOD_SERVICE);
+        View focusedView = activity.getCurrentFocus();
+
+        if (focusedView != null) {
+
+            try {
+                assert inputManager != null;
+                inputManager.hideSoftInputFromWindow(focusedView.getWindowToken(),
+                        InputMethodManager.HIDE_NOT_ALWAYS);
+            } catch (AssertionError e) {
+                e.printStackTrace();
+            }
+        }
+    }
 
 
 

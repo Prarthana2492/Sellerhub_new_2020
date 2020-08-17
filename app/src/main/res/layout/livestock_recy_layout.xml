@@ -54,6 +54,43 @@
 
     </LinearLayout>
 
+    <LinearLayout
+        android:id="@+id/search_lay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/menu_green"
+        android:paddingHorizontal="15dp"
+        android:paddingBottom="10dp"
+        android:gravity="center_vertical">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+
+           <!-- <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_search_green"
+                />-->
+
+            <EditText
+                android:id="@+id/search"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16dp"
+                android:padding="10dp"
+                android:drawablePadding="10dp"
+                android:drawableLeft="@drawable/ic_search_grey"
+                android:background="@drawable/border_empty_curve"
+                android:fontFamily="@font/segoeui"
+                android:textColor="@color/gray"
+                />
+
+        </LinearLayout>
+    </LinearLayout>
 
     <!--<android.support.v7.widget.Toolbar-->
         <!--android:id="@+id/toolbar"-->

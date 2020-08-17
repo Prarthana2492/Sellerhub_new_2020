@@ -6,6 +6,7 @@ import android.support.v4.app.FragmentStatePagerAdapter;
 
 import com.SevenNine.Partnercode.Fragment.AcceptedListFragment;
 import com.SevenNine.Partnercode.Fragment.DispatchedFragment;
+import com.SevenNine.Partnercode.Fragment.DispatchedOrderListFragment;
 import com.SevenNine.Partnercode.Fragment.NewOrderFragment;
 import com.SevenNine.Partnercode.Fragment.NotificationList;
 import com.SevenNine.Partnercode.Fragment.OrderDetailsFragment;
@@ -46,7 +47,7 @@ public class PagerOrder extends FragmentStatePagerAdapter {
                 AcceptedListFragment scheduledTabFragment=new AcceptedListFragment();
                 return scheduledTabFragment;
             case 2:
-                DispatchedFragment tab2 = new DispatchedFragment();
+                DispatchedOrderListFragment tab2 = new DispatchedOrderListFragment();
                 return tab2;
             case 3:
                 DispatchedFragment tab3 = new DispatchedFragment();

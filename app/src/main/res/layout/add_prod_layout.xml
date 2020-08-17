@@ -304,6 +304,7 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/segoeui"
                     android:maxLength="30"
+                    android:text="0"
                     android:singleLine="true"
                     android:inputType="number"
                     android:textColorHint="#C7C7C7"

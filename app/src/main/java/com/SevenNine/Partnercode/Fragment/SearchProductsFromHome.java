@@ -163,14 +163,14 @@ public class SearchProductsFromHome extends Fragment {
 
             System.out.println("jhfdfdjc111"+jsonObject);
 
-            Crop_Post.crop_posting(getActivity(), Urls.GetProductLists, jsonObject, new VoleyJsonObjectCallback() {
+            Crop_Post.crop_posting(getActivity(), Urls.GetProductListsForSearch, jsonObject, new VoleyJsonObjectCallback() {
                 @Override
                 public void onSuccessResponse(JSONObject result) {
                     System.out.println("GetSellingTypeeeeeeeepp"+result);
 
 
                     try{
-                        get_soiltype = result.getJSONArray("ProductLists");
+                        get_soiltype = result.getJSONArray("ProductListsForSearch");
                         System.out.println("idddddddddddddddddddddddddddddddddddddddddnext"+get_soiltype);
 
                         if (get_soiltype.length()==0){

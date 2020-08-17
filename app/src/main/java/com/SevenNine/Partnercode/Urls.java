@@ -39,6 +39,7 @@ public class Urls {
  public static final String GetFarmDetailsList = ROOT_URL+"MasterTable/GetFarmsList";
  public static final String GetFarmsListByUserId = ROOT_URL+"MasterTable/GetFarmsListByUserId";
  public static final String GetOrderList =ROOT_URL +"Partner/GetOrdersFromCart";
+ public static final String GetFiltersforOrderDetails =ROOT_URL +"Partner/GetFiltersforOrderDetails";
  public static final String Get7NineWeeklyPaymentDetails =ROOT_URL +"Partner/Get7NineWeeklyPaymentDetails";
  public static final String Get7NineTodaysPaymentDetails =ROOT_URL +"Partner/Get7NineTodaysPaymentDetails";
  public static final String GetFiltersOnTodayPaymentDetails =ROOT_URL +"Partner/GetFiltersOnTodayPaymentDetails";
@@ -48,6 +49,7 @@ public class Urls {
  public static final String GetProductDetails =ROOT_URL +"Partner/GetProductDetails";
  public static final String GetOfferDetails =ROOT_URL +"Partner/GetOfferDetails";
  public static final String GetAcceptedOrdersDetails =ROOT_URL +"Partner/GetAcceptedOrdersDetails";
+ public static final String GetDispatchedOrdersDetails =ROOT_URL +"Partner/GetDispatchedOrdersDetails";
  public static final String GetBankList = ROOT_URL+"MasterTable/GetBankDetailsList";
 
 
@@ -162,8 +164,10 @@ public class Urls {
  public static final String GetSellingCategoryList = ROOT_URL + "MasterTable/GetSellingCategoryList";
  public static final String GetSellingList = ROOT_URL + "MasterTable/GetSellingList";
  public static final String GetProductLists = ROOT_URL + "MasterTable/GetProductLists";
+ public static final String GetProductListsForSearch = ROOT_URL + "MasterTable/GetProductListsForSearch";
  public static final String AddUpdateProductDetails = ROOT_URL + "Partner/AddUpdateProductDetails";
  public static final String AddAcceptOrdersFrom7NineDetails = ROOT_URL + "Partner/AddAcceptOrdersFrom7NineDetails";
+ public static final String AddDispatchedOrdersFrom7NineDetails = ROOT_URL + "Partner/AddDispatchedOrdersFrom7NineDetails";
  public static final String GetStoreDetails = ROOT_URL + "Partner/GetStoreDetails";
  public static final String Get_Profile_Details1= ROOT_URL + "Auth/GetRegUserDetails";
 

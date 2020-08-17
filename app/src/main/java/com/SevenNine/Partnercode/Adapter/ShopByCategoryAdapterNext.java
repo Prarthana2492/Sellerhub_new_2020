@@ -13,9 +13,9 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.SevenNine.Partnercode.Bean.Sellbean;
-import com.SevenNine.Partnercode.Fragment.AddProductFragment;
+import com.SevenNine.Partnercode.Bean.MainVerticalBean;
 import com.SevenNine.Partnercode.Fragment.AddProductList;
+import com.SevenNine.Partnercode.Fragment.HomeFragment;
 import com.SevenNine.Partnercode.R;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
@@ -23,16 +23,16 @@ import com.bumptech.glide.request.RequestOptions;
 
 import java.util.List;
 
-public class AddProductListAdapter extends RecyclerView.Adapter<AddProductListAdapter.MyViewHolder> {
+public class ShopByCategoryAdapterNext extends RecyclerView.Adapter<ShopByCategoryAdapterNext.MyViewHolder> {
 
-    private List<Sellbean> productList;
+    private List<MainVerticalBean> productList;
     Activity activity;
     Fragment selectedFragment;
-    public static String sellingtypeid,productlist_id,prod_img;
+    public static String sellingtypeid,shop_cat_home;
 
 
 
-    public AddProductListAdapter(Activity activity, List<Sellbean> moviesList) {
+    public ShopByCategoryAdapterNext(Activity activity, List<MainVerticalBean> moviesList) {
         this.productList = moviesList;
         this.activity=activity;
 
@@ -61,34 +61,32 @@ public class AddProductListAdapter extends RecyclerView.Adapter<AddProductListAd
         View itemView = LayoutInflater.from(parent.getContext())
 
 
-                .inflate(R.layout.homepage_adapter_layout, parent, false);
+                .inflate(R.layout.shop_cat_2, parent, false);
         return new MyViewHolder(itemView);
 
     }
     @Override
     public void onBindViewHolder(final MyViewHolder holder, final int position) {
-     final Sellbean products = productList.get(position);
+     final MainVerticalBean products = productList.get(position);
       sellingtypeid=products.getId();
         holder.name.setText(products.getName());
         Glide.with(activity).load(products.getImage())
                 .thumbnail(0.5f)
                 //.crossFade()
                 .apply(RequestOptions.diskCacheStrategyOf(DiskCacheStrategy.ALL)
-                        .error(R.drawable.ic_gallery__default))
+                        .error(R.drawable.veg))
                 .into(holder.image);
-        holder.image.setOnClickListener(new View.OnClickListener() {
+        holder.item.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                productlist_id=products.getId();
-                Bundle bundle = new Bundle();
-                bundle.putString("status",productlist_id);
-                bundle.putString("masterId", AddProductList.selling_masterid);
-                bundle.putString("prod_img", products.getImage());
-                bundle.putString("prod_name", products.getName());
-                selectedFragment = AddProductFragment.newInstance();
+                shop_cat_home="shop_by_cat";
+                Bundle bundle=new Bundle();
+                bundle.putString("sellingCatId_shop",products.getId());
+                bundle.putString("ShopbyCat","ShopbyCatt");
+                selectedFragment = AddProductList.newInstance();
                 FragmentTransaction transaction = ((FragmentActivity)activity).getSupportFragmentManager().beginTransaction();
                 transaction.replace(R.id.frame_layout1, selectedFragment);
-                transaction.addToBackStack("spicescateory12");
+                transaction.addToBackStack("spicescateory");
                 selectedFragment.setArguments(bundle);
                 transaction.commit();
                 /*sellingtypeid=products.getId();

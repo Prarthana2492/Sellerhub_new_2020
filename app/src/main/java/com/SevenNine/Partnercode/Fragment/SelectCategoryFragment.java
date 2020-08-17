@@ -38,7 +38,7 @@ public class SelectCategoryFragment extends Fragment {
     Fragment selectedFragment = null;
     TextView toolbar_title;
     public static String livestock_status;
-    LinearLayout back_feed,linearLayout;
+    LinearLayout back_feed,linearLayout,search_lay;
     JSONArray get_categorylist_array;
     JSONArray get_soiltype;
    public static String sellingdetailsid,sellnavigation,sellingid;
@@ -62,10 +62,12 @@ public class SelectCategoryFragment extends Fragment {
         toolbar_title=view.findViewById(R.id.setting_tittle);
         back_feed=view.findViewById(R.id.back_feed);
         linearLayout = view.findViewById(R.id.linearLayout);
+        search_lay = view.findViewById(R.id.search_lay);
         toolbar_title.setText("Select Category");
        // sellingdetailsid=Inventory_Details_Fragment.SId;
         System.out.println("selleditiddd"+sellingdetailsid);
 
+        search_lay.setVisibility(View.GONE);
         if (getArguments() != null) {
          //   sellnavigation= String.valueOf(getArguments().getString("navg_from").equals("invtry_details"));
             sellingid = getArguments().getString("status");
