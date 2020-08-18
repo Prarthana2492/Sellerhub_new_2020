@@ -268,7 +268,7 @@ public class NewOrderFragment extends Fragment {
             userRequestjsonObject.put("Status",status);
             // userRequestjsonObject.put("UserId","1");
             System.out.println("uiuuuuuussseeettttiiinnnngg"+userRequestjsonObject);
-
+////jjjjjjjjjjj
             Login_post.login_posting(getActivity(), Urls.GetFiltersforOrderDetails, userRequestjsonObject, new VoleyJsonObjectCallback() {
                 @Override
                 public void onSuccessResponse(JSONObject result) {
