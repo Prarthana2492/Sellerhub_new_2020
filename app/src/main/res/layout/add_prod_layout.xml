@@ -159,7 +159,7 @@
 
                     />
 
-                <TextView
+               <!-- <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
@@ -181,7 +181,7 @@
                     android:textColorHint="#C7C7C7"
                     android:textSize="18dp"
 
-                    />
+                    />-->
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -222,6 +222,30 @@
 
                         />
 
+                    <TextView
+                        android:id="@+id/price_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:text="Price"
+                        android:drawablePadding="5dp"
+                        android:drawableRight="@drawable/ic_astrick_icon"
+                        android:textColor="#9D9D9D"
+                        android:textSize="15dp" />
+
+
+                    <EditText
+                        android:id="@+id/amount"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/segoeui"
+                        android:maxLength="30"
+                        android:singleLine="true"
+                        android:inputType="number"
+                        android:textColorHint="#C7C7C7"
+                        android:textSize="18dp"
+
+                        />
                     <LinearLayout
                         android:id="@+id/offer_lay"
                         android:layout_width="match_parent"
@@ -253,7 +277,15 @@
                             android:textSize="18dp"
 
                             />
-
+                    </LinearLayout>
+                    <LinearLayout
+                        android:id="@+id/exp_lay"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginLeft="5dp"
+                        android:visibility="gone"
+                        >
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -286,9 +318,8 @@
                             android:layout_marginBottom="10dp"
                             android:background="#9D9D9D" />
 
-                    </LinearLayout>
                 </LinearLayout>
-
+                </LinearLayout>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

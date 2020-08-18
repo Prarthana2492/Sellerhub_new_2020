@@ -37,7 +37,7 @@ import org.json.JSONObject;
 
 public class ProductConfirmationFragment extends Fragment {
     public static RecyclerView recyclerView;
-    LinearLayout back_feed,submit;
+    LinearLayout back_feed,submit,offer_lay,price_lay,exp_lay;
     SessionManager sessionManager;
     JSONObject lngObject;
     Fragment selectedFragment;
@@ -58,9 +58,12 @@ public class ProductConfirmationFragment extends Fragment {
         prod_name=view.findViewById(R.id.prod_name);
         price=view.findViewById(R.id.price);
         actual_price=view.findViewById(R.id.mrp);
+        price_lay=view.findViewById(R.id.price_lay);
+        offer_lay=view.findViewById(R.id.offer_lay);
         offer_perc=view.findViewById(R.id.offer_price);
         prod_img=view.findViewById(R.id.prod_img);
         exp_date=view.findViewById(R.id.exp_date);
+        exp_lay=view.findViewById(R.id.exp_lay);
         delivery_charges=view.findViewById(R.id.delivery_charges);
         brand=view.findViewById(R.id.brand);
         quantity=view.findViewById(R.id.quantity);
@@ -101,22 +104,40 @@ public class ProductConfirmationFragment extends Fragment {
             }
         });
 
-      /*  prod_name.setText(getArguments().getString("product_name_st"));
-        price.setText(getArguments().getString("product_price_st"));
+        prod_name.setText(": "+getArguments().getString("ProdName"));
+       /* price.setText(getArguments().getString("product_price_st"));
         actual_price.setText(getArguments().getString("product_mrp_st"));
         abt_product.setText(getArguments().getString("product_name_st")+", "+getArguments().getString("prod_brand_st")+", "+getArguments().getString("prod_quant"));
 */
-        prod_name.setText(": "+getArguments().getString("ProdName"));
       //  price.setText("Rs"+OffersAdapter.product_price_st);
         actual_price.setText(": ₹"+getArguments().getString("ProdMRP"));
-        price.setText(": ₹"+getArguments().getString("ProdPrice"));
-        offer_perc.setText(": ₹"+getArguments().getString("ProdOfferPrice"));
+       // price.setText(": ₹"+getArguments().getString("ProdPrice"));
+      //  offer_perc.setText(": ₹"+getArguments().getString("ProdOfferPrice"));
         quantity.setText(": "+getArguments().getString("ProdQuantity")+ "Kg");
-        exp_date.setText(": "+getArguments().getString("ProdExpiryDate"));
         delivery_charges.setText(": ₹"+getArguments().getString("ProdDeliveryCharge"));
+        if (getArguments().getString("ProdOfferPrice")!=null){
+            offer_perc.setText(": ₹"+getArguments().getString("ProdOfferPrice"));
+            price_lay.setVisibility(View.GONE);
+            offer_lay.setVisibility(View.VISIBLE);
+            exp_lay.setVisibility(View.VISIBLE);
+            exp_date.setText(": "+getArguments().getString("ProdExpiryDate"));
+        }else{
+            price_lay.setVisibility(View.VISIBLE);
+            offer_lay.setVisibility(View.GONE);
+            price.setText(": ₹"+getArguments().getString("ProdPrice"));
+            exp_lay.setVisibility(View.GONE);
+        }
+
+       /* if (getArguments().getString("ProdName")!=null){
+            prod_name.setText(": "+getArguments().getString("ProdName"));
+        }else{
+            brand.setVisibility(View.VISIBLE);
+            brand.setText(": "+getArguments().getString("ProdBrand"));
+
+        }*/
         if (getArguments().getString("ProdBrand").equals("")){
          brand.setVisibility(View.GONE);
-        }else{
+        } else{
             brand.setVisibility(View.VISIBLE);
             brand.setText(": "+getArguments().getString("ProdBrand"));
 
@@ -199,7 +220,6 @@ public class ProductConfirmationFragment extends Fragment {
             System.out.println("aaaaaa" + jsonObject);
 
             //   jsonObject.put("UnitOfPriceId", uom.getText().toString());
-            jsonObject.put("Amount", price.getText().toString().substring(3));
             System.out.println("bbbbbb" + jsonObject);
 
             jsonObject.put("MRP", actual_price.getText().toString().substring(3));
@@ -225,11 +245,14 @@ public class ProductConfirmationFragment extends Fragment {
             if (AddProductFragment.IsOfferAvailable == 1) {
                 jsonObject.put("OfferExpiresOn", exp_date.getText().toString().substring(2));
                 jsonObject.put("OfferPrice", offer_perc.getText().toString().substring(3));
+                jsonObject.put("Amount", "0");
+
                 System.out.println("333333" + jsonObject);
 
             }else{
                 jsonObject.put("OfferExpiresOn", "1/1/2020");
                 jsonObject.put("OfferPrice", "0");
+                jsonObject.put("Amount", price.getText().toString().substring(3));
                 System.out.println("3333333" + jsonObject);
 
             }
@@ -243,16 +266,16 @@ public class ProductConfirmationFragment extends Fragment {
 
             }
             if (getArguments().getString("ProdBrand")==null){
-                jsonObject.put("Brand", 1);
+                jsonObject.put("Brand", "1");
 
             }else{
               //  jsonObject.put("Brand", brand.getText().toString().substring(2));
-                jsonObject.put("Brand",1);
+                jsonObject.put("Brand",brand.getText().toString().substring(2));
             }
             jsonObject.put("SellingListMasterId", 1);
             System.out.println("uuuuuuuuuuu" + jsonObject);
 
-            jsonObject.put("ExpiryDate", exp_date.getText().toString().substring(2));
+            jsonObject.put("ExpiryDate", "1/1/2020");
             jsonObject.put("Comments", comments);
             System.out.println("xxxxxx" + jsonObject);
 

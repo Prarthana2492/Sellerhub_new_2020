@@ -2,10 +2,13 @@ package com.SevenNine.Partnercode;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Bitmap;
 
 import com.SevenNine.Partnercode.Activity.Extra_Activity;
 import com.SevenNine.Partnercode.Activity.LandingPageActivity;
 import com.SevenNine.Partnercode.Activity.NewSignUpActivity;
+
+import static com.SevenNine.Partnercode.Fragment.AaSettingFragment.bitmap;
 
 /**
  * Created by vinod on 11/12/17.
@@ -41,6 +44,7 @@ public class SessionManager {
     public static final String KEY_LANGUAGE_NAME = "language_name";
     public static final String KEY_LATITUDE ="lat";
     public static final String KEY_LONGITUDE ="lng";
+   // public static final Bitmap KEY_BITMAP =bitmap;
    // public static final String KEY_LOCATION ="loc";
 
     public static final String KEY_LOCATION = "location";
@@ -149,6 +153,16 @@ public class SessionManager {
 
         // Storing name in pref
         loginPrefsEditor.putString(KEY_LANGUAGE, language);
+
+
+        // commit changes
+        loginPrefsEditor.commit();
+    }
+    public void savebitmap(Bitmap bitmap){
+
+
+        // Storing name in pref
+       // loginPrefsEditor.putString(KEY_BITMAP, bitmap);
 
 
         // commit changes

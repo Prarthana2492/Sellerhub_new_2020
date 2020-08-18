@@ -64,8 +64,8 @@ import java.util.Locale;
 
 public class AddProductFragment extends Fragment {
     Fragment selectedFragment;
-    TextView norecords;
-    LinearLayout Continue,linearLayout,backfeed,offer_lay;
+    TextView norecords,price_text;
+    LinearLayout Continue,linearLayout,backfeed,offer_lay,exp_lay;
     EditText product_code,product_name,product_description,quantity,amount,sku,mrp,search,delivery_charge,off_price;
     public  static EditText brand;
     public  static TextView uom,expiry_date;
@@ -121,7 +121,9 @@ public class AddProductFragment extends Fragment {
         delivery_charge = view.findViewById(R.id.delivery_charge);
         off_price = view.findViewById(R.id.off_price);
         offer_lay = view.findViewById(R.id.offer_lay);
+        exp_lay = view.findViewById(R.id.exp_lay);
         norecords = view.findViewById(R.id.norecords);
+        price_text = view.findViewById(R.id.price_text);
         norecords.setVisibility(View.GONE);
         drawer = (DrawerLayout) view.findViewById(R.id.drawer_layout_op);
 
@@ -150,15 +152,28 @@ public class AddProductFragment extends Fragment {
         if (InventoryAdapter.prod_id!=null){
             quantity.setText(InventoryAdapter.quantity);
             mrp.setText(InventoryAdapter.mrp);
-            amount.setText(InventoryAdapter.amount);
-            brand.setText(InventoryAdapter.brand);
+           // amount.setText(InventoryAdapter.amount);
             delivery_charge.setText(InventoryAdapter.deliver_charges);
+            prod_image=InventoryAdapter.prod_img;
+            prod_name=InventoryAdapter.prod_name;
             if (InventoryAdapter.isofferactive.equals("true")){
                 offer_checkbox.setChecked(true);
-                off_price.setVisibility(View.VISIBLE);
-                expiry_date.setVisibility(View.VISIBLE);
-                off_price.setText(InventoryAdapter.offer_price);
+               // off_price.setVisibility(View.VISIBLE);
+                price_text.setText("Offer Price");
+                exp_lay.setVisibility(View.VISIBLE);
+                amount.setText(InventoryAdapter.offer_price);
+               // off_price.setText(InventoryAdapter.amount);
                 expiry_date.setText(InventoryAdapter.exp_date.substring(0,10));
+            }else{
+                price_text.setText("Price");
+                amount.setText(InventoryAdapter.amount);
+                exp_lay.setVisibility(View.GONE);
+
+            }
+            if (InventoryAdapter.brand.equals("1")){
+                brand.setText("");
+            }else{
+                brand.setText(InventoryAdapter.brand);
             }
 
         }
@@ -171,6 +186,9 @@ public class AddProductFragment extends Fragment {
                     if (getArguments().getString("page") != null) {
                         FragmentManager fm = getActivity().getSupportFragmentManager();
                         fm.popBackStack("spicescateory999", FragmentManager.POP_BACK_STACK_INCLUSIVE);
+                    } else if (getArguments().getString("sellingtypeid")!=null){
+                        FragmentManager fm = getActivity().getSupportFragmentManager();
+                        fm.popBackStack("confirm", FragmentManager.POP_BACK_STACK_INCLUSIVE);
                     } else {
                         FragmentManager fm = getActivity().getSupportFragmentManager();
                         fm.popBackStack("spicescateory12", FragmentManager.POP_BACK_STACK_INCLUSIVE);
@@ -193,7 +211,10 @@ public class AddProductFragment extends Fragment {
                         if (getArguments().getString("page") != null) {
                             FragmentManager fm = getActivity().getSupportFragmentManager();
                             fm.popBackStack("spicescateory999", FragmentManager.POP_BACK_STACK_INCLUSIVE);
-                        } else {
+                        }else if (getArguments().getString("sellingtypeid")!=null){
+                            FragmentManager fm = getActivity().getSupportFragmentManager();
+                            fm.popBackStack("confirm", FragmentManager.POP_BACK_STACK_INCLUSIVE);
+                        }else {
                             FragmentManager fm = getActivity().getSupportFragmentManager();
                             fm.popBackStack("spicescateory12", FragmentManager.POP_BACK_STACK_INCLUSIVE);
                         }
@@ -206,24 +227,30 @@ public class AddProductFragment extends Fragment {
         });
 
         if (offer_checkbox.isChecked()){
-            offer_lay.setVisibility(View.VISIBLE);
+           // offer_lay.setVisibility(View.VISIBLE);
+            price_text.setText("Offer Price");
+            exp_lay.setVisibility(View.VISIBLE);
             IsOfferAvailable=1;
         }else{
             offer_lay.setVisibility(View.GONE);
             IsOfferAvailable=0;
+            exp_lay.setVisibility(View.GONE);
+            price_text.setText("Price");
 
         }
         offer_checkbox.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (offer_checkbox.isChecked()){
-                    offer_lay.setVisibility(View.VISIBLE);
+                  //  offer_lay.setVisibility(View.VISIBLE);
+                    price_text.setText("Offer Price");
+                    exp_lay.setVisibility(View.VISIBLE);
                     IsOfferAvailable=1;
                 }else{
                     offer_lay.setVisibility(View.GONE);
+                    price_text.setText("Price");
+                    exp_lay.setVisibility(View.GONE);
                     IsOfferAvailable=0;
-
-
                 }
             }
         });
@@ -377,11 +404,7 @@ public class AddProductFragment extends Fragment {
                     Toast toast = Toast.makeText(getActivity(), "Enter MRP", Toast.LENGTH_LONG);
                     toast.setGravity(Gravity.TOP | Gravity.CENTER, 0, 0);
                     toast.show();
-                } else if (amount.getText().toString().equals("")) {
-                    Toast toast = Toast.makeText(getActivity(), "Enter selling amount", Toast.LENGTH_LONG);
-                    toast.setGravity(Gravity.TOP | Gravity.CENTER, 0, 0);
-                    toast.show();
-                } else if (quantity.getText().toString().equals("")) {
+                }  else if (quantity.getText().toString().equals("")) {
                     Toast toast = Toast.makeText(getActivity(), "Enter Quantity", Toast.LENGTH_LONG);
                     toast.setGravity(Gravity.TOP | Gravity.CENTER, 0, 0);
                     toast.show();
@@ -407,7 +430,7 @@ public class AddProductFragment extends Fragment {
                 } */
                 else if (IsOfferAvailable==1){
 
-                    if (off_price.getText().toString().equals("")){
+                    if (amount.getText().toString().equals("")){
                         Toast toast = Toast.makeText(getActivity(), "Enter Offer Price", Toast.LENGTH_LONG);
                         toast.setGravity(Gravity.TOP | Gravity.CENTER, 0, 0);
                         toast.show();
@@ -419,9 +442,9 @@ public class AddProductFragment extends Fragment {
                        // AddProduct();
                         Bundle bundle=new Bundle();
                         bundle.putString("ProdName",prod_name);
-                        bundle.putString("ProdPrice",amount.getText().toString());
+                      //  bundle.putString("ProdPrice",amount.getText().toString());
                         bundle.putString("ProdMRP",mrp.getText().toString());
-                        bundle.putString("ProdOfferPrice",off_price.getText().toString());
+                        bundle.putString("ProdOfferPrice",amount.getText().toString());
                         bundle.putString("ProdDeliveryCharge",delivery_charge.getText().toString());
                         bundle.putString("ProdBrand",brand.getText().toString());
                         bundle.putString("ProdQuantity",quantity.getText().toString());
@@ -434,14 +457,29 @@ public class AddProductFragment extends Fragment {
                         selectedFragment.setArguments(bundle);
                         transaction.commit();
                     }
+                }else if (amount.getText().toString().equals("")) {
+                    Toast toast = Toast.makeText(getActivity(), "Enter Price", Toast.LENGTH_LONG);
+                    toast.setGravity(Gravity.TOP | Gravity.CENTER, 0, 0);
+                    toast.show();
                 }
                 else {
                     System.out.println("uuuuuuuu" + IsOfferAvailable);
                    // AddProduct();
+                    Bundle bundle=new Bundle();
+                    bundle.putString("ProdName",prod_name);
+                    bundle.putString("ProdPrice",amount.getText().toString());
+                    bundle.putString("ProdMRP",mrp.getText().toString());
+                  //  bundle.putString("ProdOfferPrice",amount.getText().toString());
+                    bundle.putString("ProdDeliveryCharge",delivery_charge.getText().toString());
+                    bundle.putString("ProdBrand",brand.getText().toString());
+                    bundle.putString("ProdQuantity",quantity.getText().toString());
+                  //  bundle.putString("ProdExpiryDate",expiry_date.getText().toString());
+                    bundle.putString("ProdImage", prod_image);
                     selectedFragment = ProductConfirmationFragment.newInstance();
                     FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
                     transaction.replace(R.id.frame_layout1, selectedFragment);
                     transaction.addToBackStack("spicescateory1");
+                    selectedFragment.setArguments(bundle);
                     transaction.commit();
 
                 }

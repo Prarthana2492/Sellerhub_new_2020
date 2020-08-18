@@ -56,7 +56,7 @@ public class PaymentTodayFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.new_order_recy, container, false);
         recyclerView=view.findViewById(R.id.new_order_recy);
-        last_month_text = view.findViewById(R.id.last_month_text);
+        last_month_text = view.findViewById(R.id.time);
         filter = view.findViewById(R.id.filter);
         last_month_text.setText("Today");
 

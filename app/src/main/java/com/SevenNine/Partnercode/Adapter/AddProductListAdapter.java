@@ -28,7 +28,7 @@ public class AddProductListAdapter extends RecyclerView.Adapter<AddProductListAd
     private List<Sellbean> productList;
     Activity activity;
     Fragment selectedFragment;
-    public static String sellingtypeid,productlist_id,prod_img;
+    public static String sellingtypeid,productlist_id,prod_img,prod_name;
 
 
 
@@ -80,6 +80,8 @@ public class AddProductListAdapter extends RecyclerView.Adapter<AddProductListAd
             @Override
             public void onClick(View view) {
                 productlist_id=products.getId();
+                prod_name=products.getName();
+                prod_img=products.getImage();
                 Bundle bundle = new Bundle();
                 bundle.putString("status",productlist_id);
                 bundle.putString("masterId", AddProductList.selling_masterid);

@@ -300,7 +300,7 @@ static Fragment myloadingfragment;
                     post_object.put("objUser",jsonObject);
 
 
-                    Crop_Post.crop_posting(getActivity(), Urls.Get_Profile_Details1, post_object, new VoleyJsonObjectCallback() {
+                    Crop_Post.getProfileDetails(getActivity(), Urls.Get_Profile_Details1, post_object, new VoleyJsonObjectCallback() {
                         @Override
                         public void onSuccessResponse(JSONObject result) {
                             System.out.println("ggpgpgpg" + result);

@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/main_layout"
     android:layout_width="match_parent"
     android:layout_height="250dp"
     android:orientation="vertical"
-
     android:background="@drawable/border_empty_curve"
     >
 
@@ -15,7 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:paddingRight="15dp"
+        android:paddingRight="5dp"
         android:paddingLeft="10dp"
         android:background="@drawable/addrs_top_curve"
         android:paddingVertical="10dp"
@@ -23,15 +21,16 @@
         >
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:padding="5dp"
-            android:layout_weight="95">
+            android:layout_weight="90"
+            >
 
 
             <TextView
                 android:id="@+id/popup_heading"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
                 android:text="Comment"
@@ -45,9 +44,10 @@
 
         <LinearLayout
             android:id="@+id/close_popup"
-            android:layout_width="30dp"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
             android:background="@drawable/ic_filter_state"
+            android:layout_weight="10"
             android:gravity="center">
 
 
@@ -88,8 +88,7 @@
     <EditText
         android:id="@+id/comment"
         android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:layout_marginHorizontal="16dp"
+        android:layout_height="130dp"
         android:layout_gravity="start"
         android:gravity="start"
         android:paddingHorizontal="10dp"

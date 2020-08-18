@@ -93,7 +93,7 @@ public class AaSettingFragment extends Fragment {
       //  addr_lay=view.findViewById(R.id.addr_lay);
      //   acc_info_lay=view.findViewById(R.id.acc_info_lay);
         phone_no=view.findViewById(R.id.phone_noo);
-        name=view.findViewById(R.id.name_set);
+      //  name=view.findViewById(R.id.name_set);
         image_acc=view.findViewById(R.id.image_acc1);
         logout=view.findViewById(R.id.logout);
         cam_img=view.findViewById(R.id.cam_img);
@@ -509,8 +509,11 @@ public class AaSettingFragment extends Fragment {
                 // update="image_update";
                 Intent i = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI); // to go to gallery
                 startActivityForResult(i, 100); // on activity method will execute
-
-
+                /*selectedFragment = AaProfileFragment.newInstance();
+                FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
+                ft.replace(R.id.frame_layout1,selectedFragment);
+                ft.commit();
+*/
             }
         });
        /* edit_pencil.setOnClickListener(new View.OnClickListener() {
@@ -553,9 +556,9 @@ public class AaSettingFragment extends Fragment {
 
                       //  name.setText(ProfileName1);
                         phone_no.setText(ProfilePhone);
-                        name.setText(ProfileName1);
+                      ////  name.setText(ProfileName1);
 
-                        name.setFilters(new InputFilter[]{EMOJI_FILTER});
+                      ////  name.setFilters(new InputFilter[]{EMOJI_FILTER});
                         phone_no.setFilters(new InputFilter[]{EMOJI_FILTER});
                         //profile_mail.setFilters(new InputFilter[]{EMOJI_FILTER});
 

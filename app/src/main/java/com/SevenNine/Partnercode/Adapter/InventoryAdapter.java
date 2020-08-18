@@ -40,7 +40,7 @@ public class InventoryAdapter extends RecyclerView.Adapter<InventoryAdapter.MyVi
     private List<InventoryBean> productList;
     Activity activity;
     Fragment selectedFragment;
-    public static String prod_name,mrp,brand,prod_id,amount,quantity,status,ProductId,offer_price,deliver_charges,isofferactive,exp_date;
+    public static String prod_name,mrp,brand,prod_id,amount,quantity,status,ProductId,offer_price,deliver_charges,isofferactive,exp_date,prod_img;
     SessionManager sessionManager;
     LinearLayout linear_layout;
 
@@ -93,7 +93,7 @@ public class InventoryAdapter extends RecyclerView.Adapter<InventoryAdapter.MyVi
 
         holder.name.setText(products.getProd_name());
         holder.weight.setText(products.getQuantity()+" Kg");
-        holder.price.setText("Rs "+products.getAmount());
+       // holder.price.setText("Rs "+products.getAmount());
         if (products.getMrp().equals(products.getAmount())){
             holder.actual_price.setVisibility(View.INVISIBLE);
             holder.mrp_text.setVisibility(View.INVISIBLE);
@@ -207,16 +207,19 @@ public class InventoryAdapter extends RecyclerView.Adapter<InventoryAdapter.MyVi
                 isofferactive=products.getIsOfferActive();
                 mrp=products.getMrp();
                 prod_id=products.getProd_desc();
+                prod_img=products.getProd_icon();
                 Bundle bundle=new Bundle();
                 bundle.putString("selling_catid",products.getSelling_cat_id());
                 bundle.putString("productlistid",products.getProductlistId());
                 bundle.putString("sellingmasterid",products.getSelling_master_id());
                 bundle.putString("sellingtypeid",products.getSellingTypeId());
+              //  bundle.putString("prod_img",products.getProd_icon());
+             //   bundle.putString("prod_name",products.getProd_name());
 
                 selectedFragment = AddProductFragment.newInstance();
                 FragmentTransaction transaction = ((FragmentActivity)activity).getSupportFragmentManager().beginTransaction();
                 transaction.replace(R.id.frame_layout1, selectedFragment);
-                transaction.addToBackStack("spicescateorye");
+                transaction.addToBackStack("confirm");
                 selectedFragment.setArguments(bundle);
                 transaction.commit();
 

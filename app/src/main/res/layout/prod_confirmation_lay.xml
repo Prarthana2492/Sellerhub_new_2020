@@ -155,6 +155,7 @@
 
 
         <LinearLayout
+            android:id="@+id/price_lay"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:weightSum="100"
@@ -183,6 +184,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/offer_lay"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:weightSum="100"
@@ -239,6 +241,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/exp_lay"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:weightSum="100"

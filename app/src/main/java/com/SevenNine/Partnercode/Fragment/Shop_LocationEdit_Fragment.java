@@ -437,7 +437,7 @@ public class Shop_LocationEdit_Fragment extends Fragment {
 
 
 
-        try {
+      /*  try {
             lngObject = new JSONObject(sessionManager.getRegId("language"));
 
             ok.setText(lngObject.getString("OK").replace("\n",""));
@@ -450,7 +450,7 @@ public class Shop_LocationEdit_Fragment extends Fragment {
             e.printStackTrace();
         }
 
-
+*/
 
 
 
@@ -459,12 +459,22 @@ public class Shop_LocationEdit_Fragment extends Fragment {
         ok.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                selectedFragment = VerificationFragment.newInstance();
-                FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
-                transaction.replace(R.id.frame_layout1, selectedFragment);
-                transaction.addToBackStack("add_edit");
-                transaction.commit();
-                dialog.dismiss();
+                if (Store.store!=null){
+                    selectedFragment = Store.newInstance();
+                    FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
+                    transaction.replace(R.id.frame_layout1, selectedFragment);
+                    transaction.addToBackStack("add_edit");
+                    transaction.commit();
+                    dialog.dismiss();
+                }else{
+                    selectedFragment = VerificationFragment.newInstance();
+                    FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
+                    transaction.replace(R.id.frame_layout1, selectedFragment);
+                    transaction.addToBackStack("add_edit");
+                    transaction.commit();
+                    dialog.dismiss();
+                }
+
             }
         });
         cancel.setOnClickListener(new View.OnClickListener() {

@@ -40,7 +40,7 @@ public class NewOrderAdapter extends RecyclerView.Adapter<NewOrderAdapter.MyView
     private List<NewOrderBean> productList;
     Activity activity;
     Fragment selectedFragment;
-    String name;
+    String name,prod_image;
     SessionManager sessionManager;
 
     public static CardView cardView;
@@ -144,7 +144,7 @@ public class NewOrderAdapter extends RecyclerView.Adapter<NewOrderAdapter.MyView
                 bundle.putString("uom",products1.getUom());
                 bundle.putString("MRP",products1.getFirstname());
 
-                System.out.println("getttttAmountt"+products1.getAmount());
+                System.out.println("getttttAmountt"+products1.getProducts_Icon());
                 bundle.putString("delivery_charges",products1.getDelivery_charges());
                 selectedFragment = OrderDetailsFragment.newInstance();
                 FragmentTransaction transaction = ((FragmentActivity)activity).getSupportFragmentManager().beginTransaction();
@@ -158,6 +158,8 @@ public class NewOrderAdapter extends RecyclerView.Adapter<NewOrderAdapter.MyView
        holder.accept.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View v) {
+               prod_image=products1.getProducts_Icon();
+               System.out.println("hfdsdjshkd "+prod_image);
                JSONObject params = new JSONObject();
                try {
                    params.put("Amount",products1.getAmount());
@@ -171,12 +173,12 @@ public class NewOrderAdapter extends RecyclerView.Adapter<NewOrderAdapter.MyView
                    params.put("SelectedQuantity",products1.getQuantity()); //using status
                    params.put("UnitOfPrice","Kilograms");
                    params.put("MRP",products1.getFirstname());
-                   params.put("SellingListIcon",products1.getProd_img());
-                   params.put("ProductIcon",products1.getProducts_Icon());
+                   params.put("ProductIcon",prod_image);
                    params.put("ProductName",products1.getProd_name());
                    params.put("ProductDescription",products1.getProd_desc());
                    params.put("CustomerName","Priya");  //tarnsaction id
                    params.put("CreatedBy",sessionManager.getRegId("userId"));
+                   params.put("SellingListIcon",products1.getProducts_Icon());
                    if (products1.getBrand().equals("")){
                        params.put("Brand","Not Entered");
                    }else{
