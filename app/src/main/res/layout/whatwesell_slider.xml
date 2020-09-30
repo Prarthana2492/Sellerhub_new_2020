@@ -20,7 +20,7 @@
         android:textColor="@color/colorPrimary"
         android:textStyle="bold"
         android:layout_marginHorizontal="16dp"
-        android:text="What We Sell"/>
+        android:text="What You Can Sell"/>
 
     <android.support.v7.widget.RecyclerView
     android:id="@+id/rv"

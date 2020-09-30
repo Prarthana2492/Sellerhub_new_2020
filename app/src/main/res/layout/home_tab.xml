@@ -37,8 +37,7 @@
 
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ic_menu_button"
-                />
+                android:src="@drawable/ic_menu_button" />
 
         </LinearLayout>
 
@@ -53,7 +52,7 @@
                 >
 
                 <TextView
-                    android:text="7-Nine Partner"
+                    android:text="Seller Hub"
                     android:paddingHorizontal="5dp"
                     android:gravity="center_vertical"
                     android:layout_width="0dp"
@@ -131,7 +130,7 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/seven_nine_logo"
+            android:src="@drawable/nandi_logo"
             android:layout_gravity="center"
             >
 

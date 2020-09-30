@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.SevenNine.Partnercode">
+    package="com.FarmPe.SellerHub">
 
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
@@ -23,21 +23,21 @@
         tools:node="remove" />
 
     <application
-        android:name="com.SevenNine.Partnercode.Activity.MyApplication"
+        android:name="com.FarmPe.SellerHub.Activity.MyApplication"
         android:allowBackup="true"
-        android:icon="@drawable/ic_watch"
+        android:icon="@drawable/nandi_logo"
         android:label="@string/app_name"
         android:largeHeap="true"
-        android:roundIcon="@drawable/ic_watch"
+        android:roundIcon="@drawable/nandi_logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:replace="android:allowBackup">
         <activity
-            android:name="com.SevenNine.Partnercode.Activity.CameraActivity"
+            android:name="com.FarmPe.SellerHub.Activity.CameraActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name="com.SevenNine.Partnercode.Activity.ActivitySelectLang"
+            android:name="com.FarmPe.SellerHub.Activity.ActivitySelectLang"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -46,34 +46,38 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.SevenNine.Partnercode.Activity.GetLocationActivity"
+            android:name="com.FarmPe.SellerHub.Activity.GetLocationActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.SevenNine.Partnercode.Activity.UploadCamera_Activity"
+            android:name="com.FarmPe.SellerHub.Activity.UploadCamera_Activity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.SevenNine.Partnercode.Activity.SelectLanguageActivity"
+            android:name="com.FarmPe.SellerHub.Activity.SelectLanguageActivity"
             android:screenOrientation="portrait" />
 
         <activity
-            android:name="com.SevenNine.Partnercode.Activity.LandingPageActivity"
+            android:name="com.FarmPe.SellerHub.Activity.R_U_Farmer_Activity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.FarmPe.SellerHub.Activity.LandingPageActivity"
             android:resizeableActivity="false"
             android:screenOrientation="portrait" />
 
         <activity
-            android:name="com.SevenNine.Partnercode.Activity.Extra_Activity"
+            android:name="com.FarmPe.SellerHub.Activity.Extra_Activity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.SevenNine.Partnercode.Activity.FirmShopDetailsActivity"
+            android:name="com.FarmPe.SellerHub.Activity.FirmShopDetailsActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.SevenNine.Partnercode.Activity.Slider_Activity"
+            android:name="com.FarmPe.SellerHub.Activity.Slider_Activity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.SevenNine.Partnercode.Activity.NewSignUpActivity"
+            android:name="com.FarmPe.SellerHub.Activity.NewSignUpActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.SevenNine.Partnercode.Activity.NewEnterOTP"
+            android:name="com.FarmPe.SellerHub.Activity.NewEnterOTP"
             android:screenOrientation="portrait" />
 
 
@@ -82,7 +86,7 @@
             android:value="@integer/google_play_services_version" />
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyASLfdH5Tr931zKrsdH2alWHPxMg6NzD-A" /> <!-- android:value="AIzaSyBrYtFN3tRw8ElIi5P8ayOwgNbykiMYcjM" /> -->
+            android:value="AIzaSyDoPoXCJKf9xGg809DWT2d9C7v1Upe0R00" /> <!-- android:value="AIzaSyBrYtFN3tRw8ElIi5P8ayOwgNbykiMYcjM" /> -->
         <!--
  <receiver
             android:name="com.FarmPe.SellerHub.ReadSms"
@@ -92,13 +96,13 @@
             </intent-filter>
         </receiver>
         -->
-        <service android:name="com.SevenNine.Partnercode.GpsService" /> <!-- Firebase Notifications -->
-        <service android:name="com.SevenNine.Partnercode.MyFirebaseMessagingService">
+        <service android:name="com.FarmPe.SellerHub.GpsService" /> <!-- Firebase Notifications -->
+        <service android:name="com.FarmPe.SellerHub.MyFirebaseMessagingService">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
-        <service android:name="com.SevenNine.Partnercode.MyFirebaseInstanceIDService">
+        <service android:name="com.FarmPe.SellerHub.MyFirebaseInstanceIDService">
             <intent-filter>
                 <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
             </intent-filter>

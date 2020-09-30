@@ -15,7 +15,7 @@ android {
     compileSdkVersion 28
 
     defaultConfig {
-        applicationId "com.SevenNine.Partnercode"
+        applicationId "com.FarmPe.SellerHub"
         minSdkVersion 20
 
         targetSdkVersion 28

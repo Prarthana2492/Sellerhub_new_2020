@@ -26,6 +26,7 @@
           android:weightSum="100"
           >
          <LinearLayout
+
              android:layout_width="0dp"
              android:layout_height="match_parent"
              android:orientation="vertical"
@@ -65,7 +66,7 @@
                 android:id="@+id/user_name_menu"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Hello, Priya"
+                android:text="Hello, Keerthi"
                 android:textSize="20dp"
                 android:fontFamily="@font/segoeui"
                 android:textStyle="bold"
@@ -228,8 +229,9 @@
              android:fontFamily="@font/segoeui"
              android:layout_marginTop="25dp"
              android:textColor="#000"
+             android:layout_marginBottom="15dp"
              />
-         <TextView
+        <!-- <TextView
              android:id="@+id/offers"
              android:layout_width="match_parent"
              android:layout_height="wrap_content"
@@ -239,7 +241,7 @@
              android:layout_marginBottom="15dp"
              android:fontFamily="@font/segoeui"
              android:textColor="#000"
-             />
+             />-->
 <!--
          <TextView
              android:id="@+id/bank_acc"

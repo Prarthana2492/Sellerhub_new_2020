@@ -51,7 +51,7 @@
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_gravity="center"
-                android:src="@drawable/seven_nine_logo" />
+                android:src="@drawable/selleerhub_logo" />
 
         </LinearLayout>
 
@@ -68,7 +68,7 @@
                 android:id="@+id/made_text1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Your Essentials Store"
+                android:text="Your FarmPe Store"
                 android:paddingLeft="10dp"
                 android:textColor="@color/colorPrimaryDark"
                 android:fontFamily="@font/segoeui"
@@ -87,7 +87,7 @@
                 android:id="@+id/conflu"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Your Go-To Convenience Store for Vegetables, Fruits, Groceries, Dairy and More."
+                android:text="Your Go-To Convenience Store for Vegetables, Fruits,  Dairy and More."
                 android:paddingLeft="10dp"
                 android:textColor="#999999"
                 android:fontFamily="@font/segoeui"
