@@ -12,7 +12,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/menu_green"
+        android:background="@color/lang_bg_color"
         android:orientation="horizontal"
         android:padding="8dp">
 
@@ -43,7 +43,7 @@
             android:layout_gravity="center"
             android:layout_marginLeft="10dp"
             android:text="Inventory"
-            android:textColor="#fff"
+            android:textColor="@color/white_text"
             android:textSize="20dp"
             android:textStyle="bold" />
 
@@ -79,7 +79,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:text="List Products"
-                android:textColor="#fff"
+                android:textColor="@color/white_text"
                 android:textStyle="bold"
                 android:layout_marginRight="10dp"
                 android:textSize="16dp"

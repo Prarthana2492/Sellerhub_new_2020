@@ -89,8 +89,8 @@ public class SellDetailsEditFragment extends Fragment {
 
 
         Status_bar_change_singleton.getInstance().color_change(getActivity());
-        Window window = getActivity().getWindow();
-        window.setStatusBarColor(ContextCompat.getColor(getActivity(), R.color.dark_green));
+//        Window window = getActivity().getWindow();
+//        window.setStatusBarColor(ContextCompat.getColor(getActivity(), R.color.dark_green));
 
 
         unit_of_price_pop_up = new PopupMenu(getActivity(), unit_of_measurement, Gravity.RIGHT);
@@ -150,34 +150,34 @@ public class SellDetailsEditFragment extends Fragment {
                 Quality_id = "1";
 
                 a_grade.setTextColor(Color.parseColor("#FFFFFF"));
-                b_grade.setTextColor(Color.parseColor("#000000"));
-                c_grade.setTextColor(Color.parseColor("#000000"));
+                b_grade.setTextColor(Color.parseColor("#FFFFFF"));
+                c_grade.setTextColor(Color.parseColor("#FFFFFF"));
 
                 a_grade.setBackgroundResource(R.drawable.black_border_blue_filled);
-                b_grade.setBackgroundResource(R.drawable.black_bordr_white_filled1);
-                c_grade.setBackgroundResource(R.drawable.black_bordr_white_filled1);
+                b_grade.setBackgroundResource(R.drawable.border_login_curve_grey);
+                c_grade.setBackgroundResource(R.drawable.border_login_curve_grey);
 
             }else if(getArguments().getString("Quality").equals("B Grade")){
                 Quality_id = "2";
 
                 b_grade.setTextColor(Color.parseColor("#FFFFFF"));
-                a_grade.setTextColor(Color.parseColor("#000000"));
-                c_grade.setTextColor(Color.parseColor("#000000"));
+                a_grade.setTextColor(Color.parseColor("#FFFFFF"));
+                c_grade.setTextColor(Color.parseColor("#FFFFFF"));
 
                 b_grade.setBackgroundResource(R.drawable.black_border_blue_filled);
-                a_grade.setBackgroundResource(R.drawable.black_bordr_white_filled1);
-                c_grade.setBackgroundResource(R.drawable.black_bordr_white_filled1);
+                a_grade.setBackgroundResource(R.drawable.border_login_curve_grey);
+                c_grade.setBackgroundResource(R.drawable.border_login_curve_grey);
             }else{
 
                 Quality_id = "3";
 
                 c_grade.setTextColor(Color.parseColor("#FFFFFF"));
-                a_grade.setTextColor(Color.parseColor("#000000"));
-                b_grade.setTextColor(Color.parseColor("#000000"));
+                a_grade.setTextColor(Color.parseColor("#FFFFFF"));
+                b_grade.setTextColor(Color.parseColor("#FFFFFF"));
 
                 c_grade.setBackgroundResource(R.drawable.black_border_blue_filled);
-                a_grade.setBackgroundResource(R.drawable.black_bordr_white_filled1);
-                a_grade.setBackgroundResource(R.drawable.black_bordr_white_filled1);
+                a_grade.setBackgroundResource(R.drawable.border_login_curve_grey);
+                a_grade.setBackgroundResource(R.drawable.border_login_curve_grey);
 
             }
 
@@ -187,34 +187,34 @@ public class SellDetailsEditFragment extends Fragment {
                 Variety_id = "1";
 
                 hybrid.setTextColor(Color.parseColor("#FFFFFF"));
-                jawari.setTextColor(Color.parseColor("#000000"));
-                desi.setTextColor(Color.parseColor("#000000"));
+                jawari.setTextColor(Color.parseColor("#FFFFFF"));
+                desi.setTextColor(Color.parseColor("#FFFFFF"));
 
                 hybrid.setBackgroundResource(R.drawable.black_border_blue_filled);
-                jawari.setBackgroundResource(R.drawable.black_bordr_white_filled1);
-                desi.setBackgroundResource(R.drawable.black_bordr_white_filled1);
+                jawari.setBackgroundResource(R.drawable.border_login_curve_grey);
+                desi.setBackgroundResource(R.drawable.border_login_curve_grey);
 
             }else if(getArguments().getString("Quality").equals("Jawari")){
                 Variety_id = "2";
 
                 jawari.setTextColor(Color.parseColor("#FFFFFF"));
-                hybrid.setTextColor(Color.parseColor("#000000"));
-                desi.setTextColor(Color.parseColor("#000000"));
+                hybrid.setTextColor(Color.parseColor("#FFFFFF"));
+                desi.setTextColor(Color.parseColor("#FFFFFF"));
 
                 jawari.setBackgroundResource(R.drawable.black_border_blue_filled);
-                hybrid.setBackgroundResource(R.drawable.black_bordr_white_filled1);
-                desi.setBackgroundResource(R.drawable.black_bordr_white_filled1);
+                hybrid.setBackgroundResource(R.drawable.border_login_curve_grey);
+                desi.setBackgroundResource(R.drawable.border_login_curve_grey);
             }else{
 
                 Variety_id = "3";
 
                 desi.setTextColor(Color.parseColor("#FFFFFF"));
-                hybrid.setTextColor(Color.parseColor("#000000"));
-                jawari.setTextColor(Color.parseColor("#000000"));
+                hybrid.setTextColor(Color.parseColor("#FFFFFF"));
+                jawari.setTextColor(Color.parseColor("#FFFFFF"));
 
                 desi.setBackgroundResource(R.drawable.black_border_blue_filled);
-                hybrid.setBackgroundResource(R.drawable.black_bordr_white_filled1);
-                jawari.setBackgroundResource(R.drawable.black_bordr_white_filled1);
+                hybrid.setBackgroundResource(R.drawable.border_login_curve_grey);
+                jawari.setBackgroundResource(R.drawable.border_login_curve_grey);
 
             }
 
@@ -282,14 +282,14 @@ public class SellDetailsEditFragment extends Fragment {
 
                 Quality_id = "1";
                 a_grade.setTextColor(Color.parseColor("#FFFFFF"));
-                b_grade.setTextColor(Color.parseColor("#000000"));
-                c_grade.setTextColor(Color.parseColor("#000000"));
+                b_grade.setTextColor(Color.parseColor("#FFFFFF"));
+                c_grade.setTextColor(Color.parseColor("#FFFFFF"));
 
 
 
                 a_grade.setBackgroundResource(R.drawable.black_border_blue_filled);
-                b_grade.setBackgroundResource(R.drawable.black_bordr_white_filled1);
-                c_grade.setBackgroundResource(R.drawable.black_bordr_white_filled1);
+                b_grade.setBackgroundResource(R.drawable.border_login_curve_grey);
+                c_grade.setBackgroundResource(R.drawable.border_login_curve_grey);
 
 
 
@@ -303,14 +303,14 @@ public class SellDetailsEditFragment extends Fragment {
 
                 Quality_id = "2";
                 b_grade.setTextColor(Color.parseColor("#FFFFFF"));
-                a_grade.setTextColor(Color.parseColor("#000000"));
-                c_grade.setTextColor(Color.parseColor("#000000"));
+                a_grade.setTextColor(Color.parseColor("#FFFFFF"));
+                c_grade.setTextColor(Color.parseColor("#FFFFFF"));
 
 
 
                 b_grade.setBackgroundResource(R.drawable.black_border_blue_filled);
-                a_grade.setBackgroundResource(R.drawable.black_bordr_white_filled1);
-                c_grade.setBackgroundResource(R.drawable.black_bordr_white_filled1);
+                a_grade.setBackgroundResource(R.drawable.border_login_curve_grey);
+                c_grade.setBackgroundResource(R.drawable.border_login_curve_grey);
 
 
 
@@ -328,14 +328,14 @@ public class SellDetailsEditFragment extends Fragment {
 
                 Quality_id = "3";
                 c_grade.setTextColor(Color.parseColor("#FFFFFF"));
-                b_grade.setTextColor(Color.parseColor("#000000"));
-                a_grade.setTextColor(Color.parseColor("#000000"));
+                b_grade.setTextColor(Color.parseColor("#FFFFFF"));
+                a_grade.setTextColor(Color.parseColor("#FFFFFF"));
 
 
 
                 c_grade.setBackgroundResource(R.drawable.black_border_blue_filled);
-                b_grade.setBackgroundResource(R.drawable.black_bordr_white_filled1);
-                a_grade.setBackgroundResource(R.drawable.black_bordr_white_filled1);
+                b_grade.setBackgroundResource(R.drawable.border_login_curve_grey);
+                a_grade.setBackgroundResource(R.drawable.border_login_curve_grey);
 
 
 
@@ -350,14 +350,14 @@ public class SellDetailsEditFragment extends Fragment {
 
                 Variety_id = "1";
                 hybrid.setTextColor(Color.parseColor("#FFFFFF"));
-                jawari.setTextColor(Color.parseColor("#000000"));
-                desi.setTextColor(Color.parseColor("#000000"));
+                jawari.setTextColor(Color.parseColor("#FFFFFF"));
+                desi.setTextColor(Color.parseColor("#FFFFFF"));
 
 
 
                 hybrid.setBackgroundResource(R.drawable.black_border_blue_filled);
-                jawari.setBackgroundResource(R.drawable.black_bordr_white_filled1);
-                desi.setBackgroundResource(R.drawable.black_bordr_white_filled1);
+                jawari.setBackgroundResource(R.drawable.border_login_curve_grey);
+                desi.setBackgroundResource(R.drawable.border_login_curve_grey);
 
 
 
@@ -371,14 +371,14 @@ public class SellDetailsEditFragment extends Fragment {
 
                 Variety_id = "2";
                 jawari.setTextColor(Color.parseColor("#FFFFFF"));
-                hybrid.setTextColor(Color.parseColor("#000000"));
-                desi.setTextColor(Color.parseColor("#000000"));
+                hybrid.setTextColor(Color.parseColor("#FFFFFF"));
+                desi.setTextColor(Color.parseColor("#FFFFFF"));
 
 
 
                 jawari.setBackgroundResource(R.drawable.black_border_blue_filled);
-                hybrid.setBackgroundResource(R.drawable.black_bordr_white_filled1);
-                desi.setBackgroundResource(R.drawable.black_bordr_white_filled1);
+                hybrid.setBackgroundResource(R.drawable.border_login_curve_grey);
+                desi.setBackgroundResource(R.drawable.border_login_curve_grey);
 
 
 
@@ -392,14 +392,14 @@ public class SellDetailsEditFragment extends Fragment {
 
                 Variety_id = "3";
                 desi.setTextColor(Color.parseColor("#FFFFFF"));
-                jawari.setTextColor(Color.parseColor("#000000"));
-                hybrid.setTextColor(Color.parseColor("#000000"));
+                jawari.setTextColor(Color.parseColor("#FFFFFF"));
+                hybrid.setTextColor(Color.parseColor("#FFFFFF"));
 
 
 
                 desi.setBackgroundResource(R.drawable.black_border_blue_filled);
-                jawari.setBackgroundResource(R.drawable.black_bordr_white_filled1);
-                hybrid.setBackgroundResource(R.drawable.black_bordr_white_filled1);
+                jawari.setBackgroundResource(R.drawable.border_login_curve_grey);
+                hybrid.setBackgroundResource(R.drawable.border_login_curve_grey);
 
             }
         });
@@ -410,10 +410,10 @@ public class SellDetailsEditFragment extends Fragment {
 
                 Organicproduce_Id = "1";
                 yes.setTextColor(Color.parseColor("#FFFFFF"));
-                no.setTextColor(Color.parseColor("#000000"));
+                no.setTextColor(Color.parseColor("#FFFFFF"));
 
                 yes.setBackgroundResource(R.drawable.black_border_blue_filled);
-                no.setBackgroundResource(R.drawable.black_bordr_white_filled1);
+                no.setBackgroundResource(R.drawable.border_login_curve_grey);
 
             }
         });
@@ -424,10 +424,10 @@ public class SellDetailsEditFragment extends Fragment {
 
                 Organicproduce_Id = "2";
                 no.setTextColor(Color.parseColor("#FFFFFF"));
-                yes.setTextColor(Color.parseColor("#000000"));
+                yes.setTextColor(Color.parseColor("#FFFFFF"));
 
                 no.setBackgroundResource(R.drawable.black_border_blue_filled);
-                yes.setBackgroundResource(R.drawable.black_bordr_white_filled1);
+                yes.setBackgroundResource(R.drawable.border_login_curve_grey);
 
             }
         });
@@ -439,16 +439,16 @@ public class SellDetailsEditFragment extends Fragment {
 
                 PackagingtypeId ="1";
                 cartons.setTextColor(Color.parseColor("#FFFFFF"));
-                plastic_box.setTextColor(Color.parseColor("#000000"));
-                petjar.setTextColor(Color.parseColor("#000000"));
-                otheroption1.setTextColor(Color.parseColor("#000000"));
+                plastic_box.setTextColor(Color.parseColor("#FFFFFF"));
+                petjar.setTextColor(Color.parseColor("#FFFFFF"));
+                otheroption1.setTextColor(Color.parseColor("#FFFFFF"));
 
 
 
                 cartons.setBackgroundResource(R.drawable.black_border_blue_filled);
-                plastic_box.setBackgroundResource(R.drawable.black_bordr_white_filled1);
-                petjar.setBackgroundResource(R.drawable.black_bordr_white_filled1);
-                otheroption1.setBackgroundResource(R.drawable.black_bordr_white_filled1);
+                plastic_box.setBackgroundResource(R.drawable.border_login_curve_grey);
+                petjar.setBackgroundResource(R.drawable.border_login_curve_grey);
+                otheroption1.setBackgroundResource(R.drawable.border_login_curve_grey);
 
 
 
@@ -461,16 +461,16 @@ public class SellDetailsEditFragment extends Fragment {
 
                 PackagingtypeId ="2";
                 plastic_box.setTextColor(Color.parseColor("#FFFFFF"));
-                cartons.setTextColor(Color.parseColor("#000000"));
-                petjar.setTextColor(Color.parseColor("#000000"));
-                otheroption1.setTextColor(Color.parseColor("#000000"));
+                cartons.setTextColor(Color.parseColor("#FFFFFF"));
+                petjar.setTextColor(Color.parseColor("#FFFFFF"));
+                otheroption1.setTextColor(Color.parseColor("#FFFFFF"));
 
 
 
                 plastic_box.setBackgroundResource(R.drawable.black_border_blue_filled);
-                cartons.setBackgroundResource(R.drawable.black_bordr_white_filled1);
-                petjar.setBackgroundResource(R.drawable.black_bordr_white_filled1);
-                otheroption1.setBackgroundResource(R.drawable.black_bordr_white_filled1);
+                cartons.setBackgroundResource(R.drawable.border_login_curve_grey);
+                petjar.setBackgroundResource(R.drawable.border_login_curve_grey);
+                otheroption1.setBackgroundResource(R.drawable.border_login_curve_grey);
 
 
 
@@ -484,16 +484,16 @@ public class SellDetailsEditFragment extends Fragment {
 
                 PackagingtypeId ="3";
                 petjar.setTextColor(Color.parseColor("#FFFFFF"));
-                plastic_box.setTextColor(Color.parseColor("#000000"));
-                cartons.setTextColor(Color.parseColor("#000000"));
-                otheroption1.setTextColor(Color.parseColor("#000000"));
+                plastic_box.setTextColor(Color.parseColor("#FFFFFF"));
+                cartons.setTextColor(Color.parseColor("#FFFFFF"));
+                otheroption1.setTextColor(Color.parseColor("#FFFFFF"));
 
 
 
                 petjar.setBackgroundResource(R.drawable.black_border_blue_filled);
-                plastic_box.setBackgroundResource(R.drawable.black_bordr_white_filled1);
-                cartons.setBackgroundResource(R.drawable.black_bordr_white_filled1);
-                otheroption1.setBackgroundResource(R.drawable.black_bordr_white_filled1);
+                plastic_box.setBackgroundResource(R.drawable.border_login_curve_grey);
+                cartons.setBackgroundResource(R.drawable.border_login_curve_grey);
+                otheroption1.setBackgroundResource(R.drawable.border_login_curve_grey);
 
 
 
@@ -506,16 +506,16 @@ public class SellDetailsEditFragment extends Fragment {
 
                 PackagingtypeId ="4";
                 otheroption1.setTextColor(Color.parseColor("#FFFFFF"));
-                plastic_box.setTextColor(Color.parseColor("#000000"));
-                petjar.setTextColor(Color.parseColor("#000000"));
-                cartons.setTextColor(Color.parseColor("#000000"));
+                plastic_box.setTextColor(Color.parseColor("#FFFFFF"));
+                petjar.setTextColor(Color.parseColor("#FFFFFF"));
+                cartons.setTextColor(Color.parseColor("#FFFFFF"));
 
 
 
                 otheroption1.setBackgroundResource(R.drawable.black_border_blue_filled);
-                plastic_box.setBackgroundResource(R.drawable.black_bordr_white_filled1);
-                petjar.setBackgroundResource(R.drawable.black_bordr_white_filled1);
-                cartons.setBackgroundResource(R.drawable.black_bordr_white_filled1);
+                plastic_box.setBackgroundResource(R.drawable.border_login_curve_grey);
+                petjar.setBackgroundResource(R.drawable.border_login_curve_grey);
+                cartons.setBackgroundResource(R.drawable.border_login_curve_grey);
 
 
 
@@ -529,20 +529,20 @@ public class SellDetailsEditFragment extends Fragment {
 
                 PackagingsizeId ="1";
                 fivekg.setTextColor(Color.parseColor("#FFFFFF"));
-                tenkg.setTextColor(Color.parseColor("#000000"));
-                twentykg.setTextColor(Color.parseColor("#000000"));
-                fiftykg.setTextColor(Color.parseColor("#000000"));
-                hundredkg.setTextColor(Color.parseColor("#000000"));
-                otherkg_option.setTextColor(Color.parseColor("#000000"));
+                tenkg.setTextColor(Color.parseColor("#FFFFFF"));
+                twentykg.setTextColor(Color.parseColor("#FFFFFF"));
+                fiftykg.setTextColor(Color.parseColor("#FFFFFF"));
+                hundredkg.setTextColor(Color.parseColor("#FFFFFF"));
+                otherkg_option.setTextColor(Color.parseColor("#FFFFFF"));
 
 
 
                 fivekg.setBackgroundResource(R.drawable.black_border_blue_filled);
-                tenkg.setBackgroundResource(R.drawable.black_bordr_white_filled1);
-                twentykg.setBackgroundResource(R.drawable.black_bordr_white_filled1);
-                fiftykg.setBackgroundResource(R.drawable.black_bordr_white_filled1);
-                hundredkg.setBackgroundResource(R.drawable.black_bordr_white_filled1);
-                otherkg_option.setBackgroundResource(R.drawable.black_bordr_white_filled1);
+                tenkg.setBackgroundResource(R.drawable.border_login_curve_grey);
+                twentykg.setBackgroundResource(R.drawable.border_login_curve_grey);
+                fiftykg.setBackgroundResource(R.drawable.border_login_curve_grey);
+                hundredkg.setBackgroundResource(R.drawable.border_login_curve_grey);
+                otherkg_option.setBackgroundResource(R.drawable.border_login_curve_grey);
 
 
 
@@ -556,19 +556,19 @@ public class SellDetailsEditFragment extends Fragment {
 
                 PackagingsizeId ="2";
                 tenkg.setTextColor(Color.parseColor("#FFFFFF"));
-                fivekg.setTextColor(Color.parseColor("#000000"));
-                twentykg.setTextColor(Color.parseColor("#000000"));
-                fiftykg.setTextColor(Color.parseColor("#000000"));
-                hundredkg.setTextColor(Color.parseColor("#000000"));
-                otherkg_option.setTextColor(Color.parseColor("#000000"));
+                fivekg.setTextColor(Color.parseColor("#FFFFFF"));
+                twentykg.setTextColor(Color.parseColor("#FFFFFF"));
+                fiftykg.setTextColor(Color.parseColor("#FFFFFF"));
+                hundredkg.setTextColor(Color.parseColor("#FFFFFF"));
+                otherkg_option.setTextColor(Color.parseColor("#FFFFFF"));
 
 
                 tenkg.setBackgroundResource(R.drawable.black_border_blue_filled);
-                fivekg.setBackgroundResource(R.drawable.black_bordr_white_filled1);
-                twentykg.setBackgroundResource(R.drawable.black_bordr_white_filled1);
-                fiftykg.setBackgroundResource(R.drawable.black_bordr_white_filled1);
-                hundredkg.setBackgroundResource(R.drawable.black_bordr_white_filled1);
-                otherkg_option.setBackgroundResource(R.drawable.black_bordr_white_filled1);
+                fivekg.setBackgroundResource(R.drawable.border_login_curve_grey);
+                twentykg.setBackgroundResource(R.drawable.border_login_curve_grey);
+                fiftykg.setBackgroundResource(R.drawable.border_login_curve_grey);
+                hundredkg.setBackgroundResource(R.drawable.border_login_curve_grey);
+                otherkg_option.setBackgroundResource(R.drawable.border_login_curve_grey);
 
             }
         });
@@ -579,18 +579,18 @@ public class SellDetailsEditFragment extends Fragment {
 
                 PackagingsizeId ="3";
                 twentykg.setTextColor(Color.parseColor("#FFFFFF"));
-                tenkg.setTextColor(Color.parseColor("#000000"));
-                fivekg.setTextColor(Color.parseColor("#000000"));
-                fiftykg.setTextColor(Color.parseColor("#000000"));
-                hundredkg.setTextColor(Color.parseColor("#000000"));
-                otherkg_option.setTextColor(Color.parseColor("#000000"));
+                tenkg.setTextColor(Color.parseColor("#FFFFFF"));
+                fivekg.setTextColor(Color.parseColor("#FFFFFF"));
+                fiftykg.setTextColor(Color.parseColor("#FFFFFF"));
+                hundredkg.setTextColor(Color.parseColor("#FFFFFF"));
+                otherkg_option.setTextColor(Color.parseColor("#FFFFFF"));
 
                 twentykg.setBackgroundResource(R.drawable.black_border_blue_filled);
-                tenkg.setBackgroundResource(R.drawable.black_bordr_white_filled1);
-                fivekg.setBackgroundResource(R.drawable.black_bordr_white_filled1);
-                fiftykg.setBackgroundResource(R.drawable.black_bordr_white_filled1);
-                hundredkg.setBackgroundResource(R.drawable.black_bordr_white_filled1);
-                otherkg_option.setBackgroundResource(R.drawable.black_bordr_white_filled1);
+                tenkg.setBackgroundResource(R.drawable.border_login_curve_grey);
+                fivekg.setBackgroundResource(R.drawable.border_login_curve_grey);
+                fiftykg.setBackgroundResource(R.drawable.border_login_curve_grey);
+                hundredkg.setBackgroundResource(R.drawable.border_login_curve_grey);
+                otherkg_option.setBackgroundResource(R.drawable.border_login_curve_grey);
 
 
             }
@@ -602,20 +602,20 @@ public class SellDetailsEditFragment extends Fragment {
 
                 PackagingsizeId ="4";
                 fiftykg.setTextColor(Color.parseColor("#FFFFFF"));
-                tenkg.setTextColor(Color.parseColor("#000000"));
-                twentykg.setTextColor(Color.parseColor("#000000"));
-                fivekg.setTextColor(Color.parseColor("#000000"));
-                hundredkg.setTextColor(Color.parseColor("#000000"));
-                otherkg_option.setTextColor(Color.parseColor("#000000"));
+                tenkg.setTextColor(Color.parseColor("#FFFFFF"));
+                twentykg.setTextColor(Color.parseColor("#FFFFFF"));
+                fivekg.setTextColor(Color.parseColor("#FFFFFF"));
+                hundredkg.setTextColor(Color.parseColor("#FFFFFF"));
+                otherkg_option.setTextColor(Color.parseColor("#FFFFFF"));
 
 
 
                 fiftykg.setBackgroundResource(R.drawable.black_border_blue_filled);
-                tenkg.setBackgroundResource(R.drawable.black_bordr_white_filled1);
-                twentykg.setBackgroundResource(R.drawable.black_bordr_white_filled1);
-                fivekg.setBackgroundResource(R.drawable.black_bordr_white_filled1);
-                hundredkg.setBackgroundResource(R.drawable.black_bordr_white_filled1);
-                otherkg_option.setBackgroundResource(R.drawable.black_bordr_white_filled1);
+                tenkg.setBackgroundResource(R.drawable.border_login_curve_grey);
+                twentykg.setBackgroundResource(R.drawable.border_login_curve_grey);
+                fivekg.setBackgroundResource(R.drawable.border_login_curve_grey);
+                hundredkg.setBackgroundResource(R.drawable.border_login_curve_grey);
+                otherkg_option.setBackgroundResource(R.drawable.border_login_curve_grey);
 
 
 
@@ -628,20 +628,20 @@ public class SellDetailsEditFragment extends Fragment {
 
                 PackagingsizeId ="5";
                 hundredkg.setTextColor(Color.parseColor("#FFFFFF"));
-                tenkg.setTextColor(Color.parseColor("#000000"));
-                twentykg.setTextColor(Color.parseColor("#000000"));
-                fiftykg.setTextColor(Color.parseColor("#000000"));
-                fivekg.setTextColor(Color.parseColor("#000000"));
-                otherkg_option.setTextColor(Color.parseColor("#000000"));
+                tenkg.setTextColor(Color.parseColor("#FFFFFF"));
+                twentykg.setTextColor(Color.parseColor("#FFFFFF"));
+                fiftykg.setTextColor(Color.parseColor("#FFFFFF"));
+                fivekg.setTextColor(Color.parseColor("#FFFFFF"));
+                otherkg_option.setTextColor(Color.parseColor("#FFFFFF"));
 
 
 
                 hundredkg.setBackgroundResource(R.drawable.black_border_blue_filled);
-                tenkg.setBackgroundResource(R.drawable.black_bordr_white_filled1);
-                twentykg.setBackgroundResource(R.drawable.black_bordr_white_filled1);
-                fiftykg.setBackgroundResource(R.drawable.black_bordr_white_filled1);
-                fivekg.setBackgroundResource(R.drawable.black_bordr_white_filled1);
-                otherkg_option.setBackgroundResource(R.drawable.black_bordr_white_filled1);
+                tenkg.setBackgroundResource(R.drawable.border_login_curve_grey);
+                twentykg.setBackgroundResource(R.drawable.border_login_curve_grey);
+                fiftykg.setBackgroundResource(R.drawable.border_login_curve_grey);
+                fivekg.setBackgroundResource(R.drawable.border_login_curve_grey);
+                otherkg_option.setBackgroundResource(R.drawable.border_login_curve_grey);
 
 
 
@@ -655,20 +655,20 @@ public class SellDetailsEditFragment extends Fragment {
 
                 PackagingsizeId ="6";
                 otherkg_option.setTextColor(Color.parseColor("#FFFFFF"));
-                tenkg.setTextColor(Color.parseColor("#000000"));
-                twentykg.setTextColor(Color.parseColor("#000000"));
-                fiftykg.setTextColor(Color.parseColor("#000000"));
-                hundredkg.setTextColor(Color.parseColor("#000000"));
-                fivekg.setTextColor(Color.parseColor("#000000"));
+                tenkg.setTextColor(Color.parseColor("#FFFFFF"));
+                twentykg.setTextColor(Color.parseColor("#FFFFFF"));
+                fiftykg.setTextColor(Color.parseColor("#FFFFFF"));
+                hundredkg.setTextColor(Color.parseColor("#FFFFFF"));
+                fivekg.setTextColor(Color.parseColor("#FFFFFF"));
 
 
 
                 otherkg_option.setBackgroundResource(R.drawable.black_border_blue_filled);
-                tenkg.setBackgroundResource(R.drawable.black_bordr_white_filled1);
-                twentykg.setBackgroundResource(R.drawable.black_bordr_white_filled1);
-                fiftykg.setBackgroundResource(R.drawable.black_bordr_white_filled1);
-                hundredkg.setBackgroundResource(R.drawable.black_bordr_white_filled1);
-                fivekg.setBackgroundResource(R.drawable.black_bordr_white_filled1);
+                tenkg.setBackgroundResource(R.drawable.border_login_curve_grey);
+                twentykg.setBackgroundResource(R.drawable.border_login_curve_grey);
+                fiftykg.setBackgroundResource(R.drawable.border_login_curve_grey);
+                hundredkg.setBackgroundResource(R.drawable.border_login_curve_grey);
+                fivekg.setBackgroundResource(R.drawable.border_login_curve_grey);
 
 
 
@@ -745,12 +745,12 @@ public class SellDetailsEditFragment extends Fragment {
                     Toast toast = Toast.makeText(getActivity(), "Please enter max price", Toast.LENGTH_LONG);
                     toast.setGravity(Gravity.TOP | Gravity.CENTER, 0, 0);
                     toast.show();
-                }else  if(unit_of_measurement.getText().toString().equals("")) {
-
-
-                    Toast toast = Toast.makeText(getActivity(), "Please select UOM", Toast.LENGTH_LONG);
-                    toast.setGravity(Gravity.TOP | Gravity.CENTER, 0, 0);
-                    toast.show();
+//                }else  if(unit_of_measurement.getText().toString().equals("")) {
+//
+//
+//                    Toast toast = Toast.makeText(getActivity(), "Please select UOM", Toast.LENGTH_LONG);
+//                    toast.setGravity(Gravity.TOP | Gravity.CENTER, 0, 0);
+//                    toast.show();
                 }else  if(Organicproduce_Id == null) {
 
 
@@ -770,8 +770,13 @@ public class SellDetailsEditFragment extends Fragment {
                     toast.setGravity(Gravity.TOP | Gravity.CENTER, 0, 0);
                     toast.show();
                 }else {
-                         SellEdit();
-                  //  nextpage();
+
+                    selectedFragment = InventoryList.newInstance();
+                    FragmentTransaction transaction = (getActivity()).getSupportFragmentManager().beginTransaction();
+                    transaction.replace(R.id.frame_layout1, selectedFragment);
+                    transaction.commit();
+
+                    //  nextpage();
                     // uploadImage(getResizedBitmap(Spices_CameraFragment.selectedImage, 100, 100));
                 }
 
@@ -789,77 +794,77 @@ public class SellDetailsEditFragment extends Fragment {
         return view;
     }
 
-    private void SellEdit() {
-
-        try{
-
-            final JSONObject jsonObject = new JSONObject();
-            jsonObject.put("UserId",sessionManager.getRegId("userId"));
-            jsonObject.put("SellingDetailsId", SellDetails_id);
-            jsonObject.put("SellingListMasterId",Sell_MlistId );
-            jsonObject.put("SellingCategoryId",SellCategort_id );
-            jsonObject.put("SellingVarietyId",Variety_id);
-            jsonObject.put("SellingQualityId", Quality_id);
-            jsonObject.put("SellingQuantity", min_quantity.getText().toString());
-            jsonObject.put("UnitOfPriceId",String.valueOf(QuantityPrice_Adapter3.quantityprice_id));
-            jsonObject.put("Price","0");
-
-            jsonObject.put("MinPrice",min_price.getText().toString() );
-            jsonObject.put("MaxPrice",max_price.getText().toString() );
-            jsonObject.put("OrganicProduceId",Organicproduce_Id);
-            jsonObject.put("PackagingTypeId",PackagingtypeId);
-            jsonObject.put("PackagingSizeId",PackagingsizeId);
-
-     Crop_Post.crop_posting(getActivity(), Urls.EditSellDetails, jsonObject, new VoleyJsonObjectCallback() {
-                @Override
-                public void onSuccessResponse(JSONObject result) {
-                    Bundle bundle=new Bundle();
-
-                    System.out.println("EditSellDetailslllllllllllllllllllll"+result);
-
-
-                    try{
-
-                        status= result.getString("Status");
-                      //  message = result.getString("Message");
-
-
-                        if((status.equals("Success"))){
-
-
-                            Toast toast = Toast.makeText(getActivity(), "Sell details edited", Toast.LENGTH_LONG);
-                            toast.setGravity(Gravity.TOP | Gravity.CENTER, 0, 0);
-                            toast.show();
-                           selectedFragment = InventoryList.newInstance();
-                            FragmentTransaction transaction = (getActivity()).getSupportFragmentManager().beginTransaction();
-                            transaction.replace(R.id.frame_layout1, selectedFragment);
-                            transaction.commit();
-
-
-                        }else{
-
-
-                            Toast toast = Toast.makeText(getActivity(), "Sell details not edited", Toast.LENGTH_LONG);
-                            toast.setGravity(Gravity.TOP | Gravity.CENTER, 0, 0);
-                            toast.show();
-
-                        }
-
-
-                    }catch (Exception e){
-                        e.printStackTrace();
-
-                    }
-                }
-            });
-
-
-        }catch (Exception e){
-            e.printStackTrace();
-
-        }
-
-    }
+//    private void SellEdit() {
+//
+//        try{
+//
+//            final JSONObject jsonObject = new JSONObject();
+//            jsonObject.put("UserId",sessionManager.getRegId("userId"));
+//            jsonObject.put("SellingDetailsId", SellDetails_id);
+//            jsonObject.put("SellingListMasterId",Sell_MlistId );
+//            jsonObject.put("SellingCategoryId",SellCategort_id );
+//            jsonObject.put("SellingVarietyId",Variety_id);
+//            jsonObject.put("SellingQualityId", Quality_id);
+//            jsonObject.put("SellingQuantity", min_quantity.getText().toString());
+//            jsonObject.put("UnitOfPriceId",String.valueOf(QuantityPrice_Adapter3.quantityprice_id));
+//            jsonObject.put("Price","0");
+//
+//            jsonObject.put("MinPrice",min_price.getText().toString() );
+//            jsonObject.put("MaxPrice",max_price.getText().toString() );
+//            jsonObject.put("OrganicProduceId",Organicproduce_Id);
+//            jsonObject.put("PackagingTypeId",PackagingtypeId);
+//            jsonObject.put("PackagingSizeId",PackagingsizeId);
+//
+//     Crop_Post.crop_posting(getActivity(), Urls.EditSellDetails, jsonObject, new VoleyJsonObjectCallback() {
+//                @Override
+//                public void onSuccessResponse(JSONObject result) {
+//                    Bundle bundle=new Bundle();
+//
+//                    System.out.println("EditSellDetailslllllllllllllllllllll"+result);
+//
+//
+//                    try{
+//
+//                        status= result.getString("Status");
+//                      //  message = result.getString("Message");
+//
+//
+//                        if((status.equals("Success"))){
+//
+//
+//                            Toast toast = Toast.makeText(getActivity(), "Sell details edited", Toast.LENGTH_LONG);
+//                            toast.setGravity(Gravity.TOP | Gravity.CENTER, 0, 0);
+//                            toast.show();
+//                           selectedFragment = InventoryList.newInstance();
+//                            FragmentTransaction transaction = (getActivity()).getSupportFragmentManager().beginTransaction();
+//                            transaction.replace(R.id.frame_layout1, selectedFragment);
+//                            transaction.commit();
+//
+//
+//                        }else{
+//
+//
+//                            Toast toast = Toast.makeText(getActivity(), "Sell details not edited", Toast.LENGTH_LONG);
+//                            toast.setGravity(Gravity.TOP | Gravity.CENTER, 0, 0);
+//                            toast.show();
+//
+//                        }
+//
+//
+//                    }catch (Exception e){
+//                        e.printStackTrace();
+//
+//                    }
+//                }
+//            });
+//
+//
+//        }catch (Exception e){
+//            e.printStackTrace();
+//
+//        }
+//
+//    }
 
     private void PrepareUOM() {
 

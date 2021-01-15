@@ -53,7 +53,7 @@ public class HomeLandingFragment extends Fragment {
         View view = inflater.inflate(R.layout.home_landing_page, container, false);
         linearLayout=view.findViewById(R.id.drawer_layout);
         Window window = getActivity().getWindow();
-        window.setStatusBarColor(ContextCompat.getColor(getActivity(),R.color.colorPrimaryDark1));
+        window.setStatusBarColor(ContextCompat.getColor(getActivity(),R.color.colorPrimaryDark));
 
 
         view.setFocusableInTouchMode(true);

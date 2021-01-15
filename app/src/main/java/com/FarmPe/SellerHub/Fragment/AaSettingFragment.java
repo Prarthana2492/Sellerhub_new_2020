@@ -1,6 +1,7 @@
 package com.FarmPe.SellerHub.Fragment;
 
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Matrix;
@@ -54,12 +55,12 @@ import java.util.Map;
 import de.hdodenhof.circleimageview.CircleImageView;
 
 import static android.app.Activity.RESULT_OK;
-import static com.FarmPe.SellerHub.Fragment.Shop_Camera_Preview_Fragment.EMOJI_FILTER;
+
 import static com.android.volley.VolleyLog.TAG;
 
 public class AaSettingFragment extends Fragment {
     Fragment selectedFragment;
-    LinearLayout backfeed,not_lay,lang_lay,help_lay,main_layout,change_pass_lay,kyc_lay,log_lay,loans_layout;
+    LinearLayout backfeed,not_lay,lang_lay,help_lay,main_layout,change_pass_lay,addr_lay,log_lay,invi_lay;
     public static TextView phone_no,name,logout;
     JSONObject lngObject;
     CircleImageView image_acc;
@@ -73,6 +74,8 @@ public class AaSettingFragment extends Fragment {
     public static Bitmap bitmap;
     ImageView cam_img,edit_pencil;
     String name_str,phone_str;
+
+
     public static AaSettingFragment newInstance() {
         AaSettingFragment fragment = new AaSettingFragment();
         return fragment;
@@ -84,12 +87,12 @@ public class AaSettingFragment extends Fragment {
         View view = inflater.inflate(R.layout.a_s_setting_layout1, container, false);
 
         backfeed=view.findViewById(R.id.back_feed);
-       // invi_lay=view.findViewById(R.id.invi_lay);
+        invi_lay=view.findViewById(R.id.invi_lay);
       //  change_pass_lay=view.findViewById(R.id.change_pass_lay);
         lang_lay=view.findViewById(R.id.lang_lay);
         not_lay=view.findViewById(R.id.not_lay);
        // kyc_lay=view.findViewById(R.id.kyc_lay);
-      //  addr_lay=view.findViewById(R.id.addr_lay);
+      addr_lay=view.findViewById(R.id.addr_lay);
      //   acc_info_lay=view.findViewById(R.id.acc_info_lay);
         phone_no=view.findViewById(R.id.phone_noo);
       //  name=view.findViewById(R.id.name_set);
@@ -145,7 +148,7 @@ public class AaSettingFragment extends Fragment {
             }
         });
 
-        phone_no.setText(sessionManager.getRegId("phone"));
+        //phone_no.setText(sessionManager.getRegId("phone"));
         // name.setText(sessionManager.getRegId("name"));
         // phone_no.setText(sessionManager.getRegId("phone"));
 
@@ -204,6 +207,7 @@ public class AaSettingFragment extends Fragment {
                 transaction.commit();
             }
         });
+
         not_lay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -225,33 +229,36 @@ public class AaSettingFragment extends Fragment {
                 transaction.commit();
             }
         });*/
-       /* addr_lay.setOnClickListener(new View.OnClickListener() {
+        addr_lay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                selectedFragment = NewAddressDetails_Fragment.newInstance();
+
+                selectedFragment = Add_New_Address_Fragment.newInstance();
                 FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
                 transaction.replace(R.id.frame_layout1, selectedFragment);
                 transaction.addToBackStack("sett");
                 transaction.commit();
             }
         });
-        acc_info_lay.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                selectedFragment = BankAccount_Fragment.newInstance();
-                FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
-                transaction.replace(R.id.frame_layout1, selectedFragment);
-                transaction.addToBackStack("bbbbb");
-                transaction.commit();
-            }
-        });*/
+
+//        acc_info_lay.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                selectedFragment = BankAccount_Fragment.newInstance();
+//                FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
+//                transaction.replace(R.id.frame_layout1, selectedFragment);
+//                transaction.addToBackStack("bbbbb");
+//                transaction.commit();
+//            }
+//        });
+
         help_lay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                selectedFragment = PrivacyPolicyFragment.newInstance();
+
+                selectedFragment = HelpFragment.newInstance();
                 FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
                 transaction.replace(R.id.frame_layout1, selectedFragment);
-                transaction.addToBackStack("Policy");
                 transaction.commit();
             }
         });
@@ -314,7 +321,7 @@ public class AaSettingFragment extends Fragment {
 
         });
 
-       /* invi_lay.setOnClickListener(new View.OnClickListener() {
+        invi_lay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -490,14 +497,14 @@ public class AaSettingFragment extends Fragment {
                 mBottomSheetDialog.setContentView(sheetView);
                 mBottomSheetDialog.show();
             }
-        });*/
+        });
 
         cam_img.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // update="image_update";
-                Intent i = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI); // to go to gallery
-                startActivityForResult(i, 100); // on activity method will execute
+//                Intent i = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI); // to go to gallery
+//                startActivityForResult(i, 100); // on activity method will execute
 
 
             }
@@ -506,8 +513,8 @@ public class AaSettingFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 // update="image_update";
-                Intent i = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI); // to go to gallery
-                startActivityForResult(i, 100); // on activity method will execute
+//                Intent i = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI); // to go to gallery
+//                startActivityForResult(i, 100); // on activity method will execute
                 /*selectedFragment = AaProfileFragment.newInstance();
                 FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
                 ft.replace(R.id.frame_layout1,selectedFragment);
@@ -634,41 +641,41 @@ public class AaSettingFragment extends Fragment {
         }catch (Exception e){
             e.printStackTrace();
         }*/
-
-        try {
-            JSONObject jsonObject = new JSONObject();
-            jsonObject.put("UserId", sessionManager.getRegId("userId"));
-
-            Crop_Post.crop_posting(getActivity(), Urls.GetCImagelist, jsonObject, new VoleyJsonObjectCallback() {
-                @Override
-                public void onSuccessResponse(JSONObject result) {
-                    System.out.println("dhfjfjd" + result);
-
-                    try {
-                        JSONArray imagelist_array = result.getJSONArray("captureImagelist");
-                        for (int i = 0; i < imagelist_array.length(); i++) {
-
-                            JSONObject jsonObject1 = imagelist_array.getJSONObject(i);
-                            //   image_id = jsonObject1.getString("CImageId");
-                            String image_view = jsonObject1.getString("Image1");
-
-                            Glide.with(getActivity()).load(image_view)
-                                    .thumbnail(0.5f)
-                                    .diskCacheStrategy(DiskCacheStrategy.ALL)
-                                    .error(R.drawable.ic_gallery__default)
-                                    .into(image_acc);
-                        }
-
-
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                    }
-                }
-            });
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+//
+//        try {
+//            JSONObject jsonObject = new JSONObject();
+//            jsonObject.put("UserId", sessionManager.getRegId("userId"));
+//
+//            Crop_Post.crop_posting(getActivity(), Urls.GetCImagelist, jsonObject, new VoleyJsonObjectCallback() {
+//                @Override
+//                public void onSuccessResponse(JSONObject result) {
+//                    System.out.println("dhfjfjd" + result);
+//
+//                    try {
+//                        JSONArray imagelist_array = result.getJSONArray("captureImagelist");
+//                        for (int i = 0; i < imagelist_array.length(); i++) {
+//
+//                            JSONObject jsonObject1 = imagelist_array.getJSONObject(i);
+//                            //   image_id = jsonObject1.getString("CImageId");
+//                            String image_view = jsonObject1.getString("Image1");
+//
+//                            Glide.with(getActivity()).load(image_view)
+//                                    .thumbnail(0.5f)
+//                                    .diskCacheStrategy(DiskCacheStrategy.ALL)
+//                                    .error(R.drawable.ic_gallery__default)
+//                                    .into(image_acc);
+//                        }
+//
+//
+//                    } catch (Exception e) {
+//                        e.printStackTrace();
+//                    }
+//                }
+//            });
+//
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
 
 
         return view;
@@ -723,7 +730,7 @@ public class AaSettingFragment extends Fragment {
                 bitmap = BitmapFactory.decodeStream(imageStream);
                 System.out.println("bittttttttt"+bitmap);
                 image_acc.setImageBitmap(bitmap);
-                uploadImage(bitmap);
+            //    uploadImage(bitmap);
                 //uploadImage(getResizedBitmap(bitmap,100,100));
 
             } catch (FileNotFoundException e) {
@@ -818,81 +825,81 @@ System.out.println("ennnnnnnterrrrr");
 
 
 
-    private void uploadImage(final Bitmap bitmap){
-        VolleyMultipartRequest volleyMultipartRequest = new VolleyMultipartRequest(Request.Method.POST, Urls.Update_Profile_Details,
-                new Response.Listener<NetworkResponse>(){
-                    @Override
-                    public void onResponse(NetworkResponse response) {
-                        //Toast.makeText(getActivity(), obj.getString("message"), Toast.LENGTH_SHORT).show();
-                        //  String resultResponse = new String(response.data);
-                        Log.e(TAG,"afaeftagsbillvaluegf"+response);
-                        /*if (update!=null){
-                          //  mBottomSheetDialog.dismiss();
-                            name.setText(name_str.length()+"7");
-                            System.out.println("pppphhhoonnee_numbrr"+name_str+phone_str);
-                            phone_no.setText(phone_str.length()+"7");
-                        }*/
-                        //  sessionManager.save_name(name.getText().toString(),phone_no.getText().toString(),"");
-
-
-
-                        //Toast.makeText(getActivity(),"uploaded", Toast.LENGTH_SHORT).show();
-                       /* selectedFragment = SettingFragment.newInstance();
-                        FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
-                        ft.replace(R.id.frame_layout,selectedFragment);
-                        ft.commit();*/
-
-                    }
-                },
-
-                new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(getActivity(), error.getMessage(), Toast.LENGTH_SHORT).show();
-                    }
-                }) {
-            /*
-             *pass files using below method
-             * */
-            @Override
-            protected Map<String, String> getParams() throws AuthFailureError {
-                Map<String, String> params = new HashMap<>();
-                params.put("UserId", sessionManager.getRegId("userId"));
-
-                if (update != null) {
-
-                    params.put("PhoneNo", phone_str);
-
-                    System.out.println("parametrsss1111" + params);
-                } else {
-
-                    params.put("PhoneNo", phone_no.getText().toString());
-
-                    System.out.println("parametrsss" + params);
-                    // return params;
-                }
-                return params;
-            }
-            @Override
-            protected Map<String, DataPart> getByteData() {
-                Map<String, DataPart> params = new HashMap<>();
-                long imagename = System.currentTimeMillis();
-                // params.put("File", new DataPart(imagename + ".png", getFileDataFromDrawable(bitmap)));
-                Log.e(TAG,"Imhereafaeftagsparams Imhereafaeftagsparams "+bitmap);
-
-                if (bitmap==null){
-
-                }else {
-                    params.put("ProfilePic", new DataPart(imagename + ".png", getFileDataFromDrawable(bitmap)));
-
-                }
-                Log.e(TAG,"Imhereafaeftagsparams "+params);
-                return params;
-            }
-        };
-        //adding the request to volley
-        Volley.newRequestQueue(getActivity()).add(volleyMultipartRequest);
-    }
+//    private void uploadImage(final Bitmap bitmap){
+//        VolleyMultipartRequest volleyMultipartRequest = new VolleyMultipartRequest(Request.Method.POST, Urls.Update_Profile_Details,
+//                new Response.Listener<NetworkResponse>(){
+//                    @Override
+//                    public void onResponse(NetworkResponse response) {
+//                        //Toast.makeText(getActivity(), obj.getString("message"), Toast.LENGTH_SHORT).show();
+//                        //  String resultResponse = new String(response.data);
+//                        Log.e(TAG,"afaeftagsbillvaluegf"+response);
+//                        /*if (update!=null){
+//                          //  mBottomSheetDialog.dismiss();
+//                            name.setText(name_str.length()+"7");
+//                            System.out.println("pppphhhoonnee_numbrr"+name_str+phone_str);
+//                            phone_no.setText(phone_str.length()+"7");
+//                        }*/
+//                        //  sessionManager.save_name(name.getText().toString(),phone_no.getText().toString(),"");
+//
+//
+//
+//                        //Toast.makeText(getActivity(),"uploaded", Toast.LENGTH_SHORT).show();
+//                       /* selectedFragment = SettingFragment.newInstance();
+//                        FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
+//                        ft.replace(R.id.frame_layout,selectedFragment);
+//                        ft.commit();*/
+//
+//                    }
+//                },
+//
+//                new Response.ErrorListener() {
+//                    @Override
+//                    public void onErrorResponse(VolleyError error) {
+//                        Toast.makeText(getActivity(), error.getMessage(), Toast.LENGTH_SHORT).show();
+//                    }
+//                }) {
+//            /*
+//             *pass files using below method
+//             * */
+//            @Override
+//            protected Map<String, String> getParams() throws AuthFailureError {
+//                Map<String, String> params = new HashMap<>();
+//                params.put("UserId", sessionManager.getRegId("userId"));
+//
+//                if (update != null) {
+//
+//                    params.put("PhoneNo", phone_str);
+//
+//                    System.out.println("parametrsss1111" + params);
+//                } else {
+//
+//                    params.put("PhoneNo", phone_no.getText().toString());
+//
+//                    System.out.println("parametrsss" + params);
+//                    // return params;
+//                }
+//                return params;
+//            }
+//            @Override
+//            protected Map<String, DataPart> getByteData() {
+//                Map<String, DataPart> params = new HashMap<>();
+//                long imagename = System.currentTimeMillis();
+//                // params.put("File", new DataPart(imagename + ".png", getFileDataFromDrawable(bitmap)));
+//                Log.e(TAG,"Imhereafaeftagsparams Imhereafaeftagsparams "+bitmap);
+//
+//                if (bitmap==null){
+//
+//                }else {
+//                    params.put("ProfilePic", new DataPart(imagename + ".png", getFileDataFromDrawable(bitmap)));
+//
+//                }
+//                Log.e(TAG,"Imhereafaeftagsparams "+params);
+//                return params;
+//            }
+//        };
+//        //adding the request to volley
+//        Volley.newRequestQueue(getActivity()).add(volleyMultipartRequest);
+//    }
 
 
     public Bitmap getResizedBitmap(Bitmap bm, int newWidth, int newHeight) {

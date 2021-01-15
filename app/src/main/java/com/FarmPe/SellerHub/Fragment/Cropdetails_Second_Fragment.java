@@ -82,14 +82,14 @@ public class Cropdetails_Second_Fragment extends Fragment {
         Status_bar_change_singleton.getInstance().color_change(getActivity());
         sessionManager = new SessionManager(getActivity());
 
-        Bundle bundle= getArguments();
-        if (bundle!=null){
-            sell_MlistId = (getArguments().getString("selling_Mlist_id"));
-            variety_Id = getArguments().getString("variety_id");
-            quality_Id = getArguments().getString("quality_id");
-            Get_image = getArguments().getString("Image");
-            System.out.println("image2222222"+Get_image);
-        }
+//        Bundle bundle= getArguments();
+//        if (bundle!=null){
+//            sell_MlistId = (getArguments().getString("selling_Mlist_id"));
+//            variety_Id = getArguments().getString("variety_id");
+//            quality_Id = getArguments().getString("quality_id");
+//            Get_image = getArguments().getString("Image");
+//            System.out.println("image2222222"+Get_image);
+//        }
 
 
         //GETIMAGE = BitmapFactory.decodeFile(String.valueOf(Get_image));
@@ -154,10 +154,11 @@ public class Cropdetails_Second_Fragment extends Fragment {
 
                 Organicproduce_Id = "1";
                 yes.setTextColor(Color.parseColor("#FFFFFF"));
-                no.setTextColor(Color.parseColor("#000000"));
+                no.setTextColor(Color.parseColor("#FFFFFF"));
 
                 yes.setBackgroundResource(R.drawable.black_border_blue_filled);
-                no.setBackgroundResource(R.drawable.black_bordr_white_filled1);
+                no.setBackgroundResource(R.drawable.border_login_curve_grey);
+
 
             }
         });
@@ -168,10 +169,10 @@ public class Cropdetails_Second_Fragment extends Fragment {
 
                 Organicproduce_Id = "2";
                 no.setTextColor(Color.parseColor("#FFFFFF"));
-                yes.setTextColor(Color.parseColor("#000000"));
+                yes.setTextColor(Color.parseColor("#FFFFFF"));
 
+                yes.setBackgroundResource(R.drawable.border_login_curve_grey);
                 no.setBackgroundResource(R.drawable.black_border_blue_filled);
-                yes.setBackgroundResource(R.drawable.black_bordr_white_filled1);
 
             }
         });
@@ -183,16 +184,16 @@ public class Cropdetails_Second_Fragment extends Fragment {
 
                PackagingtypeId ="1";
                 cartons.setTextColor(Color.parseColor("#FFFFFF"));
-                plastic_box.setTextColor(Color.parseColor("#000000"));
-                petjar.setTextColor(Color.parseColor("#000000"));
-                otheroption1.setTextColor(Color.parseColor("#000000"));
+                plastic_box.setTextColor(Color.parseColor("#FFFFFF"));
+                petjar.setTextColor(Color.parseColor("#FFFFFF"));
+                otheroption1.setTextColor(Color.parseColor("#FFFFFF"));
 
 
 
                 cartons.setBackgroundResource(R.drawable.black_border_blue_filled);
-                plastic_box.setBackgroundResource(R.drawable.black_bordr_white_filled1);
-                petjar.setBackgroundResource(R.drawable.black_bordr_white_filled1);
-                otheroption1.setBackgroundResource(R.drawable.black_bordr_white_filled1);
+                plastic_box.setBackgroundResource(R.drawable.border_login_curve_grey);
+                petjar.setBackgroundResource(R.drawable.border_login_curve_grey);
+                otheroption1.setBackgroundResource(R.drawable.border_login_curve_grey);
 
 
 
@@ -205,16 +206,16 @@ public class Cropdetails_Second_Fragment extends Fragment {
 
                 PackagingtypeId ="2";
                 plastic_box.setTextColor(Color.parseColor("#FFFFFF"));
-                cartons.setTextColor(Color.parseColor("#000000"));
-                petjar.setTextColor(Color.parseColor("#000000"));
-                otheroption1.setTextColor(Color.parseColor("#000000"));
+                cartons.setTextColor(Color.parseColor("#FFFFFF"));
+                petjar.setTextColor(Color.parseColor("#FFFFFF"));
+                otheroption1.setTextColor(Color.parseColor("#FFFFFF"));
 
 
 
                 plastic_box.setBackgroundResource(R.drawable.black_border_blue_filled);
-                cartons.setBackgroundResource(R.drawable.black_bordr_white_filled1);
-                petjar.setBackgroundResource(R.drawable.black_bordr_white_filled1);
-                otheroption1.setBackgroundResource(R.drawable.black_bordr_white_filled1);
+                cartons.setBackgroundResource(R.drawable.border_login_curve_grey);
+                petjar.setBackgroundResource(R.drawable.border_login_curve_grey);
+                otheroption1.setBackgroundResource(R.drawable.border_login_curve_grey);
 
 
 
@@ -228,16 +229,16 @@ public class Cropdetails_Second_Fragment extends Fragment {
 
                 PackagingtypeId ="3";
                 petjar.setTextColor(Color.parseColor("#FFFFFF"));
-                plastic_box.setTextColor(Color.parseColor("#000000"));
-                cartons.setTextColor(Color.parseColor("#000000"));
-                otheroption1.setTextColor(Color.parseColor("#000000"));
+                plastic_box.setTextColor(Color.parseColor("#FFFFFF"));
+                cartons.setTextColor(Color.parseColor("#FFFFFF"));
+                otheroption1.setTextColor(Color.parseColor("#FFFFFF"));
 
 
 
                 petjar.setBackgroundResource(R.drawable.black_border_blue_filled);
-                plastic_box.setBackgroundResource(R.drawable.black_bordr_white_filled1);
-                cartons.setBackgroundResource(R.drawable.black_bordr_white_filled1);
-                otheroption1.setBackgroundResource(R.drawable.black_bordr_white_filled1);
+                plastic_box.setBackgroundResource(R.drawable.border_login_curve_grey);
+                cartons.setBackgroundResource(R.drawable.border_login_curve_grey);
+                otheroption1.setBackgroundResource(R.drawable.border_login_curve_grey);
 
 
 
@@ -250,16 +251,16 @@ public class Cropdetails_Second_Fragment extends Fragment {
 
                 PackagingtypeId ="4";
                 otheroption1.setTextColor(Color.parseColor("#FFFFFF"));
-                plastic_box.setTextColor(Color.parseColor("#000000"));
-                petjar.setTextColor(Color.parseColor("#000000"));
-                cartons.setTextColor(Color.parseColor("#000000"));
+                plastic_box.setTextColor(Color.parseColor("#FFFFFF"));
+                petjar.setTextColor(Color.parseColor("#FFFFFF"));
+                cartons.setTextColor(Color.parseColor("#FFFFFF"));
 
 
 
                 otheroption1.setBackgroundResource(R.drawable.black_border_blue_filled);
-                plastic_box.setBackgroundResource(R.drawable.black_bordr_white_filled1);
-                petjar.setBackgroundResource(R.drawable.black_bordr_white_filled1);
-                cartons.setBackgroundResource(R.drawable.black_bordr_white_filled1);
+                plastic_box.setBackgroundResource(R.drawable.border_login_curve_grey);
+                petjar.setBackgroundResource(R.drawable.border_login_curve_grey);
+                cartons.setBackgroundResource(R.drawable.border_login_curve_grey);
 
 
 
@@ -273,20 +274,20 @@ public class Cropdetails_Second_Fragment extends Fragment {
 
                 PackagingsizeId ="1";
                 fivekg.setTextColor(Color.parseColor("#FFFFFF"));
-                tenkg.setTextColor(Color.parseColor("#000000"));
-                twentykg.setTextColor(Color.parseColor("#000000"));
-                fiftykg.setTextColor(Color.parseColor("#000000"));
-                hundredkg.setTextColor(Color.parseColor("#000000"));
-                otherkg_option.setTextColor(Color.parseColor("#000000"));
+                tenkg.setTextColor(Color.parseColor("#FFFFFF"));
+                twentykg.setTextColor(Color.parseColor("#FFFFFF"));
+                fiftykg.setTextColor(Color.parseColor("#FFFFFF"));
+                hundredkg.setTextColor(Color.parseColor("#FFFFFF"));
+                otherkg_option.setTextColor(Color.parseColor("#FFFFFF"));
 
 
 
                 fivekg.setBackgroundResource(R.drawable.black_border_blue_filled);
-                tenkg.setBackgroundResource(R.drawable.black_bordr_white_filled1);
-                twentykg.setBackgroundResource(R.drawable.black_bordr_white_filled1);
-                fiftykg.setBackgroundResource(R.drawable.black_bordr_white_filled1);
-                hundredkg.setBackgroundResource(R.drawable.black_bordr_white_filled1);
-                otherkg_option.setBackgroundResource(R.drawable.black_bordr_white_filled1);
+                tenkg.setBackgroundResource(R.drawable.border_login_curve_grey);
+                twentykg.setBackgroundResource(R.drawable.border_login_curve_grey);
+                fiftykg.setBackgroundResource(R.drawable.border_login_curve_grey);
+                hundredkg.setBackgroundResource(R.drawable.border_login_curve_grey);
+                otherkg_option.setBackgroundResource(R.drawable.border_login_curve_grey);
 
 
 
@@ -300,19 +301,19 @@ public class Cropdetails_Second_Fragment extends Fragment {
 
                 PackagingsizeId ="2";
                 tenkg.setTextColor(Color.parseColor("#FFFFFF"));
-                fivekg.setTextColor(Color.parseColor("#000000"));
-                twentykg.setTextColor(Color.parseColor("#000000"));
-                fiftykg.setTextColor(Color.parseColor("#000000"));
-                hundredkg.setTextColor(Color.parseColor("#000000"));
-                otherkg_option.setTextColor(Color.parseColor("#000000"));
+                fivekg.setTextColor(Color.parseColor("#FFFFFF"));
+                twentykg.setTextColor(Color.parseColor("#FFFFFF"));
+                fiftykg.setTextColor(Color.parseColor("#FFFFFF"));
+                hundredkg.setTextColor(Color.parseColor("#FFFFFF"));
+                otherkg_option.setTextColor(Color.parseColor("#FFFFFF"));
 
 
                 tenkg.setBackgroundResource(R.drawable.black_border_blue_filled);
-                fivekg.setBackgroundResource(R.drawable.black_bordr_white_filled1);
-                twentykg.setBackgroundResource(R.drawable.black_bordr_white_filled1);
-                fiftykg.setBackgroundResource(R.drawable.black_bordr_white_filled1);
-                hundredkg.setBackgroundResource(R.drawable.black_bordr_white_filled1);
-                otherkg_option.setBackgroundResource(R.drawable.black_bordr_white_filled1);
+                fivekg.setBackgroundResource(R.drawable.border_login_curve_grey);
+                twentykg.setBackgroundResource(R.drawable.border_login_curve_grey);
+                fiftykg.setBackgroundResource(R.drawable.border_login_curve_grey);
+                hundredkg.setBackgroundResource(R.drawable.border_login_curve_grey);
+                otherkg_option.setBackgroundResource(R.drawable.border_login_curve_grey);
 
             }
         });
@@ -323,18 +324,18 @@ public class Cropdetails_Second_Fragment extends Fragment {
 
                 PackagingsizeId ="3";
                 twentykg.setTextColor(Color.parseColor("#FFFFFF"));
-                tenkg.setTextColor(Color.parseColor("#000000"));
-                fivekg.setTextColor(Color.parseColor("#000000"));
-                fiftykg.setTextColor(Color.parseColor("#000000"));
-                hundredkg.setTextColor(Color.parseColor("#000000"));
-                otherkg_option.setTextColor(Color.parseColor("#000000"));
+                tenkg.setTextColor(Color.parseColor("#FFFFFF"));
+                fivekg.setTextColor(Color.parseColor("#FFFFFF"));
+                fiftykg.setTextColor(Color.parseColor("#FFFFFF"));
+                hundredkg.setTextColor(Color.parseColor("#FFFFFF"));
+                otherkg_option.setTextColor(Color.parseColor("#FFFFFF"));
 
                 twentykg.setBackgroundResource(R.drawable.black_border_blue_filled);
-                tenkg.setBackgroundResource(R.drawable.black_bordr_white_filled1);
-                fivekg.setBackgroundResource(R.drawable.black_bordr_white_filled1);
-                fiftykg.setBackgroundResource(R.drawable.black_bordr_white_filled1);
-                hundredkg.setBackgroundResource(R.drawable.black_bordr_white_filled1);
-                otherkg_option.setBackgroundResource(R.drawable.black_bordr_white_filled1);
+                tenkg.setBackgroundResource(R.drawable.border_login_curve_grey);
+                fivekg.setBackgroundResource(R.drawable.border_login_curve_grey);
+                fiftykg.setBackgroundResource(R.drawable.border_login_curve_grey);
+                hundredkg.setBackgroundResource(R.drawable.border_login_curve_grey);
+                otherkg_option.setBackgroundResource(R.drawable.border_login_curve_grey);
 
 
             }
@@ -346,20 +347,20 @@ public class Cropdetails_Second_Fragment extends Fragment {
 
                 PackagingsizeId ="4";
                 fiftykg.setTextColor(Color.parseColor("#FFFFFF"));
-                tenkg.setTextColor(Color.parseColor("#000000"));
-                twentykg.setTextColor(Color.parseColor("#000000"));
-                fivekg.setTextColor(Color.parseColor("#000000"));
-                hundredkg.setTextColor(Color.parseColor("#000000"));
-                otherkg_option.setTextColor(Color.parseColor("#000000"));
+                tenkg.setTextColor(Color.parseColor("#FFFFFF"));
+                twentykg.setTextColor(Color.parseColor("#FFFFFF"));
+                fivekg.setTextColor(Color.parseColor("#FFFFFF"));
+                hundredkg.setTextColor(Color.parseColor("#FFFFFF"));
+                otherkg_option.setTextColor(Color.parseColor("#FFFFFF"));
 
 
 
                 fiftykg.setBackgroundResource(R.drawable.black_border_blue_filled);
-                tenkg.setBackgroundResource(R.drawable.black_bordr_white_filled1);
-                twentykg.setBackgroundResource(R.drawable.black_bordr_white_filled1);
-                fivekg.setBackgroundResource(R.drawable.black_bordr_white_filled1);
-                hundredkg.setBackgroundResource(R.drawable.black_bordr_white_filled1);
-                otherkg_option.setBackgroundResource(R.drawable.black_bordr_white_filled1);
+                tenkg.setBackgroundResource(R.drawable.border_login_curve_grey);
+                twentykg.setBackgroundResource(R.drawable.border_login_curve_grey);
+                fivekg.setBackgroundResource(R.drawable.border_login_curve_grey);
+                hundredkg.setBackgroundResource(R.drawable.border_login_curve_grey);
+                otherkg_option.setBackgroundResource(R.drawable.border_login_curve_grey);
 
 
 
@@ -372,20 +373,20 @@ public class Cropdetails_Second_Fragment extends Fragment {
 
                 PackagingsizeId ="5";
                 hundredkg.setTextColor(Color.parseColor("#FFFFFF"));
-                tenkg.setTextColor(Color.parseColor("#000000"));
-                twentykg.setTextColor(Color.parseColor("#000000"));
-                fiftykg.setTextColor(Color.parseColor("#000000"));
-                fivekg.setTextColor(Color.parseColor("#000000"));
-                otherkg_option.setTextColor(Color.parseColor("#000000"));
+                tenkg.setTextColor(Color.parseColor("#FFFFFF"));
+                twentykg.setTextColor(Color.parseColor("#FFFFFF"));
+                fiftykg.setTextColor(Color.parseColor("#FFFFFF"));
+                fivekg.setTextColor(Color.parseColor("#FFFFFF"));
+                otherkg_option.setTextColor(Color.parseColor("#FFFFFF"));
 
 
 
                 hundredkg.setBackgroundResource(R.drawable.black_border_blue_filled);
-                tenkg.setBackgroundResource(R.drawable.black_bordr_white_filled1);
-                twentykg.setBackgroundResource(R.drawable.black_bordr_white_filled1);
-                fiftykg.setBackgroundResource(R.drawable.black_bordr_white_filled1);
-                fivekg.setBackgroundResource(R.drawable.black_bordr_white_filled1);
-                otherkg_option.setBackgroundResource(R.drawable.black_bordr_white_filled1);
+                tenkg.setBackgroundResource(R.drawable.border_login_curve_grey);
+                twentykg.setBackgroundResource(R.drawable.border_login_curve_grey);
+                fiftykg.setBackgroundResource(R.drawable.border_login_curve_grey);
+                fivekg.setBackgroundResource(R.drawable.border_login_curve_grey);
+                otherkg_option.setBackgroundResource(R.drawable.border_login_curve_grey);
 
 
 
@@ -399,20 +400,20 @@ public class Cropdetails_Second_Fragment extends Fragment {
 
                 PackagingsizeId ="6";
                 otherkg_option.setTextColor(Color.parseColor("#FFFFFF"));
-                tenkg.setTextColor(Color.parseColor("#000000"));
-                twentykg.setTextColor(Color.parseColor("#000000"));
-                fiftykg.setTextColor(Color.parseColor("#000000"));
-                hundredkg.setTextColor(Color.parseColor("#000000"));
-                fivekg.setTextColor(Color.parseColor("#000000"));
+                tenkg.setTextColor(Color.parseColor("#FFFFFF"));
+                twentykg.setTextColor(Color.parseColor("#FFFFFF"));
+                fiftykg.setTextColor(Color.parseColor("#FFFFFF"));
+                hundredkg.setTextColor(Color.parseColor("#FFFFFF"));
+                fivekg.setTextColor(Color.parseColor("#FFFFFF"));
 
 
 
                 otherkg_option.setBackgroundResource(R.drawable.black_border_blue_filled);
-                tenkg.setBackgroundResource(R.drawable.black_bordr_white_filled1);
-                twentykg.setBackgroundResource(R.drawable.black_bordr_white_filled1);
-                fiftykg.setBackgroundResource(R.drawable.black_bordr_white_filled1);
-                hundredkg.setBackgroundResource(R.drawable.black_bordr_white_filled1);
-                fivekg.setBackgroundResource(R.drawable.black_bordr_white_filled1);
+                tenkg.setBackgroundResource(R.drawable.border_login_curve_grey);
+                twentykg.setBackgroundResource(R.drawable.border_login_curve_grey);
+                fiftykg.setBackgroundResource(R.drawable.border_login_curve_grey);
+                hundredkg.setBackgroundResource(R.drawable.border_login_curve_grey);
+                fivekg.setBackgroundResource(R.drawable.border_login_curve_grey);
 
 
 
@@ -442,7 +443,13 @@ public class Cropdetails_Second_Fragment extends Fragment {
               toast.setGravity(Gravity.TOP | Gravity.CENTER, 0, 0);
               toast.show();
           }else {
-              uploadImage(getResizedBitmap(Spices_CameraFragment.selectedImage, 100, 100));
+
+              selectedFragment = ProductConfirmationFragment.newInstance();
+              FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
+              transaction.replace(R.id.frame_layout1, selectedFragment);
+              transaction.addToBackStack("spicesdetails");
+              transaction.commit();
+              //uploadImage(getResizedBitmap(Spices_CameraFragment.selectedImage, 100, 100));
           }
          /* if (getArguments() .getString("navg_from")!= null) {
               if (getArguments().getString("NAVGI").equals(Spices_Details_Fragment.navigation)) {
@@ -466,195 +473,195 @@ public class Cropdetails_Second_Fragment extends Fragment {
 
 
 
-    private void uploadImage(final Bitmap bitmap){
-        final ProgressDialog progressDialog = ProgressDialog.show(getActivity(), "",
-                "Loading....Please wait.");
-        progressDialog.show();
-
-
-
-        VolleyMultipartRequest volleyMultipartRequest = new VolleyMultipartRequest(Request.Method.POST, Urls.AddUpdateSelling,
-                new Response.Listener<NetworkResponse>(){
-                    @Override
-                    public void onResponse(NetworkResponse response) {
-                        Log.e(TAG,"afaeftagsbillvalue"+response.data);
-                        Log.e(TAG,"afaeftagsbillvalue"+response);
-                        progressDialog.dismiss();
-
-                       /* Toast toast = Toast.makeText(getActivity(),"Inventory added successfully", Toast.LENGTH_LONG);
-                        toast.setGravity(Gravity.TOP|Gravity.CENTER,0,0);
-                        toast.show();*/
-
-                       /* int duration=1000;
-                       Snackbar snackbar = Snackbar
-                                .make(main_layout, "Selllist Added Successfully",duration);
-                        View snackbarView = snackbar.getView();
-                        TextView tv = (TextView) snackbarView.findViewById(android.support.design.R.id.snackbar_text);
-                        tv.setBackgroundColor(ContextCompat.getColor(getActivity(),R.color.orange));
-                        tv.setTextColor(Color.WHITE);
-                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M){
-                            tv.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
-                        } else {
-                            tv.setGravity(Gravity.CENTER_HORIZONTAL);
-                        }
-                        snackbar.show();*/
-
-                        selectedFragment = ProductConfirmationFragment.newInstance();
-                        FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
-                        transaction.replace(R.id.frame_layout1, selectedFragment);
-                        transaction.addToBackStack("spicesdetails");
-                        transaction.commit();
-                    }
-                },
-
-                new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(getActivity(),error.getMessage(), Toast.LENGTH_SHORT).show();
-                        progressDialog.dismiss();
-                    }
-                }) {
-
-            @Override
-            protected VolleyError parseNetworkError(VolleyError volleyError){
-                if(volleyError.networkResponse != null && volleyError.networkResponse.data != null){
-                    VolleyError error = new VolleyError(new String(volleyError.networkResponse.data));
-                    //Toast.makeText(getActivity(),volleyError.getMessage(), Toast.LENGTH_SHORT).show();
-
-
-
-                    Toast toast = Toast.makeText(getActivity(),volleyError.getMessage(), Toast.LENGTH_LONG);
-                    toast.setGravity(Gravity.TOP|Gravity.CENTER,0,0);
-                    toast.show();
-                 /*   int duration=1000;
-                    Snackbar snackbar = Snackbar
-                            .make(main_layout, volleyError.getMessage(),duration);
-                    View snackbarView = snackbar.getView();
-                    TextView tv = (TextView) snackbarView.findViewById(android.support.design.R.id.snackbar_text);
-                    tv.setBackgroundColor(ContextCompat.getColor(getActivity(),R.color.orange));
-                    tv.setTextColor(Color.WHITE);
-                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M){
-                        tv.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
-                    } else {
-                        tv.setGravity(Gravity.CENTER_HORIZONTAL);
-                    }
-                    snackbar.show();*/
-
-                    volleyError = error;
-                }
-
-                return volleyError;
-            }
-
-            @Override
-            protected Map<String, DataPart> getByteData() {
-                Map<String, DataPart> params = new HashMap<>();
-                long imagename = System.currentTimeMillis();
-                Log.e(TAG,"Im here " + params);
-               // if (bitmap!=null) {
-                    params.put("SellingImage", new DataPart(imagename + ".png", getFileDataFromDrawable(bitmap)));
-
-              //  }
-                Log.e(TAG,"Im here " + params);
-                return params;
-            }
-
-            @Override
-            protected Map<String, String> getParams() throws AuthFailureError {
-                Map<String, String> params = new HashMap<>();
-                params.put("UserId", sessionManager.getRegId("userId"));
-                params.put("CreatedBy", sessionManager.getRegId("userId"));
-                params.put("SellingDetailsId", "0");
-                params.put("SellingListMasterId", sell_MlistId);
-
-                params.put("SellingVarietyId", variety_Id);
-                params.put("SellingQualityId", quality_Id);
-                params.put("SellingQuantity", Spices_Details_Fragment.min_quantity.getText().toString());
-                params.put("UnitOfPriceId", String.valueOf(QuantityPrice_Adapter2.quantityprice_id));
-                params.put("Price", "0");
-                params.put("SellingCategoryId", Spices_Category_Adapter.selling_category_id);
-                params.put("MinPrice", Spices_Details_Fragment.min_price.getText().toString());
-                params.put("MaxPrice", Spices_Details_Fragment.max_price.getText().toString());
-                params.put("OrganicProduceId",Organicproduce_Id );
-                params.put("PackagingTypeId", PackagingtypeId);
-                params.put("PackagingSizeId", PackagingsizeId);
-
-
-
-
-                // params.put("SellingDetailsId",selling_detailsid);
-
-
-
-                if (getArguments() .getString("NAVGI")!= null) {
-
-                    if (getArguments().getString("NAVGI").equals(Spices_Details_Fragment.navigation)) {
-                        params.put("UserId", sessionManager.getRegId("userId"));
-                        params.put("CreatedBy", sessionManager.getRegId("userId"));
-                        params.put("SellingDetailsId", Spices_Details_Fragment.SellDetails_id);
-                        System.out.println("editiddddd" + Spices_Details_Fragment.SellDetails_id);
-                        params.put("SellingListMasterId", Spices_Details_Fragment.Sell_MlistId);
-                        System.out.println("Masterid" + Spices_Details_Fragment.Sell_MlistId);
-                        params.put("SellingVarietyId", variety_Id);
-                        params.put("SellingQualityId", quality_Id);
-                        params.put("SellingQuantity", Spices_Details_Fragment.min_quantity.getText().toString());
-                        params.put("UnitOfPriceId", String.valueOf(QuantityPrice_Adapter2.quantityprice_id));
-                        params.put("Price", "0");
-                        params.put("SellingCategoryId", Spices_Details_Fragment.SellCategort_id);
-                        System.out.println("categoryid" + Spices_Details_Fragment.SellCategort_id);
-                        params.put("MinPrice", Spices_Details_Fragment.min_price.getText().toString());
-                        params.put("MaxPrice", Spices_Details_Fragment.max_price.getText().toString());
-                        params.put("OrganicProduceId",Organicproduce_Id );
-                        params.put("PackagingTypeId", PackagingtypeId);
-                        params.put("PackagingSizeId", PackagingsizeId);
-
-
-                    } else {
-
-
-                    }
-                }
-
-              /*  if (getArguments() .getString("navg_from5")!= null) {
-
-                if (getArguments().getString("navg_from5").equals("true")) {
-
-                    params.put("UserId", sessionManager.getRegId("userId"));
-                    params.put("CreatedBy", sessionManager.getRegId("userId"));
-                    params.put("SellingDetailsId", selling_detailsid);
-                    params.put("SellingListMasterId", selling_list_Id1);
-                    params.put("SellingVarietyId", Variety_id);
-                    params.put("SellingQualityId", Quality_id);
-                    params.put("SellingQuantity", min_quantity.getText().toString());
-                    params.put("UnitOfPriceId", String.valueOf(QuantityPrice_Adapter2.quantityprice_id));
-                    params.put("Price", "0");
-                    params.put("SellingCategoryId", Spices_Category_Adapter.selling_category_id);
-                    params.put("MinPrice", min_price.getText().toString());
-                    params.put("MaxPrice", max_price.getText().toString());
-
-
-                    System.out.println("bbb" + selling_list_Id1);
-
-
-                    System.out.println("iddssssssaannbcvbnm" + params);
-
-                }
-            }*/
-
-
-
-                System.out.println("idsssss"+Spices_Category_Adapter.selling_category_id);
-                //  params.put("FarmDescription", description.getText().toString());
-                Log.e(TAG,"afaeftagsparams"+params);
-                return params;
-            }
-        };
-
-        volleyMultipartRequest.setRetryPolicy(new DefaultRetryPolicy(1000 * 60, DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
-                DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
-        //adding the request to volley
-        Volley.newRequestQueue(getActivity()).add(volleyMultipartRequest);
-    }
+//    private void uploadImage(final Bitmap bitmap){
+//        final ProgressDialog progressDialog = ProgressDialog.show(getActivity(), "",
+//                "Loading....Please wait.");
+//        progressDialog.show();
+//
+//
+//
+//        VolleyMultipartRequest volleyMultipartRequest = new VolleyMultipartRequest(Request.Method.POST, Urls.AddUpdateSelling,
+//                new Response.Listener<NetworkResponse>(){
+//                    @Override
+//                    public void onResponse(NetworkResponse response) {
+//                        Log.e(TAG,"afaeftagsbillvalue"+response.data);
+//                        Log.e(TAG,"afaeftagsbillvalue"+response);
+//                        progressDialog.dismiss();
+//
+//                       /* Toast toast = Toast.makeText(getActivity(),"Inventory added successfully", Toast.LENGTH_LONG);
+//                        toast.setGravity(Gravity.TOP|Gravity.CENTER,0,0);
+//                        toast.show();*/
+//
+//                       /* int duration=1000;
+//                       Snackbar snackbar = Snackbar
+//                                .make(main_layout, "Selllist Added Successfully",duration);
+//                        View snackbarView = snackbar.getView();
+//                        TextView tv = (TextView) snackbarView.findViewById(android.support.design.R.id.snackbar_text);
+//                        tv.setBackgroundColor(ContextCompat.getColor(getActivity(),R.color.orange));
+//                        tv.setTextColor(Color.WHITE);
+//                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M){
+//                            tv.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+//                        } else {
+//                            tv.setGravity(Gravity.CENTER_HORIZONTAL);
+//                        }
+//                        snackbar.show();*/
+//
+//                        selectedFragment = ProductConfirmationFragment.newInstance();
+//                        FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
+//                        transaction.replace(R.id.frame_layout1, selectedFragment);
+//                        transaction.addToBackStack("spicesdetails");
+//                        transaction.commit();
+//                    }
+//                },
+//
+//                new Response.ErrorListener() {
+//                    @Override
+//                    public void onErrorResponse(VolleyError error) {
+//                        Toast.makeText(getActivity(),error.getMessage(), Toast.LENGTH_SHORT).show();
+//                        progressDialog.dismiss();
+//                    }
+//                }) {
+//
+//            @Override
+//            protected VolleyError parseNetworkError(VolleyError volleyError){
+//                if(volleyError.networkResponse != null && volleyError.networkResponse.data != null){
+//                    VolleyError error = new VolleyError(new String(volleyError.networkResponse.data));
+//                    //Toast.makeText(getActivity(),volleyError.getMessage(), Toast.LENGTH_SHORT).show();
+//
+//
+//
+//                    Toast toast = Toast.makeText(getActivity(),volleyError.getMessage(), Toast.LENGTH_LONG);
+//                    toast.setGravity(Gravity.TOP|Gravity.CENTER,0,0);
+//                    toast.show();
+//                 /*   int duration=1000;
+//                    Snackbar snackbar = Snackbar
+//                            .make(main_layout, volleyError.getMessage(),duration);
+//                    View snackbarView = snackbar.getView();
+//                    TextView tv = (TextView) snackbarView.findViewById(android.support.design.R.id.snackbar_text);
+//                    tv.setBackgroundColor(ContextCompat.getColor(getActivity(),R.color.orange));
+//                    tv.setTextColor(Color.WHITE);
+//                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M){
+//                        tv.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+//                    } else {
+//                        tv.setGravity(Gravity.CENTER_HORIZONTAL);
+//                    }
+//                    snackbar.show();*/
+//
+//                    volleyError = error;
+//                }
+//
+//                return volleyError;
+//            }
+//
+//            @Override
+//            protected Map<String, DataPart> getByteData() {
+//                Map<String, DataPart> params = new HashMap<>();
+//                long imagename = System.currentTimeMillis();
+//                Log.e(TAG,"Im here " + params);
+//               // if (bitmap!=null) {
+//                    params.put("SellingImage", new DataPart(imagename + ".png", getFileDataFromDrawable(bitmap)));
+//
+//              //  }
+//                Log.e(TAG,"Im here " + params);
+//                return params;
+//            }
+//
+//            @Override
+//            protected Map<String, String> getParams() throws AuthFailureError {
+//                Map<String, String> params = new HashMap<>();
+//                params.put("UserId", sessionManager.getRegId("userId"));
+//                params.put("CreatedBy", sessionManager.getRegId("userId"));
+//                params.put("SellingDetailsId", "0");
+//                params.put("SellingListMasterId", sell_MlistId);
+//
+//                params.put("SellingVarietyId", variety_Id);
+//                params.put("SellingQualityId", quality_Id);
+//                params.put("SellingQuantity", Spices_Details_Fragment.min_quantity.getText().toString());
+//                params.put("UnitOfPriceId", String.valueOf(QuantityPrice_Adapter2.quantityprice_id));
+//                params.put("Price", "0");
+//                params.put("SellingCategoryId", Spices_Category_Adapter.selling_category_id);
+//                params.put("MinPrice", Spices_Details_Fragment.min_price.getText().toString());
+//                params.put("MaxPrice", Spices_Details_Fragment.max_price.getText().toString());
+//                params.put("OrganicProduceId",Organicproduce_Id );
+//                params.put("PackagingTypeId", PackagingtypeId);
+//                params.put("PackagingSizeId", PackagingsizeId);
+//
+//
+//
+//
+//                // params.put("SellingDetailsId",selling_detailsid);
+//
+//
+//
+//                if (getArguments() .getString("NAVGI")!= null) {
+//
+//                    if (getArguments().getString("NAVGI").equals(Spices_Details_Fragment.navigation)) {
+//                        params.put("UserId", sessionManager.getRegId("userId"));
+//                        params.put("CreatedBy", sessionManager.getRegId("userId"));
+//                        params.put("SellingDetailsId", Spices_Details_Fragment.SellDetails_id);
+//                        System.out.println("editiddddd" + Spices_Details_Fragment.SellDetails_id);
+//                        params.put("SellingListMasterId", Spices_Details_Fragment.Sell_MlistId);
+//                        System.out.println("Masterid" + Spices_Details_Fragment.Sell_MlistId);
+//                        params.put("SellingVarietyId", variety_Id);
+//                        params.put("SellingQualityId", quality_Id);
+//                        params.put("SellingQuantity", Spices_Details_Fragment.min_quantity.getText().toString());
+//                        params.put("UnitOfPriceId", String.valueOf(QuantityPrice_Adapter2.quantityprice_id));
+//                        params.put("Price", "0");
+//                        params.put("SellingCategoryId", Spices_Details_Fragment.SellCategort_id);
+//                        System.out.println("categoryid" + Spices_Details_Fragment.SellCategort_id);
+//                        params.put("MinPrice", Spices_Details_Fragment.min_price.getText().toString());
+//                        params.put("MaxPrice", Spices_Details_Fragment.max_price.getText().toString());
+//                        params.put("OrganicProduceId",Organicproduce_Id );
+//                        params.put("PackagingTypeId", PackagingtypeId);
+//                        params.put("PackagingSizeId", PackagingsizeId);
+//
+//
+//                    } else {
+//
+//
+//                    }
+//                }
+//
+//              /*  if (getArguments() .getString("navg_from5")!= null) {
+//
+//                if (getArguments().getString("navg_from5").equals("true")) {
+//
+//                    params.put("UserId", sessionManager.getRegId("userId"));
+//                    params.put("CreatedBy", sessionManager.getRegId("userId"));
+//                    params.put("SellingDetailsId", selling_detailsid);
+//                    params.put("SellingListMasterId", selling_list_Id1);
+//                    params.put("SellingVarietyId", Variety_id);
+//                    params.put("SellingQualityId", Quality_id);
+//                    params.put("SellingQuantity", min_quantity.getText().toString());
+//                    params.put("UnitOfPriceId", String.valueOf(QuantityPrice_Adapter2.quantityprice_id));
+//                    params.put("Price", "0");
+//                    params.put("SellingCategoryId", Spices_Category_Adapter.selling_category_id);
+//                    params.put("MinPrice", min_price.getText().toString());
+//                    params.put("MaxPrice", max_price.getText().toString());
+//
+//
+//                    System.out.println("bbb" + selling_list_Id1);
+//
+//
+//                    System.out.println("iddssssssaannbcvbnm" + params);
+//
+//                }
+//            }*/
+//
+//
+//
+//                System.out.println("idsssss"+Spices_Category_Adapter.selling_category_id);
+//                //  params.put("FarmDescription", description.getText().toString());
+//                Log.e(TAG,"afaeftagsparams"+params);
+//                return params;
+//            }
+//        };
+//
+//        volleyMultipartRequest.setRetryPolicy(new DefaultRetryPolicy(1000 * 60, DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
+//                DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
+//        //adding the request to volley
+//        Volley.newRequestQueue(getActivity()).add(volleyMultipartRequest);
+//    }
 
 
 

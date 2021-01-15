@@ -73,7 +73,7 @@ public class OffersListFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.offers_recy_lay, container, false);
         Window window = getActivity().getWindow();
-        window.setStatusBarColor(ContextCompat.getColor(getActivity(),R.color.colorPrimaryDark1));
+        window.setStatusBarColor(ContextCompat.getColor(getActivity(),R.color.colorPrimaryDark));
         Status_bar_change_singleton.getInstance().color_change(getActivity());
 
 

@@ -16,6 +16,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.FarmPe.SellerHub.Bean.Inventory_Static_Bean;
 import com.FarmPe.SellerHub.Fragment.AddProductFragment;
 import com.FarmPe.SellerHub.Fragment.SellDetailsEditFragment;
 import com.FarmPe.SellerHub.Fragment.Spices_Details_Fragment;
@@ -35,7 +36,7 @@ import java.util.List;
 
 public class InventoryAdapter extends RecyclerView.Adapter<InventoryAdapter.MyViewHolder> {
 
-    private List<InventoryBean> productList;
+    private List<Inventory_Static_Bean> productList;
     Activity activity;
     Fragment selectedFragment;
     public static String prod_name,mrp,brand,prod_id,amount,quantity,status,ProductId,offer_price,deliver_charges,isofferactive,exp_date,prod_img;
@@ -43,7 +44,7 @@ public class InventoryAdapter extends RecyclerView.Adapter<InventoryAdapter.MyVi
     LinearLayout linear_layout;
     public static String sellingedit_id,selling_masterid,selling_categoryid,edit_image;
 
-    public InventoryAdapter(Activity activity, List<InventoryBean> moviesList) {
+    public InventoryAdapter(Activity activity, List<Inventory_Static_Bean> moviesList) {
         this.productList = moviesList;
         this.activity=activity;
 
@@ -87,26 +88,31 @@ public class InventoryAdapter extends RecyclerView.Adapter<InventoryAdapter.MyVi
     }
     @Override
     public void onBindViewHolder(final MyViewHolder holder, final int position) {
-     final InventoryBean products = productList.get(position);
+     final Inventory_Static_Bean products = productList.get(position);
 
-     if(products.getProd_name().equals("")){
-         holder.name.setText(products.getBrand());
-     }else {
-         holder.name.setText(products.getProd_name());
-     }
+        holder.name.setText(products.getProduct_name());
+//
+//     if(products.getProd_name().equals("")){
+//         holder.name.setText(products.getBrand());
+//     }else {
+//         holder.name.setText(products.getProd_name());
+//     }
 
-        holder.weight.setText(products.getQuantity()+products.getProd_desc());
+        holder.weight.setText(products.getQuantity());
        // holder.price.setText("Rs "+products.getAmount());
-        if (products.getMrp().equals(products.getAmount())){
-            holder.actual_price.setVisibility(View.INVISIBLE);
-            holder.mrp_text.setVisibility(View.INVISIBLE);
-        }else{
-            holder.actual_price.setText("₹"+products.getMrp());
-            holder.actual_price.setBackground(activity.getResources().getDrawable(R.drawable.line));
-          //  holder.actual_price.setPaintFlags(holder.actual_price.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
-        }
+//        if (products.getMrp().equals(products.getAmount){
+//            holder.actual_price.setVisibility(View.INVISIBLE);
+//            holder.mrp_text.setVisibility(View.INVISIBLE);
+//        }else{
+//            holder.actual_price.setText("₹"+products.getMrp());
+//            holder.actual_price.setBackground(activity.getResources().getDrawable(R.drawable.line));
+//          //  holder.actual_price.setPaintFlags(holder.actual_price.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
+//        }
 
-        holder.price.setText("Rs "+products.getAmount());
+        holder.price.setText("Rs "+products.getPrice());
+        holder.actual_price.setText("₹ "+products.getMrp());
+        holder.actual_price.setBackground(activity.getResources().getDrawable(R.drawable.line));
+
 
       /*  if (products.getOffer_price().equals("0")){
             holder.off_text.setVisibility(View.GONE);
@@ -128,7 +134,7 @@ public class InventoryAdapter extends RecyclerView.Adapter<InventoryAdapter.MyVi
         holder.delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ProductId=products.getSelling_cat_id();
+             //   ProductId=products.getSelling_cat_id();
 
                 final Dialog dialog = new Dialog(activity);
                 dialog.setContentView(R.layout.delete_details_popup);
@@ -137,48 +143,59 @@ public class InventoryAdapter extends RecyclerView.Adapter<InventoryAdapter.MyVi
                 TextView cancel=dialog.findViewById(R.id.cancel);
 
 
+
                 ok.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        try{
-                            JSONObject jsonObject  = new JSONObject();
-                            jsonObject.put("SellingDetailsId",ProductId);
-                            jsonObject.put("UserId",sessionManager.getRegId("userId"));
-
-                            System.out.println("bank_dvvvvetails_iddd"+jsonObject);
-
-                            Crop_Post.crop_posting(activity, Urls.DeleteProductDetails, jsonObject, new VoleyJsonObjectCallback() {
-                                @Override
-                                public void onSuccessResponse(JSONObject result) {
-                                    System.out.println("111111dddd" + result);
-
-                                    try{
-
-                                        status = result.getString("Status");
-
-                                        if(status.equals("1")){
-
-                                            productList.remove(position);
-                                            notifyDataSetChanged();
-                                            System.out.println("jdhjahdjkah"+productList.size());
-
-                                        }
-
-                                    }catch (Exception e){
-                                        e.printStackTrace();
-                                    }
-                                }
-                            });
-
-
-                        }catch (Exception e){
-                            e.printStackTrace();
-                        }
 
                         dialog.dismiss();
 
                     }
                 });
+
+
+//                ok.setOnClickListener(new View.OnClickListener() {
+//                    @Override
+//                    public void onClick(View v) {
+//                        try{
+//                            JSONObject jsonObject  = new JSONObject();
+//                            jsonObject.put("SellingDetailsId",ProductId);
+//                            jsonObject.put("UserId",sessionManager.getRegId("userId"));
+//
+//                            System.out.println("bank_dvvvvetails_iddd"+jsonObject);
+//
+//                            Crop_Post.crop_posting(activity, Urls.DeleteProductDetails, jsonObject, new VoleyJsonObjectCallback() {
+//                                @Override
+//                                public void onSuccessResponse(JSONObject result) {
+//                                    System.out.println("111111dddd" + result);
+//
+//                                    try{
+//
+//                                        status = result.getString("Status");
+//
+//                                        if(status.equals("1")){
+//
+//                                            productList.remove(position);
+//                                            notifyDataSetChanged();
+//                                            System.out.println("jdhjahdjkah"+productList.size());
+//
+//                                        }
+//
+//                                    }catch (Exception e){
+//                                        e.printStackTrace();
+//                                    }
+//                                }
+//                            });
+//
+//
+//                        }catch (Exception e){
+//                            e.printStackTrace();
+//                        }
+//
+//                        dialog.dismiss();
+//
+//                    }
+//                });
 
 
                 cancel.setOnClickListener(new View.OnClickListener() {
@@ -194,12 +211,15 @@ public class InventoryAdapter extends RecyclerView.Adapter<InventoryAdapter.MyVi
             }
         });
 
-        Glide.with(activity).load(products.getSelling_icon())
+        Glide.with(activity).load(products.getProduct_icon())
                 .thumbnail(0.5f)
                 //.crossFade()
                 .apply(RequestOptions.diskCacheStrategyOf(DiskCacheStrategy.ALL)
                         .error(R.drawable.veg))
                 .into(holder.prod_img_fix);
+
+
+
         holder.edit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -237,24 +257,24 @@ public class InventoryAdapter extends RecyclerView.Adapter<InventoryAdapter.MyVi
               //  bundle.putString("prod_img",products.getProd_icon());
              //   bundle.putString("prod_name",products.getProd_name());
 
-                Bundle bundle = new Bundle();
-                bundle.putString("navg_from","invtry_details");
-                bundle.putString("Edit_Id",products.getSelling_cat_id());
-                bundle.putString("EditMaster_Id",products.getSelling_master_id());
-                bundle.putString("EditCategory_Id",products.getExp_date());
-                bundle.putString("Quality",products.getDelivery_charge());
-                bundle.putString("Variety",products.getOffer_price());
-                bundle.putString("Minquantity",products.getQuantity());
-                bundle.putString("Minprice",products.getAmount());
-                bundle.putString("Maxprice",products.getMrp());
-                bundle.putString("UOM",products.getProd_desc());
+//                Bundle bundle = new Bundle();
+//                bundle.putString("navg_from","invtry_details");
+//                bundle.putString("Edit_Id",products.getSelling_cat_id());
+//                bundle.putString("EditMaster_Id",products.getSelling_master_id());
+//                bundle.putString("EditCategory_Id",products.getExp_date());
+//                bundle.putString("Quality",products.getDelivery_charge());
+//                bundle.putString("Variety",products.getOffer_price());
+//                bundle.putString("Minquantity",products.getQuantity());
+//                bundle.putString("Minprice",products.getAmount());
+//                bundle.putString("Maxprice",products.getMrp());
+//                bundle.putString("UOM",products.getProd_desc());
 
 
                 selectedFragment = SellDetailsEditFragment.newInstance();
                 FragmentTransaction transaction = ((FragmentActivity)activity).getSupportFragmentManager().beginTransaction();
                 transaction.replace(R.id.frame_layout1, selectedFragment);
                 transaction.addToBackStack("confirm");
-                selectedFragment.setArguments(bundle);
+//                selectedFragment.setArguments(bundle);
                 transaction.commit();
 
             }

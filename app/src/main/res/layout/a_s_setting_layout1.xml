@@ -6,13 +6,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#FAFAFA"
+    android:background="@color/lang_bg_color"
     >
+
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fitsSystemWindows="true"
-        android:background="@color/green"
+        android:background="@color/lang_bg_color"
         >
 
         <!--<android.support.v7.widget.Toolbar
@@ -211,7 +213,7 @@
                             android:text="Change"
                             android:textSize="14dp"
                             android:textStyle="bold"
-                            android:textColor="#2E34C8"
+                            android:textColor="@color/blue_txt"
                             android:fontFamily="@font/segoeui"
                             />
 
@@ -248,23 +250,22 @@
                             android:id="@+id/phone_noo"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Phone Number"
+                            android:text="1234567890"
                             android:textSize="16dp"
                             android:textStyle="bold"
-                            android:textColor="#000"
+                            android:textColor="@color/white_text"
                             android:fontFamily="@font/segoeui"
                             />
-<!--
+
                         <TextView
                             android:id="@+id/name_set"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text=""
+                            android:text="ABC"
                             android:textSize="14dp"
                             android:fontFamily="@font/segoeui"
-                            android:textColor="#000"
+                            android:textColor="@color/white_text"
                             />
--->
                     </LinearLayout>
 
                 </LinearLayout>
@@ -336,7 +337,6 @@
 
 
 
-<!--
                 <LinearLayout
                     android:id="@+id/acc_info_lay"
                     android:layout_width="match_parent"
@@ -379,7 +379,7 @@
                             android:text="Bank Accounts"
                             android:textSize="16dp"
                             android:paddingVertical="20dp"
-                            android:textColor="#000"
+                            android:textColor="@color/white_text"
                             />
                         <View
                             android:layout_width="match_parent"
@@ -392,9 +392,7 @@
 
 
                 </LinearLayout>
--->
 
-<!--
                 <LinearLayout
                     android:id="@+id/addr_lay"
                     android:layout_width="match_parent"
@@ -436,7 +434,7 @@
                             android:text="My Addresses"
                             android:textSize="16dp"
                             android:paddingVertical="20dp"
-                            android:textColor="#000"
+                            android:textColor="@color/white_text"
                             />
 
                         <View
@@ -449,7 +447,6 @@
 
 
                 </LinearLayout>
--->
 
                 <!--
                         <LinearLayout
@@ -551,7 +548,7 @@
                             android:text="Notifications"
                             android:textSize="16dp"
                             android:paddingVertical="20dp"
-                            android:textColor="#000"
+                            android:textColor="@color/white_text"
                             />
                         <View
                             android:layout_width="match_parent"
@@ -608,7 +605,7 @@
                             android:layout_height="wrap_content"
                             android:text="Change Language"
                             android:textSize="16dp"
-                            android:textColor="#000"
+                            android:textColor="@color/white_text"
                             android:paddingVertical="20dp"
                             />
 
@@ -726,7 +723,7 @@
                             android:text="Policies"
                             android:textSize="16dp"
                             android:paddingVertical="20dp"
-                            android:textColor="#000"
+                            android:textColor="@color/white_text"
                             />
 
 
@@ -740,14 +737,9 @@
                     </LinearLayout>
 
 
-
-
-
-
                 </LinearLayout>
 
 
-<!--
                 <LinearLayout
                     android:id="@+id/invi_lay"
                     android:layout_width="match_parent"
@@ -790,7 +782,7 @@
                             android:text="Invite a Friend"
                             android:textSize="16dp"
                             android:paddingVertical="20dp"
-                            android:textColor="#000"
+                            android:textColor="@color/white_text"
                             />
 
                         <View
@@ -803,7 +795,6 @@
 
 
                 </LinearLayout>
--->
 
                 <LinearLayout
                     android:id="@+id/log_lay"
@@ -846,7 +837,7 @@
                             android:layout_height="wrap_content"
                             android:text="Logout"
                             android:textSize="16dp"
-                            android:textColor="#000"
+                            android:textColor="@color/white_text"
                             android:paddingVertical="20dp"
                             />
 

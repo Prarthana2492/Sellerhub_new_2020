@@ -238,7 +238,7 @@ public class NewEnterOTP extends AppCompatActivity implements ConnectivityReceiv
             public void onFinish() {
                 if (otp1.getText().toString().equals("")||otp2.getText().toString().equals("")||otp3.getText().toString().equals("")||otp4.getText().toString().equals("")){
                     timer.setText("RESEND");
-                    timer.setBackgroundResource(R.drawable.border_filled_red_time);
+                    timer.setBackgroundResource(R.drawable.green_border_filled);
                     if (timer.getText().toString().equals("RESEND")){
                        /* otp_sent.setVisibility(View.INVISIBLE);
                         sent_img.setVisibility(View.INVISIBLE);
@@ -384,7 +384,7 @@ otp1.setOnClickListener(new View.OnClickListener() {
                     // sent_img.setVisibility(View.INVISIBLE);
                     // sent_text.setVisibility(View.INVISIBLE);
                     otp_string=otp1.getText().toString()+otp2.getText().toString()+otp3.getText().toString()+otp4.getText().toString();
-                    register_btn.setBackgroundResource(R.drawable.border_filled_red);
+                    register_btn.setBackgroundResource(R.drawable.green_border_filled);
 
                 }
 
@@ -447,7 +447,7 @@ otp1.setOnClickListener(new View.OnClickListener() {
                     cTimer= new CountDownTimer(30000, 1000) {
 
                         public void onTick(long millisUntilFinished) {
-                            timer.setBackgroundResource(R.drawable.border_filled_red_time);
+                            timer.setBackgroundResource(R.drawable.green_border_filled);
 
                             timer.setText("00:"+millisUntilFinished / 1000);
                             String timer_limit=""+millisUntilFinished/1000;
@@ -468,7 +468,7 @@ otp1.setOnClickListener(new View.OnClickListener() {
                         public void onFinish() {
                             if (otp1.getText().toString().equals("")||otp2.getText().toString().equals("")||otp3.getText().toString().equals("")||otp4.getText().toString().equals("")){
                                 timer.setText("RESEND");
-                                timer.setBackgroundResource(R.drawable.border_filled_red_time);
+                                timer.setBackgroundResource(R.drawable.green_border_filled);
                                 if (timer.getText().toString().equals("RESEND")){
                                    /* otp_sent.setVisibility(View.INVISIBLE);
                                     sent_img.setVisibility(View.INVISIBLE);
@@ -628,16 +628,16 @@ otp1.setOnClickListener(new View.OnClickListener() {
                     otp3.setText("");
                     otp4.setText("");
 
-                }else{
-                    if (getIntent().getStringExtra("Login")!=null){
-                        System.out.println("llllllogiiinn");
-                        verify_status();
-
+//                }else{
+//                    if (getIntent().getStringExtra("Login")!=null){
+//                        System.out.println("llllllogiiinn");
+//                     //   verify_status();
+//
 
                     }else{
-                        Intent intent=new Intent(NewEnterOTP.this,LandingPageActivity.class);
+                        Intent intent=new Intent(NewEnterOTP.this,Farmer_Activity_Page.class);
                         startActivity(intent);
-                    }
+
 
                 }
 
@@ -646,52 +646,52 @@ otp1.setOnClickListener(new View.OnClickListener() {
 
     }
 
-    private void verify_status() {
-
-        try {
-
-            JSONObject jsonObject = new JSONObject();
-
-            jsonObject.put("UserId", sessionManager.getRegId("userId"));
-
-            System.out.println("alldetailssss"+jsonObject);
-
-
-            Login_post.login_posting(NewEnterOTP.this, Urls.GetUserVerificationStatus, jsonObject, new VoleyJsonObjectCallback() {
-                @Override
-                public void onSuccessResponse(JSONObject result) {
-                    System.out.println("111111user" + result);
-                    JSONObject json1 = new JSONObject();
-
-                    try {
-                        json1 = result.getJSONObject("VerificationStatus");
-
-                        IsUserUploaded = json1.getString("IsUserUploaded");
-
-                        System.out.println("isssssuppploadeddd"+IsUserUploaded);
-                        if (IsUserUploaded.equals(true)){
-                            Intent intent=new Intent(NewEnterOTP.this,LandingPageActivity.class);
-                            intent.putExtra("Loginsuccess","Login_success");
-                            startActivity(intent);
-                        }else{
-                            Intent intent = new Intent(NewEnterOTP.this, LandingPageActivity.class);
-                            // intent.putExtra("verify_aadhar", "not_verified");
-                            startActivity(intent);
-
-                        }
-
-
-                    } catch (JSONException e) {
-                        e.printStackTrace();
-                    }
-
-                }
-            });
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
+//    private void verify_status() {
+//
+//        try {
+//
+//            JSONObject jsonObject = new JSONObject();
+//
+//            jsonObject.put("UserId", sessionManager.getRegId("userId"));
+//
+//            System.out.println("alldetailssss"+jsonObject);
+//
+//
+//            Login_post.login_posting(NewEnterOTP.this, Urls.GetUserVerificationStatus, jsonObject, new VoleyJsonObjectCallback() {
+//                @Override
+//                public void onSuccessResponse(JSONObject result) {
+//                    System.out.println("111111user" + result);
+//                    JSONObject json1 = new JSONObject();
+//
+//                    try {
+//                        json1 = result.getJSONObject("VerificationStatus");
+//
+//                        IsUserUploaded = json1.getString("IsUserUploaded");
+//
+//                        System.out.println("isssssuppploadeddd"+IsUserUploaded);
+//                        if (IsUserUploaded.equals(true)){
+//                            Intent intent=new Intent(NewEnterOTP.this,LandingPageActivity.class);
+//                            intent.putExtra("Loginsuccess","Login_success");
+//                            startActivity(intent);
+//                        }else{
+//                            Intent intent = new Intent(NewEnterOTP.this, LandingPageActivity.class);
+//                            // intent.putExtra("verify_aadhar", "not_verified");
+//                            startActivity(intent);
+//
+//                        }
+//
+//
+//                    } catch (JSONException e) {
+//                        e.printStackTrace();
+//                    }
+//
+//                }
+//            });
+//
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+//    }
     @Override
     public void onBackPressed() {
         Intent intent=new Intent(NewEnterOTP.this, NewSignUpActivity.class);

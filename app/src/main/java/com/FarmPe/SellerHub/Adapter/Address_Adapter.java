@@ -19,7 +19,7 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.FarmPe.SellerHub.Fragment.AddNewAddressFragment;
+
 import com.FarmPe.SellerHub.Volly_class.Crop_Post;
 import com.FarmPe.SellerHub.Volly_class.VoleyJsonObjectCallback;
 import com.FarmPe.SellerHub.Bean.Add_New_Address_Bean;
@@ -146,13 +146,13 @@ public class Address_Adapter extends RecyclerView.Adapter<Address_Adapter.MyView
                 bundle.putString("Addr_pickup_from",products.getAdd_pickup_frm());
                 System.out.println("edittttttttttttttttttttttttttttttttttttttttttt"+bundle);
                 //bundle.putString("navigation_from","your_add");
-
-                selectedFragment = AddNewAddressFragment.newInstance();
-                FragmentTransaction transaction = ((FragmentActivity) activity).getSupportFragmentManager().beginTransaction();
-                transaction.replace(R.id.frame_layout1, selectedFragment);
-                selectedFragment.setArguments(bundle);
-                // transaction.addToBackStack("your_add");
-                transaction.commit();
+//
+//                selectedFragment = AddNewAddressFragment.newInstance();
+//                FragmentTransaction transaction = ((FragmentActivity) activity).getSupportFragmentManager().beginTransaction();
+//                transaction.replace(R.id.frame_layout1, selectedFragment);
+//                selectedFragment.setArguments(bundle);
+//                // transaction.addToBackStack("your_add");
+//                transaction.commit();
             }
         });
 

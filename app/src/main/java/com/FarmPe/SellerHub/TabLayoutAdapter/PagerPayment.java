@@ -44,11 +44,13 @@ public class PagerPayment extends FragmentStatePagerAdapter {
                 return tab1;
             case 1:
                // PaymentsTabLayout.last_month_text.setText("Today");
-                PaymentTodayFragment scheduledTabFragment=new PaymentTodayFragment();
+               // PaymentTodayFragment scheduledTabFragment=new PaymentTodayFragment();
+                PaymentDetailsFragment scheduledTabFragment=new PaymentDetailsFragment();
                 return scheduledTabFragment;
             case 2:
                // PaymentsTabLayout.last_month_text.setText("This Week");
-                PaymentThisweekFragment tab2 = new PaymentThisweekFragment();
+              //  PaymentThisweekFragment tab2 = new PaymentThisweekFragment();
+                PaymentDetailsFragment tab2 = new PaymentDetailsFragment();
                 return tab2;
            /* case 5:
                 FarmLocationItemFragment tab5=new FarmLocationItemFragment();

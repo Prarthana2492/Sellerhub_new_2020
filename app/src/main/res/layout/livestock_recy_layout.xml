@@ -17,7 +17,7 @@
         android:layout_height="wrap_content"
         android:padding="8dp"
         android:orientation="horizontal"
-        android:background="@color/menu_green"
+        android:background="@color/lang_bg_color"
         tools:ignore="MissingConstraints">
 
 
@@ -58,7 +58,7 @@
         android:id="@+id/search_lay"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/menu_green"
+        android:background="@color/lang_bg_color"
         android:paddingHorizontal="15dp"
         android:paddingBottom="10dp"
         android:gravity="center_vertical">

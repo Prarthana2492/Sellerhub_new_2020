@@ -10,9 +10,10 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 
-import com.FarmPe.SellerHub.Fragment.AddNewAddressFragment;
+
 import com.FarmPe.SellerHub.Fragment.Add_NewBankDetails_Fragment;
 import com.FarmPe.SellerHub.Bean.StateBean;
+import com.FarmPe.SellerHub.Fragment.Add_New_Address_Fragment;
 import com.FarmPe.SellerHub.R;
 
 import java.util.List;
@@ -50,22 +51,22 @@ public class DistrictAdapter extends RecyclerView.Adapter<DistrictAdapter.MyStat
                 districtid=stateBean.getId();
 
 
-                /*Add_New_Address_Fragment.district_txt.setText(holder.statename.getText().toString());
-                Add_New_Address_Fragment.drawer.closeDrawers();*/
-                if (Add_NewBankDetails_Fragment.page!=null){
-                   // AddNewAddressFragment.ed_dstrt.setText(holder.statename.getText().toString());
-                  //  AddNewAddressFragment.drawer.closeDrawers();
-
-                    Add_NewBankDetails_Fragment.district.setText(holder.statename.getText().toString());
-                    Add_NewBankDetails_Fragment.drawer.closeDrawers();
-                }else {
-                     AddNewAddressFragment.ed_dstrt.setText(holder.statename.getText().toString());
-                      AddNewAddressFragment.drawer.closeDrawers();
-                  //  NewAddressFragment.district.setText(holder.statename.getText().toString());
-                  //  NewAddressFragment.drawer.closeDrawers();
-                }
-               // NewAddressFragment.district.setText(holder.statename.getText().toString());
-              //  NewAddressFragment.drawer.closeDrawers();
+                Add_New_Address_Fragment.district_txt.setText(holder.statename.getText().toString());
+                Add_New_Address_Fragment.drawer.closeDrawers();
+//                if (Add_NewBankDetails_Fragment.page!=null){
+//                   // AddNewAddressFragment.ed_dstrt.setText(holder.statename.getText().toString());
+//                  //  AddNewAddressFragment.drawer.closeDrawers();
+//
+//                    Add_NewBankDetails_Fragment.district.setText(holder.statename.getText().toString());
+//                    Add_NewBankDetails_Fragment.drawer.closeDrawers();
+//                }else {
+//                     AddNewAddressFragment.ed_dstrt.setText(holder.statename.getText().toString());
+//                      AddNewAddressFragment.drawer.closeDrawers();
+//                  //  NewAddressFragment.district.setText(holder.statename.getText().toString());
+//                  //  NewAddressFragment.drawer.closeDrawers();
+//                }
+//               // NewAddressFragment.district.setText(holder.statename.getText().toString());
+//              //  NewAddressFragment.drawer.closeDrawers();
 
             }
         });

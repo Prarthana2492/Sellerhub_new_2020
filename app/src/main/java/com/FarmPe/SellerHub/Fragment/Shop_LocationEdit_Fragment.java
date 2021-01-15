@@ -154,12 +154,12 @@ public class Shop_LocationEdit_Fragment extends Fragment {
             public void onClick(View view) {
                /* Bundle bundle = new Bundle();
                 bundle.putString("status","shop_camera");*/
-                selectedFragment = Shop_Camera_Fragment.newInstance();
-                FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
-                transaction.replace(R.id.frame_layout1, selectedFragment);
-                //selectedFragment.setArguments(bundle);
-                transaction.addToBackStack("shop_cameraa");
-                transaction.commit();
+//                selectedFragment = Shop_Camera_Fragment.newInstance();
+//                FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
+//                transaction.replace(R.id.frame_layout1, selectedFragment);
+//                //selectedFragment.setArguments(bundle);
+//                transaction.addToBackStack("shop_cameraa");
+//                transaction.commit();
 
 
             }
@@ -171,12 +171,12 @@ public class Shop_LocationEdit_Fragment extends Fragment {
             public void onClick(View view) {
                 /* Bundle bundle = new Bundle();*/
                 //  bundle.putString("status","shopl_edit");
-                selectedFragment = Shop_Camera_Fragment.newInstance();
-                FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
-                transaction.replace(R.id.frame_layout1, selectedFragment);
-                // selectedFragment.setArguments(bundle);
-                transaction.addToBackStack("shop_cameraa");
-                transaction.commit();
+//                selectedFragment = Shop_Camera_Fragment.newInstance();
+//                FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
+//                transaction.replace(R.id.frame_layout1, selectedFragment);
+//                // selectedFragment.setArguments(bundle);
+//                transaction.addToBackStack("shop_cameraa");
+//                transaction.commit();
 
             }
         });

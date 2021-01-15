@@ -102,14 +102,14 @@ public class Spices_CameraFragment extends Fragment implements SurfaceHolder.Cal
             }
         });
 
-      sellinglist_id=getArguments().getString("status1");
-        if (getArguments() != null) {
-
-
-            sell_navigation3 = getArguments().getString("navg_from3");
-
-        }
-
+//      sellinglist_id=getArguments().getString("status1");
+//        if (getArguments() != null) {
+//
+//
+//            sell_navigation3 = getArguments().getString("navg_from3");
+//
+//        }
+//
 
 
 
@@ -434,6 +434,7 @@ public class Spices_CameraFragment extends Fragment implements SurfaceHolder.Cal
                     bundle.putString("sellinglist_id", Spices_Adapter.sellinglistid);
                     bundle.putString("sellinglist_name", sell_name);
                     System.out.println("sellnameeeee22222222222222"+sell_name);
+
                     selectedFragment = SellImagePreview_Fragment.newInstance();
                     FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
                     transaction.replace(R.id.frame_layout1, selectedFragment);

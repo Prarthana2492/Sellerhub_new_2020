@@ -184,7 +184,7 @@ public class VerificationFragment extends Fragment {
                                 @Override
                                 public void onClick(View view) {
 
-                                    selectedFragment = FirmShopDetailsFragment.newInstance();
+                                    selectedFragment = FirmShopDetailsFragment_new.newInstance();
                                     FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
                                     transaction.replace(R.id.frame_layout1, selectedFragment);
                                     transaction.addToBackStack("verification");

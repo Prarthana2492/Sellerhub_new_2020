@@ -14,7 +14,7 @@
         android:layout_weight="17"
         android:gravity="center_vertical"
         android:paddingLeft="15dp"
-        android:background="#FAFAFA"
+        android:background="@color/lang_bg_color"
         android:paddingRight="20dp"
         >
 

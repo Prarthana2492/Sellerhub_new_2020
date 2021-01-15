@@ -8,7 +8,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:weightSum="100"
-    android:background="#fff">
+    android:background="@color/lang_bg_color">
 
 
     <LinearLayout
@@ -17,7 +17,7 @@
         android:orientation="horizontal"
         android:weightSum="100"
         android:paddingLeft="10dp"
-        android:background="#f1f1f1"
+        android:background="@color/seperator"
         >
 
         <TextView
@@ -26,6 +26,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="80"
             android:text="Last 6 Months"
+            android:textColor="@color/white_text"
             android:fontFamily="@font/segoeui"
             android:layout_gravity="center_vertical"
             android:padding="10dp"
@@ -41,6 +42,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="20"
             android:text="Filter"
+            android:textColor="@color/white_text"
             android:fontFamily="@font/segoeui"
             android:drawableRight="@drawable/ic_right_angle_arrow"
             android:layout_gravity="center_vertical"
@@ -58,13 +60,13 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#fff"
+        android:background="@color/lang_bg_color"
         android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#fff"
+            android:background="@color/lang_bg_color"
             android:layout_marginHorizontal="10dp"
             android:orientation="vertical">
         <TextView
@@ -74,7 +76,7 @@
             android:fontFamily="@font/segoeui"
             android:text="Payment Summary"
             android:layout_marginTop="10dp"
-            android:textColor="#000"
+            android:textColor="@color/grey_text_color"
             android:textSize="16dp"
             android:textStyle="bold" />
 
@@ -113,7 +115,7 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:weightSum="4"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="15dp"
             >
             <TextView
                 android:layout_width="0dp"
@@ -121,7 +123,7 @@
                 android:text="Transactions"
                 android:textSize="14dp"
                 android:fontFamily="@font/segoeui"
-                android:textColor="#000"
+                android:textColor="@color/white_text"
                 android:layout_weight="2.5"
                 android:layout_marginLeft="10dp"
                 />
@@ -140,7 +142,7 @@
                 android:textSize="14dp"
                 android:layout_weight="1.5"
                 android:fontFamily="@font/segoeui"
-                android:textColor="#000"
+                android:textColor="@color/white_text"
                 android:gravity="right"
                 android:layout_marginLeft="10dp"
                 />
@@ -152,7 +154,7 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:weightSum="100"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="1dp"
             >
 
             <TextView
@@ -160,6 +162,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_weight="70"
+                android:textColor="@color/white_text"
                 android:fontFamily="@font/segoeui"
                 android:text="Items Cost:"
                 android:textSize="14dp" />
@@ -180,7 +183,7 @@
                 android:text="Rs.0.00"
                 android:textSize="14dp"
                 android:fontFamily="@font/segoeui"
-                android:textColor="#000"
+                android:textColor="@color/white_text"
                 />
 
             </LinearLayout>
@@ -196,6 +199,7 @@
                 android:layout_height="wrap_content"
                 android:text="Delivery Charges"
                 android:textSize="14dp"
+                android:textColor="@color/white_text"
                 android:fontFamily="@font/segoeui"
                 android:layout_weight="70"
                 android:layout_marginLeft="10dp"
@@ -215,7 +219,7 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/segoeui"
                     android:text="Rs.0.00"
-                    android:textColor="#000"
+                    android:textColor="@color/white_text"
                     android:textSize="14dp" />
             </LinearLayout>
         </LinearLayout>
@@ -300,6 +304,7 @@
                 android:text="Tax:"
                 android:textSize="14dp"
                 android:layout_weight="70"
+                android:textColor="@color/white_text"
                 android:fontFamily="@font/segoeui"
                 android:layout_marginLeft="10dp"
                 />
@@ -317,7 +322,7 @@
                 android:layout_height="wrap_content"
                 android:text="Rs.0.00"
                 android:textSize="14dp"
-                android:textColor="#000"
+                android:textColor="@color/white_text"
                 android:fontFamily="@font/segoeui"
                 />
 
@@ -335,6 +340,7 @@
                 android:text="Total:"
                 android:textSize="14dp"
                 android:layout_weight="70"
+                android:textColor="@color/white_text"
                 android:fontFamily="@font/segoeui"
                 android:layout_marginLeft="10dp"
                 />
@@ -352,7 +358,7 @@
                 android:text="Rs.0.00"
                 android:textSize="14dp"
                 android:layout_marginRight="10dp"
-                android:textColor="#000"
+                android:textColor="@color/white_text"
                 android:fontFamily="@font/segoeui"
                 />
             </LinearLayout>
@@ -406,7 +412,7 @@
                 android:layout_weight="70"
                 android:textStyle="bold"
                 android:fontFamily="@font/segoeui"
-                android:textColor="#000"
+                android:textColor="@color/white_text"
                 android:layout_marginLeft="10dp"
                 />
             <LinearLayout
@@ -425,7 +431,7 @@
                 android:textStyle="bold"
                 android:layout_marginRight="10dp"
                 android:fontFamily="@font/segoeui"
-                android:textColor="@color/red"
+                android:textColor="@color/blue_txt"
                 />
             </LinearLayout>
         </LinearLayout>
@@ -455,57 +461,25 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/segoeui"
                 android:text="Payment Instrument"
-                android:textColor="#000"
+                android:textColor="@color/grey_text_color"
                 android:layout_marginLeft="10dp"
                 android:textSize="16dp"
                 android:textStyle="bold" />
+
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
+                android:layout_marginTop="15dp"
                 android:weightSum="100"
-                android:layout_marginTop="10dp"
                 >
-
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:layout_weight="70"
-                    android:fontFamily="@font/segoeui"
                     android:text="Cash on Delivery:"
-                    android:textSize="14dp" />
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="30"
-                    android:gravity="right"
-                    android:orientation="horizontal"
-                    >
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="34dp"
-                        android:fontFamily="@font/segoeui"
-                        android:text="₹0.00"
-                        android:textColor="#000"
-                        android:textSize="14dp" />
-
-                </LinearLayout>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:weightSum="100"
-                >
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:text="NetBank:"
                     android:textSize="14dp"
+                    android:textColor="@color/white_text"
                     android:fontFamily="@font/segoeui"
                     android:layout_weight="70"
                     android:layout_marginLeft="10dp"
@@ -523,7 +497,41 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/segoeui"
                         android:text="₹0.00"
-                        android:textColor="#000"
+                        android:textColor="@color/white_text"
+                        android:textSize="14dp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="100"
+                >
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="NetBank:"
+                    android:textSize="14dp"
+                    android:textColor="@color/white_text"
+                    android:fontFamily="@font/segoeui"
+                    android:layout_weight="70"
+                    android:layout_marginLeft="10dp"
+                    />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="30"
+                    android:gravity="right"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/segoeui"
+                        android:text="₹0.00"
+                        android:textColor="@color/white_text"
                         android:textSize="14dp" />
                 </LinearLayout>
             </LinearLayout>
@@ -574,6 +582,7 @@
                     android:text="Debit/Credit Card:"
                     android:textSize="14dp"
                     android:layout_weight="70"
+                    android:textColor="@color/white_text"
                     android:fontFamily="@font/segoeui"
                     android:layout_marginLeft="10dp"
                     />
@@ -589,11 +598,12 @@
                         android:layout_height="wrap_content"
                         android:text="₹0.00"
                         android:textSize="14dp"
-                        android:textColor="#000"
+                        android:textColor="@color/white_text"
                         android:fontFamily="@font/segoeui"
                         />
                 </LinearLayout>
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -606,6 +616,7 @@
                     android:text="BHIM UPI / Bank Account:"
                     android:textSize="14dp"
                     android:layout_weight="70"
+                    android:textColor="@color/white_text"
                     android:fontFamily="@font/segoeui"
                     android:layout_marginLeft="10dp"
                     />
@@ -622,7 +633,7 @@
                         android:layout_height="wrap_content"
                         android:text="₹0.00"
                         android:textSize="14dp"
-                        android:textColor="#000"
+                        android:textColor="@color/white_text"
                         android:fontFamily="@font/segoeui"
                         />
 
@@ -640,6 +651,7 @@
                     android:text="7Nine Wallet:"
                     android:textSize="14dp"
                     android:layout_weight="70"
+                    android:textColor="@color/white_text"
                     android:fontFamily="@font/segoeui"
                     android:layout_marginLeft="10dp"
                     />
@@ -655,7 +667,7 @@
                         android:layout_height="wrap_content"
                         android:text="₹0.00"
                         android:textSize="14dp"
-                        android:textColor="#000"
+                        android:textColor="@color/white_text"
                         android:fontFamily="@font/segoeui"
                         />
                 </LinearLayout>
@@ -673,6 +685,7 @@
                     android:textSize="14dp"
                     android:fontFamily="@font/segoeui"
                     android:layout_weight="70"
+                    android:textColor="@color/white_text"
                     android:layout_marginLeft="10dp"
                     />
                 <LinearLayout
@@ -688,7 +701,7 @@
                         android:text="₹0.00"
                         android:textSize="14dp"
                         android:fontFamily="@font/segoeui"
-                        android:textColor="#000"
+                        android:textColor="@color/white_text"
                         />
                 </LinearLayout>
             </LinearLayout>
@@ -707,7 +720,7 @@
                     android:layout_weight="70"
                     android:textStyle="bold"
                     android:fontFamily="@font/segoeui"
-                    android:textColor="#000"
+                    android:textColor="@color/white_text"
                     android:layout_marginLeft="10dp"
                     />
                 <LinearLayout
@@ -725,7 +738,7 @@
                         android:textSize="14dp"
                         android:textStyle="bold"
                         android:fontFamily="@font/segoeui"
-                        android:textColor="@color/red"
+                        android:textColor="@color/blue_txt"
                         />
                 </LinearLayout>
             </LinearLayout>

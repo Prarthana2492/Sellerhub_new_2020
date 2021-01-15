@@ -21,6 +21,7 @@ import android.widget.TextView;
 
 import com.FarmPe.SellerHub.Activity.Status_bar_change_singleton;
 import com.FarmPe.SellerHub.Adapter.What_Areu_Selling_Adapter;
+import com.FarmPe.SellerHub.Bean.MainVerticalBean;
 import com.FarmPe.SellerHub.Bean.Sellbean;
 import com.FarmPe.SellerHub.R;
 import com.FarmPe.SellerHub.Urls;
@@ -36,7 +37,8 @@ import java.util.List;
 
 public class What_Areu_Selling_Fragment extends Fragment {
 
-    public static ArrayList<Sellbean> newOrderBeansList = new ArrayList<>();
+   // public static ArrayList<Sellbean> newOrderBeansList = new ArrayList<>();
+    public static ArrayList<MainVerticalBean> newOrderBeansList = new ArrayList<>();
     private List<Sellbean> searchresultAraaylist = new ArrayList<>();
     public static RecyclerView recyclerView;
     public static What_Areu_Selling_Adapter livestock_types_adapter;
@@ -149,13 +151,31 @@ public class What_Areu_Selling_Fragment extends Fragment {
         GridLayoutManager mLayoutManager_farm = new GridLayoutManager(getActivity(), 2, GridLayoutManager.VERTICAL, false);
         recyclerView.setLayoutManager(mLayoutManager_farm);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
+
+        MainVerticalBean bean = new MainVerticalBean("Fenugreek","1","",R.drawable.fenugreek_2);
+        newOrderBeansList.add(bean);
+        MainVerticalBean bean1 = new MainVerticalBean("Fennel","1","",R.drawable.fennel);
+        newOrderBeansList.add(bean1);
+        MainVerticalBean bean2 = new MainVerticalBean("Celery","1","",R.drawable.celery);
+        newOrderBeansList.add(bean2);
+        MainVerticalBean bean3 = new MainVerticalBean("Cinnamon","1","",R.drawable.cinnamon);
+        newOrderBeansList.add(bean3);
+        MainVerticalBean bean4= new MainVerticalBean("Cambodge","1","",R.drawable.cambodge);
+        newOrderBeansList.add(bean4);
+        MainVerticalBean bean5= new MainVerticalBean("Caperround","1","",R.drawable.caperround);
+        newOrderBeansList.add(bean5);
+
+
         livestock_types_adapter=new What_Areu_Selling_Adapter(getActivity(),newOrderBeansList);
         recyclerView.setAdapter(livestock_types_adapter);
+        livestock_types_adapter.notifyDataSetChanged();
+
+
 
         search.addTextChangedListener(new TextWatcher() {
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                sorting(s.toString());
+             //   sorting(s.toString());
                 // TODO Auto-generated method stub
             }
 
@@ -174,60 +194,60 @@ public class What_Areu_Selling_Fragment extends Fragment {
             }
         });
 
-    try{
-
-            newOrderBeansList.clear();
-            JSONObject jsonObject = new JSONObject();
-
-
-            Crop_Post.crop_posting(getActivity(), Urls.GetSellingType, jsonObject, new VoleyJsonObjectCallback() {
-                @Override
-                public void onSuccessResponse(JSONObject result) {
-
-                    System.out.println("GetSellingTypeeeeeeee"+result);
-
-
-                    try{
-
-                        get_soiltype = result.getJSONArray("SellingTypeList");
-
-                        for(int i=0;i<get_soiltype.length();i++){
-
-                            JSONObject jsonObject1 = get_soiltype.getJSONObject(i);
-                            addTractorBean3 = new Sellbean(jsonObject1.getString("SellingTypeName"),jsonObject1.getString("SellingTypeId"),jsonObject1.getString("SellingTypeIcon"));
-
-                            newOrderBeansList.add(addTractorBean3);
-                        }
-                        livestock_types_adapter.notifyDataSetChanged();
-
-                    }catch (Exception e){
-                        e.printStackTrace();
-                    }
-                }
-            });
-
-        }catch (Exception e){
-            e.printStackTrace();
-        }
+//    try{
+//
+//            newOrderBeansList.clear();
+//            JSONObject jsonObject = new JSONObject();
+//
+//
+//            Crop_Post.crop_posting(getActivity(), Urls.GetSellingType, jsonObject, new VoleyJsonObjectCallback() {
+//                @Override
+//                public void onSuccessResponse(JSONObject result) {
+//
+//                    System.out.println("GetSellingTypeeeeeeee"+result);
+//
+//
+//                    try{
+//
+//                        get_soiltype = result.getJSONArray("SellingTypeList");
+//
+//                        for(int i=0;i<get_soiltype.length();i++){
+//
+//                            JSONObject jsonObject1 = get_soiltype.getJSONObject(i);
+//                            addTractorBean3 = new Sellbean(jsonObject1.getString("SellingTypeName"),jsonObject1.getString("SellingTypeId"),jsonObject1.getString("SellingTypeIcon"));
+//
+//                            newOrderBeansList.add(addTractorBean3);
+//                        }
+//                        livestock_types_adapter.notifyDataSetChanged();
+//
+//                    }catch (Exception e){
+//                        e.printStackTrace();
+//                    }
+//                }
+//            });
+//
+//        }catch (Exception e){
+//            e.printStackTrace();
+//        }
 
         return view;
     }
-
-    public  void sorting(String filter_text){
-
-        final String text = filter_text.toLowerCase();
-
-        searchresultAraaylist.clear();
-        for (int i = 0; i < newOrderBeansList.size(); i++) {
-
-            if (newOrderBeansList.get(i).getName().toLowerCase().contains(text)) {
-                searchresultAraaylist.add(newOrderBeansList.get(i));
-
-            }
-        }
-        livestock_types_adapter=new What_Areu_Selling_Adapter(getActivity(),searchresultAraaylist);
-        recyclerView.setAdapter(livestock_types_adapter);
-
-    }
+//
+//    public  void sorting(String filter_text){
+//
+//        final String text = filter_text.toLowerCase();
+//
+//        searchresultAraaylist.clear();
+//        for (int i = 0; i < newOrderBeansList.size(); i++) {
+//
+//            if (newOrderBeansList.get(i).getName().toLowerCase().contains(text)) {
+//                searchresultAraaylist.add(newOrderBeansList.get(i));
+//
+//            }
+//        }
+//        livestock_types_adapter=new What_Areu_Selling_Adapter(getActivity(),searchresultAraaylist);
+//        recyclerView.setAdapter(livestock_types_adapter);
+//
+//    }
 
 }

@@ -9,8 +9,9 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.FarmPe.SellerHub.Fragment.AddNewAddressFragment;
+
 import com.FarmPe.SellerHub.Bean.StateBean;
+import com.FarmPe.SellerHub.Fragment.Add_New_Address_Fragment;
 import com.FarmPe.SellerHub.R;
 
 import java.util.List;
@@ -49,10 +50,10 @@ public class TalukAdapter extends RecyclerView.Adapter<TalukAdapter.TalukMyViewH
 
                 talukid=stateBean.getId();
                 System.out.println("checkingggggg"+talukid);
-               /* Add_New_Address_Fragment.tehsil_txt.setText(holder.statename.getText().toString());
-                Add_New_Address_Fragment.drawer.closeDrawers();*/
-                AddNewAddressFragment.ed_tsl.setText(holder.statename.getText().toString());
-                AddNewAddressFragment.drawer.closeDrawers();
+                Add_New_Address_Fragment.tehsil_txt.setText(holder.statename.getText().toString());
+                Add_New_Address_Fragment.drawer.closeDrawers();
+//                AddNewAddressFragment.ed_tsl.setText(holder.statename.getText().toString());
+//                AddNewAddressFragment.drawer.closeDrawers();
               //  NewAddressFragment.block.setText(holder.statename.getText().toString());
               //  NewAddressFragment.drawer.closeDrawers();
 

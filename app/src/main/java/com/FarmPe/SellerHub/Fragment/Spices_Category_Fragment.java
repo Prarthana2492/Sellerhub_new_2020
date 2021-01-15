@@ -17,6 +17,7 @@ import android.widget.TextView;
 
 import com.FarmPe.SellerHub.Activity.Status_bar_change_singleton;
 import com.FarmPe.SellerHub.Adapter.Spices_Category_Adapter;
+import com.FarmPe.SellerHub.Bean.MainVerticalBean;
 import com.FarmPe.SellerHub.Bean.Sellbean;
 import com.FarmPe.SellerHub.R;
 import com.FarmPe.SellerHub.Urls;
@@ -38,7 +39,7 @@ public class Spices_Category_Fragment extends Fragment {
    public static String livestock_status;
    LinearLayout back_feed,linearLayout,search_layout;
    JSONArray get_categorylist_array;
-   public static ArrayList<Sellbean> newOrderBeansList = new ArrayList<>();
+   public static ArrayList<MainVerticalBean> newOrderBeansList = new ArrayList<>();
    JSONArray get_soiltype;
    Sellbean addTractorBean3;
   public static String sellingid,sell_navigation1;
@@ -66,13 +67,13 @@ public class Spices_Category_Fragment extends Fragment {
        linearLayout = view.findViewById(R.id.linearLayout);
        search_layout = view.findViewById(R.id.search_lay);
        search_layout.setVisibility(View.GONE);
-       sellingid = getArguments().getString("status");
+      // sellingid = getArguments().getString("status");
 
-
-       if (getArguments() != null) {
-           sell_navigation1 = getArguments().getString("navg_from1");
-
-       }
+//
+//       if (getArguments() != null) {
+//           sell_navigation1 = getArguments().getString("navg_from1");
+//
+//       }
 
        back_feed.setOnClickListener(new View.OnClickListener() {
            @Override
@@ -110,44 +111,59 @@ public class Spices_Category_Fragment extends Fragment {
        GridLayoutManager mLayoutManager_farm = new GridLayoutManager(getActivity(), 2, GridLayoutManager.VERTICAL, false);
        recyclerView.setLayoutManager(mLayoutManager_farm);
        recyclerView.setItemAnimator(new DefaultItemAnimator());
+
+
+
+       MainVerticalBean bean = new MainVerticalBean("Fenugreek","1","",R.drawable.fenugreek_2);
+       newOrderBeansList.add(bean);
+       MainVerticalBean bean1 = new MainVerticalBean("Fennel","1","",R.drawable.fennel);
+       newOrderBeansList.add(bean1);
+       MainVerticalBean bean2 = new MainVerticalBean("Celery","1","",R.drawable.celery);
+       newOrderBeansList.add(bean2);
+       MainVerticalBean bean3 = new MainVerticalBean("Cinnamon","1","",R.drawable.cinnamon);
+       newOrderBeansList.add(bean3);
+       MainVerticalBean bean4= new MainVerticalBean("Cambodge","1","",R.drawable.cambodge);
+       newOrderBeansList.add(bean4);
+
        livestock_types_adapter=new Spices_Category_Adapter(getActivity(),newOrderBeansList);
        recyclerView.setAdapter(livestock_types_adapter);
+       livestock_types_adapter.notifyDataSetChanged();
 
 
-       try{
-
-           newOrderBeansList.clear();
-           JSONObject jsonObject = new JSONObject();
-           jsonObject.put("SellingTypeId",sellingid);
-           Crop_Post.crop_posting(getActivity(), Urls.GetSellingCategoryList, jsonObject, new VoleyJsonObjectCallback() {
-               @Override
-               public void onSuccessResponse(JSONObject result) {
-
-                   System.out.println("GetSellingTypeeeeeeee"+result);
-
-
-                   try{
-
-                       get_soiltype = result.getJSONArray("SellingCategoryList");
-
-                       for(int i=0;i<get_soiltype.length();i++){
-
-                           JSONObject jsonObject1 = get_soiltype.getJSONObject(i);
-                           addTractorBean3 = new Sellbean(jsonObject1.getString("SellingCategoryName"),jsonObject1.getString("SellingCategoryId"),jsonObject1.getString("SellingCategoryIcon"));
-
-                           newOrderBeansList.add(addTractorBean3);
-                       }
-                       livestock_types_adapter.notifyDataSetChanged();
-
-                   }catch (Exception e){
-                       e.printStackTrace();
-                   }
-               }
-           });
-
-       }catch (Exception e){
-           e.printStackTrace();
-       }
+//       try{
+//
+//           newOrderBeansList.clear();
+//           JSONObject jsonObject = new JSONObject();
+//           jsonObject.put("SellingTypeId",sellingid);
+//           Crop_Post.crop_posting(getActivity(), Urls.GetSellingCategoryList, jsonObject, new VoleyJsonObjectCallback() {
+//               @Override
+//               public void onSuccessResponse(JSONObject result) {
+//
+//                   System.out.println("GetSellingTypeeeeeeee"+result);
+//
+//
+//                   try{
+//
+//                       get_soiltype = result.getJSONArray("SellingCategoryList");
+//
+//                       for(int i=0;i<get_soiltype.length();i++){
+//
+//                           JSONObject jsonObject1 = get_soiltype.getJSONObject(i);
+//                           addTractorBean3 = new Sellbean(jsonObject1.getString("SellingCategoryName"),jsonObject1.getString("SellingCategoryId"),jsonObject1.getString("SellingCategoryIcon"));
+//
+//                           newOrderBeansList.add(addTractorBean3);
+//                       }
+//                       livestock_types_adapter.notifyDataSetChanged();
+//
+//                   }catch (Exception e){
+//                       e.printStackTrace();
+//                   }
+//               }
+//           });
+//
+//       }catch (Exception e){
+//           e.printStackTrace();
+//       }
 
 
 

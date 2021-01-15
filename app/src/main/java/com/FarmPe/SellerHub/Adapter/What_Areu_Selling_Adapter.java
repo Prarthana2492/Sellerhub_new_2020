@@ -13,6 +13,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.FarmPe.SellerHub.Bean.MainVerticalBean;
 import com.FarmPe.SellerHub.Bean.Sellbean;
 import com.FarmPe.SellerHub.Fragment.Spices_Category_Fragment;
 import com.FarmPe.SellerHub.Fragment.What_Areu_Selling_Fragment;
@@ -25,14 +26,14 @@ import java.util.List;
 
 public class What_Areu_Selling_Adapter extends RecyclerView.Adapter<What_Areu_Selling_Adapter.MyViewHolder> {
 
-    private List<Sellbean> productList;
+    private List<MainVerticalBean> productList;
     Activity activity;
     Fragment selectedFragment;
     public static String sellingtypeid,sellingedit_id;
 
 
 
-    public What_Areu_Selling_Adapter(Activity activity, List<Sellbean> moviesList) {
+    public What_Areu_Selling_Adapter(Activity activity, List<MainVerticalBean> moviesList) {
         this.productList = moviesList;
         this.activity=activity;
 
@@ -67,29 +68,32 @@ public class What_Areu_Selling_Adapter extends RecyclerView.Adapter<What_Areu_Se
     }
     @Override
     public void onBindViewHolder(final MyViewHolder holder, final int position) {
-     final Sellbean products = productList.get(position);
+     final MainVerticalBean products = productList.get(position);
       sellingtypeid=products.getId();
+
         holder.name.setText(products.getName());
+
         Glide.with(activity).load(products.getImage())
                 .thumbnail(0.5f)
                 //.crossFade()
                 .apply(RequestOptions.diskCacheStrategyOf(DiskCacheStrategy.ALL)
                         .error(R.drawable.ic_gallery__default))
                 .into(holder.image);
+
         holder.image.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                sellingtypeid=products.getId();
-                Bundle bundle = new Bundle();
-                bundle.putString("status",sellingtypeid);
-                bundle.putString("navg_from1", What_Areu_Selling_Fragment.sellnavigation);
+//                sellingtypeid=products.getId();
+//                Bundle bundle = new Bundle();
+//                bundle.putString("status",sellingtypeid);
+//                bundle.putString("navg_from1", What_Areu_Selling_Fragment.sellnavigation);
                // bundle.putString("ID", What_Areu_Selling_Fragment.sellingdetailsid);
                 System.out.println("whatareusellingtypeID"+sellingtypeid);
                 selectedFragment = Spices_Category_Fragment.newInstance();
                 FragmentTransaction transaction = ((FragmentActivity)activity).getSupportFragmentManager().beginTransaction();
                 transaction.replace(R.id.frame_layout1, selectedFragment);
                 transaction.addToBackStack("spicescateory");
-                selectedFragment.setArguments(bundle);
+              // selectedFragment.setArguments(bundle);
                 transaction.commit();
             }
         });

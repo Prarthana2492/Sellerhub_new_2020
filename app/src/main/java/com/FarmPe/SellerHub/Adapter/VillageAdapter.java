@@ -9,8 +9,9 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.FarmPe.SellerHub.Fragment.AddNewAddressFragment;
+
 import com.FarmPe.SellerHub.Bean.StateBean;
+import com.FarmPe.SellerHub.Fragment.NewAddressFragment;
 import com.FarmPe.SellerHub.R;
 
 import java.util.List;
@@ -48,10 +49,10 @@ public class VillageAdapter extends RecyclerView.Adapter<VillageAdapter.HoblisMy
             @Override
             public void onClick(View view) {
                villageid = stateBean.getId();
-                AddNewAddressFragment.ed_vill.setText(holder.statename.getText().toString());
-                AddNewAddressFragment.drawer.closeDrawers();
-             //   NewAddressFragment.village.setText(holder.statename.getText().toString());
-             //   NewAddressFragment.drawer.closeDrawers();
+//                AddNewAddressFragment.ed_vill.setText(holder.statename.getText().toString());
+//                AddNewAddressFragment.drawer.closeDrawers();
+                NewAddressFragment.village.setText(holder.statename.getText().toString());
+                NewAddressFragment.drawer.closeDrawers();
 
             }
         });

@@ -32,7 +32,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
                 android:text="Comment"
-                android:textColor="#000"
+                android:textColor="@color/white_text"
                 android:textSize="16dp"
                 android:textStyle="bold"
 
@@ -88,7 +88,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/segoeui"
                 android:text="Cancel"
-                android:textColor="@color/blue"
+                android:textColor="@color/blue_txt"
                 android:textSize="14dp"
                 />
             <TextView
@@ -98,7 +98,7 @@
                 android:fontFamily="@font/segoeui"
                 android:text="Submit"
                 android:layout_marginLeft="20dp"
-                android:textColor="@color/blue"
+                android:textColor="@color/blue_txt"
                 android:textSize="14dp"
                 />
 

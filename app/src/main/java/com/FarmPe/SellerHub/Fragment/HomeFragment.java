@@ -76,15 +76,15 @@ static Fragment myloadingfragment;
        // list_prod=view.findViewById(R.id.list_prod);
         logout=view.findViewById(R.id.logout);
         search_by_cat=view.findViewById(R.id.search_by_cat);
-        store=view.findViewById(R.id.stores);
+    //    store=view.findViewById(R.id.stores);
       // offers=view.findViewById(R.id.offers);
         inventory=view.findViewById(R.id.inventory);
         payments=view.findViewById(R.id.payments);
         image_acc=view.findViewById(R.id.image_acc);
-        drawer_layout=view.findViewById(R.id.drawer_layout);
+        drawer_layout=view.findViewById(R.id.drawer_layout1);
         search=view.findViewById(R.id.search);
         Window window = getActivity().getWindow();
-        window.setStatusBarColor(ContextCompat.getColor(getActivity(),R.color.colorPrimaryDark1));
+        window.setStatusBarColor(ContextCompat.getColor(getActivity(),R.color.colorPrimaryDark));
         drawer = (DrawerLayout)view.findViewById(R.id.drawer_layout);
 
         sessionManager=new SessionManager((getActivity()));
@@ -141,31 +141,31 @@ static Fragment myloadingfragment;
                 return true;
             }
         });
-        Bundle bundle=getArguments();
-        if (bundle!=null){
-            if (bundle.getString("status")!=null){
-                selectedFragment = PreviewProductDetails.newInstance();
-                FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
-                transaction.replace(R.id.frame_layout_home, selectedFragment);
-                transaction.commit();
-            }else if(bundle.getString("order_details")!=null) {
-                selectedFragment = OrderTabFragment.newInstance();
-                FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
-                transaction.replace(R.id.frame_layout_home, selectedFragment);
-                transaction.commit();
-            }else
-            {
-                selectedFragment = HomeLandingFragment.newInstance();
-                FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
-                transaction.replace(R.id.frame_layout_home, selectedFragment);
-                transaction.commit();
-            }
-        }else{
-            selectedFragment = HomeLandingFragment.newInstance();
-            FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
-            transaction.replace(R.id.frame_layout_home, selectedFragment);
-            transaction.commit();
-        }
+//        Bundle bundle=getArguments();
+//        if (bundle!=null){
+//            if (bundle.getString("status")!=null){
+//                selectedFragment = PreviewProductDetails.newInstance();
+//                FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
+//                transaction.replace(R.id.frame_layout_home, selectedFragment);
+//                transaction.commit();
+//            }else if(bundle.getString("order_details")!=null) {
+//                selectedFragment = OrderTabFragment.newInstance();
+//                FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
+//                transaction.replace(R.id.frame_layout_home, selectedFragment);
+//                transaction.commit();
+//            }else
+//            {
+//                selectedFragment = HomeLandingFragment.newInstance();
+//                FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
+//                transaction.replace(R.id.frame_layout_home, selectedFragment);
+//                transaction.commit();
+//            }
+//        }else{
+//            selectedFragment = HomeLandingFragment.newInstance();
+//            FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
+//            transaction.replace(R.id.frame_layout_home, selectedFragment);
+//            transaction.commit();
+//        }
 
        search.setOnClickListener(new View.OnClickListener() {
            @Override
@@ -180,7 +180,7 @@ static Fragment myloadingfragment;
         menu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                drawer = (DrawerLayout)view.findViewById(R.id.drawer_layout);
+                drawer = (DrawerLayout)view.findViewById(R.id.drawer_layout1);
                 drawer.openDrawer(GravityCompat.START);
                 home.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -234,16 +234,16 @@ static Fragment myloadingfragment;
                 });
 
 
-                store.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        selectedFragment = Store.newInstance();
-                        FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
-                        transaction.replace(R.id.frame_layout1, selectedFragment);
-                        transaction.commit();
-                        drawer.closeDrawers();
-                    }
-                });
+//                store.setOnClickListener(new View.OnClickListener() {
+//                    @Override
+//                    public void onClick(View v) {
+//                        selectedFragment = Store.newInstance();
+//                        FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
+//                        transaction.replace(R.id.frame_layout1, selectedFragment);
+//                        transaction.commit();
+//                        drawer.closeDrawers();
+//                    }
+//                });
                 my_orders.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -255,6 +255,7 @@ static Fragment myloadingfragment;
                         drawer.closeDrawers();
                     }
                 });
+
                 account.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -278,6 +279,7 @@ static Fragment myloadingfragment;
                         drawer.closeDrawers();
                     }
                 });
+
                 payments.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -314,189 +316,189 @@ static Fragment myloadingfragment;
                     }
                 });
 */
-                try{
-                    JSONObject jsonObject = new JSONObject();
-                    JSONObject post_object = new JSONObject();
-
-                    jsonObject.put("Id",sessionManager.getRegId("userId"));
-                    post_object.put("objUser",jsonObject);
-
-
-                    Crop_Post.getProfileDetails(getActivity(), Urls.Get_Profile_Details1, post_object, new VoleyJsonObjectCallback() {
-                        @Override
-                        public void onSuccessResponse(JSONObject result) {
-                            System.out.println("ggpgpgpg" + result);
-
-                            try{
-
-                                JSONObject jsonObject1 = result.getJSONObject("user");
-                                String ProfileName1 = jsonObject1.getString("UserName");
-                                System.out.println("11111" + jsonObject1.getString("FullName"));
-                                String ProfilePhone = jsonObject1.getString("PhoneNo");
-                                String ProfileEmail = jsonObject1.getString("EmailId");
-                                String ProfileImage = jsonObject1.getString("ProfilePic");
-                                System.out.println("11111" + ProfileName1);
-
-
-
-                                //  name.setText(ProfileName1);
-                                // phone_no.setText(ProfilePhone);
-                                //  user_name_menu.setText(ProfileName1);
-
-                                // user_name_menu.setFilters(new InputFilter[]{EMOJI_FILTER});
-                                //  phone_no.setFilters(new InputFilter[]{EMOJI_FILTER});
-                                //profile_mail.setFilters(new InputFilter[]{EMOJI_FILTER});
-
-
-                               /* if (!(ProfileImage.equals(""))){
-                                    Glide.with(getActivity()).load(ProfileImage)
-
-                                            .thumbnail(0.5f)
-                                            //  .crossFade()
-                                            .error(R.drawable.avatarmale)
-                                            .into(image_acc);
-                                }else{
-                                  *//*  try {
-
-                                        JSONObject jsonObject = new JSONObject();
-                                        jsonObject.put("UserId", sessionManager.getRegId("userId"));
-
-
-                                        Crop_Post.crop_posting(getActivity(), Urls.GetCImagelist, jsonObject, new VoleyJsonObjectCallback() {
-                                            @Override
-                                            public void onSuccessResponse(JSONObject result) {
-                                                System.out.println("dhfjfjd" + result);
-
-
-                                                try {
-
-                                                    JSONArray imagelist_array = result.getJSONArray("captureImagelist");
-
-                                                    for (int i = 0; i < imagelist_array.length(); i++) {
-
-
-                                                        JSONObject jsonObject1 = imagelist_array.getJSONObject(i);
-                                                        String image_view = jsonObject1.getString("Image1");
-
-
-
-                                                        Glide.with(getActivity()).load(image_view)
-                                                                .thumbnail(0.5f)
-                                                                .diskCacheStrategy(DiskCacheStrategy.ALL)
-                                                                .error(R.drawable.avatarmale)
-                                                                .into(image_acc);
-                                                    }
-
-
-
-
-                                                } catch (Exception e) {
-                                                    e.printStackTrace();
-                                                }
-
-                                            }
-                                        });
-
-
-                                    } catch (Exception e) {
-                                        e.printStackTrace();
-                                    }*//*
-                                }*/
-                       /* Glide.with(getActivity()).load(ProfileImage)
-
-                                .thumbnail(0.5f)
-                                //  .crossFade()
-                                .error(R.drawable.avatarmale)
-                                .into(prod_img);*/
-
-
-                            }catch (Exception e){
-                                e.printStackTrace();
-                            }
-
-                        }
-                    });
-
-                }catch (Exception e){
-                    e.printStackTrace();
-                }
+//                try{
+//                    JSONObject jsonObject = new JSONObject();
+//                    JSONObject post_object = new JSONObject();
+//
+//                    jsonObject.put("Id",sessionManager.getRegId("userId"));
+//                    post_object.put("objUser",jsonObject);
+//
+//
+//                    Crop_Post.getProfileDetails(getActivity(), Urls.Get_Profile_Details1, post_object, new VoleyJsonObjectCallback() {
+//                        @Override
+//                        public void onSuccessResponse(JSONObject result) {
+//                            System.out.println("ggpgpgpg" + result);
+//
+//                            try{
+//
+//                                JSONObject jsonObject1 = result.getJSONObject("user");
+//                                String ProfileName1 = jsonObject1.getString("UserName");
+//                                System.out.println("11111" + jsonObject1.getString("FullName"));
+//                                String ProfilePhone = jsonObject1.getString("PhoneNo");
+//                                String ProfileEmail = jsonObject1.getString("EmailId");
+//                                String ProfileImage = jsonObject1.getString("ProfilePic");
+//                                System.out.println("11111" + ProfileName1);
+//
+//
+//
+//                                //  name.setText(ProfileName1);
+//                                // phone_no.setText(ProfilePhone);
+//                                //  user_name_menu.setText(ProfileName1);
+//
+//                                // user_name_menu.setFilters(new InputFilter[]{EMOJI_FILTER});
+//                                //  phone_no.setFilters(new InputFilter[]{EMOJI_FILTER});
+//                                //profile_mail.setFilters(new InputFilter[]{EMOJI_FILTER});
+//
+//
+//                               /* if (!(ProfileImage.equals(""))){
+//                                    Glide.with(getActivity()).load(ProfileImage)
+//
+//                                            .thumbnail(0.5f)
+//                                            //  .crossFade()
+//                                            .error(R.drawable.avatarmale)
+//                                            .into(image_acc);
+//                                }else{
+//                                  *//*  try {
+//
+//                                        JSONObject jsonObject = new JSONObject();
+//                                        jsonObject.put("UserId", sessionManager.getRegId("userId"));
+//
+//
+//                                        Crop_Post.crop_posting(getActivity(), Urls.GetCImagelist, jsonObject, new VoleyJsonObjectCallback() {
+//                                            @Override
+//                                            public void onSuccessResponse(JSONObject result) {
+//                                                System.out.println("dhfjfjd" + result);
+//
+//
+//                                                try {
+//
+//                                                    JSONArray imagelist_array = result.getJSONArray("captureImagelist");
+//
+//                                                    for (int i = 0; i < imagelist_array.length(); i++) {
+//
+//
+//                                                        JSONObject jsonObject1 = imagelist_array.getJSONObject(i);
+//                                                        String image_view = jsonObject1.getString("Image1");
+//
+//
+//
+//                                                        Glide.with(getActivity()).load(image_view)
+//                                                                .thumbnail(0.5f)
+//                                                                .diskCacheStrategy(DiskCacheStrategy.ALL)
+//                                                                .error(R.drawable.avatarmale)
+//                                                                .into(image_acc);
+//                                                    }
+//
+//
+//
+//
+//                                                } catch (Exception e) {
+//                                                    e.printStackTrace();
+//                                                }
+//
+//                                            }
+//                                        });
+//
+//
+//                                    } catch (Exception e) {
+//                                        e.printStackTrace();
+//                                    }*//*
+//                                }*/
+//                       /* Glide.with(getActivity()).load(ProfileImage)
+//
+//                                .thumbnail(0.5f)
+//                                //  .crossFade()
+//                                .error(R.drawable.avatarmale)
+//                                .into(prod_img);*/
+//
+//
+//                            }catch (Exception e){
+//                                e.printStackTrace();
+//                            }
+//
+//                        }
+//                    });
+//
+//                }catch (Exception e){
+//                    e.printStackTrace();
+//                }
 
 
                 //get name  and  image //
 
-                try{
-
-                    JSONObject jsonObject = new JSONObject();
-                    JSONObject post_object = new JSONObject();
-
-                    jsonObject.put("Id",sessionManager.getRegId("userId"));
-                    post_object.put("objUser",jsonObject);
-
-
-                    Crop_Post.crop_posting(getActivity(), Urls.Get_Profile_Details, post_object, new VoleyJsonObjectCallback() {
-                        @Override
-                        public void onSuccessResponse(JSONObject result) {
-                            System.out.println("ggpgpgpg" + result);
-
-                            try{
-
-                                JSONObject jsonObject1 = result.getJSONObject("user");
-                                String  ProfileName = jsonObject1.getString("UserName");
-                                String UserType = jsonObject1.getString("UserType");
-                                //  ID = jsonObject1.getString("id");
-                                System.out.println("nameeeeeeeeeeeeeeeeeeeeeeeeeee"+ProfileName);
-                                user_name_menu.setText("Hello "+ProfileName);
-                               // usertype.setText(UserType);
-
-
-
-                            }catch (Exception e){
-                                e.printStackTrace();
-                            }
-
-                        }
-                    });
-
-
-                }catch (Exception e){
-                    e.printStackTrace();
-                }
-
-
-                try {
-                    JSONObject jsonObject = new JSONObject();
-                    jsonObject.put("UserId", sessionManager.getRegId("userId"));
-
-                    Crop_Post.crop_posting(getActivity(), Urls.GetCImagelist, jsonObject, new VoleyJsonObjectCallback() {
-                        @Override
-                        public void onSuccessResponse(JSONObject result) {
-                            System.out.println("dhfjfjd" + result);
-
-                            try {
-                                JSONArray imagelist_array = result.getJSONArray("captureImagelist");
-                                for (int i = 0; i < imagelist_array.length(); i++) {
-
-                                    JSONObject jsonObject1 = imagelist_array.getJSONObject(i);
-                                 //   image_id = jsonObject1.getString("CImageId");
-                                    String image_view = jsonObject1.getString("Image1");
-
-                                    Glide.with(getActivity()).load(image_view)
-                                            .thumbnail(0.5f)
-                                            .diskCacheStrategy(DiskCacheStrategy.ALL)
-                                            .error(R.drawable.ic_gallery__default)
-                                            .into(image_acc);
-                                }
+//                try{
+//
+//                    JSONObject jsonObject = new JSONObject();
+//                    JSONObject post_object = new JSONObject();
+//
+//                    jsonObject.put("Id",sessionManager.getRegId("userId"));
+//                    post_object.put("objUser",jsonObject);
+//
+//
+//                    Crop_Post.crop_posting(getActivity(), Urls.Get_Profile_Details, post_object, new VoleyJsonObjectCallback() {
+//                        @Override
+//                        public void onSuccessResponse(JSONObject result) {
+//                            System.out.println("ggpgpgpg" + result);
+//
+//                            try{
+//
+//                                JSONObject jsonObject1 = result.getJSONObject("user");
+//                                String  ProfileName = jsonObject1.getString("UserName");
+//                                String UserType = jsonObject1.getString("UserType");
+//                                //  ID = jsonObject1.getString("id");
+//                                System.out.println("nameeeeeeeeeeeeeeeeeeeeeeeeeee"+ProfileName);
+//                                user_name_menu.setText("Hello "+ProfileName);
+//                               // usertype.setText(UserType);
+//
+//
+//
+//                            }catch (Exception e){
+//                                e.printStackTrace();
+//                            }
+//
+//                        }
+//                    });
+//
+//
+//                }catch (Exception e){
+//                    e.printStackTrace();
+//                }
 
 
-                            } catch (Exception e) {
-                                e.printStackTrace();
-                            }
-                        }
-                    });
-
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
+//                try {
+//                    JSONObject jsonObject = new JSONObject();
+//                    jsonObject.put("UserId", sessionManager.getRegId("userId"));
+//
+//                    Crop_Post.crop_posting(getActivity(), Urls.GetCImagelist, jsonObject, new VoleyJsonObjectCallback() {
+//                        @Override
+//                        public void onSuccessResponse(JSONObject result) {
+//                            System.out.println("dhfjfjd" + result);
+//
+//                            try {
+//                                JSONArray imagelist_array = result.getJSONArray("captureImagelist");
+//                                for (int i = 0; i < imagelist_array.length(); i++) {
+//
+//                                    JSONObject jsonObject1 = imagelist_array.getJSONObject(i);
+//                                 //   image_id = jsonObject1.getString("CImageId");
+//                                    String image_view = jsonObject1.getString("Image1");
+//
+//                                    Glide.with(getActivity()).load(image_view)
+//                                            .thumbnail(0.5f)
+//                                            .diskCacheStrategy(DiskCacheStrategy.ALL)
+//                                            .error(R.drawable.ic_gallery__default)
+//                                            .into(image_acc);
+//                                }
+//
+//
+//                            } catch (Exception e) {
+//                                e.printStackTrace();
+//                            }
+//                        }
+//                    });
+//
+//                } catch (Exception e) {
+//                    e.printStackTrace();
+//                }
 
 
 

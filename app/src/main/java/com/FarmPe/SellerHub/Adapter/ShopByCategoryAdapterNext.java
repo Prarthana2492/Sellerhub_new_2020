@@ -81,6 +81,7 @@ public class ShopByCategoryAdapterNext extends RecyclerView.Adapter<ShopByCatego
                 .apply(RequestOptions.diskCacheStrategyOf(DiskCacheStrategy.ALL)
                         .error(R.drawable.veg))
                 .into(holder.image);
+
         holder.item.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -90,6 +91,7 @@ public class ShopByCategoryAdapterNext extends RecyclerView.Adapter<ShopByCatego
                 bundle.putString("status",sellingtypeid);
                 System.out.println("ppppppppppppppppppppppppID"+sellingtypeid);
                 bundle.putString("ShopbyCat","ShopbyCatt");
+
                 selectedFragment = Spices_Fragment.newInstance();
                 FragmentTransaction transaction = ((FragmentActivity)activity).getSupportFragmentManager().beginTransaction();
                 transaction.replace(R.id.frame_layout1, selectedFragment);

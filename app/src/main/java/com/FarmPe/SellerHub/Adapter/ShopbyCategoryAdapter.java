@@ -108,44 +108,44 @@ public class ShopbyCategoryAdapter extends RecyclerView.Adapter<ShopbyCategoryAd
         livestock_types_adapter=new SelectCategoryAdapter(getActivity(),newOrderBeansList);
         recyclerView.setAdapter(livestock_types_adapter);*/
 
-            try{
-
-                //  newOrderBeansList.clear();
-                JSONObject jsonObject = new JSONObject();
-                jsonObject.put("SellingTypeId",products.getId());
-
-                System.out.println("jhfdfdjc111"+jsonObject);
-                Crop_Post.lang_posting(activity, Urls.GetSellingCategoryList, jsonObject, new VoleyJsonObjectCallback() {
-                    @Override
-                    public void onSuccessResponse(JSONObject result) {
-
-                        System.out.println("GetSellingTypeeeeeeesflllllllllllllllllllle"+result);
-
-
-                        try{
-
-                            get_soiltype = result.getJSONArray("SellingCategoryList");
-
-                            for(int i=0;i<get_soiltype.length();i++){
-
-                                JSONObject jsonObject1 = get_soiltype.getJSONObject(i);
-                                MainVerticalBean sellbean = new MainVerticalBean(jsonObject1.getString("SellingCategoryName"),jsonObject1.getString("SellingCategoryId"),jsonObject1.getString("SellingCategoryIcon"));
-
-                                newOrderBeansList.add(sellbean);
-                            }
-                            livestock_types_adapter=new ShopByCategoryAdapterNext(activity,newOrderBeansList);
-                            holder.recyclerView.setAdapter(livestock_types_adapter);
-                            livestock_types_adapter.notifyDataSetChanged();
-
-                        }catch (Exception e){
-                            e.printStackTrace();
-                        }
-                    }
-                });
-
-            }catch (Exception e){
-                e.printStackTrace();
-            }
+//            try{
+//
+//                //  newOrderBeansList.clear();
+//                JSONObject jsonObject = new JSONObject();
+//                jsonObject.put("SellingTypeId",products.getId());
+//
+//                System.out.println("jhfdfdjc111"+jsonObject);
+//                Crop_Post.lang_posting(activity, Urls.GetSellingCategoryList, jsonObject, new VoleyJsonObjectCallback() {
+//                    @Override
+//                    public void onSuccessResponse(JSONObject result) {
+//
+//                        System.out.println("GetSellingTypeeeeeeesflllllllllllllllllllle"+result);
+//
+//
+//                        try{
+//
+//                            get_soiltype = result.getJSONArray("SellingCategoryList");
+//
+//                            for(int i=0;i<get_soiltype.length();i++){
+//
+//                                JSONObject jsonObject1 = get_soiltype.getJSONObject(i);
+//                                MainVerticalBean sellbean = new MainVerticalBean(jsonObject1.getString("SellingCategoryName"),jsonObject1.getString("SellingCategoryId"),jsonObject1.getString("SellingCategoryIcon"));
+//
+//                                newOrderBeansList.add(sellbean);
+//                            }
+//                            livestock_types_adapter=new ShopByCategoryAdapterNext(activity,newOrderBeansList);
+//                            holder.recyclerView.setAdapter(livestock_types_adapter);
+//                            livestock_types_adapter.notifyDataSetChanged();
+//
+//                        }catch (Exception e){
+//                            e.printStackTrace();
+//                        }
+//                    }
+//                });
+//
+//            }catch (Exception e){
+//                e.printStackTrace();
+//            }
 
         }
 

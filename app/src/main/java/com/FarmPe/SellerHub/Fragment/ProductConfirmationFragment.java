@@ -80,8 +80,8 @@ public class ProductConfirmationFragment extends Fragment {
 
 
         sessionManager=new SessionManager(getActivity());
-        Window window = getActivity().getWindow();
-        window.setStatusBarColor(ContextCompat.getColor(getActivity(),R.color.dark_green));
+//        Window window = getActivity().getWindow();
+//        window.setStatusBarColor(ContextCompat.getColor(getActivity(),R.color.dark_green));
         back_feed.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -167,77 +167,77 @@ public class ProductConfirmationFragment extends Fragment {
 
 //get sell details //
 
-        try{
-
-            //  newOrderBeansList_subcat_veg.clear();
-            JSONObject jsonObject = new JSONObject();
-            jsonObject.put("UserId",sessionManager.getRegId("userId"));
-
-            System.out.println("jhfdfdjc111"+jsonObject);
-            Crop_Post.crop_posting(getActivity(), Urls.GetProductDetails, jsonObject, new VoleyJsonObjectCallback() {
-                @Override
-                public void onSuccessResponse(JSONObject result) {
-
-                    System.out.println("GetSellingTypeeeeeeee"+result);
-
-
-                    try{
-
-                        get_soiltype = result.getJSONArray("SellDetails");
-
-
-                            JSONObject jsonObject1 = get_soiltype.getJSONObject(0);
-
-                            String Name = jsonObject1.getString("SellingListName");
-                            String SellingCategoryName = jsonObject1.getString("SellingCategoryName");
-                            String Selling_Quantity = jsonObject1.getString("SellingQuantity");
-                            String Min_Price = jsonObject1.getString("MinPrice");
-                            String Max_Price = jsonObject1.getString("MaxPrice");
-                             SellingListIcon = jsonObject1.getString("SellingListIcon");
-                            String Selling_DetailsId = jsonObject1.getString("SellingDetailsId");
-                            String UnitOfPrice = jsonObject1.getString("UnitOfPrice");
-
-                        if(Name.equals("")){
-                            prod_name.setText(SellingCategoryName);
-                        }else {
-                            prod_name.setText(Name);
-                        }
-
-
-
-                            prod_name.setText(Name);
-                            actual_price.setText(Max_Price);
-                            quantity.setText(Selling_Quantity+"/"+UnitOfPrice);
-                            price.setText(Min_Price);
-
-                            Glide.with(getActivity()).load(SellingListIcon)
-                                    .thumbnail(0.5f)
-                                    //.crossFade()
-                                    .apply(RequestOptions.diskCacheStrategyOf(DiskCacheStrategy.ALL)
-                                            .error(R.drawable.ic_gallery__default))
-                                    .into(prod_img);
-
-                          //  String Name = jsonObject1.getString("SellingListName");
-                           // InventoryBean sellbean = new InventoryBean(jsonObject1.getString("SellingListName"),"","",jsonObject1.getString("SellingQuantity"),jsonObject1.getString("MinPrice"),jsonObject1.getString("MaxPrice"),"",jsonObject1.getString("SellingListIcon"),jsonObject1.getString("SellingDetailsId"),"","","","","","","");
-                            //  bean = new Inventorydetailsbean(jsonObject1.getString("SellingDetailsId"),jsonObject1.getString("SellingListName"),jsonObject1.getString("UnitOfPrice"),jsonObject1.getString("Price"),jsonObject1.getString("SellingQuantity"),jsonObject1.getString("SellingListIcon"),jsonObject1.getString("SellingVariety"),jsonObject1.getString("SellingCategoryName"),jsonObject1.getString("SellingQuality"),jsonObject1.getString("MinPrice"),jsonObject1.getString("MaxPrice"));
-
-                            // bean = new Inventorydetailsbean(jsonObject1.getString("SellingDetailsId"),jsonObject1.getString("SellingListName"),jsonObject1.getString("UnitOfPrice"),jsonObject1.getString("Price"),jsonObject1.getString("SellingQuantity"),jsonObject1.getString("SellingListIcon"),jsonObject1.getString("SellingVariety"),jsonObject1.getString("SellingCategoryName"),jsonObject1.getString("SellingQuality"),jsonObject1.getString("MinPrice"),jsonObject1.getString("MaxPrice"));
-
-                           // newOrderBeansList_subcat.add(sellbean);
-
-                      //  livestock_types_adapter=new InventoryAdapter(getActivity(),newOrderBeansList_subcat);
-                       // recyclerView_main.setAdapter(livestock_types_adapter);
-                        //   name.setText(jsonObject1.getString("SellingCategoryName"));
-
-                    }catch (Exception e){
-                        e.printStackTrace();
-                    }
-                }
-            });
-
-        }catch (Exception e){
-            e.printStackTrace();
-        }
+//        try{
+//
+//            //  newOrderBeansList_subcat_veg.clear();
+//            JSONObject jsonObject = new JSONObject();
+//            jsonObject.put("UserId",sessionManager.getRegId("userId"));
+//
+//            System.out.println("jhfdfdjc111"+jsonObject);
+//            Crop_Post.crop_posting(getActivity(), Urls.GetProductDetails, jsonObject, new VoleyJsonObjectCallback() {
+//                @Override
+//                public void onSuccessResponse(JSONObject result) {
+//
+//                    System.out.println("GetSellingTypeeeeeeee"+result);
+//
+//
+//                    try{
+//
+//                        get_soiltype = result.getJSONArray("SellDetails");
+//
+//
+//                            JSONObject jsonObject1 = get_soiltype.getJSONObject(0);
+//
+//                            String Name = jsonObject1.getString("SellingListName");
+//                            String SellingCategoryName = jsonObject1.getString("SellingCategoryName");
+//                            String Selling_Quantity = jsonObject1.getString("SellingQuantity");
+//                            String Min_Price = jsonObject1.getString("MinPrice");
+//                            String Max_Price = jsonObject1.getString("MaxPrice");
+//                             SellingListIcon = jsonObject1.getString("SellingListIcon");
+//                            String Selling_DetailsId = jsonObject1.getString("SellingDetailsId");
+//                            String UnitOfPrice = jsonObject1.getString("UnitOfPrice");
+//
+//                        if(Name.equals("")){
+//                            prod_name.setText(SellingCategoryName);
+//                        }else {
+//                            prod_name.setText(Name);
+//                        }
+//
+//
+//
+//                            prod_name.setText(Name);
+//                            actual_price.setText(Max_Price);
+//                            quantity.setText(Selling_Quantity+"/"+UnitOfPrice);
+//                            price.setText(Min_Price);
+//
+//                            Glide.with(getActivity()).load(SellingListIcon)
+//                                    .thumbnail(0.5f)
+//                                    //.crossFade()
+//                                    .apply(RequestOptions.diskCacheStrategyOf(DiskCacheStrategy.ALL)
+//                                            .error(R.drawable.ic_gallery__default))
+//                                    .into(prod_img);
+//
+//                          //  String Name = jsonObject1.getString("SellingListName");
+//                           // InventoryBean sellbean = new InventoryBean(jsonObject1.getString("SellingListName"),"","",jsonObject1.getString("SellingQuantity"),jsonObject1.getString("MinPrice"),jsonObject1.getString("MaxPrice"),"",jsonObject1.getString("SellingListIcon"),jsonObject1.getString("SellingDetailsId"),"","","","","","","");
+//                            //  bean = new Inventorydetailsbean(jsonObject1.getString("SellingDetailsId"),jsonObject1.getString("SellingListName"),jsonObject1.getString("UnitOfPrice"),jsonObject1.getString("Price"),jsonObject1.getString("SellingQuantity"),jsonObject1.getString("SellingListIcon"),jsonObject1.getString("SellingVariety"),jsonObject1.getString("SellingCategoryName"),jsonObject1.getString("SellingQuality"),jsonObject1.getString("MinPrice"),jsonObject1.getString("MaxPrice"));
+//
+//                            // bean = new Inventorydetailsbean(jsonObject1.getString("SellingDetailsId"),jsonObject1.getString("SellingListName"),jsonObject1.getString("UnitOfPrice"),jsonObject1.getString("Price"),jsonObject1.getString("SellingQuantity"),jsonObject1.getString("SellingListIcon"),jsonObject1.getString("SellingVariety"),jsonObject1.getString("SellingCategoryName"),jsonObject1.getString("SellingQuality"),jsonObject1.getString("MinPrice"),jsonObject1.getString("MaxPrice"));
+//
+//                           // newOrderBeansList_subcat.add(sellbean);
+//
+//                      //  livestock_types_adapter=new InventoryAdapter(getActivity(),newOrderBeansList_subcat);
+//                       // recyclerView_main.setAdapter(livestock_types_adapter);
+//                        //   name.setText(jsonObject1.getString("SellingCategoryName"));
+//
+//                    }catch (Exception e){
+//                        e.printStackTrace();
+//                    }
+//                }
+//            });
+//
+//        }catch (Exception e){
+//            e.printStackTrace();
+//        }
 
 
 
@@ -271,8 +271,8 @@ public class ProductConfirmationFragment extends Fragment {
                         final Dialog dialog = new Dialog(getActivity());
                         dialog.setContentView(R.layout.comment_popup1);
                         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-                        dialog.getWindow()
-                                .setLayout((int) (getScreenWidth(getActivity()) * .9), ViewGroup.LayoutParams.WRAP_CONTENT);
+//                        dialog.getWindow()
+//                                .setLayout((int) (getScreenWidth(getActivity()) * .9), ViewGroup.LayoutParams.MATCH_PARENT);
                         final EditText comment = (EditText) dialog.findViewById(R.id.comment);
                         final TextView submit_comment = (TextView)dialog.findViewById(R.id.submit_comment) ;
                         final TextView cancel = (TextView)dialog.findViewById(R.id.cancel) ;

@@ -19,6 +19,8 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 
+import com.FarmPe.SellerHub.Bean.Inventory_Static_Bean;
+import com.FarmPe.SellerHub.Bean.MainVerticalBean;
 import com.FarmPe.SellerHub.Volly_class.Crop_Post;
 import com.FarmPe.SellerHub.Volly_class.VoleyJsonObjectCallback;
 import com.FarmPe.SellerHub.Activity.Status_bar_change_singleton;
@@ -36,7 +38,8 @@ import java.util.ArrayList;
 
 public class InventoryList extends Fragment {
 
-    public static ArrayList<InventoryBean> newOrderBeansList_subcat = new ArrayList<>();
+  //  public static ArrayList<InventoryBean> newOrderBeansList_subcat = new ArrayList<>();
+    public static ArrayList<Inventory_Static_Bean> newOrderBeansList_subcat = new ArrayList<>();
 
     public static RecyclerView recyclerView_main;
     public static InventoryAdapter livestock_types_adapter;
@@ -61,8 +64,8 @@ public class InventoryList extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.inventory_prod_recy, container, false);
         Window window = getActivity().getWindow();
-        window.setStatusBarColor(ContextCompat.getColor(getActivity(),R.color.colorPrimaryDark1));
-        Status_bar_change_singleton.getInstance().color_change(getActivity());
+//        window.setStatusBarColor(ContextCompat.getColor(getActivity(),R.color.colorPrimaryDark1));
+//        Status_bar_change_singleton.getInstance().color_change(getActivity());
 
 
         recyclerView_main=view.findViewById(R.id.recycler_cat_detail);
@@ -127,47 +130,61 @@ sessionManager=new SessionManager(getActivity());
         recyclerView_main.setLayoutManager(mLayoutManager_farm);
         recyclerView_main.setItemAnimator(new DefaultItemAnimator());
 
-        try{
 
-            //  newOrderBeansList_subcat_veg.clear();
-            JSONObject jsonObject = new JSONObject();
-            jsonObject.put("UserId",sessionManager.getRegId("userId"));
+        Inventory_Static_Bean bean = new Inventory_Static_Bean("Fenugreek","1 kg","30","20",R.drawable.fenugreek_2);
+        newOrderBeansList_subcat.add(bean);
+        Inventory_Static_Bean bean1 = new Inventory_Static_Bean("Fennel","6 kg","20","10",R.drawable.fennel);
+        newOrderBeansList_subcat.add(bean1);
+        Inventory_Static_Bean bean2 = new Inventory_Static_Bean("Celery","5 kg","40","30",R.drawable.celery);
+        newOrderBeansList_subcat.add(bean2);
+        Inventory_Static_Bean bean3 = new Inventory_Static_Bean("Cinnamon","3 kg","60","50",R.drawable.cinnamon);
+        newOrderBeansList_subcat.add(bean3);
+        Inventory_Static_Bean bean4= new Inventory_Static_Bean("Cambodge","4 kg","70","60",R.drawable.cambodge);
+        newOrderBeansList_subcat.add(bean4);
 
-            System.out.println("jhfdfdjc111"+jsonObject);
-            Crop_Post.crop_posting(getActivity(), Urls.GetProductDetails, jsonObject, new VoleyJsonObjectCallback() {
-                @Override
-                public void onSuccessResponse(JSONObject result) {
+        livestock_types_adapter=new InventoryAdapter(getActivity(),newOrderBeansList_subcat);
+        recyclerView_main.setAdapter(livestock_types_adapter);
 
-                    System.out.println("GetSellingTypeeeeeeee"+result);
-
-
-                    try{
-
-                        get_soiltype = result.getJSONArray("SellDetails");
-
-                        for(int i=0;i<get_soiltype.length();i++){
-
-                            JSONObject jsonObject1 = get_soiltype.getJSONObject(i);
-                            InventoryBean sellbean = new InventoryBean(jsonObject1.getString("SellingListName"),jsonObject1.getString("UnitOfPrice"),jsonObject1.getString("SellingCategoryName"),jsonObject1.getString("SellingQuantity"),jsonObject1.getString("MinPrice"),jsonObject1.getString("MaxPrice"),"",jsonObject1.getString("SellingListIcon"),jsonObject1.getString("SellingDetailsId"),"",jsonObject1.getString("SellingListMasterId"),jsonObject1.getString("SellingVariety"),jsonObject1.getString("SellingQuality"),jsonObject1.getString("SellingCategoryId"),"","");
-                          //  bean = new Inventorydetailsbean(jsonObject1.getString("SellingDetailsId"),jsonObject1.getString("SellingListName"),jsonObject1.getString("UnitOfPrice"),jsonObject1.getString("Price"),jsonObject1.getString("SellingQuantity"),jsonObject1.getString("SellingListIcon"),jsonObject1.getString("SellingVariety"),jsonObject1.getString("SellingCategoryName"),jsonObject1.getString("SellingQuality"),jsonObject1.getString("MinPrice"),jsonObject1.getString("MaxPrice"));
-
-                            // bean = new Inventorydetailsbean(jsonObject1.getString("SellingDetailsId"),jsonObject1.getString("SellingListName"),jsonObject1.getString("UnitOfPrice"),jsonObject1.getString("Price"),jsonObject1.getString("SellingQuantity"),jsonObject1.getString("SellingListIcon"),jsonObject1.getString("SellingVariety"),jsonObject1.getString("SellingCategoryName"),jsonObject1.getString("SellingQuality"),jsonObject1.getString("MinPrice"),jsonObject1.getString("SellingCategoryId"));
-
-                            newOrderBeansList_subcat.add(sellbean);
-                        }
-                        livestock_types_adapter=new InventoryAdapter(getActivity(),newOrderBeansList_subcat);
-                        recyclerView_main.setAdapter(livestock_types_adapter);
-                     //   name.setText(jsonObject1.getString("SellingCategoryName"));
-
-                    }catch (Exception e){
-                        e.printStackTrace();
-                    }
-                }
-            });
-
-        }catch (Exception e){
-            e.printStackTrace();
-        }
+//        try{
+//
+//            //  newOrderBeansList_subcat_veg.clear();
+//            JSONObject jsonObject = new JSONObject();
+//            jsonObject.put("UserId",sessionManager.getRegId("userId"));
+//
+//            System.out.println("jhfdfdjc111"+jsonObject);
+//            Crop_Post.crop_posting(getActivity(), Urls.GetProductDetails, jsonObject, new VoleyJsonObjectCallback() {
+//                @Override
+//                public void onSuccessResponse(JSONObject result) {
+//
+//                    System.out.println("GetSellingTypeeeeeeee"+result);
+//
+//
+//                    try{
+//
+//                        get_soiltype = result.getJSONArray("SellDetails");
+//
+//                        for(int i=0;i<get_soiltype.length();i++){
+//
+//                            JSONObject jsonObject1 = get_soiltype.getJSONObject(i);
+//                            InventoryBean sellbean = new InventoryBean(jsonObject1.getString("SellingListName"),jsonObject1.getString("UnitOfPrice"),jsonObject1.getString("SellingCategoryName"),jsonObject1.getString("SellingQuantity"),jsonObject1.getString("MinPrice"),jsonObject1.getString("MaxPrice"),"",jsonObject1.getString("SellingListIcon"),jsonObject1.getString("SellingDetailsId"),"",jsonObject1.getString("SellingListMasterId"),jsonObject1.getString("SellingVariety"),jsonObject1.getString("SellingQuality"),jsonObject1.getString("SellingCategoryId"),"","");
+//                          //  bean = new Inventorydetailsbean(jsonObject1.getString("SellingDetailsId"),jsonObject1.getString("SellingListName"),jsonObject1.getString("UnitOfPrice"),jsonObject1.getString("Price"),jsonObject1.getString("SellingQuantity"),jsonObject1.getString("SellingListIcon"),jsonObject1.getString("SellingVariety"),jsonObject1.getString("SellingCategoryName"),jsonObject1.getString("SellingQuality"),jsonObject1.getString("MinPrice"),jsonObject1.getString("MaxPrice"));
+//
+//                            // bean = new Inventorydetailsbean(jsonObject1.getString("SellingDetailsId"),jsonObject1.getString("SellingListName"),jsonObject1.getString("UnitOfPrice"),jsonObject1.getString("Price"),jsonObject1.getString("SellingQuantity"),jsonObject1.getString("SellingListIcon"),jsonObject1.getString("SellingVariety"),jsonObject1.getString("SellingCategoryName"),jsonObject1.getString("SellingQuality"),jsonObject1.getString("MinPrice"),jsonObject1.getString("SellingCategoryId"));
+//
+//                            newOrderBeansList_subcat.add(sellbean);
+//                        }
+//
+//                     //   name.setText(jsonObject1.getString("SellingCategoryName"));
+//
+//                    }catch (Exception e){
+//                        e.printStackTrace();
+//                    }
+//                }
+//            });
+//
+//        }catch (Exception e){
+//            e.printStackTrace();
+//        }
 
 
         return view;

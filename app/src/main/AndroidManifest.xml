@@ -33,11 +33,9 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:replace="android:allowBackup">
+
         <activity
-            android:name="com.FarmPe.SellerHub.Activity.CameraActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name="com.FarmPe.SellerHub.Activity.ActivitySelectLang"
+            android:name="com.FarmPe.SellerHub.Activity.First_Page"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -45,6 +43,34 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+
+        <activity
+            android:name="com.FarmPe.SellerHub.Activity.Language_Page"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.FarmPe.SellerHub.Activity.Login_Page"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.FarmPe.SellerHub.Activity.Enter_OTP_Page"
+            android:screenOrientation="portrait" />
+
+
+        <activity
+            android:name="com.FarmPe.SellerHub.Activity.R_U_Farmer_Activity"
+            android:screenOrientation="portrait" />
+
+
+
+
+
+
+        <activity
+            android:name="com.FarmPe.SellerHub.Activity.CameraActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+
         <activity
             android:name="com.FarmPe.SellerHub.Activity.GetLocationActivity"
             android:screenOrientation="portrait" />
@@ -56,7 +82,7 @@
             android:screenOrientation="portrait" />
 
         <activity
-            android:name="com.FarmPe.SellerHub.Activity.R_U_Farmer_Activity"
+            android:name="com.FarmPe.SellerHub.Activity.ActivitySelectLang"
             android:screenOrientation="portrait" />
 
         <activity
@@ -70,6 +96,12 @@
         <activity
             android:name="com.FarmPe.SellerHub.Activity.FirmShopDetailsActivity"
             android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.FarmPe.SellerHub.Activity.Farmer_Activity_Page"
+            android:screenOrientation="portrait" />
+
+
         <activity
             android:name="com.FarmPe.SellerHub.Activity.Slider_Activity"
             android:screenOrientation="portrait" />

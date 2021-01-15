@@ -158,7 +158,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_weight="36"
-                        android:background="#ffffff"
+                        android:background="@color/lang_bg_color"
                         android:clickable="true"
                         android:fontFamily="@font/segoeui"
                         android:gravity="right"
@@ -173,7 +173,7 @@
                             android:layout_marginTop="10dp"
                             android:fontFamily="@font/segoeui"
                             android:text="Tips"
-                            android:textColor="#000"
+                            android:textColor="@color/blue_txt"
                             android:textSize="18dp"
                             android:textStyle="bold" />
 
@@ -187,7 +187,7 @@
                             android:drawablePadding="10dp"
                             android:fontFamily="@font/segoeui"
                             android:text="Go few steps back and capture picture of full crop / harvest / farm produce"
-                            android:textColor="#000"
+                            android:textColor="@color/white_text"
                             android:textSize="14dp" />
 
                         <TextView
@@ -200,7 +200,7 @@
                             android:drawablePadding="10dp"
                             android:fontFamily="@font/segoeui"
                             android:text="Take pictures in a day.No pictures in the night"
-                            android:textColor="#000"
+                            android:textColor="@color/white_text"
                             android:textSize="14dp" />
 
                         <TextView
@@ -213,7 +213,7 @@
                             android:drawablePadding="10dp"
                             android:fontFamily="@font/segoeui"
                             android:text="Crop full picture to be visible"
-                            android:textColor="#000"
+                            android:textColor="@color/white_text"
                             android:textSize="14dp" />
 
 
@@ -227,7 +227,7 @@
                             android:drawablePadding="10dp"
                             android:fontFamily="@font/segoeui"
                             android:text="Photo should be clear and sharp"
-                            android:textColor="#000"
+                            android:textColor="@color/white_text"
                             android:textSize="14dp" />
 
 
@@ -238,7 +238,7 @@
                             android:layout_gravity="center"
                             android:layout_marginTop="20dp"
                             android:text="Take photo again"
-                            android:textColor="#713ECC"
+                            android:textColor="@color/blue_txt"
                             android:textSize="16dp" />
 
 
@@ -261,7 +261,7 @@
 
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/border_filled_red_not_curved"
+        android:background="@drawable/green_border_filled"
         android:layout_gravity="bottom"
         android:gravity="center"
         >

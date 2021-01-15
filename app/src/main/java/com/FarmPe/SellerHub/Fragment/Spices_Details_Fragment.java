@@ -43,6 +43,7 @@ import com.FarmPe.SellerHub.Adapter.QuantityPrice_Adapter2;
 import com.FarmPe.SellerHub.Adapter.Quantity_Adapter2;
 import com.FarmPe.SellerHub.Adapter.Spices_Category_Adapter;
 import com.FarmPe.SellerHub.Adapter.Variety_Adapter2;
+import com.FarmPe.SellerHub.Bean.MainAdapterBean1;
 import com.FarmPe.SellerHub.Bean.SelectLanguageBean;
 import com.FarmPe.SellerHub.R;
 import com.FarmPe.SellerHub.SessionManager;
@@ -132,6 +133,7 @@ public class Spices_Details_Fragment extends Fragment {
         continuebtn = view.findViewById(R.id.continuebtn);
         sell_name = view.findViewById(R.id.sellnamee);
 
+
         a_grade = view.findViewById(R.id.agrade_btn);
         b_grade = view.findViewById(R.id.bgrade_btn);
         c_grade = view.findViewById(R.id.cgrade_btn);
@@ -145,27 +147,33 @@ public class Spices_Details_Fragment extends Fragment {
         recyclerView = view.findViewById(R.id.recycler_view);
         norecords = view.findViewById(R.id.norecords);
         norecords.setVisibility(View.GONE);
+
+
         drawer = (DrawerLayout) view.findViewById(R.id.drawer_layout_op);
-
-
 
         sessionManager = new SessionManager(getActivity());
 
         String id = (getArguments().getString("sellname"));
         imageUri = id;
 
+
+
         Bundle bundle= getArguments();
+
         if (bundle!=null){
+
             SellDetails_id = (getArguments().getString("Edit_Id"));
             Sell_MlistId = getArguments().getString("EditMaster_Id");
             SellCategort_id = getArguments().getString("EditCategory_Id");
             Sell_Image = getArguments().getString("EditImage");
-
             System.out.println("Image111111"+Sell_Image);
         }
+
         if (getArguments() .getString("navg_from")!= null) {
+
             navigation = String.valueOf(getArguments().getString("navg_from").equals("invtry_details"));
         }
+
        /* sell_editid=What_Areu_Selling_Fragment.sellingdetailsid;
 
         if(sell_editid!= null){
@@ -178,11 +186,7 @@ public class Spices_Details_Fragment extends Fragment {
        /* if(getArguments().getString("status").equals("home_search")){
 
 
-
-
-
         }*/
-
 
 
 
@@ -190,11 +194,15 @@ public class Spices_Details_Fragment extends Fragment {
 
         sellinglist_id = getArguments().getString("sellinglistM_id");
 
+
         if(sellinglist_id!= null){
-            selling_list_Id1=sellinglist_id;
+
+            selling_list_Id1 = sellinglist_id;
+
         }else {
             selling_list_Id1="0";
         }
+
 
         search.addTextChangedListener(new TextWatcher() {
             @Override
@@ -216,9 +224,12 @@ public class Spices_Details_Fragment extends Fragment {
             }
         });
 
+
         unit_of_measurement.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+
                 getActivity().getWindow().setSoftInputMode( WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
 
                 drawer.openDrawer(GravityCompat.END);
@@ -229,23 +240,47 @@ public class Spices_Details_Fragment extends Fragment {
                 newOrderBeansList.clear();
                 RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getActivity());
                 recyclerView.setLayoutManager(mLayoutManager);
+
+
+
                 final LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());
                 layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
                 recyclerView.setLayoutManager(layoutManager);
                 recyclerView.setItemAnimator(new DefaultItemAnimator());
 
-                livestock_types_adapter3 = new QuantityPrice_Adapter2(getActivity(),newOrderBeansList);
+
+                SelectLanguageBean bean3 = new SelectLanguageBean("1",1,"");
+                newOrderBeansList1.add(bean3);
+
+
+                SelectLanguageBean bean4= new SelectLanguageBean("2",1,"");
+                newOrderBeansList1.add(bean4);
+
+
+                SelectLanguageBean bean5= new SelectLanguageBean("3",1,"");
+                newOrderBeansList1.add(bean5);
+
+
+                SelectLanguageBean bean6= new SelectLanguageBean("4",1,"");
+                newOrderBeansList1.add(bean6);
+
+
+                SelectLanguageBean bean7= new SelectLanguageBean("5",1,"");
+                newOrderBeansList1.add(bean7);
+
+
+                livestock_types_adapter3 = new QuantityPrice_Adapter2(getActivity(),newOrderBeansList1);
+
 
                 recyclerView.setAdapter(livestock_types_adapter3);
+                livestock_types_adapter3.notifyDataSetChanged();
 
-                PrepareUOM();
+
+             //   PrepareUOM();
 
 
             }
         });
-
-
-
 
 
 
@@ -256,14 +291,14 @@ public class Spices_Details_Fragment extends Fragment {
 
                 Quality_id = "1";
                 a_grade.setTextColor(Color.parseColor("#FFFFFF"));
-                b_grade.setTextColor(Color.parseColor("#000000"));
-                c_grade.setTextColor(Color.parseColor("#000000"));
+                b_grade.setTextColor(Color.parseColor("#FFFFFF"));
+                c_grade.setTextColor(Color.parseColor("#FFFFFF"));
 
 
 
                 a_grade.setBackgroundResource(R.drawable.black_border_blue_filled);
-                b_grade.setBackgroundResource(R.drawable.black_bordr_white_filled1);
-                c_grade.setBackgroundResource(R.drawable.black_bordr_white_filled1);
+                b_grade.setBackgroundResource(R.drawable.border_login_curve_grey);
+                c_grade.setBackgroundResource(R.drawable.border_login_curve_grey);
 
 
 
@@ -277,14 +312,14 @@ public class Spices_Details_Fragment extends Fragment {
 
                 Quality_id = "2";
                 b_grade.setTextColor(Color.parseColor("#FFFFFF"));
-                a_grade.setTextColor(Color.parseColor("#000000"));
-                c_grade.setTextColor(Color.parseColor("#000000"));
+                a_grade.setTextColor(Color.parseColor("#FFFFFF"));
+                c_grade.setTextColor(Color.parseColor("#FFFFFF"));
 
 
 
                 b_grade.setBackgroundResource(R.drawable.black_border_blue_filled);
-                a_grade.setBackgroundResource(R.drawable.black_bordr_white_filled1);
-                c_grade.setBackgroundResource(R.drawable.black_bordr_white_filled1);
+                a_grade.setBackgroundResource(R.drawable.border_login_curve_grey);
+                c_grade.setBackgroundResource(R.drawable.border_login_curve_grey);
 
 
 
@@ -300,14 +335,14 @@ public class Spices_Details_Fragment extends Fragment {
 
                 Quality_id = "3";
                 c_grade.setTextColor(Color.parseColor("#FFFFFF"));
-                b_grade.setTextColor(Color.parseColor("#000000"));
-                a_grade.setTextColor(Color.parseColor("#000000"));
+                b_grade.setTextColor(Color.parseColor("#FFFFFF"));
+                a_grade.setTextColor(Color.parseColor("#FFFFFF"));
 
 
 
                 c_grade.setBackgroundResource(R.drawable.black_border_blue_filled);
-                b_grade.setBackgroundResource(R.drawable.black_bordr_white_filled1);
-                a_grade.setBackgroundResource(R.drawable.black_bordr_white_filled1);
+                b_grade.setBackgroundResource(R.drawable.border_login_curve_grey);
+                a_grade.setBackgroundResource(R.drawable.border_login_curve_grey);
 
 
 
@@ -322,14 +357,14 @@ public class Spices_Details_Fragment extends Fragment {
 
                 Variety_id = "1";
                 hybrid.setTextColor(Color.parseColor("#FFFFFF"));
-                jawari.setTextColor(Color.parseColor("#000000"));
-                desi.setTextColor(Color.parseColor("#000000"));
+                jawari.setTextColor(Color.parseColor("#FFFFFF"));
+                desi.setTextColor(Color.parseColor("#FFFFFF"));
 
 
 
                 hybrid.setBackgroundResource(R.drawable.black_border_blue_filled);
-                jawari.setBackgroundResource(R.drawable.black_bordr_white_filled1);
-                desi.setBackgroundResource(R.drawable.black_bordr_white_filled1);
+                jawari.setBackgroundResource(R.drawable.border_login_curve_grey);
+                desi.setBackgroundResource(R.drawable.border_login_curve_grey);
 
 
 
@@ -343,14 +378,14 @@ public class Spices_Details_Fragment extends Fragment {
 
                 Variety_id = "2";
                 jawari.setTextColor(Color.parseColor("#FFFFFF"));
-                hybrid.setTextColor(Color.parseColor("#000000"));
-                desi.setTextColor(Color.parseColor("#000000"));
+                hybrid.setTextColor(Color.parseColor("#FFFFFF"));
+                desi.setTextColor(Color.parseColor("#FFFFFF"));
 
 
 
                 jawari.setBackgroundResource(R.drawable.black_border_blue_filled);
-                hybrid.setBackgroundResource(R.drawable.black_bordr_white_filled1);
-                desi.setBackgroundResource(R.drawable.black_bordr_white_filled1);
+                hybrid.setBackgroundResource(R.drawable.border_login_curve_grey);
+                desi.setBackgroundResource(R.drawable.border_login_curve_grey);
 
 
 
@@ -364,14 +399,14 @@ public class Spices_Details_Fragment extends Fragment {
 
                 Variety_id = "3";
                 desi.setTextColor(Color.parseColor("#FFFFFF"));
-                jawari.setTextColor(Color.parseColor("#000000"));
-                hybrid.setTextColor(Color.parseColor("#000000"));
+                jawari.setTextColor(Color.parseColor("#FFFFFF"));
+                hybrid.setTextColor(Color.parseColor("#FFFFFF"));
 
 
 
                 desi.setBackgroundResource(R.drawable.black_border_blue_filled);
-                jawari.setBackgroundResource(R.drawable.black_bordr_white_filled1);
-                hybrid.setBackgroundResource(R.drawable.black_bordr_white_filled1);
+                jawari.setBackgroundResource(R.drawable.border_login_curve_grey);
+                hybrid.setBackgroundResource(R.drawable.border_login_curve_grey);
 
 
 
@@ -392,8 +427,8 @@ public class Spices_Details_Fragment extends Fragment {
         //quantity_popup = new PopupMenu(getActivity(), quantity,Gravity.RIGHT);
         unit_of_price_pop_up = new PopupMenu(getActivity(), unit_of_measurement,Gravity.RIGHT);
 
-        Window window = getActivity().getWindow();
-        window.setStatusBarColor(ContextCompat.getColor(getActivity(), R.color.dark_green));
+//        Window window = getActivity().getWindow();
+//        window.setStatusBarColor(ContextCompat.getColor(getActivity(), R.color.dark_green));
 
 
 
@@ -556,12 +591,12 @@ public class Spices_Details_Fragment extends Fragment {
                     Toast toast = Toast.makeText(getActivity(), "Please enter max price", Toast.LENGTH_LONG);
                     toast.setGravity(Gravity.TOP | Gravity.CENTER, 0, 0);
                     toast.show();
-                }else  if(unit_of_measurement.getText().toString().equals("")) {
-
-
-                    Toast toast = Toast.makeText(getActivity(), "Please select UOM", Toast.LENGTH_LONG);
-                    toast.setGravity(Gravity.TOP | Gravity.CENTER, 0, 0);
-                    toast.show();
+//                }else  if(unit_of_measurement.getText().toString().equals("")) {
+//
+//
+//                    Toast toast = Toast.makeText(getActivity(), "Please select UOM", Toast.LENGTH_LONG);
+//                    toast.setGravity(Gravity.TOP | Gravity.CENTER, 0, 0);
+//                    toast.show();
                 }else {
 
                         nextpage();
@@ -987,97 +1022,97 @@ public class Spices_Details_Fragment extends Fragment {
 
     private void nextpage() {
 
-        Bundle bundle= new Bundle();
-        bundle.putString("NAVGI",navigation);
-        bundle.putString("selling_Mlist_id", selling_list_Id1);
-        bundle.putString("variety_id", Variety_id);
-        bundle.putString("quality_id", Quality_id);
-        bundle.putString("Image", Sell_Image);
+//        Bundle bundle= new Bundle();
+//        bundle.putString("NAVGI",navigation);
+//        bundle.putString("selling_Mlist_id", selling_list_Id1);
+//        bundle.putString("variety_id", Variety_id);
+//        bundle.putString("quality_id", Quality_id);
+//        bundle.putString("Image", Sell_Image);
 
         selectedFragment = Cropdetails_Second_Fragment.newInstance();
         FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.frame_layout1, selectedFragment);
-        selectedFragment.setArguments(bundle);
+     //   selectedFragment.setArguments(bundle);
         transaction.addToBackStack("spicesdetails");
         transaction.commit();
     }
 
-    private void PrepareUOM() {
-
-
-        recyclerView.setVisibility(View.VISIBLE);
-
-        try{
-
-            newOrderBeansList.clear();
-            JSONObject jsonObject = new JSONObject();
-
-
-            Crop_Post.crop_posting(getActivity(), Urls.GetUnitOfPriceList, jsonObject, new VoleyJsonObjectCallback() {
-                @Override
-                public void onSuccessResponse(JSONObject result) {
-
-                    System.out.println("GetCropQuantityListeeeeeee"+result);
-
-
-                    try{
-
-                        jsonArray = result.getJSONArray("SellingUnitOfPrice");
-                        if (jsonArray != null && jsonArray.length() > 0) {
-                            for (int i = 0; i < jsonArray.length(); i++) {
-
-                                JSONObject jsonObject1 = jsonArray.getJSONObject(i);
-                                selectLanguageBean = new SelectLanguageBean(jsonObject1.getString("UnitOfPrice"), jsonObject1.getInt("UnitOfPriceId"), "");
-
-                                newOrderBeansList.add(selectLanguageBean);
-                            }
-                            sorting(newOrderBeansList);
-                            livestock_types_adapter3.notifyDataSetChanged();
-                        }else{
-                            recyclerView.setVisibility(View.GONE);
-                            norecords.setVisibility(View.VISIBLE);
-                        }
-
-                    }catch (Exception e){
-                        e.printStackTrace();
-                    }
-                }
-            });
-
-        }catch (Exception e){
-            e.printStackTrace();
-        }
-
-      /*
-                        if (state_array != null && state_array.length() > 0) {
-                            for (int i = 0; i < state_array.length(); i++) {
-                                JSONObject jsonObject1 = state_array.getJSONObject(i);
-
-                                stateBean = new StateBean(jsonObject1.getString("State").trim().replace("&amp;", "&"), jsonObject1.getString("StateId"));
-
-                                stateBeanList.add(stateBean);
-                            }
-                            sorting(stateBeanList);
-
-                            stateApdater.notifyDataSetChanged();
-                            // grade_dialog.show();
-
-                        }else{
-                            recyclerView.setVisibility(View.GONE);
-                            norecords.setVisibility(View.VISIBLE);
-                        }
-
-                    }catch (Exception e){
-                        e.printStackTrace();
-                    }
-
-                }
-            });
-
-        }catch (Exception e){
-            e.printStackTrace();
-        }*/
-    }
+//    private void PrepareUOM() {
+//
+//
+//        recyclerView.setVisibility(View.VISIBLE);
+//
+//        try{
+//
+//            newOrderBeansList.clear();
+//            JSONObject jsonObject = new JSONObject();
+//
+//
+//            Crop_Post.crop_posting(getActivity(), Urls.GetUnitOfPriceList, jsonObject, new VoleyJsonObjectCallback() {
+//                @Override
+//                public void onSuccessResponse(JSONObject result) {
+//
+//                    System.out.println("GetCropQuantityListeeeeeee"+result);
+//
+//
+//                    try{
+//
+//                        jsonArray = result.getJSONArray("SellingUnitOfPrice");
+//                        if (jsonArray != null && jsonArray.length() > 0) {
+//                            for (int i = 0; i < jsonArray.length(); i++) {
+//
+//                                JSONObject jsonObject1 = jsonArray.getJSONObject(i);
+//                                selectLanguageBean = new SelectLanguageBean(jsonObject1.getString("UnitOfPrice"), jsonObject1.getInt("UnitOfPriceId"), "");
+//
+//                                newOrderBeansList.add(selectLanguageBean);
+//                            }
+//                            sorting(newOrderBeansList);
+//                            livestock_types_adapter3.notifyDataSetChanged();
+//                        }else{
+//                            recyclerView.setVisibility(View.GONE);
+//                            norecords.setVisibility(View.VISIBLE);
+//                        }
+//
+//                    }catch (Exception e){
+//                        e.printStackTrace();
+//                    }
+//                }
+//            });
+//
+//        }catch (Exception e){
+//            e.printStackTrace();
+//        }
+//
+//      /*
+//                        if (state_array != null && state_array.length() > 0) {
+//                            for (int i = 0; i < state_array.length(); i++) {
+//                                JSONObject jsonObject1 = state_array.getJSONObject(i);
+//
+//                                stateBean = new StateBean(jsonObject1.getString("State").trim().replace("&amp;", "&"), jsonObject1.getString("StateId"));
+//
+//                                stateBeanList.add(stateBean);
+//                            }
+//                            sorting(stateBeanList);
+//
+//                            stateApdater.notifyDataSetChanged();
+//                            // grade_dialog.show();
+//
+//                        }else{
+//                            recyclerView.setVisibility(View.GONE);
+//                            norecords.setVisibility(View.VISIBLE);
+//                        }
+//
+//                    }catch (Exception e){
+//                        e.printStackTrace();
+//                    }
+//
+//                }
+//            });
+//
+//        }catch (Exception e){
+//            e.printStackTrace();
+//        }*/
+//    }
     public void sorting(List<SelectLanguageBean> arrayList){
 
         Collections.sort(arrayList, new Comparator() {

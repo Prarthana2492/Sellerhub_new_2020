@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
+    android:background="@color/lang_bg_color"
     android:layout_height="match_parent">
 
 
@@ -11,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:background="#f6f6f6">
+        android:background="@color/lang_bg_color">
 
       <!-- <LinearLayout
            android:layout_width="match_parent"
@@ -27,12 +28,12 @@
         android:id="@+id/simpleTabLayout_land"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#ffffff"
+        android:background="@color/seperator"
         android:layout_gravity="center_horizontal"
-        app:tabIndicatorColor="@color/green"
-        app:tabSelectedTextColor="#000000"
+        app:tabIndicatorColor="@color/white_text"
+        app:tabSelectedTextColor="@color/white_text"
         app:tabTextAppearance="@style/TabLayoutStyle"
-        app:tabTextColor="#000000"
+        app:tabTextColor="@color/white_text"
 
         />
 

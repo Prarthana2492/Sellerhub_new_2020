@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:weightSum="100"
+    android:background="@color/lang_bg_color"
     >
 
     <LinearLayout
@@ -13,7 +14,7 @@
         android:layout_height="0dp"
         android:layout_weight="9"
         android:orientation="vertical"
-        android:background="#1e8434">
+        android:background="@color/lang_bg_color">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -125,11 +126,11 @@
         android:layout_weight="91"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
 
-        tools:background="#f5f5f5">
+        tools:background="@color/lang_bg_color">
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="300dp"
+            android:layout_height="200dp"
             android:src="@drawable/nandi_logo"
             android:layout_gravity="center"
             >

@@ -2,20 +2,21 @@
 
 <LinearLayout
     android:id="@+id/linearLayout"
-android:layout_width="match_parent"
-android:layout_height="match_parent"
-xmlns:android="http://schemas.android.com/apk/res/android"
-android:weightSum="100"
-android:orientation="vertical"
-android:background="@android:color/white"
-xmlns:app="http://schemas.android.com/apk/res-auto"
-xmlns:tools="http://schemas.android.com/tools">
+   android:layout_width="match_parent"
+   android:layout_height="match_parent"
+   xmlns:android="http://schemas.android.com/apk/res/android"
+   android:weightSum="100"
+    android:orientation="vertical"
+   android:background="@color/lang_bg_color"
+   xmlns:app="http://schemas.android.com/apk/res-auto"
+   xmlns:tools="http://schemas.android.com/tools">
 
 <ScrollView
     android:layout_width="match_parent"
     android:layout_height="0dp"
     android:layout_weight="100"
     android:fillViewport="true">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -25,11 +26,11 @@ xmlns:tools="http://schemas.android.com/tools">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_height="wrap_content"
             android:padding="8dp"
             android:layout_weight="10"
             android:orientation="horizontal"
-            android:background="@color/menu_green"
+            android:background="@color/lang_bg_color"
             tools:ignore="MissingConstraints">
 
 
@@ -83,7 +84,7 @@ xmlns:tools="http://schemas.android.com/tools">
                 android:layout_marginLeft="10dp"
                 android:fontFamily="@font/segoeui"
                 android:text="Quality "
-                android:textColor="#9D9D9D"
+                android:textColor="@color/grey_text_color"
                 android:textSize="15dp"
                 android:drawableRight="@drawable/ic_astrick_icon"
                 />
@@ -106,8 +107,8 @@ xmlns:tools="http://schemas.android.com/tools">
                     android:layout_weight="1"
                     android:text="A Grade"
                     android:gravity="center"
-                    android:background="@drawable/black_bordr_white_filled1"
-                    android:textColor="#9D9D9D"
+                    android:background="@drawable/border_login_curve_grey"
+                    android:textColor="@color/white_text"
                     android:textSize="13dp"
                     />
 
@@ -121,8 +122,8 @@ xmlns:tools="http://schemas.android.com/tools">
                     android:layout_weight="1"
                     android:text="B Grade"
                     android:gravity="center"
-                    android:background="@drawable/black_bordr_white_filled1"
-                    android:textColor="#9D9D9D"
+                    android:background="@drawable/border_login_curve_grey"
+                    android:textColor="@color/white_text"
                     android:textSize="13dp"
                     />
 
@@ -135,8 +136,8 @@ xmlns:tools="http://schemas.android.com/tools">
                     android:layout_weight="1"
                     android:text="C Grade"
                     android:gravity="center"
-                    android:background="@drawable/black_bordr_white_filled1"
-                    android:textColor="#9D9D9D"
+                    android:background="@drawable/border_login_curve_grey"
+                    android:textColor="@color/white_text"
                     android:textSize="13dp"
                     />
 
@@ -165,7 +166,7 @@ xmlns:tools="http://schemas.android.com/tools">
                 android:fontFamily="@font/segoeui"
                 android:layout_marginTop="10dp"
                 android:text="Variety"
-                android:textColor="#9D9D9D"
+                android:textColor="@color/grey_text_color"
                 android:textSize="15dp"
                 android:drawableRight="@drawable/ic_astrick_icon"
 
@@ -190,8 +191,8 @@ xmlns:tools="http://schemas.android.com/tools">
                     android:layout_weight="1"
                     android:text="Hybrid"
                     android:gravity="center"
-                    android:background="@drawable/black_bordr_white_filled1"
-                    android:textColor="#9D9D9D"
+                    android:background="@drawable/border_login_curve_grey"
+                    android:textColor="@color/white_text"
                     android:textSize="13dp"
                     />
 
@@ -205,8 +206,8 @@ xmlns:tools="http://schemas.android.com/tools">
                     android:layout_weight="1"
                     android:text="Jawari"
                     android:gravity="center"
-                    android:background="@drawable/black_bordr_white_filled1"
-                    android:textColor="#9D9D9D"
+                    android:background="@drawable/border_login_curve_grey"
+                    android:textColor="@color/white_text"
                     android:textSize="13dp"
                     />
 
@@ -219,8 +220,8 @@ xmlns:tools="http://schemas.android.com/tools">
                     android:layout_weight="1"
                     android:text="Desi"
                     android:gravity="center"
-                    android:background="@drawable/black_bordr_white_filled1"
-                    android:textColor="#9D9D9D"
+                    android:background="@drawable/border_login_curve_grey"
+                    android:textColor="@color/white_text"
                     android:textSize="13dp"
                     />
 
@@ -251,7 +252,9 @@ xmlns:tools="http://schemas.android.com/tools">
             android:maxLength="30"
             android:inputType="number"
             android:singleLine="true"
-            android:textColorHint="#C7C7C7"
+            android:backgroundTint="#707070"
+            android:textColorHint="@color/grey_text_color"
+            android:textColor="@color/white_text"
             android:textSize="18dp"
             android:layout_marginHorizontal="20dp"
 
@@ -265,7 +268,7 @@ xmlns:tools="http://schemas.android.com/tools">
             android:text="Min Price"
             android:drawablePadding="5dp"
             android:drawableRight="@drawable/ic_astrick_icon"
-            android:textColor="#9D9D9D"
+            android:textColor="@color/grey_text_color"
             android:textSize="15dp" />
 
 
@@ -277,7 +280,9 @@ xmlns:tools="http://schemas.android.com/tools">
             android:maxLength="30"
             android:inputType="number"
             android:singleLine="true"
-            android:textColorHint="#C7C7C7"
+            android:backgroundTint="#707070"
+            android:textColorHint="@color/grey_text_color"
+            android:textColor="@color/white_text"
             android:textSize="18dp"
             android:layout_marginHorizontal="20dp"
 
@@ -291,7 +296,7 @@ xmlns:tools="http://schemas.android.com/tools">
             android:text="Select UOM"
             android:drawablePadding="5dp"
             android:drawableRight="@drawable/ic_astrick_icon"
-            android:textColor="#9D9D9D"
+            android:textColor="@color/grey_text_color"
             android:textSize="15dp" />
 
         <EditText
@@ -300,7 +305,9 @@ xmlns:tools="http://schemas.android.com/tools">
             android:layout_height="wrap_content"
             android:fontFamily="@font/segoeui"
             android:singleLine="true"
-            android:textColorHint="#C7C7C7"
+            android:backgroundTint="#707070"
+            android:textColorHint="@color/grey_text_color"
+            android:textColor="@color/white_text"
             android:textSize="18dp"
             android:layout_marginHorizontal="20dp"
             android:drawableRight="@drawable/ic_down_arrow"
@@ -314,7 +321,8 @@ xmlns:tools="http://schemas.android.com/tools">
             android:layout_marginHorizontal="20dp"
             android:drawablePadding="5dp"
             android:drawableRight="@drawable/ic_astrick_icon"
-            android:textColor="#9D9D9D"
+            android:textColor="@color/grey_text_color"
+
             android:textSize="15dp"
             android:text="Quantity "
 
@@ -328,7 +336,9 @@ xmlns:tools="http://schemas.android.com/tools">
             android:maxLength="30"
             android:inputType="number"
             android:singleLine="true"
-            android:textColorHint="#C7C7C7"
+            android:backgroundTint="#707070"
+            android:textColorHint="@color/grey_text_color"
+            android:textColor="@color/white_text"
             android:textSize="18dp"
             android:layout_marginHorizontal="20dp"
 
@@ -485,7 +495,7 @@ xmlns:tools="http://schemas.android.com/tools">
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:fontFamily="@font/segoeui"
-                android:textColor="#9D9D9D"
+                android:textColor="@color/grey_text_color"
                 android:textSize="15dp"
                 android:drawableRight="@drawable/ic_astrick_icon"
                 android:text="Organic Produce "
@@ -512,7 +522,7 @@ xmlns:tools="http://schemas.android.com/tools">
                     android:fontFamily="@font/segoeui"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:background="@drawable/black_bordr_white_filled1"
+                    android:background="@drawable/border_login_curve_grey"
                     android:textColor="#9D9D9D"
                     android:textSize="13dp"
                     android:text="Yes"
@@ -528,8 +538,8 @@ xmlns:tools="http://schemas.android.com/tools">
                     android:fontFamily="@font/segoeui"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:background="@drawable/black_bordr_white_filled1"
-                    android:textColor="#9D9D9D"
+                    android:background="@drawable/border_login_curve_grey"
+                    android:textColor="@color/white_text"
                     android:textSize="13dp"
                     android:text="No"
 
@@ -572,7 +582,7 @@ xmlns:tools="http://schemas.android.com/tools">
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:fontFamily="@font/segoeui"
-                android:textColor="#9D9D9D"
+                android:textColor="@color/grey_text_color"
                 android:textSize="15dp"
                 android:drawableRight="@drawable/ic_astrick_icon"
                 android:text="Packaging type available "
@@ -598,8 +608,8 @@ xmlns:tools="http://schemas.android.com/tools">
                     android:fontFamily="@font/segoeui"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:background="@drawable/black_bordr_white_filled1"
-                    android:textColor="#9D9D9D"
+                    android:background="@drawable/border_login_curve_grey"
+                    android:textColor="@color/white_text"
                     android:textSize="13dp"
                     android:text="Cartons"
 
@@ -614,8 +624,8 @@ xmlns:tools="http://schemas.android.com/tools">
                     android:fontFamily="@font/segoeui"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:background="@drawable/black_bordr_white_filled1"
-                    android:textColor="#9D9D9D"
+                    android:background="@drawable/border_login_curve_grey"
+                    android:textColor="@color/white_text"
                     android:textSize="13dp"
                     android:text="Plastic Box"
 
@@ -629,8 +639,8 @@ xmlns:tools="http://schemas.android.com/tools">
                     android:fontFamily="@font/segoeui"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:background="@drawable/black_bordr_white_filled1"
-                    android:textColor="#9D9D9D"
+                    android:background="@drawable/border_login_curve_grey"
+                    android:textColor="@color/white_text"
                     android:textSize="13dp"
                     android:text="Pet Jar"
 
@@ -652,8 +662,8 @@ xmlns:tools="http://schemas.android.com/tools">
                     android:fontFamily="@font/segoeui"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:background="@drawable/black_bordr_white_filled1"
-                    android:textColor="#9D9D9D"
+                    android:background="@drawable/border_login_curve_grey"
+                    android:textColor="@color/white_text"
                     android:textSize="13dp"
                     android:text="Other Option "
 
@@ -680,7 +690,7 @@ xmlns:tools="http://schemas.android.com/tools">
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:fontFamily="@font/segoeui"
-                android:textColor="#9D9D9D"
+                android:textColor="@color/grey_text_color"
                 android:textSize="15dp"
                 android:drawableRight="@drawable/ic_astrick_icon"
                 android:text="Packaging Size(Kg/Ton)"
@@ -705,8 +715,8 @@ xmlns:tools="http://schemas.android.com/tools">
                     android:fontFamily="@font/segoeui"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:background="@drawable/black_bordr_white_filled1"
-                    android:textColor="#9D9D9D"
+                    android:background="@drawable/border_login_curve_grey"
+                    android:textColor="@color/white_text"
                     android:textSize="13dp"
                     android:text="5Kg"
 
@@ -723,8 +733,8 @@ xmlns:tools="http://schemas.android.com/tools">
                     android:fontFamily="@font/segoeui"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:background="@drawable/black_bordr_white_filled1"
-                    android:textColor="#9D9D9D"
+                    android:background="@drawable/border_login_curve_grey"
+                    android:textColor="@color/white_text"
                     android:textSize="13dp"
                     android:text="10Kg"
 
@@ -738,8 +748,8 @@ xmlns:tools="http://schemas.android.com/tools">
                     android:fontFamily="@font/segoeui"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:background="@drawable/black_bordr_white_filled1"
-                    android:textColor="#9D9D9D"
+                    android:background="@drawable/border_login_curve_grey"
+                    android:textColor="@color/white_text"
                     android:textSize="13dp"
                     android:text="20Kg"
 
@@ -766,8 +776,8 @@ xmlns:tools="http://schemas.android.com/tools">
                     android:fontFamily="@font/segoeui"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:background="@drawable/black_bordr_white_filled1"
-                    android:textColor="#9D9D9D"
+                    android:background="@drawable/border_login_curve_grey"
+                    android:textColor="@color/white_text"
                     android:textSize="13dp"
                     android:text="50Kg"
 
@@ -782,8 +792,8 @@ xmlns:tools="http://schemas.android.com/tools">
                     android:fontFamily="@font/segoeui"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:background="@drawable/black_bordr_white_filled1"
-                    android:textColor="#9D9D9D"
+                    android:background="@drawable/border_login_curve_grey"
+                    android:textColor="@color/white_text"
                     android:textSize="13dp"
                     android:text="100Kg"
 
@@ -798,8 +808,8 @@ xmlns:tools="http://schemas.android.com/tools">
                     android:fontFamily="@font/segoeui"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:background="@drawable/black_bordr_white_filled1"
-                    android:textColor="#9D9D9D"
+                    android:background="@drawable/border_login_curve_grey"
+                    android:textColor="@color/white_text"
                     android:textSize="13dp"
                     android:text="Other Option"
 
@@ -825,7 +835,7 @@ xmlns:tools="http://schemas.android.com/tools">
     android:layout_height="wrap_content"
     android:gravity="center"
     android:orientation="vertical"
-    android:background="@drawable/border_filled_red_not_curved"
+    android:background="@drawable/green_border_filled"
 
     >
 

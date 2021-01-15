@@ -17,6 +17,9 @@ import android.view.Window;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.FarmPe.SellerHub.Adapter.SelectMainAdapter;
+import com.FarmPe.SellerHub.Adapter.ShopbyCategoryAdapter_new;
+import com.FarmPe.SellerHub.Bean.MainAdapterBean1;
 import com.FarmPe.SellerHub.Volly_class.Crop_Post;
 import com.FarmPe.SellerHub.Volly_class.VoleyJsonObjectCallback;
 import com.FarmPe.SellerHub.Adapter.ShopbyCategoryAdapter;
@@ -32,10 +35,13 @@ import java.util.ArrayList;
 
 public class ShopByCategoryFragment extends Fragment {
 
-    public static ArrayList<MainVerticalBean> newOrderBeansList = new ArrayList<>();
+  //  public static ArrayList<MainVerticalBean> newOrderBeansList = new ArrayList<>();
+   public static ArrayList<MainAdapterBean1> newOrderBeansList1 = new ArrayList<>();
 
     public static RecyclerView recyclerView_main,recy_veg,recy_food_grails,recyclerView_prod,recycler_cooking;
-    public static ShopbyCategoryAdapter mainAdapter;
+    public static ShopbyCategoryAdapter mainAdapter1;
+    public static ShopbyCategoryAdapter_new mainAdapter;
+
     Fragment selectedFragment = null;
     TextView toolbar_title;
     public static String livestock_status;
@@ -54,8 +60,8 @@ public class ShopByCategoryFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.shop_by_cat, container, false);
-        Window window = getActivity().getWindow();
-        window.setStatusBarColor(ContextCompat.getColor(getActivity(), R.color.dark_green));
+//        Window window = getActivity().getWindow();
+//        window.setStatusBarColor(ContextCompat.getColor(getActivity(), R.color.dark_green));
        /* Status_bar_change_singleton.getInstance().color_change(getActivity());
         HomePage_With_Bottom_Navigation.linear_bottonsheet.setVisibility(View.GONE);
         HomePage_With_Bottom_Navigation.view.setVisibility(View.GONE);*/
@@ -95,62 +101,71 @@ public class ShopByCategoryFragment extends Fragment {
                 return true;
             }
         });
-        newOrderBeansList.clear();
+        newOrderBeansList1.clear();
         // livestock_types_adapter = new Livestock_Types_Adapter( getActivity(),newOrderBeansList);
         GridLayoutManager mLayoutManager_farm1 = new GridLayoutManager(getActivity(), 1, GridLayoutManager.VERTICAL, false);
         recyclerView_main.setLayoutManager(mLayoutManager_farm1);
         recyclerView_main.setItemAnimator(new DefaultItemAnimator());
-       /* MainAdapterBean1 beann = new MainAdapterBean1("All","1",R.drawable.food_restaurant);
-        newOrderBeansList_main.add(beann);
-        MainAdapterBean1 bean = new MainAdapterBean1("Vegetables","1",R.drawable.food_restaurant);
-        newOrderBeansList_main.add(bean);
-        MainAdapterBean1 bean1 = new MainAdapterBean1("Fruits","1",R.drawable.food_restaurant);
-        newOrderBeansList_main.add(bean1);
-        MainAdapterBean1 bean2 = new MainAdapterBean1("Groceries","1",R.drawable.food_restaurant);
-        newOrderBeansList_main.add(bean2);
-        MainAdapterBean1 bean3 = new MainAdapterBean1("Cooking Oil","1",R.drawable.food_restaurant);
-        newOrderBeansList_main.add(bean3);
-        MainAdapterBean1 bean33 = new MainAdapterBean1("Masala","1",R.drawable.food_restaurant);
-        newOrderBeansList_main.add(bean33);
-        mainAdapter=new SelectMainAdapter(getActivity(),newOrderBeansList_main);
-        recyclerView_main.setAdapter(mainAdapter);*/
-
-        try{
-
-            newOrderBeansList.clear();
-            JSONObject jsonObject = new JSONObject();
 
 
-            Crop_Post.lang_posting(getActivity(), Urls.GetSellingType, jsonObject, new VoleyJsonObjectCallback() {
-                @Override
-                public void onSuccessResponse(JSONObject result) {
+        MainAdapterBean1 beann = new MainAdapterBean1("All","1",R.drawable.veg);
+        newOrderBeansList1.add(beann);
+        MainAdapterBean1 bean = new MainAdapterBean1("Vegetables","1",R.drawable.veg);
+        newOrderBeansList1.add(bean);
+        MainAdapterBean1 bean1 = new MainAdapterBean1("Fruits","1",R.drawable.veg);
+        newOrderBeansList1.add(bean1);
+        MainAdapterBean1 bean2 = new MainAdapterBean1("Groceries","1",R.drawable.veg);
+        newOrderBeansList1.add(bean2);
+        MainAdapterBean1 bean3 = new MainAdapterBean1("Cooking Oil","1",R.drawable.veg);
+        newOrderBeansList1.add(bean3);
+        MainAdapterBean1 bean33 = new MainAdapterBean1("Masala","1",R.drawable.veg);
+        newOrderBeansList1.add(bean33);
 
-                    System.out.println("GetSellingTypeeeeeeeesfghjjhhg"+result);
+        MainAdapterBean1 bean35 = new MainAdapterBean1("Biscuits","1",R.drawable.veg);
+        newOrderBeansList1.add(bean35);
 
 
-                    try{
 
-                        get_soiltype = result.getJSONArray("SellingTypeList");
-
-                        for(int i=0;i<get_soiltype.length();i++){
-
-                            JSONObject jsonObject1 = get_soiltype.getJSONObject(i);
-                            MainVerticalBean bean = new MainVerticalBean(jsonObject1.getString("SellingTypeName"),jsonObject1.getString("SellingTypeId"),jsonObject1.getString("SellingTypeIcon"));
-                            newOrderBeansList.add(bean);
-                        }
-                        mainAdapter=new ShopbyCategoryAdapter(getActivity(),newOrderBeansList);
-                        recyclerView_main.setAdapter(mainAdapter);
-                        mainAdapter.notifyDataSetChanged();
-
-                    }catch (Exception e){
-                        e.printStackTrace();
-                    }
-                }
-            });
-
-        }catch (Exception e){
-            e.printStackTrace();
-        }
+        mainAdapter=new ShopbyCategoryAdapter_new(getActivity(),newOrderBeansList1);
+        recyclerView_main.setAdapter(mainAdapter);
+        mainAdapter.notifyDataSetChanged();
+//
+//        try{
+//
+//            newOrderBeansList.clear();
+//            JSONObject jsonObject = new JSONObject();
+//
+//
+//            Crop_Post.lang_posting(getActivity(), Urls.GetSellingType, jsonObject, new VoleyJsonObjectCallback() {
+//                @Override
+//                public void onSuccessResponse(JSONObject result) {
+//
+//                    System.out.println("GetSellingTypeeeeeeeesfghjjhhg"+result);
+//
+//
+//                    try{
+//
+//                        get_soiltype = result.getJSONArray("SellingTypeList");
+//
+//                        for(int i=0;i<get_soiltype.length();i++){
+//
+//                            JSONObject jsonObject1 = get_soiltype.getJSONObject(i);
+//                            MainVerticalBean bean = new MainVerticalBean(jsonObject1.getString("SellingTypeName"),jsonObject1.getString("SellingTypeId"),jsonObject1.getString("SellingTypeIcon"));
+//                            newOrderBeansList.add(bean);
+//                        }
+//                        mainAdapter=new ShopbyCategoryAdapter(getActivity(),newOrderBeansList);
+//                        recyclerView_main.setAdapter(mainAdapter);
+//                        mainAdapter.notifyDataSetChanged();
+//
+//                    }catch (Exception e){
+//                        e.printStackTrace();
+//                    }
+//                }
+//            });
+//
+//        }catch (Exception e){
+//            e.printStackTrace();
+//        }
 
         return view;
     }

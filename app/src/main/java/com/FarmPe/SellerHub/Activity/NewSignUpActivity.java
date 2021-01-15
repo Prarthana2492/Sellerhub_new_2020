@@ -177,17 +177,17 @@ public class NewSignUpActivity extends AppCompatActivity implements Connectivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.new_login_page_screen);
+        setContentView(R.layout.login_page);
         checkConnection();
 
-        phone_no = findViewById(R.id.phonenumber);
+        phone_no = findViewById(R.id.mobile_no);
         register = findViewById(R.id.register_btn);
         login = findViewById(R.id.login_btn);
         linearLayout = findViewById(R.id.linear_layout);
-        welcome_text = findViewById(R.id.text);
-        made_text = findViewById(R.id.made_text1);
-        confluence = findViewById(R.id.conflu);
-        toast_text=findViewById(R.id.toast_text);
+//        welcome_text = findViewById(R.id.text);
+//        made_text = findViewById(R.id.made_text1);
+//        confluence = findViewById(R.id.conflu);
+//        toast_text=findViewById(R.id.toast_text);
 
         setupUI(linearLayout);
         String[] localize = {"+91"};
@@ -224,7 +224,7 @@ public class NewSignUpActivity extends AppCompatActivity implements Connectivity
 
             public void onTextChanged(CharSequence s, int start,
                                       int before, int count) {
-                toast_text.setVisibility(View.INVISIBLE);
+              //  toast_text.setVisibility(View.INVISIBLE);
             }
         });
         register.setOnClickListener(new View.OnClickListener() {
@@ -239,7 +239,7 @@ public class NewSignUpActivity extends AppCompatActivity implements Connectivity
                 contact =  phone_no.getText().toString();
 
                 if (phone_no.getText().toString().equals("")) {
-                    toast_text.setVisibility(View.VISIBLE);
+                  //  toast_text.setVisibility(View.VISIBLE);
 
                 } else if (!(phone_no.length() == 10)) {
                     Toast toast = Toast.makeText(NewSignUpActivity.this,"Enter Valid Phone number", Toast.LENGTH_LONG);
@@ -275,7 +275,7 @@ public class NewSignUpActivity extends AppCompatActivity implements Connectivity
                 contact =  phone_no.getText().toString();
 
                 if (phone_no.getText().toString().equals("")) {
-                    toast_text.setVisibility(View.VISIBLE);
+                  //  toast_text.setVisibility(View.VISIBLE);
 
                   //  toast_text.setVisibility(View.VISIBLE);
 

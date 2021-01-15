@@ -92,12 +92,12 @@ public class NewAddressDetails_Fragment extends Fragment {
                 address_nav_stat="profile";
                 System.out.println("address_nav_statpprooo"+address_nav_stat);
 
-                selectedFragment = AddNewAddressFragment.newInstance();
-                FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
-                transaction.replace(R.id.frame_layout1, selectedFragment);
-                transaction.addToBackStack("newaddressfragment");
+//                selectedFragment = AddNewAddressFragment.newInstance();
+//                FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
+//                transaction.replace(R.id.frame_layout1, selectedFragment);
+//                transaction.addToBackStack("newaddressfragment");
                 // setArguments(bundle);
-                transaction.commit();
+               // transaction.commit();
             }
         });
         back_feed.setOnClickListener(new View.OnClickListener() {

@@ -10,9 +10,9 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 
-import com.FarmPe.SellerHub.Fragment.AddNewAddressFragment;
 import com.FarmPe.SellerHub.Fragment.Add_NewBankDetails_Fragment;
 import com.FarmPe.SellerHub.Bean.StateBean;
+import com.FarmPe.SellerHub.Fragment.Add_New_Address_Fragment;
 import com.FarmPe.SellerHub.R;
 
 import java.util.List;
@@ -47,19 +47,20 @@ public class StateApdater extends RecyclerView.Adapter<StateApdater.MyStateHolde
             @Override
             public void onClick(View view) {
 
-                stateid=stateBean.getId();
-               /* Add_New_Address_Fragment.state_txt.setText(holder.statename.getText().toString());
-                Add_New_Address_Fragment.drawer.closeDrawers();*/
-                if (Add_NewBankDetails_Fragment.page!=null){
-                    Add_NewBankDetails_Fragment.state.setText(holder.statename.getText().toString());
-                    Add_NewBankDetails_Fragment.drawer.closeDrawers();
 
-                }else {
-                    AddNewAddressFragment.ed_state.setText(holder.statename.getText().toString());
-                    AddNewAddressFragment.drawer.closeDrawers();
-                  //  NewAddressFragment.state.setText(holder.statename.getText().toString());
-                  //  NewAddressFragment.drawer.closeDrawers();
-                }
+                stateid=stateBean.getId();
+                Add_New_Address_Fragment.state_txt.setText(holder.statename.getText().toString());
+                Add_New_Address_Fragment.drawer.closeDrawers();
+//                if (Add_NewBankDetails_Fragment.page!=null){
+//                    Add_NewBankDetails_Fragment.state.setText(holder.statename.getText().toString());
+//                    Add_NewBankDetails_Fragment.drawer.closeDrawers();
+//
+//                }else {
+//                    AddNewAddressFragment.ed_state.setText(holder.statename.getText().toString());
+//                    AddNewAddressFragment.drawer.closeDrawers();
+//                  //  NewAddressFragment.state.setText(holder.statename.getText().toString());
+//                  //  NewAddressFragment.drawer.closeDrawers();
+//                }
               //  NewAddressFragment.state.setText(holder.statename.getText().toString());
               //  NewAddressFragment.drawer.closeDrawers();
 

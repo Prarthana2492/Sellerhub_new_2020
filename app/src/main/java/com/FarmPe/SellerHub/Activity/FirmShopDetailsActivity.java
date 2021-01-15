@@ -9,6 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.LinearLayout;
 
 import com.FarmPe.SellerHub.Fragment.FirmShopDetailsFragment;
+import com.FarmPe.SellerHub.Fragment.FirmShopDetailsFragment_new;
 import com.FarmPe.SellerHub.R;
 
 public class FirmShopDetailsActivity extends AppCompatActivity  {
@@ -24,7 +25,7 @@ public class FirmShopDetailsActivity extends AppCompatActivity  {
 
 
 
-        selectedFragment = FirmShopDetailsFragment.newInstance();
+        selectedFragment = FirmShopDetailsFragment_new.newInstance();
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.frame_layout1, selectedFragment);
         transaction.commit();

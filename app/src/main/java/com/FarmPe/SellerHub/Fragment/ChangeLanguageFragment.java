@@ -58,18 +58,18 @@ public class ChangeLanguageFragment extends Fragment {
         Status_bar_change_singleton.getInstance().color_change(getActivity());
 
         back_feed=view.findViewById(R.id.back_feed);
-        proceed=view.findViewById(R.id.continuebtn);
+     //   proceed=view.findViewById(R.id.continuebtn);
       //  lang_title=view.findViewById(R.id.lang_title);
-        continue_lang=view.findViewById(R.id.continuebtn);
-        recyclerView =view.findViewById(R.id.recycler_what_looking);
-        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getActivity());
-        recyclerView.setLayoutManager(mLayoutManager);
-        recyclerView.setItemAnimator(new DefaultItemAnimator());
-        mAdapter = new SelectLanguageAdapter(getActivity(), newOrderBeansList);
-
-        sessionManager = new SessionManager(getActivity());
-        recyclerView.setAdapter(mAdapter);
-        Langauges();
+      //  continue_lang=view.findViewById(R.id.continuebtn);
+//        recyclerView =view.findViewById(R.id.recycler_what_looking);
+//        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getActivity());
+//        recyclerView.setLayoutManager(mLayoutManager);
+//        recyclerView.setItemAnimator(new DefaultItemAnimator());
+//        mAdapter = new SelectLanguageAdapter(getActivity(), newOrderBeansList);
+//
+//        sessionManager = new SessionManager(getActivity());
+//        recyclerView.setAdapter(mAdapter);
+       // Langauges();
 
 
 
@@ -140,44 +140,44 @@ public class ChangeLanguageFragment extends Fragment {
     }
 
     
-    private void Langauges() {
-        try {
-            newOrderBeansList.clear();
-            JSONObject userRequestjsonObject = new JSONObject();
-            JSONObject postjsonObject = new JSONObject();
-            userRequestjsonObject.put("TalukId", 5495);
-            postjsonObject.putOpt("Hobliobj", userRequestjsonObject);
-
-            Login_post.login_posting(getActivity(), Urls.Languages,postjsonObject,new VoleyJsonObjectCallback() {
-                @Override
-                public void onSuccessResponse(JSONObject result) {
-                    System.out.println("statussssscccs"+result);
-                    JSONObject jsonObject;
-
-                    try {
-                        JSONArray jsonArray=result.getJSONArray("LanguagesList");
-                        for (int i=0;i<jsonArray.length();i++){
-                            JSONObject jsonObject1=jsonArray.getJSONObject(i);
-                            String language=jsonObject1.getString("Language");
-                            int langCode=jsonObject1.getInt("Id");
-                            String langimg=jsonObject1.getString("ImageIcon");
-                            SelectLanguageBean stateBean=new SelectLanguageBean(language,langCode,langimg);
-                            newOrderBeansList.add(stateBean);
-                            recyclerView.setAdapter(mAdapter);
-                        }
-
-                    } catch (JSONException e) {
-                        e.printStackTrace();
-                    }
-                }
-            });
-
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-    }
+//    private void Langauges() {
+//        try {
+//            newOrderBeansList.clear();
+//            JSONObject userRequestjsonObject = new JSONObject();
+//            JSONObject postjsonObject = new JSONObject();
+//            userRequestjsonObject.put("TalukId", 5495);
+//            postjsonObject.putOpt("Hobliobj", userRequestjsonObject);
+//
+//            Login_post.login_posting(getActivity(), Urls.Languages,postjsonObject,new VoleyJsonObjectCallback() {
+//                @Override
+//                public void onSuccessResponse(JSONObject result) {
+//                    System.out.println("statussssscccs"+result);
+//                    JSONObject jsonObject;
+//
+//                    try {
+//                        JSONArray jsonArray=result.getJSONArray("LanguagesList");
+//                        for (int i=0;i<jsonArray.length();i++){
+//                            JSONObject jsonObject1=jsonArray.getJSONObject(i);
+//                            String language=jsonObject1.getString("Language");
+//                            int langCode=jsonObject1.getInt("Id");
+//                            String langimg=jsonObject1.getString("ImageIcon");
+//                            SelectLanguageBean stateBean=new SelectLanguageBean(language,langCode,langimg);
+//                            newOrderBeansList.add(stateBean);
+//                            recyclerView.setAdapter(mAdapter);
+//                        }
+//
+//                    } catch (JSONException e) {
+//                        e.printStackTrace();
+//                    }
+//                }
+//            });
+//
+//
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+//
+//    }
 
 }
 

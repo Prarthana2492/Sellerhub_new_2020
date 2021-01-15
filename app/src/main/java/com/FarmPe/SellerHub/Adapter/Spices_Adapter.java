@@ -14,6 +14,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 
+import com.FarmPe.SellerHub.Bean.MainVerticalBean;
 import com.FarmPe.SellerHub.Bean.Sellbean;
 import com.FarmPe.SellerHub.Fragment.Spices_CameraFragment;
 import com.FarmPe.SellerHub.Fragment.Spices_Fragment;
@@ -26,19 +27,17 @@ import java.util.List;
 
 public class Spices_Adapter extends RecyclerView.Adapter<Spices_Adapter.MyViewHolder> {
 
-    private List<Sellbean> productList;
+    private List<MainVerticalBean> productList;
     Activity activity;
     Fragment selectedFragment;
     public static String sellinglistid,sellinglistname;
 
 
-    public Spices_Adapter(Activity activity, List<Sellbean> moviesList) {
+    public Spices_Adapter(Activity activity, List<MainVerticalBean> moviesList) {
         this.productList = moviesList;
         this.activity=activity;
 
-
     }
-
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
         public ImageView image;
@@ -68,7 +67,7 @@ public class Spices_Adapter extends RecyclerView.Adapter<Spices_Adapter.MyViewHo
 
     @Override
     public void onBindViewHolder(final MyViewHolder holder, final int position) {
-        final Sellbean products = productList.get(position);
+        final MainVerticalBean products = productList.get(position);
 
 
 
@@ -92,6 +91,7 @@ public class Spices_Adapter extends RecyclerView.Adapter<Spices_Adapter.MyViewHo
                 System.out.println("a99999999999999999999999999"+sellinglistid);
 
               bundle.putString("navg_from3", Spices_Fragment.sell_navigation2);
+
                 selectedFragment = Spices_CameraFragment.newInstance();
                 FragmentTransaction transaction =  ((FragmentActivity)activity).getSupportFragmentManager().beginTransaction();
                 transaction.replace(R.id.frame_layout1, selectedFragment);
